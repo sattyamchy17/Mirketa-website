@@ -1,0 +1,1363 @@
+/* ============================================================
+   SALESFORCE DATA CLOUD PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   A tenth distinct visual language on this site: a "live data
+   console" aesthetic — a converging data-stream hero, a 3-column
+   source→hub→destination flow diagram, stacked challenge/
+   solution rows, flip-to-reveal expertise cards, full-width
+   alternating capability spec bands, a mock live analytics
+   console (ingestion bars, unified-profile card, activation
+   chips, segment list), a horizontal pipeline architecture,
+   minimal industry definition cards, a Gantt-style implementation
+   timeline, and a single-question FAQ stepper — none of which
+   repeat any prior page layout on this site.
+   ============================================================ */
+
+.data-cloud {
+  --dc-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.dc-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.dc-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.dc-btn.btn-primary:hover {
+  background: var(--dc-hover-navy);
+}
+
+/* ============================================================
+   STICKY CTA — desktop only
+   ============================================================ */
+.dc-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.dc-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dc-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .dc-sticky-cta { display: none; }
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  pointer-events: none;
+  animation: dc-ripple 0.6s ease-out;
+}
+
+@keyframes dc-ripple {
+  to { transform: scale(2.2); opacity: 0; }
+}
+
+/* ============================================================
+   HERO — converging data-stream background
+   ============================================================ */
+.dc-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #04101c;
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+.dc-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.dc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(4, 16, 28, 0.92) 0%, rgba(4, 16, 28, 0.58) 55%, rgba(4, 16, 28, 0.25) 100%);
+}
+
+.dc-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.dc-hero__text {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.dc-hero h1 {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.dc-hero__description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.dc-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.dc-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 24px;
+}
+
+.dc-hero__stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--color-primary-green);
+  margin-bottom: 4px;
+}
+
+.dc-hero__stat span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dc-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  z-index: 2;
+}
+
+.dc-scroll-indicator span {
+  display: block;
+  width: 4px;
+  height: 8px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  background: var(--color-primary-green);
+  animation: dc-scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes dc-scroll-dot {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(14px); opacity: 0.3; }
+}
+
+@media (max-width: 768px) {
+  .dc-hero { padding-top: 120px; padding-bottom: 90px; }
+  .dc-hero h1 { font-size: 27px; }
+}
+@media (max-width: 480px) {
+  .dc-hero__ctas { flex-direction: column; align-items: stretch; }
+  .dc-hero__stats { gap: 20px; }
+}
+
+/* ============================================================
+   LIVE DATA FLOW — 3-column flow diagram
+   ============================================================ */
+.dc-flow {
+  background: var(--color-white);
+}
+
+.dc-flow__diagram {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr 1.2fr 0.6fr 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.dc-flow__column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dc-flow__column-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-400);
+  margin-bottom: 4px;
+}
+
+.dc-flow__node {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.dc-flow__node--dest {
+  background: rgba(33, 173, 101, 0.08);
+  border-color: rgba(33, 173, 101, 0.3);
+}
+
+.dc-flow__lines svg {
+  width: 100%;
+  height: 220px;
+}
+
+.dc-flow__hub {
+  background: var(--color-dark-navy);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .dc-flow__diagram { grid-template-columns: 1fr; }
+  .dc-flow__lines { display: none; }
+  .dc-flow__hub { order: -1; margin-bottom: 20px; }
+}
+
+/* ============================================================
+   THE DATA PROBLEM — stacked challenge/solution rows
+   ============================================================ */
+.dc-problem {
+  background: var(--color-bg-light);
+}
+
+.dc-problem__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dc-problem__row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  padding: 28px;
+}
+
+.dc-problem__side {
+  padding: 4px 6px;
+}
+
+.dc-problem__tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.dc-problem__side--challenge .dc-problem__tag {
+  color: #c23a3a;
+  background: rgba(194, 58, 58, 0.1);
+}
+
+.dc-problem__side--solution .dc-problem__tag {
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+}
+
+.dc-problem__side h3 {
+  font-size: 15.5px;
+  margin-bottom: 10px;
+}
+
+.dc-problem__side p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+.dc-problem__arrow {
+  color: var(--color-primary-green);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .dc-problem__row { grid-template-columns: 1fr; }
+  .dc-problem__arrow { transform: rotate(90deg); justify-self: center; }
+}
+
+/* ============================================================
+   EXPERTISE — flip cards
+   ============================================================ */
+.dc-expertise {
+  background: var(--color-white);
+}
+
+.dc-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.dc-flip-card {
+  perspective: 1200px;
+  height: 220px;
+  text-align: left;
+}
+
+.dc-flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.dc-flip-card.is-flipped .dc-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.dc-flip-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dc-flip-card__face--front {
+  background: var(--color-dark-navy);
+}
+
+.dc-flip-card__face--front img {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+}
+
+.dc-flip-card__face--front h3 {
+  color: #fff;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+}
+
+.dc-flip-card__hint {
+  font-size: 10.5px;
+  color: var(--color-primary-green);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dc-flip-card__face--back {
+  background: var(--color-primary-green);
+  transform: rotateY(180deg);
+}
+
+.dc-flip-card__face--back p {
+  color: #fff;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .dc-flip-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .dc-flip-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .dc-flip-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   KEY CAPABILITIES — full-width alternating spec bands
+   ============================================================ */
+.dc-capabilities {
+  background: var(--color-white);
+}
+
+.dc-bands {
+  display: flex;
+  flex-direction: column;
+}
+
+.dc-band {
+  background: var(--color-white);
+  padding: 44px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dc-band--alt {
+  background: var(--color-bg-light);
+}
+
+.dc-band__inner {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.dc-band__icon {
+  width: 52px;
+  height: 52px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--color-dark-navy);
+}
+
+.dc-band__subheading {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+}
+
+.dc-band__content h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.dc-band__content p {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  max-width: 800px;
+  margin-bottom: 18px;
+}
+
+.dc-band__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dc-band__tags span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  border-radius: 14px;
+}
+
+.dc-band--alt .dc-band__tags span {
+  background: var(--color-bg-light);
+}
+
+@media (max-width: 700px) {
+  .dc-band__inner { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   LIVE DATA CLOUD METRICS DASHBOARD — mock console
+   ============================================================ */
+.dc-dashboard {
+  background: var(--color-bg-light);
+}
+
+.dc-dashboard__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.dc-dashboard__head .section-heading {
+  margin-bottom: 0;
+}
+
+.dc-dashboard__illo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 900px) {
+  .dc-dashboard__head {
+    grid-template-columns: 1fr;
+  }
+  .dc-dashboard__illo {
+    max-width: 200px;
+    order: -1;
+    margin: 0 auto;
+  }
+}
+
+.dc-console {
+  background: #0d1b2a;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.dc-console__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 18px;
+  background: #142638;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dc-console__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dc-console__dot--red { background: #e5605a; }
+.dc-console__dot--yellow { background: #e5c15a; }
+.dc-console__dot--green { background: #21ad65; }
+
+.dc-console__filename {
+  margin-left: 8px;
+  font-family: "IBM Plex Mono", Menlo, monospace;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.5);
+  flex: 1;
+}
+
+.dc-console__live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+}
+
+.dc-console__live span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  box-shadow: 0 0 0 0 rgba(33, 173, 101, 0.6);
+  animation: dc-pulse 1.8s ease-out infinite;
+}
+
+@keyframes dc-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(33, 173, 101, 0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(33, 173, 101, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(33, 173, 101, 0); }
+}
+
+.dc-console__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dc-console__panel {
+  background: #0d1b2a;
+  padding: 26px 24px;
+}
+
+.dc-console__panel h3 {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+.dc-console__panel-subheading {
+  margin-top: 24px;
+}
+
+.dc-ingestion-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 34px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dc-ingestion-row__label {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dc-ingestion-row__track {
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.dc-ingestion-row__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary-green), #4a9fe0);
+  transition: width 1.2s ease;
+}
+
+.dc-ingestion-row__pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  text-align: right;
+}
+
+.dc-profile-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.dc-profile-card__id {
+  display: block;
+  font-family: "IBM Plex Mono", Menlo, monospace;
+  font-size: 12px;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.dc-profile-card p {
+  font-size: 12.5px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.dc-profile-card__confidence {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #4a9fe0;
+  background: rgba(74, 159, 224, 0.15);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.dc-profile-card__sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dc-profile-card__sources span {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.dc-activation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dc-activation-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.dc-activation-chip__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.dc-segments-list__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11.5px;
+}
+
+.dc-segments-list__row span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dc-segments-list__row strong {
+  color: var(--color-primary-green);
+  font-family: var(--font-heading);
+}
+
+.dc-console__performance {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 24px;
+}
+
+.dc-console__performance-item {
+  text-align: center;
+}
+
+.dc-console__performance-item strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 19px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.dc-console__performance-item span {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .dc-console__grid { grid-template-columns: 1fr; }
+  .dc-console__performance { grid-template-columns: 1fr 1fr; row-gap: 16px; }
+}
+@media (max-width: 480px) {
+  .dc-console__performance { grid-template-columns: 1fr; }
+  .dc-activation-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   USE CASES — numbered rows
+   ============================================================ */
+.dc-use-cases {
+  background: var(--color-white);
+}
+
+.dc-use-case__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dc-use-case__row {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dc-use-case__list .dc-use-case__row:last-child {
+  border-bottom: none;
+}
+
+.dc-use-case__number {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-border);
+}
+
+.dc-use-case__body h3 {
+  font-size: 16.5px;
+  margin-bottom: 10px;
+}
+
+.dc-use-case__body p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  margin-bottom: 14px;
+  max-width: 820px;
+}
+
+.dc-use-case__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dc-use-case__tags span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  padding: 4px 11px;
+  border-radius: 14px;
+}
+
+/* ============================================================
+   PLATFORM ARCHITECTURE — horizontal pipeline stages
+   ============================================================ */
+.dc-architecture {
+  background: var(--color-bg-light);
+}
+
+.dc-pipeline {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.dc-pipeline__stage {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dc-pipeline__card {
+  width: 240px;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  padding: 22px 20px;
+  position: relative;
+}
+
+.dc-pipeline__badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--color-primary-green);
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.dc-pipeline__card img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 12px;
+}
+
+.dc-pipeline__card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.dc-pipeline__card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  margin-bottom: 12px;
+}
+
+.dc-pipeline__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.dc-pipeline__items span {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  padding: 3px 7px;
+  border-radius: 8px;
+}
+
+.dc-pipeline__arrow {
+  flex-shrink: 0;
+  padding: 0 10px;
+  color: var(--color-primary-green);
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .dc-pipeline { flex-direction: column; }
+  .dc-pipeline__stage { flex-direction: column; align-items: stretch; }
+  .dc-pipeline__card { width: 100%; }
+  .dc-pipeline__arrow { display: none; }
+}
+
+/* ============================================================
+   INTEGRATIONS — connected systems grid
+   ============================================================ */
+.dc-integrations {
+  background: var(--color-bg-light);
+}
+
+.dc-integrations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dc-integration-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.dc-integration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.dc-integration-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.dc-integration-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dc-integration-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .dc-integrations__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .dc-integrations__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INDUSTRIES — minimal definition cards
+   ============================================================ */
+.dc-industries {
+  background: var(--color-white);
+}
+
+.dc-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dc-industry-card {
+  padding: 22px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.dc-industry-card:hover {
+  box-shadow: var(--shadow-light);
+  transform: translateY(-4px);
+}
+
+.dc-industry-card img {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 14px;
+}
+
+.dc-industry-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.dc-industry-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .dc-industries__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .dc-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY MIRKETA + IMPLEMENTATION GANTT TIMELINE
+   ============================================================ */
+.dc-why {
+  background: var(--color-bg-light);
+}
+
+.dc-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+.dc-why-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-light);
+}
+
+.dc-why-card img {
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  margin-bottom: 18px;
+}
+
+.dc-why-card h3 {
+  font-size: 15.5px;
+  margin-bottom: 10px;
+}
+
+.dc-why-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+.dc-gantt {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow-light);
+}
+
+.dc-gantt h3 {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.dc-gantt__axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: var(--color-gray-400);
+  margin-bottom: 8px;
+  padding-left: 220px;
+}
+
+.dc-gantt__row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.dc-gantt__label strong {
+  display: block;
+  font-size: 12px;
+  color: var(--color-primary-green);
+}
+
+.dc-gantt__label span {
+  font-size: 12.5px;
+  color: var(--color-dark-navy);
+}
+
+.dc-gantt__track {
+  position: relative;
+  height: 32px;
+  background: var(--color-bg-light);
+  border-radius: 8px;
+}
+
+.dc-gantt__bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary-green), #4a9fe0);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 6px;
+}
+
+@media (max-width: 900px) {
+  .dc-why__grid { grid-template-columns: 1fr; }
+  .dc-gantt__axis { display: none; }
+  .dc-gantt__row { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CLIENT SUCCESS STORIES — testimonial carousel
+   ============================================================ */
+.dc-testimonials {
+  background: var(--color-white);
+}
+
+.dc-testimonials__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.dc-testimonials__heading {
+  text-align: left;
+  margin: 0;
+  max-width: 640px;
+}
+
+.dc-testimonials__nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.dc-testimonials__nav button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  font-size: 18px;
+  color: var(--color-dark-navy);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.dc-testimonials__nav button:hover {
+  background: var(--color-primary-green);
+  border-color: var(--color-primary-green);
+  color: #fff;
+}
+
+.dc-testimonials__playpause {
+  font-size: 13px !important;
+}
+
+.dc-testimonials__swiper,
+.dc-testimonials__swiper .swiper-wrapper,
+.dc-testimonials__swiper .swiper-slide {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.dc-testimonial-card {
+  height: 100%;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 30px 28px;
+}
+
+.dc-testimonial-card p {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.dc-testimonial-card footer {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+@media (max-width: 700px) {
+  .dc-testimonials__header { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   FAQ — accordion + live search
+   ============================================================ */
+.dc-faq {
+  background: var(--color-bg-light);
+}
+
+.dc-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.dc-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.dc-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.dc-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.dc-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.dc-faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.dc-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.dc-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dc-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dc-faq-item.is-open .dc-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.dc-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: dc-faq-fade-in 0.3s ease;
+}
+
+@keyframes dc-faq-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dc-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.dc-final-cta {
+  background: linear-gradient(120deg, #04101c 0%, var(--color-dark-navy) 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.dc-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.dc-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.dc-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 30px;
+}
+
+.dc-final-cta__stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.dc-final-cta__stats strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--color-primary-green);
+  margin-bottom: 4px;
+}
+
+.dc-final-cta__stats span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+

@@ -1,0 +1,60 @@
+/* ============================================================
+   BREADCRUMB — shared hero breadcrumb (styled for dark heroes)
+   ============================================================ */
+
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding-top: 28px;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12.5px;
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary-green);
+}
+
+.breadcrumb a:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.breadcrumb span[aria-current] {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 4px;
+}
+
+/* ---------- Dark variant, for light-background heroes ---------- */
+.breadcrumb--dark a {
+  color: var(--color-gray-300);
+}
+
+.breadcrumb--dark a:hover {
+  color: var(--color-primary-green);
+}
+
+.breadcrumb--dark span[aria-current] {
+  color: var(--color-dark-navy);
+}
+
+.breadcrumb--dark span[aria-hidden] {
+  color: var(--color-gray-500);
+}

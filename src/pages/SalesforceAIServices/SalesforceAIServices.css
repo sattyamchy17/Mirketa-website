@@ -1,0 +1,969 @@
+/* ============================================================
+   SALESFORCE AI SERVICES & CRM SOLUTIONS PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   An eighth distinct visual language on this site: a
+   "Salesforce cloud dashboard" aesthetic — a hero with a
+   Customer-360-ring background, a console-style tabbed service
+   browser, Lightning-widget KPI tiles, a horizontal gradient
+   methodology rail, expandable industry cards, a two-column
+   tech-stack spec list, and "support ticket" styled FAQ cards —
+   none of which repeat any prior page layout on this site.
+   ============================================================ */
+
+.salesforce-ai-services {
+  --sf-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.sf-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.sf-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.sf-btn.btn-primary:hover {
+  background: var(--sf-hover-navy);
+}
+
+/* ============================================================
+   HERO — cloud dashboard constellation background
+   ============================================================ */
+.sf-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #061428;
+  padding-top: 140px;
+  padding-bottom: 70px;
+}
+
+.sf-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.sf-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(6, 20, 40, 0.92) 0%, rgba(6, 20, 40, 0.6) 55%, rgba(6, 20, 40, 0.28) 100%);
+}
+
+.sf-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.sf-hero__text {
+  max-width: 700px;
+  margin-bottom: 44px;
+}
+
+.sf-hero h1 {
+  color: #fff;
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.sf-hero__description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15.5px;
+  margin-bottom: 30px;
+}
+
+.sf-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sf-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 26px 30px;
+  margin-bottom: 26px;
+}
+
+.sf-metric {
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.sf-metric:last-child {
+  border-right: none;
+}
+
+.sf-metric__value {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 6px;
+}
+
+.sf-metric__label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.sf-hero__credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sf-hero__credentials li {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.12);
+  border: 1px solid rgba(33, 173, 101, 0.3);
+  padding: 6px 13px;
+  border-radius: 20px;
+}
+
+.sf-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  z-index: 2;
+}
+
+.sf-scroll-indicator span {
+  display: block;
+  width: 4px;
+  height: 8px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  background: var(--color-primary-green);
+  animation: sf-scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes sf-scroll-dot {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(14px); opacity: 0.3; }
+}
+
+@media (max-width: 900px) {
+  .sf-hero { padding-top: 120px; }
+  .sf-hero h1 { font-size: 30px; }
+  .sf-hero__metrics { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+  .sf-metric:nth-child(2) { border-right: none; }
+  .sf-metric:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.14); }
+}
+@media (max-width: 480px) {
+  .sf-hero__ctas { flex-direction: column; align-items: stretch; }
+  .sf-hero__metrics { grid-template-columns: 1fr; }
+  .sf-metric { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.14); padding-bottom: 14px; }
+  .sf-metric:last-child { border-bottom: none; padding-bottom: 0; }
+}
+
+/* ============================================================
+   SERVICES — console-style tab list + detail panel
+   ============================================================ */
+.sf-services {
+  background: var(--color-white);
+}
+
+.sf-console {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  min-height: 420px;
+}
+
+.sf-console__list {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-dark-navy);
+  padding: 12px 0;
+}
+
+.sf-console__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 16px 22px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  border-left: 3px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.sf-console__item img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity var(--transition);
+}
+
+.sf-console__item:hover {
+  color: #fff;
+}
+
+.sf-console__item.is-active {
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
+  border-left-color: var(--color-primary-green);
+  font-weight: 700;
+}
+
+.sf-console__item.is-active img {
+  opacity: 1;
+}
+
+.sf-console__panel {
+  padding: 40px 44px;
+}
+
+.sf-console__panel-icon {
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--color-dark-navy);
+  margin-bottom: 22px;
+}
+
+.sf-console__panel h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.sf-console__panel ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sf-console__panel li {
+  font-size: 13.5px;
+  color: var(--color-text);
+  padding-left: 20px;
+  position: relative;
+}
+
+.sf-console__panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+@media (max-width: 900px) {
+  .sf-console { grid-template-columns: 1fr; min-height: 0; }
+  .sf-console__list { flex-direction: row; overflow-x: auto; }
+  .sf-console__item { border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .sf-console__item.is-active { border-left-color: transparent; border-bottom-color: var(--color-primary-green); }
+  .sf-console__panel { padding: 28px 24px; }
+  .sf-console__panel ul { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   PROVEN RESULTS — Lightning-style KPI widget tiles
+   ============================================================ */
+.sf-results {
+  background: var(--color-bg-light);
+}
+
+.sf-results__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.sf-results__head .section-heading {
+  margin-bottom: 0;
+}
+
+.sf-results__illo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 900px) {
+  .sf-results__head {
+    grid-template-columns: 1fr;
+  }
+  .sf-results__illo {
+    max-width: 200px;
+    order: -1;
+  }
+}
+
+.sf-widgets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.sf-widget {
+  background: var(--color-white);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sf-widget:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sf-widget__titlebar {
+  display: flex;
+  gap: 5px;
+  padding: 10px 14px;
+  background: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sf-widget__titlebar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.sf-widget__body {
+  padding: 22px 20px 26px;
+}
+
+.sf-widget__value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.sf-widget__body h3 {
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+
+.sf-widget__body p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 900px) {
+  .sf-widgets { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .sf-widgets { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   METHODOLOGY — horizontal gradient rail with waypoints
+   ============================================================ */
+.sf-methodology {
+  background: var(--color-white);
+}
+
+.sf-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 30px;
+}
+
+.sf-rail__track {
+  position: absolute;
+  top: 0;
+  left: calc(12.5% - 1px);
+  right: calc(12.5% - 1px);
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-primary-green), #4a9fe0);
+}
+
+.sf-rail__stop {
+  text-align: center;
+  padding: 0 8px;
+}
+
+.sf-rail__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--color-dark-navy);
+  color: var(--color-primary-green);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 0 0 5px var(--color-white);
+}
+
+.sf-rail__stop h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sf-rail__stop p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 900px) {
+  .sf-rail { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .sf-rail__track { display: none; }
+}
+@media (max-width: 480px) {
+  .sf-rail { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INDUSTRIES — expandable grid cards
+   ============================================================ */
+.sf-industries {
+  background: var(--color-bg-light);
+}
+
+.sf-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.sf-industry-card {
+  background: var(--color-white);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  align-self: start;
+}
+
+.sf-industry-card__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px;
+  text-align: left;
+}
+
+.sf-industry-card__head img {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.sf-industry-card__head span:nth-child(2) {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.sf-industry-card__toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sf-industry-card.is-open .sf-industry-card__head {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sf-industry-card__body {
+  padding: 16px 18px 20px;
+  animation: sf-fade-in 0.3s ease;
+}
+
+@keyframes sf-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sf-industry-card__body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sf-industry-card__body li {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  padding-left: 16px;
+  position: relative;
+}
+
+.sf-industry-card__body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+@media (max-width: 1024px) {
+  .sf-industries__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .sf-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TECHNOLOGY STACK — two-column spec list
+   ============================================================ */
+.sf-technology {
+  background: var(--color-white);
+}
+
+.sf-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+}
+
+.sf-tech-divider {
+  width: 1px;
+  background: var(--color-border);
+}
+
+.sf-tech-column h3 {
+  font-size: 18px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-primary-green);
+  display: inline-block;
+}
+
+.sf-tech-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sf-tech-column li {
+  display: flex;
+  gap: 14px;
+}
+
+.sf-tech-column__dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  margin-top: 6px;
+}
+
+.sf-tech-column strong {
+  display: block;
+  font-size: 14.5px;
+  color: var(--color-dark-navy);
+  margin-bottom: 4px;
+}
+
+.sf-tech-column p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 900px) {
+  .sf-tech-grid { grid-template-columns: 1fr; }
+  .sf-tech-divider { width: 100%; height: 1px; }
+}
+
+/* ============================================================
+   PROPRIETARY PRODUCTS
+   ============================================================ */
+.sf-products {
+  background: var(--color-bg-light);
+}
+
+.sf-products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sf-product-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sf-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sf-product-card img {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  margin-bottom: 16px;
+}
+
+.sf-product-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 6px;
+}
+
+.sf-product-card__tagline {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.sf-product-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 1024px) {
+  .sf-products__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .sf-products__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY MIRKETA — differentiator cards + testimonial
+   ============================================================ */
+.sf-why {
+  background: var(--color-white);
+}
+
+.sf-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+.sf-why-card {
+  text-align: center;
+  padding: 28px 22px;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.sf-why-card:hover {
+  background: var(--color-bg-light);
+  transform: translateY(-4px);
+}
+
+.sf-why-card img {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--color-dark-navy);
+  margin: 0 auto 16px;
+}
+
+.sf-why-card h3 {
+  font-size: 15.5px;
+  margin-bottom: 8px;
+}
+
+.sf-why-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+.sf-testimonial {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 44px 48px;
+}
+
+.sf-testimonial p {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-dark-navy);
+  margin-bottom: 24px;
+}
+
+.sf-testimonial__name {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.sf-testimonial__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sf-testimonial__badges span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 5px 11px;
+  border-radius: 14px;
+}
+
+@media (max-width: 900px) {
+  .sf-why__grid { grid-template-columns: 1fr 1fr; }
+  .sf-testimonial { padding: 32px 26px; }
+}
+@media (max-width: 560px) {
+  .sf-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FEATURED INSIGHTS
+   ============================================================ */
+.sf-insights {
+  background: var(--color-bg-light);
+}
+
+.sf-insights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sf-insight-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-light);
+  border-top: 3px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sf-insight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sf-insight-card--guide { border-top-color: #4a9fe0; }
+.sf-insight-card--case-study { border-top-color: var(--color-primary-green); }
+.sf-insight-card--webinar { border-top-color: #8a5cf6; }
+
+.sf-insight-card__tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 14px;
+  color: var(--color-gray-400);
+}
+
+.sf-insight-card--guide .sf-insight-card__tag { color: #4a9fe0; }
+.sf-insight-card--case-study .sf-insight-card__tag { color: var(--color-primary-green); }
+.sf-insight-card--webinar .sf-insight-card__tag { color: #8a5cf6; }
+
+.sf-insight-card h3 {
+  font-size: 15.5px;
+  margin-bottom: 10px;
+}
+
+.sf-insight-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 900px) {
+  .sf-insights__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ — "support ticket" style cards
+   ============================================================ */
+.sf-faq {
+  background: var(--color-white);
+}
+
+.sf-tickets {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sf-ticket {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.sf-ticket.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.sf-ticket__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  text-align: left;
+}
+
+.sf-ticket__id {
+  flex-shrink: 0;
+  font-family: "IBM Plex Mono", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gray-400);
+  background: var(--color-bg-light);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.sf-ticket__subject {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.sf-ticket__status {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(33, 173, 101, 0.12);
+  color: var(--color-primary-green);
+}
+
+.sf-ticket.is-open .sf-ticket__status {
+  background: rgba(74, 159, 224, 0.15);
+  color: #2f6fb3;
+}
+
+.sf-ticket__body {
+  padding: 0 18px 20px 66px;
+  animation: sf-fade-in 0.3s ease;
+}
+
+.sf-ticket__body p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .sf-ticket__header { flex-wrap: wrap; }
+  .sf-ticket__body { padding-left: 18px; }
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.sf-final-cta {
+  background: linear-gradient(120deg, var(--color-dark-navy) 0%, #0a2440 100%);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sf-final-cta__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sf-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.sf-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 26px;
+}
+
+.sf-final-cta__points {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sf-final-cta__points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sf-final-cta__points img {
+  width: 16px;
+  height: 16px;
+}
+

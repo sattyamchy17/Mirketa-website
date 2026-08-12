@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <text x="110" y="34" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#0f2438" text-anchor="middle">Uptime Monitor</text>
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M30 96h176M30 112h176" />
+  </g>
+  <path d="M30 106c20-20 40-8 56-24s36-18 56 2 40 10 40 10" stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" />
+  <text x="110" y="66" font-family="IBM Plex Sans, sans-serif" font-size="18" font-weight="700" fill="#21ad65" text-anchor="middle">99.98%</text>
+  <text x="110" y="130" font-family="IBM Plex Sans, sans-serif" font-size="7.5" fill="#5a6a7a" text-anchor="middle">30-day uptime</text>
+</svg>

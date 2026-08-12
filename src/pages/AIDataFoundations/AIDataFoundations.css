@@ -1,0 +1,921 @@
+/* ============================================================
+   AI DATA FOUNDATIONS PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   A seventh distinct visual language on this site: a "data
+   platform / lakehouse" aesthetic — a layered-terrain hero with
+   an inline pull-quote stat, a scattered-silos-to-funnel problem
+   diagram, folded-corner "data sheet" service cards, a
+   stratified horizontal architecture diagram, spec-panel
+   technology cards, a 2x2 cyclical methodology loop, case-study
+   tiles, an editorial manifesto list, and a clean single-column
+   FAQ accordion — none of which repeat the Home, AI Consulting,
+   AI Readiness, AI Enablement, Agentic Orchestration, or Agent
+   Development page layouts.
+   ============================================================ */
+
+.ai-data-foundations {
+  --adf-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.adf-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.adf-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.adf-btn.btn-primary:hover {
+  background: var(--adf-hover-navy);
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  pointer-events: none;
+  animation: adf-ripple 0.6s ease-out;
+}
+
+@keyframes adf-ripple {
+  to { transform: scale(2.2); opacity: 0; }
+}
+
+/* ============================================================
+   HERO — layered data-terrain background + pull-quote stat
+   ============================================================ */
+.adf-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081018;
+  padding-top: 140px;
+  padding-bottom: 120px;
+}
+
+.adf-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.adf-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(6, 12, 20, 0.9) 0%, rgba(6, 12, 20, 0.55) 55%, rgba(6, 12, 20, 0.25) 100%);
+}
+
+.adf-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: end;
+  margin-top: 26px;
+}
+
+.adf-hero h1 {
+  color: #fff;
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.adf-hero__description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15.5px;
+  max-width: 560px;
+  margin-bottom: 30px;
+}
+
+.adf-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.adf-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.adf-hero__badges li {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.12);
+  border: 1px solid rgba(33, 173, 101, 0.35);
+  padding: 6px 13px;
+  border-radius: 20px;
+}
+
+.adf-hero__pullquote {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 28px 26px;
+}
+
+.adf-hero__pullquote-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 46px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.adf-hero__pullquote p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.adf-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  z-index: 2;
+}
+
+.adf-scroll-indicator span {
+  display: block;
+  width: 4px;
+  height: 8px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  background: var(--color-primary-green);
+  animation: adf-scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes adf-scroll-dot {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(14px); opacity: 0.3; }
+}
+
+@media (max-width: 1024px) {
+  .adf-hero__inner { grid-template-columns: 1fr; align-items: start; }
+}
+@media (max-width: 768px) {
+  .adf-hero { padding-top: 120px; padding-bottom: 90px; }
+  .adf-hero h1 { font-size: 30px; }
+}
+@media (max-width: 480px) {
+  .adf-hero__ctas { flex-direction: column; align-items: stretch; }
+}
+
+/* ============================================================
+   THE DATA FOUNDATION PROBLEM — scattered silos -> unified fabric
+   ============================================================ */
+.adf-problem {
+  background: var(--color-white);
+}
+
+.adf-problem__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.adf-problem__diagram {
+  position: relative;
+  height: 340px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+}
+
+.adf-silo-field {
+  position: absolute;
+  inset: 0;
+}
+
+.adf-silo {
+  position: absolute;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #c23a3a;
+  background: rgba(194, 58, 58, 0.08);
+  border: 1px dashed rgba(194, 58, 58, 0.4);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.adf-silo--0 { top: 8%; left: 6%; transform: rotate(-6deg); }
+.adf-silo--1 { top: 4%; left: 42%; transform: rotate(4deg); }
+.adf-silo--2 { top: 30%; left: 4%; transform: rotate(3deg); }
+.adf-silo--3 { top: 10%; right: 6%; transform: rotate(-4deg); }
+.adf-silo--4 { top: 38%; right: 8%; transform: rotate(6deg); }
+.adf-silo--5 { top: 34%; left: 34%; transform: rotate(-3deg); }
+
+.adf-funnel {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 70px solid rgba(33, 173, 101, 0.16);
+}
+
+.adf-fabric-hub {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-dark-navy);
+  color: var(--color-primary-green);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.adf-problem__content h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.adf-problem__content p {
+  font-size: 14.5px;
+  color: var(--color-gray-300);
+  margin-bottom: 16px;
+}
+
+.adf-problem__solution {
+  color: var(--color-dark-navy) !important;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .adf-problem__grid { grid-template-columns: 1fr; }
+  .adf-problem__diagram { height: 280px; }
+}
+@media (max-width: 560px) {
+  .adf-silo { font-size: 10px; padding: 6px 9px; }
+}
+
+/* ============================================================
+   SERVICES — folded-corner "data sheet" cards
+   ============================================================ */
+.adf-services {
+  background: var(--color-bg-light);
+}
+
+.adf-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.adf-doc-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-btn);
+  padding: 30px 26px 26px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.adf-doc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.adf-doc-card__fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 34px solid var(--color-bg-light);
+  border-left: 34px solid transparent;
+}
+
+.adf-doc-card__tab {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-gray-400);
+}
+
+.adf-doc-card__icon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  margin-bottom: 18px;
+}
+
+.adf-doc-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 12px;
+  padding-right: 20px;
+}
+
+.adf-doc-card p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 1024px) {
+  .adf-services__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .adf-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   REFERENCE ARCHITECTURE — stratified horizontal layers
+   ============================================================ */
+.adf-architecture {
+  background: var(--color-white);
+}
+
+.adf-strata {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  padding-left: 56px;
+}
+
+.adf-strata__flow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adf-strata__flow span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.adf-strata__flow::before {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to top, var(--color-primary-green), rgba(33, 173, 101, 0.15));
+}
+
+.adf-stratum {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 26px 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.adf-stratum:nth-child(1) { background: #f8fdfa; }
+.adf-stratum:nth-child(2) { background: #f1faf5; }
+.adf-stratum:nth-child(3) { background: #e9f7ef; }
+.adf-stratum:nth-child(4) { background: #e1f3e9; }
+.adf-stratum:nth-child(5) { background: var(--color-dark-navy); border-bottom: none; }
+
+.adf-stratum:nth-child(5) h3,
+.adf-stratum:nth-child(5) .adf-stratum__tier {
+  color: #fff;
+}
+
+.adf-stratum:nth-child(5) p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.adf-stratum__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--color-dark-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adf-stratum:nth-child(5) .adf-stratum__icon {
+  background: rgba(33, 173, 101, 0.2);
+}
+
+.adf-stratum__icon img {
+  width: 26px;
+  height: 26px;
+}
+
+.adf-stratum__tier {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.adf-stratum__body h3 {
+  font-size: 16.5px;
+  margin-bottom: 6px;
+}
+
+.adf-stratum__body p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  max-width: 760px;
+}
+
+@media (max-width: 768px) {
+  .adf-strata { padding-left: 44px; }
+  .adf-strata__flow { width: 44px; }
+  .adf-stratum { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+  .adf-stratum__icon { width: 44px; height: 44px; }
+}
+
+/* ============================================================
+   TECHNOLOGY PARTNERS — spec panels with chip lists
+   ============================================================ */
+.adf-technology {
+  background: var(--color-bg-light);
+}
+
+.adf-technology__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.adf-tech-panel {
+  background: var(--color-white);
+  border-radius: var(--radius-btn);
+  border-top: 3px solid var(--color-dark-navy);
+  padding: 24px 24px 26px;
+}
+
+.adf-tech-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.adf-tech-panel__head img {
+  width: 28px;
+  height: 28px;
+}
+
+.adf-tech-panel__head h3 {
+  font-size: 15px;
+}
+
+.adf-tech-panel p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  margin-bottom: 16px;
+}
+
+.adf-tech-panel__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adf-tech-panel__chips span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  border: 1px solid var(--color-border);
+  padding: 5px 11px;
+  border-radius: 14px;
+}
+
+@media (max-width: 1024px) {
+  .adf-technology__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .adf-technology__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   OUR APPROACH — 2x2 cyclical loop
+   ============================================================ */
+.adf-approach {
+  background: var(--color-white);
+}
+
+.adf-cycle {
+  position: relative;
+}
+
+.adf-cycle__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.adf-cycle-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  position: relative;
+}
+
+.adf-cycle-card__number {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-primary-green);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 14px;
+}
+
+.adf-cycle-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.adf-cycle-card p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  margin-bottom: 14px;
+}
+
+.adf-cycle-card__output {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+}
+
+.adf-cycle__center {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .adf-cycle__center {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-dark-navy);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 8px var(--color-white);
+  }
+  .adf-cycle__center span {
+    color: var(--color-primary-green);
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adf-cycle__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CLIENT RESULTS — case study tiles
+   ============================================================ */
+.adf-results {
+  background: var(--color-bg-light);
+}
+
+.adf-results__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.adf-case-tile {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.adf-case-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.adf-case-tile__media {
+  background-size: cover;
+  background-position: center;
+  background-color: #0f2438;
+}
+
+.adf-case-tile__body {
+  padding: 22px 22px 24px;
+}
+
+.adf-case-tile__badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  padding: 4px 11px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.adf-case-tile__body h3 {
+  font-size: 15.5px;
+  margin-bottom: 10px;
+}
+
+.adf-case-tile__body p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 900px) {
+  .adf-results__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .adf-case-tile { grid-template-columns: 1fr; }
+  .adf-case-tile__media { height: 140px; }
+}
+
+/* ============================================================
+   WHY MIRKETA — numbered manifesto list
+   ============================================================ */
+.adf-why {
+  background: var(--color-white);
+}
+
+.adf-manifesto {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.adf-manifesto__item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--color-border);
+  border-left: 3px solid transparent;
+  padding-left: 20px;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.adf-manifesto__item:hover {
+  border-left-color: var(--color-primary-green);
+  background: var(--color-bg-light);
+}
+
+.adf-manifesto__item:last-child {
+  border-bottom: none;
+}
+
+.adf-manifesto__number {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-border);
+}
+
+.adf-manifesto__item h3 {
+  font-size: 16.5px;
+  margin-bottom: 8px;
+}
+
+.adf-manifesto__item p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 600px) {
+  .adf-manifesto__item { grid-template-columns: 1fr; gap: 8px; padding-left: 16px; }
+}
+
+/* ============================================================
+   PROVEN RESULTS — soft green editorial stats band
+   ============================================================ */
+.adf-stats {
+  background: linear-gradient(180deg, #eef9f2 0%, #e3f5eb 100%);
+  padding: 64px 0;
+}
+
+.adf-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.adf-stat {
+  text-align: center;
+  border-right: 1px solid rgba(33, 173, 101, 0.2);
+  padding: 0 16px;
+}
+
+.adf-stat:last-child {
+  border-right: none;
+}
+
+.adf-stat__value {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  margin-bottom: 8px;
+}
+
+.adf-stat__label {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+@media (max-width: 768px) {
+  .adf-stats__grid { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .adf-stat:nth-child(2) { border-right: none; }
+}
+@media (max-width: 480px) {
+  .adf-stats__grid { grid-template-columns: 1fr; }
+  .adf-stat { border-right: none; border-bottom: 1px solid rgba(33, 173, 101, 0.2); padding-bottom: 20px; }
+  .adf-stat:last-child { border-bottom: none; padding-bottom: 0; }
+}
+
+/* ============================================================
+   FAQ — clean single-column accordion
+   ============================================================ */
+.adf-faq {
+  background: var(--color-white);
+}
+
+.adf-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.adf-faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.adf-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 4px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.adf-faq-item__chevron {
+  flex-shrink: 0;
+  color: var(--color-primary-green);
+  font-size: 18px;
+  transition: transform var(--transition);
+}
+
+.adf-faq-item.is-open .adf-faq-item__chevron {
+  transform: rotate(180deg);
+}
+
+.adf-faq-item.is-open .adf-faq-item__question {
+  color: var(--color-primary-green);
+}
+
+.adf-faq-item__answer {
+  padding: 0 4px 24px;
+  animation: adf-fade-in 0.3s ease;
+}
+
+@keyframes adf-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.adf-faq-item__answer p {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.adf-final-cta {
+  background: var(--color-dark-navy);
+  padding: 80px 0;
+}
+
+.adf-final-cta__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.adf-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.adf-final-cta p {
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 26px;
+}
+
+.adf-final-cta__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.adf-final-cta__points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 32px;
+}
+
+.adf-final-cta__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.adf-final-cta__points img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .adf-final-cta__grid { grid-template-columns: 1fr; }
+  .adf-final-cta__points { border-left: none; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 24px; }
+}
+@media (max-width: 480px) {
+  .adf-final-cta__ctas { flex-direction: column; align-items: stretch; }
+}
+

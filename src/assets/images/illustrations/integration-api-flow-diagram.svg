@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="26" y="60" width="42" height="30" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="47" y="79" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">CRM</text>
+  <rect x="26" y="26" width="42" height="26" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="47" y="43" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">ERP</text>
+  <rect x="26" y="98" width="42" height="26" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="47" y="115" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">HCM</text>
+  <circle cx="110" cy="80" r="20" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.4" />
+  <text x="110" y="78" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#3a8ee0" text-anchor="middle" font-weight="700">API</text>
+  <text x="110" y="87" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#3a8ee0" text-anchor="middle" font-weight="700">HUB</text>
+  <path d="M68 39l24 32M68 75h22M68 111l24-25" stroke="#0f2438" stroke-opacity="0.3" stroke-width="1.4" fill="none" />
+  <rect x="152" y="60" width="42" height="30" rx="6" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="173" y="79" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">Cloud</text>
+  <path d="M130 80h20" stroke="#0f2438" stroke-opacity="0.3" stroke-width="1.4" />
+  <g fill="#21ad65">
+    <circle cx="86" cy="55" r="2.4" />
+    <circle cx="93" cy="105" r="2.4" />
+    <circle cx="143" cy="80" r="2.4" />
+  </g>
+  <text x="30" y="140" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">Real-time, event-driven connectivity</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="30" y="30" width="52" height="34" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <circle cx="48" cy="42" r="5" stroke="#3a8ee0" stroke-width="1.4" />
+  <circle cx="64" cy="42" r="5" stroke="#3a8ee0" stroke-width="1.4" opacity="0.6" />
+  <path d="M40 58c1.5-6 5-9 8-9s6.5 3 8 9M56 58c1.2-5 4-7.5 8-7.5s6.8 2.5 8 7.5" stroke="#3a8ee0" stroke-width="1.3" fill="none" />
+  <rect x="92" y="30" width="52" height="34" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="118" y="52" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#21ad65" text-anchor="middle">46%</text>
+  <rect x="154" y="30" width="52" height="34" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <path d="M164 52l5-10 5 6 5-12 5 8" stroke="#0f2438" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M30 96h176M30 112h176M30 128h176" />
+  </g>
+  <g fill="#21ad65">
+    <rect x="34" y="112" width="10" height="16" rx="2" />
+    <rect x="52" y="100" width="10" height="28" rx="2" />
+    <rect x="70" y="106" width="10" height="22" rx="2" />
+  </g>
+  <g fill="#3a8ee0">
+    <rect x="88" y="96" width="10" height="32" rx="2" />
+  </g>
+  <text x="150" y="122" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#0f2438" opacity="0.6">Headcount by Dept</text>
+</svg>

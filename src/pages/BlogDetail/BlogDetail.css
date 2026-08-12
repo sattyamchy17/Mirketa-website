@@ -1,0 +1,284 @@
+/* ============================================================
+   BLOG DETAIL PAGE — premium editorial redesign
+   Hero: category tag + H1 + Contact Us CTA, background image when
+   the post has one (with a dark scrim for contrast), otherwise the
+   same dark-navy gradient used elsewhere on the site.
+   ============================================================ */
+.blog-detail__status {
+  text-align: center;
+  padding: 220px 20px 120px;
+  font-size: 17px;
+  color: var(--color-gray-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.blog-detail__hero {
+  position: relative;
+  background: linear-gradient(120deg, #0f2438 0%, #0d3b3d 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 168px 0 64px;
+  overflow: hidden;
+}
+
+.blog-detail__hero--image .blog-detail__hero-scrim {
+  background: linear-gradient(100deg, rgba(15, 36, 56, 0.94) 0%, rgba(15, 36, 56, 0.8) 45%, rgba(15, 36, 56, 0.55) 100%);
+}
+
+.blog-detail__hero-scrim {
+  position: absolute;
+  inset: 0;
+}
+
+.blog-detail__hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-detail__tag {
+  display: inline-block;
+  background: rgba(33, 173, 101, 0.16);
+  border: 1px solid rgba(33, 173, 101, 0.45);
+  color: #8fe3b5;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.blog-detail__hero h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.22;
+  max-width: 780px;
+  margin-bottom: 28px;
+}
+
+.blog-detail__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+/* .btn-primary already sets the brand green background + white text
+   globally; its default hover darkens the green, but every other
+   prominent hero CTA on this site overrides hover to the brand navy
+   (#1d4056) instead — matching that established convention here. */
+.blog-detail__cta.btn-primary:hover {
+  background: #1d4056;
+}
+
+.blog-detail__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-detail__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.blog-detail__author img,
+.blog-detail__author-fallback {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blog-detail__author-fallback {
+  background: var(--color-primary-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.blog-detail__meta time {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================================
+   70 / 30 MAIN LAYOUT
+   Sidebar is placed AFTER the article in DOM order so it naturally
+   stacks below the article on mobile (no reordering needed) while
+   CSS Grid places it in the second column on desktop.
+   ============================================================ */
+.blog-detail__content {
+  padding: 64px 0 80px;
+  background: var(--color-white);
+}
+
+.blog-detail__layout {
+  max-width: 1240px;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.blog-detail__body-wrap {
+  min-width: 0;
+}
+
+.blog-detail__body {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* ---------- Article typography ---------- */
+.blog-detail__body p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 22px;
+}
+
+.blog-detail__body h2 {
+  font-size: 28px;
+  line-height: 1.3;
+  margin: 48px 0 18px;
+}
+
+.blog-detail__body h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  margin: 38px 0 14px;
+}
+
+.blog-detail__body h4,
+.blog-detail__body h5 {
+  font-size: 17px;
+  margin: 28px 0 12px;
+}
+
+.blog-detail__body ul,
+.blog-detail__body ol {
+  margin: 0 0 22px;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-detail__body ul {
+  list-style: disc;
+}
+
+.blog-detail__body ol {
+  list-style: decimal;
+}
+
+.blog-detail__body li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.blog-detail__body strong {
+  color: var(--color-dark-navy);
+  font-weight: 700;
+}
+
+.blog-detail__body a {
+  color: var(--color-primary-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-detail__body a:hover {
+  color: var(--color-dark-navy);
+}
+
+.blog-detail__body blockquote {
+  border-left: 3px solid var(--color-primary-green);
+  background: var(--color-bg-light);
+  padding: 18px 24px;
+  margin: 0 0 22px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--color-dark-navy);
+}
+
+.blog-detail__body img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin: 8px 0 22px;
+}
+
+.blog-detail__body pre {
+  background: var(--color-dark-navy);
+  color: #eaf2fb;
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin-bottom: 22px;
+  font-size: 13.5px;
+}
+
+.blog-detail__body code {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+.blog-detail__body p code {
+  background: var(--color-bg-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1200px) {
+  .blog-detail__layout {
+    grid-template-columns: minmax(0, 65%) minmax(260px, 35%);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blog-detail__layout {
+    grid-template-columns: 1fr;
+  }
+  .blog-detail__body {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-detail__hero {
+    padding: 130px 0 44px;
+  }
+  .blog-detail__hero h1 {
+    font-size: 28px;
+  }
+  .blog-detail__tag {
+    margin-bottom: 16px;
+  }
+  .blog-detail__body h2 {
+    font-size: 23px;
+    margin-top: 36px;
+  }
+  .blog-detail__body h3 {
+    font-size: 19px;
+  }
+}

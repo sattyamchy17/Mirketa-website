@@ -1,0 +1,129 @@
+/* ============================================================
+   HERO FULL-BLEED — Layout D
+   Taller full-bleed background with a single glass overlay
+   card carrying the copy — no side-by-side dashboard mock.
+   ============================================================ */
+
+.hero-fullbleed {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.hero-fullbleed__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 27, 48, 0.55) 0%, rgba(8, 27, 48, 0.72) 100%);
+}
+
+.hero-fullbleed__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-fullbleed__breadcrumb {
+  margin-bottom: 28px;
+}
+
+.hero-fullbleed--left .hero-fullbleed__breadcrumb {
+  justify-content: flex-start;
+}
+
+.hero-fullbleed--center .hero-fullbleed__breadcrumb {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-fullbleed__card {
+  max-width: 680px;
+  background: rgba(8, 27, 48, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 44px 44px 40px;
+}
+
+.hero-fullbleed--center .hero-fullbleed__card {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-fullbleed__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.18);
+  border: 1px solid rgba(33, 173, 101, 0.45);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.hero-fullbleed h1 {
+  color: #fff;
+  font-size: 38px;
+  line-height: 1.16;
+  margin-bottom: 18px;
+}
+
+.hero-fullbleed__description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.hero-fullbleed__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.hero-fullbleed--center .hero-fullbleed__ctas {
+  justify-content: center;
+}
+
+.hero-fullbleed__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-fullbleed__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 20px;
+}
+
+.hero-fullbleed--center .hero-fullbleed__metrics {
+  justify-content: center;
+}
+
+.hero-fullbleed__metrics li {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 768px) {
+  .hero-fullbleed { min-height: 520px; padding-top: 110px; }
+  .hero-fullbleed h1 { font-size: 27px; }
+  .hero-fullbleed__card { padding: 30px 26px 28px; }
+}

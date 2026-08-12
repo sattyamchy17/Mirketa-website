@@ -1,0 +1,127 @@
+/* ============================================================
+   HERO EDITORIAL — Layout E
+   Light background, narrow column, large serif H1, breadcrumb
+   small at top, full-width supporting image band below the
+   copy (not beside it). Distinct from the dark dashboard hero
+   used on most other pages.
+   ============================================================ */
+
+.hero-editorial {
+  background: var(--color-bg-light);
+  padding-top: 140px;
+  padding-bottom: 0;
+}
+
+.hero-editorial__breadcrumb {
+  margin-bottom: 32px;
+}
+
+.hero-editorial__top {
+  padding-bottom: 56px;
+}
+
+.hero-editorial__copy {
+  max-width: 760px;
+}
+
+.hero-editorial__eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-editorial h1 {
+  font-size: 52px;
+  line-height: 1.12;
+  color: var(--color-dark-navy);
+  margin-bottom: 24px;
+  max-width: 15ch;
+}
+
+.hero-editorial__description {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-text);
+  max-width: 62ch;
+  margin-bottom: 32px;
+}
+
+.hero-editorial__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.hero-editorial__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.hero-editorial__metrics li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.hero-editorial__metrics li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+.hero-editorial__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-editorial__figure {
+  margin: 0;
+  width: 100%;
+}
+
+.hero-editorial__figure img {
+  width: 100%;
+  height: clamp(280px, 34vw, 460px);
+  object-fit: cover;
+  display: block;
+}
+
+.hero-editorial__figure figcaption {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  padding: 14px 40px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .hero-editorial { padding-top: 116px; }
+  .hero-editorial h1 { font-size: 36px; max-width: none; }
+  .hero-editorial__description { font-size: 16px; }
+  .hero-editorial__figure img { height: 240px; }
+}
+
+@media (max-width: 560px) {
+  .hero-editorial h1 { font-size: 29px; }
+  .hero-editorial__ctas { flex-direction: column; align-items: stretch; }
+}

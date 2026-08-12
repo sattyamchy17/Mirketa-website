@@ -1,0 +1,63 @@
+  <!-- Right: Form -->
+        <div class="reveal" style="background:#fff;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(29,64,86,0.10);">
+          <h3 style="font-family:'IBM Plex Serif',serif;font-size:22px;color:#1D4056;margin:0 0 24px;">Request a Free Agentforce Consultation</h3>
+          <!-- Load reCAPTCHA script -->
+          <script src="https://www.google.com/recaptcha/api.js"></script>
+          <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+          <div class="form-container">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dd0000000hivg" method="POST">
+              <input type="hidden" name="captcha_settings" value='{"keyname":"Mirketa_Latest_reCAPTCHA","fallback":"true","orgId":"00Dd0000000hivg","ts":""}'>
+              <input type="hidden" name="oid" value="00Dd0000000hivg">
+              <input type="hidden" name="retURL" value="https://mirketa.com/thank-you/">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first_name">First Name</label>
+                  <input id="first_name" maxlength="40" name="first_name" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="last_name">Last Name</label>
+                  <input id="last_name" maxlength="80" name="last_name" type="text">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="mobile">Mobile</label>
+                  <input id="mobile" maxlength="40" name="mobile" type="text" required>
+                </div>
+                <div class="form-group">
+                  <label for="company">Company</label>
+                  <input id="company" maxlength="40" name="company" type="text" required>
+                </div>
+              </div>
+              <div class="form-group-full">
+                <label for="email">Email</label>
+                <input id="email" maxlength="80" name="email" type="email" required>
+              </div>
+              <div class="form-group-full">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" required></textarea>
+              </div>
+              <input type="hidden" id="00N0W000008z5D6" name="00N0W000008z5D6" />
+              <div class="g-recaptcha" data-sitekey="6LepUL0mAAAAADb01WwX9NRdsVjg8VDkgYa0PT8j"></div>
+              <button type="submit" class="submit-btn">Submit</button>
+            </form>
+          </div>
+          <script>
+          function timestamp() {
+            var response = document.getElementById("g-recaptcha-response");
+            if (response == null || response.value.trim() == "") {
+              var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+              elems["ts"] = JSON.stringify(new Date().getTime());
+              document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+            }
+          }
+          setInterval(timestamp, 500);
+          </script>
+          <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var currentUrl = window.location.href;
+            document.getElementById('00N0W000008z5D6').value = currentUrl;
+          });
+          </script>
+        </div>
+      </div>

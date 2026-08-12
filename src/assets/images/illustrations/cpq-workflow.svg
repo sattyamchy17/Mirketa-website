@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g fill="#e8f8f0" stroke="#21ad65" stroke-width="1.3">
+    <rect x="14" y="60" width="50" height="40" rx="8" />
+  </g>
+  <text x="39" y="84" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#21ad65" text-anchor="middle">Configure</text>
+  <g fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.3">
+    <rect x="86" y="60" width="50" height="40" rx="8" />
+  </g>
+  <text x="111" y="84" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#3a8ee0" text-anchor="middle">Price</text>
+  <g fill="#f0faf5" stroke="#21ad65" stroke-width="1.4">
+    <rect x="158" y="60" width="50" height="40" rx="8" />
+  </g>
+  <text x="183" y="84" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#21ad65" text-anchor="middle">Quote</text>
+  <path d="M64 80h22M136 80h22" stroke="#21ad65" stroke-width="1.6" stroke-dasharray="2 3" />
+  <path d="M86 80l-4-4M86 80l-4 4M158 80l-4-4M158 80l-4 4" stroke="#21ad65" stroke-width="1.6" />
+  <path d="M170 90l4 4 8-9" stroke="#21ad65" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

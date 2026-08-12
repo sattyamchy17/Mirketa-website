@@ -1,0 +1,1127 @@
+/* ============================================================
+   SALESFORCE SERVICE CLOUD CONSULTING & DEVELOPMENT PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   ============================================================ */
+
+.salesforce-service-cloud {
+  --scc-hover-navy: #1d4056;
+  --scc-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.scc-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.scc-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.scc-btn.btn-primary:hover {
+  background: var(--scc-hover-navy);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.scc-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.scc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.scc-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.scc-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.scc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.scc-badge__spark {
+  color: var(--color-primary-green);
+}
+
+.scc-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.scc-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.scc-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.scc-hero__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scc-hero__metrics li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.scc-hero__metrics li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.scc-hero__metrics li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scc-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .scc-hero__inner { grid-template-columns: 1fr; }
+  .scc-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .scc-hero { padding-top: 120px; padding-bottom: 60px; }
+  .scc-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY — auto-scrolling logo marquee
+   ============================================================ */
+.scc-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.scc-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.scc-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.scc-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: scc-marquee 26s linear infinite;
+}
+
+.scc-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.scc-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.scc-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes scc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scc-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   SHARED "HEAD" LAYOUT — heading beside an illustration
+   ============================================================ */
+.scc-challenges__head,
+.scc-services__head,
+.scc-process__head,
+.scc-ai__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.scc-features__head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.scc-challenges__illo,
+.scc-services__illo,
+.scc-process__illo,
+.scc-ai__illo,
+.scc-features__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(15, 36, 56, 0.1));
+}
+
+.scc-challenges__head .section-heading,
+.scc-services__head .section-heading,
+.scc-process__head .section-heading,
+.scc-ai__head .section-heading,
+.scc-features__head .section-heading {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .scc-challenges__head,
+  .scc-services__head,
+  .scc-process__head,
+  .scc-ai__head,
+  .scc-features__head {
+    grid-template-columns: 1fr;
+  }
+  .scc-challenges__illo,
+  .scc-services__illo,
+  .scc-process__illo,
+  .scc-ai__illo,
+  .scc-features__illo {
+    max-width: 200px;
+    order: -1;
+  }
+}
+
+/* ============================================================
+   CUSTOMER SERVICE CHALLENGES
+   ============================================================ */
+.scc-challenges {
+  background: var(--color-bg-light);
+}
+
+.scc-challenges__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.scc-challenge-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.scc-challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.scc-challenge-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(214, 66, 66, 0.08);
+  color: #d64242;
+  margin-bottom: 16px;
+}
+
+.scc-challenge-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.scc-challenge-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.scc-challenge-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .scc-challenges__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .scc-challenges__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   OUR SALESFORCE SERVICE CLOUD SERVICES
+   ============================================================ */
+.scc-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.scc-service-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.scc-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.scc-service-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  color: var(--color-primary-green);
+  margin-bottom: 16px;
+}
+
+.scc-service-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.scc-service-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.scc-service-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.scc-service-card__link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  align-self: flex-start;
+  transition: color var(--transition);
+}
+
+.scc-service-card__link:hover {
+  color: var(--scc-hover-navy);
+}
+
+@media (max-width: 1200px) {
+  .scc-services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .scc-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY SALESFORCE SERVICE CLOUD — comparison table
+   ============================================================ */
+.scc-comparison {
+  background: var(--color-bg-light);
+}
+
+.scc-comparison__table {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+}
+
+.scc-comparison__row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 16px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 20px;
+  align-items: center;
+}
+
+.scc-comparison__row:last-child {
+  border-bottom: none;
+}
+
+.scc-comparison__row--head {
+  background: var(--color-dark-navy);
+  padding: 18px 20px;
+}
+
+.scc-comparison__row--head span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.scc-comparison__row--head span:nth-child(3) {
+  color: var(--color-primary-green);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.scc-comparison__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+.scc-comparison__cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.scc-comparison__cell span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+
+.scc-comparison__cell span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scc-comparison__cell--traditional {
+  color: var(--color-gray-300);
+}
+
+.scc-comparison__cell--traditional span {
+  color: #d64242;
+}
+
+.scc-comparison__cell--service {
+  color: var(--color-dark-navy);
+  font-weight: 500;
+}
+
+.scc-comparison__cell--service span {
+  color: var(--color-primary-green);
+}
+
+@media (max-width: 900px) {
+  .scc-comparison__row { grid-template-columns: 1fr; gap: 8px; }
+  .scc-comparison__row--head { display: none; }
+  .scc-comparison__label { padding-bottom: 4px; border-bottom: 1px solid var(--color-border); margin-bottom: 6px; }
+}
+
+/* ============================================================
+   SERVICE CLOUD FEATURES
+   ============================================================ */
+.scc-features {
+  background: var(--color-white);
+}
+
+.scc-features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.scc-feature-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+}
+
+.scc-feature-card__check {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.scc-feature-card__check svg {
+  width: 16px;
+  height: 16px;
+}
+
+.scc-feature-card__illo {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.scc-feature-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+
+.scc-feature-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .scc-features__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .scc-features__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .scc-features__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INDUSTRIES WE SERVE
+   ============================================================ */
+.scc-industries {
+  background: var(--color-bg-light);
+}
+
+.scc-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.scc-industry-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.scc-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.scc-industry-card img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.scc-industry-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .scc-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .scc-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   IMPLEMENTATION PROCESS
+   ============================================================ */
+.scc-process {
+  background: var(--color-white);
+}
+
+.scc-process__rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 22px;
+}
+
+.scc-step-card {
+  position: relative;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+}
+
+.scc-step-card__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.scc-step-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.scc-step-card p {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+.scc-step-card__arrow {
+  position: absolute;
+  top: 24px;
+  right: -18px;
+  color: var(--color-primary-green);
+  font-size: 14px;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .scc-process__rail { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .scc-process__rail { grid-template-columns: repeat(2, 1fr); }
+  .scc-step-card__arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .scc-process__rail { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   AI + SERVICE CLOUD
+   ============================================================ */
+.scc-ai {
+  background: var(--color-bg-light);
+}
+
+.scc-ai__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.scc-ai-card {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition);
+}
+
+.scc-ai-card:hover {
+  transform: translateY(-5px);
+}
+
+.scc-ai-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.scc-ai-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.scc-ai-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.scc-ai-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+.scc-ai__cta {
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .scc-ai__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .scc-ai__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY CHOOSE MIRKETA
+   ============================================================ */
+.scc-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.scc-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.scc-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.scc-why-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.scc-why-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.scc-why-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.scc-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .scc-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .scc-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CASE STUDIES
+   ============================================================ */
+.scc-case-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.scc-case-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  border-radius: 14px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
+
+.scc-case-card h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.scc-case-card__fields {
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.scc-case-card__fields div {
+  margin-bottom: 12px;
+}
+
+.scc-case-card__fields dt {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 3px;
+}
+
+.scc-case-card__fields dd {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.scc-case-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+
+.scc-case-card__metrics strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-dark-navy);
+  margin-bottom: 2px;
+}
+
+.scc-case-card__metrics span {
+  font-size: 10px;
+  color: var(--color-gray-300);
+  line-height: 1.3;
+}
+
+.scc-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .scc-cases__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.scc-testimonials {
+  background: var(--color-bg-light);
+}
+
+.scc-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.scc-testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-light);
+  margin: 0;
+}
+
+.scc-testimonial-card__mark {
+  width: 26px;
+  height: 20px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.scc-testimonial-card blockquote {
+  font-size: 14px;
+  color: var(--color-dark-navy);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.scc-testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  font-size: 12.5px;
+}
+
+.scc-testimonial-card figcaption strong {
+  color: var(--color-dark-navy);
+}
+
+.scc-testimonial-card figcaption span {
+  color: var(--color-gray-300);
+  font-size: 11.5px;
+}
+
+@media (max-width: 900px) {
+  .scc-testimonials__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TECHNOLOGY ECOSYSTEM
+   ============================================================ */
+.scc-stack__wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.scc-stack__wall li {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.scc-stack__wall li:hover {
+  border-color: var(--color-primary-green);
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.scc-faq {
+  background: var(--color-bg-light);
+}
+
+.scc-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.scc-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.scc-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.scc-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.scc-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.scc-faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.scc-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.scc-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.scc-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scc-faq-item.is-open .scc-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.scc-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: scc-fade-in 0.3s ease;
+}
+
+@keyframes scc-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scc-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.scc-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.scc-faq__links a {
+  color: var(--scc-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.scc-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.scc-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.scc-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.scc-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.scc-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.scc-final-cta__all-services {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.scc-final-cta__all-services:hover {
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .scc-final-cta h2 { font-size: 24px; }
+}

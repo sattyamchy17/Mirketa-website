@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <rect x="40" y="40" width="560" height="400" rx="18" fill="#f8f8fd" />
+  <g stroke="#e4e8ec" stroke-width="1">
+    <path d="M40 130H600 M40 220H600 M40 310H600 M40 400H600" />
+  </g>
+  <path d="M80 380 L170 340 L260 360 L350 280 L440 300 L530 160 L580 110" stroke="#21ad65" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M80 380 L170 340 L260 360 L350 280 L440 300 L530 160 L580 110 V400 H80 Z" fill="#21ad65" opacity="0.08" />
+  <g fill="#21ad65">
+    <circle cx="260" cy="360" r="6" /><circle cx="440" cy="300" r="6" /><circle cx="580" cy="110" r="7" />
+  </g>
+  <rect x="500" y="70" width="90" height="34" rx="8" fill="#0f2438" />
+  <text x="545" y="92" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="15" font-weight="700" fill="#21ad65">+25%</text>
+  <rect x="300" y="230" width="90" height="34" rx="8" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+  <text x="345" y="252" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="15" font-weight="700" fill="#1d4056">+15%</text>
+</svg>

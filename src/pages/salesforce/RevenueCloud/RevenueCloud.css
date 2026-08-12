@@ -1,0 +1,1153 @@
+/* ============================================================
+   SALESFORCE REVENUE CLOUD CONSULTING & IMPLEMENTATION PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   ============================================================ */
+
+.salesforce-revenue-cloud {
+  --rvc-hover-navy: #1d4056;
+  --rvc-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.rvc-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.rvc-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.rvc-btn.btn-primary:hover {
+  background: var(--rvc-hover-navy);
+}
+
+/* ============================================================
+   STICKY CTA — desktop only
+   ============================================================ */
+.rvc-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.rvc-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.rvc-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .rvc-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.rvc-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.rvc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.rvc-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.rvc-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.rvc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.rvc-badge__spark {
+  color: var(--color-primary-green);
+}
+
+.rvc-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.rvc-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.rvc-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.rvc-hero__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rvc-hero__metrics li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.rvc-hero__metrics li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.rvc-hero__metrics li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rvc-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .rvc-hero__inner { grid-template-columns: 1fr; }
+  .rvc-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .rvc-hero { padding-top: 120px; padding-bottom: 60px; }
+  .rvc-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY — auto-scrolling logo carousel
+   ============================================================ */
+.rvc-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.rvc-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.rvc-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.rvc-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: rvc-marquee 26s linear infinite;
+}
+
+.rvc-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rvc-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.rvc-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes rvc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rvc-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   SHARED "HEAD" LAYOUT — heading beside an illustration
+   ============================================================ */
+.rvc-challenges__head,
+.rvc-services__head,
+.rvc-ai__head,
+.rvc-process__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.rvc-capabilities__head,
+.rvc-cases__head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.rvc-challenges__illo,
+.rvc-services__illo,
+.rvc-ai__illo,
+.rvc-process__illo,
+.rvc-capabilities__illo,
+.rvc-cases__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(15, 36, 56, 0.1));
+}
+
+.rvc-challenges__head .section-heading,
+.rvc-services__head .section-heading,
+.rvc-ai__head .section-heading,
+.rvc-process__head .section-heading,
+.rvc-capabilities__head .section-heading,
+.rvc-cases__head .section-heading {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .rvc-challenges__head,
+  .rvc-services__head,
+  .rvc-ai__head,
+  .rvc-process__head,
+  .rvc-capabilities__head,
+  .rvc-cases__head {
+    grid-template-columns: 1fr;
+  }
+  .rvc-challenges__illo,
+  .rvc-services__illo,
+  .rvc-ai__illo,
+  .rvc-process__illo,
+  .rvc-capabilities__illo,
+  .rvc-cases__illo {
+    max-width: 200px;
+    order: -1;
+  }
+}
+
+/* ============================================================
+   REVENUE CHALLENGES WE SOLVE
+   ============================================================ */
+.rvc-challenges {
+  background: var(--color-bg-light);
+}
+
+.rvc-challenges__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.rvc-challenge-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.rvc-challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.rvc-challenge-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(214, 66, 66, 0.08);
+  color: #d64242;
+  margin-bottom: 16px;
+}
+
+.rvc-challenge-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rvc-challenge-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.rvc-challenge-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .rvc-challenges__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .rvc-challenges__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   OUR SALESFORCE REVENUE CLOUD SERVICES
+   ============================================================ */
+.rvc-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.rvc-service-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.rvc-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.rvc-service-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  color: var(--color-primary-green);
+  margin-bottom: 16px;
+}
+
+.rvc-service-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rvc-service-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.rvc-service-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.rvc-service-card__link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  align-self: flex-start;
+  transition: color var(--transition);
+}
+
+.rvc-service-card__link:hover {
+  color: var(--rvc-hover-navy);
+}
+
+@media (max-width: 1200px) {
+  .rvc-services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .rvc-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   REVENUE CLOUD CAPABILITIES
+   ============================================================ */
+.rvc-capabilities {
+  background: var(--color-bg-light);
+}
+
+.rvc-capabilities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rvc-capability-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-light);
+}
+
+.rvc-capability-card__check {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.rvc-capability-card__check svg {
+  width: 16px;
+  height: 16px;
+}
+
+.rvc-capability-card__illo {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.rvc-capability-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+
+.rvc-capability-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .rvc-capabilities__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .rvc-capabilities__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .rvc-capabilities__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY SALESFORCE REVENUE CLOUD — comparison table
+   ============================================================ */
+.rvc-comparison__table {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+}
+
+.rvc-comparison__row {
+  display: grid;
+  grid-template-columns: 190px 1fr 1fr;
+  gap: 16px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 20px;
+  align-items: center;
+}
+
+.rvc-comparison__row:last-child {
+  border-bottom: none;
+}
+
+.rvc-comparison__row--head {
+  background: var(--color-dark-navy);
+  padding: 18px 20px;
+}
+
+.rvc-comparison__row--head span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.rvc-comparison__row--head span:nth-child(3) {
+  color: var(--color-primary-green);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.rvc-comparison__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+.rvc-comparison__cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.rvc-comparison__cell span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+
+.rvc-comparison__cell span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rvc-comparison__cell--traditional {
+  color: var(--color-gray-300);
+}
+
+.rvc-comparison__cell--traditional span {
+  color: #d64242;
+}
+
+.rvc-comparison__cell--rc {
+  color: var(--color-dark-navy);
+  font-weight: 500;
+}
+
+.rvc-comparison__cell--rc span {
+  color: var(--color-primary-green);
+}
+
+@media (max-width: 900px) {
+  .rvc-comparison__row { grid-template-columns: 1fr; gap: 8px; }
+  .rvc-comparison__row--head { display: none; }
+  .rvc-comparison__label { padding-bottom: 4px; border-bottom: 1px solid var(--color-border); margin-bottom: 6px; }
+}
+
+/* ============================================================
+   AI-POWERED REVENUE OPERATIONS
+   ============================================================ */
+.rvc-ai {
+  background: var(--color-bg-light);
+}
+
+.rvc-ai__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rvc-ai-card {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition);
+}
+
+.rvc-ai-card:hover {
+  transform: translateY(-5px);
+}
+
+.rvc-ai-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.rvc-ai-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.rvc-ai-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.rvc-ai-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .rvc-ai__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .rvc-ai__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INDUSTRIES WE SERVE
+   ============================================================ */
+.rvc-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.rvc-industry-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.rvc-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.rvc-industry-card img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.rvc-industry-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .rvc-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .rvc-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SALESFORCE REVENUE CLOUD IMPLEMENTATION PROCESS
+   ============================================================ */
+.rvc-process {
+  background: var(--color-bg-light);
+}
+
+.rvc-process__rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 22px;
+}
+
+.rvc-step-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  box-shadow: var(--shadow-light);
+}
+
+.rvc-step-card__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.rvc-step-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.rvc-step-card p {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+.rvc-step-card__arrow {
+  position: absolute;
+  top: 24px;
+  right: -18px;
+  color: var(--color-primary-green);
+  font-size: 14px;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .rvc-process__rail { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .rvc-process__rail { grid-template-columns: repeat(2, 1fr); }
+  .rvc-step-card__arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .rvc-process__rail { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INTEGRATION ECOSYSTEM
+   ============================================================ */
+.rvc-stack__wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.rvc-stack__wall li {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.rvc-stack__wall li:hover {
+  border-color: var(--color-primary-green);
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   WHY CHOOSE MIRKETA
+   ============================================================ */
+.rvc-why {
+  background: var(--color-bg-light);
+}
+
+.rvc-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.rvc-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.rvc-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.rvc-why-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.rvc-why-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rvc-why-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.rvc-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .rvc-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .rvc-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CUSTOMER SUCCESS STORIES
+   ============================================================ */
+.rvc-case-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rvc-case-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  border-radius: 14px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
+
+.rvc-case-card h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.rvc-case-card__fields {
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.rvc-case-card__fields div {
+  margin-bottom: 12px;
+}
+
+.rvc-case-card__fields dt {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 3px;
+}
+
+.rvc-case-card__fields dd {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.rvc-case-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+
+.rvc-case-card__metrics strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-dark-navy);
+  margin-bottom: 2px;
+}
+
+.rvc-case-card__metrics span {
+  font-size: 10px;
+  color: var(--color-gray-300);
+  line-height: 1.3;
+}
+
+.rvc-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .rvc-cases__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.rvc-testimonials {
+  background: var(--color-bg-light);
+}
+
+.rvc-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.rvc-testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-light);
+  margin: 0;
+}
+
+.rvc-testimonial-card__mark {
+  width: 26px;
+  height: 20px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.rvc-testimonial-card blockquote {
+  font-size: 14px;
+  color: var(--color-dark-navy);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.rvc-testimonial-card figcaption {
+  display: flex;
+  flex-direction: column;
+  font-size: 12.5px;
+}
+
+.rvc-testimonial-card figcaption strong {
+  color: var(--color-dark-navy);
+}
+
+.rvc-testimonial-card figcaption span {
+  color: var(--color-gray-300);
+  font-size: 11.5px;
+}
+
+@media (max-width: 900px) {
+  .rvc-testimonials__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.rvc-faq {
+  background: var(--color-white);
+}
+
+.rvc-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.rvc-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg-light);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.rvc-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.rvc-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.rvc-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.rvc-faq-item {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.rvc-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.rvc-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.rvc-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rvc-faq-item.is-open .rvc-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.rvc-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: rvc-fade-in 0.3s ease;
+}
+
+@keyframes rvc-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rvc-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.rvc-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.rvc-faq__links a {
+  color: var(--rvc-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.rvc-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.rvc-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.rvc-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.rvc-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.rvc-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.rvc-final-cta__all-services {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.rvc-final-cta__all-services:hover {
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .rvc-final-cta h2 { font-size: 24px; }
+}

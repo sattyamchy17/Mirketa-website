@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" fill="none">
+  <g stroke="#21ad65" stroke-width="1.3" opacity="0.5">
+    <path d="M320 260 L320 100 M320 260 L500 160 M320 260 L500 360 M320 260 L320 420 M320 260 L140 360 M320 260 L140 160" />
+  </g>
+  <circle cx="320" cy="260" r="72" fill="#0f2438" />
+  <text x="320" y="252" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="13" font-weight="700" fill="#8fd9b3">NetSuite AI</text>
+  <text x="320" y="270" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9.5" fill="#ffffff" opacity="0.6">Intelligence</text>
+
+  <g fill="#ffffff" stroke="#21ad65" stroke-width="1.5">
+    <rect x="270" y="66" width="100" height="48" rx="10" />
+    <rect x="450" y="136" width="100" height="48" rx="10" />
+    <rect x="450" y="336" width="100" height="48" rx="10" />
+    <rect x="270" y="396" width="100" height="48" rx="10" />
+    <rect x="90" y="336" width="100" height="48" rx="10" />
+    <rect x="90" y="136" width="100" height="48" rx="10" />
+  </g>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="#1d4056" text-anchor="middle">
+    <text x="320" y="94">BI</text>
+    <text x="500" y="164">CRM</text>
+    <text x="500" y="364">Commerce</text>
+    <text x="320" y="424">Service</text>
+    <text x="140" y="364">Warehouse</text>
+    <text x="140" y="164">Service Ops</text>
+  </g>
+</svg>

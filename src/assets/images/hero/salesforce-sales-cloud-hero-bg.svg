@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1000" viewBox="0 0 1920 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="slcBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#081b30" />
+      <stop offset="55%" stop-color="#0e2c48" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="slcGlowGreen" cx="0.76" cy="0.28" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="slcGlowBlue" cx="0.12" cy="0.82" r="0.5">
+      <stop offset="0%" stop-color="#3a8ee0" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#3a8ee0" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1000" fill="url(#slcBg)" />
+  <rect width="1920" height="1000" fill="url(#slcGlowGreen)" />
+  <rect width="1920" height="1000" fill="url(#slcGlowBlue)" />
+
+  <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+    <path d="M0 280H1920 M0 540H1920 M0 800H1920" />
+    <path d="M480 0V1000 M960 0V1000 M1440 0V1000" />
+  </g>
+
+  <!-- revenue forecast line, rising across the canvas -->
+  <path d="M60 760 C 300 720 460 780 640 700 S 940 560 1180 540 1480 420 1840 300" stroke="#21ad65" stroke-width="2.2" fill="none" opacity="0.55" stroke-dasharray="3 6" />
+  <g fill="#21ad65" opacity="0.8">
+    <circle cx="640" cy="700" r="4" /><circle cx="1180" cy="540" r="4" /><circle cx="1840" cy="300" r="5" />
+  </g>
+
+  <!-- pipeline kanban cluster -->
+  <g fill="#0d2848" stroke="#3a8ee0" stroke-width="1.2" opacity="0.92">
+    <rect x="1180" y="120" width="170" height="230" rx="14" />
+    <rect x="1380" y="180" width="170" height="170" rx="14" />
+    <rect x="1580" y="120" width="170" height="230" rx="14" opacity="0.85" />
+  </g>
+  <g stroke="#9fd6ff" stroke-width="1.1" opacity="0.55">
+    <path d="M1202 150h120M1202 172h90M1202 194h60" />
+    <rect x="1202" y="212" width="126" height="44" rx="8" fill="none" stroke="#21ad65" />
+    <path d="M1402 208h120M1402 230h70" />
+    <rect x="1402" y="256" width="126" height="44" rx="8" fill="none" stroke="#21ad65" />
+    <path d="M1602 150h120M1602 172h50" />
+    <rect x="1602" y="212" width="126" height="44" rx="8" fill="none" stroke="#21ad65" />
+  </g>
+  <g fill="#21ad65" opacity="0.9">
+    <path d="M1214 234l6 6 12-14" stroke="#21ad65" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M1414 278l6 6 12-14" stroke="#21ad65" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- AI sales-assistant orb -->
+  <g opacity="0.92">
+    <circle cx="330" cy="260" r="58" fill="#0d2848" stroke="#21ad65" stroke-width="1.4" />
+    <circle cx="330" cy="260" r="30" fill="none" stroke="#3a8ee0" stroke-width="1.2" opacity="0.7" />
+    <path d="M330 232v56M304 260h52" stroke="#9fd6ff" stroke-width="1" opacity="0.5" />
+    <path d="M360 214l10-10M372 260h14M360 306l10 10" stroke="#21ad65" stroke-width="1.4" stroke-linecap="round" opacity="0.7" />
+  </g>
+
+  <!-- mobile CRM silhouette -->
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.3" opacity="0.88">
+    <rect x="90" y="560" width="120" height="220" rx="18" />
+  </g>
+  <g stroke="#9fd6ff" stroke-width="1" opacity="0.5">
+    <path d="M110 598h80M110 618h54M110 638h64" />
+    <rect x="110" y="670" width="80" height="50" rx="6" fill="none" stroke="#21ad65" />
+    <path d="M110 738h80" />
+  </g>
+
+  <!-- exec dashboard bar cluster, bottom-right -->
+  <g fill="#21ad65" opacity="0.85">
+    <rect x="1230" y="640" width="14" height="60" />
+    <rect x="1254" y="610" width="14" height="90" />
+    <rect x="1278" y="660" width="14" height="40" />
+    <rect x="1302" y="590" width="14" height="110" />
+  </g>
+  <path d="M1226 704h108" stroke="#3a8ee0" stroke-width="1.2" opacity="0.5" />
+
+  <!-- soft floating accent dots -->
+  <g fill="#3a8ee0" opacity="0.5">
+    <circle cx="1750" cy="720" r="3.5" />
+    <circle cx="1820" cy="200" r="3" />
+    <circle cx="460" cy="140" r="3.5" />
+    <circle cx="700" cy="880" r="3" />
+    <circle cx="220" cy="440" r="3" />
+  </g>
+</svg>

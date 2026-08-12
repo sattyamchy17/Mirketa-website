@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g stroke="#21ad65" stroke-opacity="0.3">
+    <rect x="14" y="20" width="56" height="120" rx="10" />
+    <rect x="82" y="20" width="56" height="120" rx="10" />
+    <rect x="150" y="20" width="56" height="120" rx="10" />
+  </g>
+  <text x="42" y="36" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="600" fill="#0f2438" text-anchor="middle">NEW</text>
+  <text x="110" y="36" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="600" fill="#0f2438" text-anchor="middle">IN PROGRESS</text>
+  <text x="178" y="36" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="600" fill="#0f2438" text-anchor="middle">RESOLVED</text>
+  <rect x="20" y="46" width="44" height="26" rx="6" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1" />
+  <rect x="20" y="78" width="44" height="26" rx="6" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1" />
+  <rect x="88" y="46" width="44" height="26" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1" />
+  <rect x="156" y="46" width="44" height="26" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.4" />
+  <path d="M164 60l4 4 8-9" stroke="#21ad65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M70 60h10M138 60h10" stroke="#21ad65" stroke-width="1.6" stroke-dasharray="2 3" />
+  <path d="M70 60l-4-4M70 60l-4 4M138 60l-4-4M138 60l-4 4" stroke="#21ad65" stroke-width="1.6" />
+  <rect x="20" y="112" width="44" height="14" rx="7" fill="#f8f8fd" stroke="#3a8ee0" stroke-width="1" />
+  <text x="42" y="122" font-family="IBM Plex Sans, sans-serif" font-size="6.5" fill="#3a8ee0" text-anchor="middle" font-weight="600">SLA 2h</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="kratuBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04141f" />
+      <stop offset="55%" stop-color="#082234" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="kratuGlowGreen" cx="0.75" cy="0.28" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="kratuGlowTeal" cx="0.2" cy="0.72" r="0.5">
+      <stop offset="0%" stop-color="#3fb8c9" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3fb8c9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#kratuBg)" />
+  <rect width="1600" height="900" fill="url(#kratuGlowGreen)" />
+  <rect width="1600" height="900" fill="url(#kratuGlowTeal)" />
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 260H1600 M0 480H1600 M0 700H1600" />
+    <path d="M420 0V900 M840 0V900 M1260 0V900" />
+  </g>
+
+  <!-- ECG / pulse line motif running across -->
+  <path d="M0 500 H1000 l20 -60 l30 100 l25 -140 l25 140 l30 -60 H1600" stroke="#21ad65" stroke-width="2" fill="none" opacity="0.5" />
+
+  <!-- healthcare intelligence console: three floating workflow cards -->
+  <g fill="#0d2233" stroke="#21ad65" stroke-width="1.3" opacity="0.85">
+    <rect x="900" y="330" width="140" height="96" rx="10" />
+    <rect x="1080" y="420" width="140" height="96" rx="10" />
+    <rect x="1260" y="330" width="140" height="96" rx="10" />
+  </g>
+  <g stroke="#8fd9b3" stroke-width="1.1" opacity="0.7">
+    <path d="M918 356h60M918 372h100M918 388h50" />
+    <path d="M1098 446h60M1098 462h100" />
+    <path d="M1278 356h60M1278 372h100M1278 388h40" />
+  </g>
+  <g stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M930 402l6 6 12-14" />
+    <path d="M1290 402l6 6 12-14" />
+  </g>
+  <g stroke="#21ad65" stroke-width="1.4" stroke-dasharray="4 5" fill="none" opacity="0.5">
+    <path d="M1040 378 C1060 378 1060 448 1080 468" />
+    <path d="M1220 468 C1240 468 1240 378 1260 378" />
+  </g>
+
+  <!-- neural nodes -->
+  <g fill="#21ad65" opacity="0.55">
+    <circle cx="180" cy="220" r="3.5" />
+    <circle cx="300" cy="300" r="3" />
+    <circle cx="140" cy="400" r="3" />
+    <circle cx="320" cy="160" r="3.5" />
+    <circle cx="1480" cy="600" r="3.5" />
+    <circle cx="1520" cy="700" r="3" />
+  </g>
+</svg>

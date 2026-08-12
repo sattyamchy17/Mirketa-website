@@ -1,0 +1,353 @@
+/* ============================================================
+   CAREER APPLICATION FORM — purpose-built job application form,
+   visually distinct from the shared ContactForm/ConsultationSection
+   (own field styling, own submit states, own file upload UI).
+   Reuses global tokens from src/css/global.css.
+   ============================================================ */
+
+.career-application {
+  padding: 80px 0;
+  background: var(--color-bg-light);
+}
+
+.career-application__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---------- Left column ---------- */
+.career-application__eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.career-application__intro h2 {
+  margin-bottom: 16px;
+}
+
+.career-application__lede {
+  color: var(--color-text);
+  font-size: 15.5px;
+  margin-bottom: 24px;
+}
+
+.career-application__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0 0 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.career-application__meta dt {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 4px;
+}
+
+.career-application__meta dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.career-application__hiring-message {
+  color: var(--color-text);
+  font-size: 14.5px;
+  margin-bottom: 16px;
+}
+
+.career-application__privacy {
+  color: var(--color-gray-300);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ---------- Right column: form card ---------- */
+.career-application__card {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(29, 64, 86, 0.1), 0 16px 40px rgba(29, 64, 86, 0.08);
+}
+
+.career-application-form__honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.career-application-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.career-application-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.career-application-form__row .career-application-form__field {
+  margin-bottom: 0;
+}
+
+.career-application-form__field label {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.career-application-form__required {
+  color: #d9534f;
+}
+
+.career-application-form__field input,
+.career-application-form__field textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.career-application-form__field input:hover,
+.career-application-form__field textarea:hover {
+  border-color: #b7c3ca;
+}
+
+.career-application-form__field input:focus-visible,
+.career-application-form__field textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 4px rgba(33, 173, 101, 0.15);
+}
+
+.career-application-form__field input[aria-invalid="true"],
+.career-application-form__field input.career-application-form__file-input[aria-invalid="true"] + .career-application-form__dropzone {
+  border-color: #d9534f;
+}
+
+.career-application-form__field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.career-application-form__error {
+  color: #d9534f;
+  font-size: 12.5px;
+  margin: 0;
+}
+
+.career-application-form__hint {
+  color: var(--color-gray-300);
+  font-size: 12.5px;
+  margin: 0;
+}
+
+/* ---------- File upload ---------- */
+.career-application-form__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.career-application-form__dropzone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 12px 20px;
+  border: 1.5px dashed var(--color-border);
+  border-radius: 12px;
+  color: var(--color-dark-navy);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.career-application-form__dropzone:hover {
+  border-color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.05);
+}
+
+.career-application-form__file-input:focus-visible + .career-application-form__dropzone {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.career-application-form__dropzone span {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary-green);
+}
+
+.career-application-form__dropzone span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.career-application-form__file-selected {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.career-application-form__file-selected span:first-child {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary-green);
+}
+
+.career-application-form__file-selected span:first-child svg {
+  width: 100%;
+  height: 100%;
+}
+
+.career-application-form__file-name {
+  flex: 1;
+  font-size: 13.5px;
+  color: var(--color-dark-navy);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.career-application-form__file-selected button {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--color-gray-300);
+  transition: color var(--transition);
+}
+
+.career-application-form__file-selected button:hover {
+  color: #d9534f;
+}
+
+.career-application-form__file-selected button svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Submit + status ---------- */
+.career-application-form__submit {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-primary-green);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(33, 173, 101, 0.25);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.career-application-form__submit:hover:not(:disabled) {
+  background: var(--color-dark-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(29, 64, 86, 0.32);
+}
+
+.career-application-form__submit:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 3px;
+}
+
+.career-application-form__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  transform: none;
+}
+
+.career-application-form__status {
+  margin-top: 18px;
+}
+
+.career-application-form__status--success {
+  color: #1c7a4b;
+  background: rgba(33, 173, 101, 0.1);
+  border: 1px solid rgba(33, 173, 101, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.career-application-form__status--error {
+  color: #a13c39;
+  background: rgba(217, 83, 79, 0.08);
+  border: 1px solid rgba(217, 83, 79, 0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-application-form__submit,
+  .career-application-form__dropzone,
+  .career-application-form__field input,
+  .career-application-form__field textarea {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .career-application__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .career-application {
+    padding: 52px 0;
+  }
+  .career-application__card {
+    padding: 28px 22px;
+  }
+  .career-application-form__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

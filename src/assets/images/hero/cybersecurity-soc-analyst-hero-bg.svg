@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1000" viewBox="0 0 1920 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="socBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070f1c" />
+      <stop offset="55%" stop-color="#0b2338" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="socGlowGreen" cx="0.78" cy="0.2" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="socGlowRed" cx="0.2" cy="0.78" r="0.5">
+      <stop offset="0%" stop-color="#e15b5b" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#e15b5b" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1000" fill="url(#socBg)" />
+  <rect width="1920" height="1000" fill="url(#socGlowGreen)" />
+  <rect width="1920" height="1000" fill="url(#socGlowRed)" />
+
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <path d="M0 280H1920 M0 540H1920 M0 800H1920" />
+    <path d="M480 0V1000 M960 0V1000 M1440 0V1000" />
+  </g>
+
+  <g opacity="0.95">
+    <path d="M900 330l70 28v70c0 60-30 100-70 118-40-18-70-58-70-118v-70l70-28z" fill="#0d2848" stroke="#21ad65" stroke-width="1.8" />
+    <path d="M872 448l20 20 36-40" stroke="#9fe3c0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <g fill="#e15b5b" opacity="0.6">
+    <circle cx="1120" cy="360" r="4" /><circle cx="1180" cy="420" r="3.5" /><circle cx="680" cy="520" r="4" />
+  </g>
+  <g fill="#21ad65" opacity="0.55">
+    <circle cx="1750" cy="150" r="4" /><circle cx="150" cy="200" r="3.5" />
+  </g>
+
+  <g fill="#0d2848" stroke="#e15b5b" stroke-width="1.2" opacity="0.92">
+    <rect x="220" y="230" width="260" height="150" rx="14" />
+  </g>
+  <text x="248" y="264" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#f6d6d6" font-weight="700">Alerts Triaged</text>
+  <text x="248" y="322" font-family="IBM Plex Serif, serif" font-size="30" fill="#ffffff" font-weight="700">24/7</text>
+  <text x="248" y="352" font-family="IBM Plex Sans, sans-serif" font-size="9.5" fill="#f2c6c6">SIEM &amp; endpoint monitoring</text>
+
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2" opacity="0.92">
+    <rect x="1400" y="600" width="280" height="170" rx="14" />
+  </g>
+  <text x="1428" y="634" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#dff3ea" font-weight="700">Threat Hunting</text>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#9fe3c0">
+    <text x="1428" y="662">MITRE ATT&amp;CK mapping</text>
+    <text x="1428" y="682">Indicators of Compromise</text>
+    <text x="1428" y="702">Hypothesis-driven hunts</text>
+  </g>
+
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.1" opacity="0.9">
+    <rect x="1300" y="160" width="230" height="86" rx="10" />
+  </g>
+  <text x="1322" y="194" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#dff3ea" font-weight="700">Incident Response</text>
+  <text x="1322" y="216" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#9fe3c0">Escalation &amp; SOP playbooks</text>
+
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.1" opacity="0.9">
+    <rect x="280" y="640" width="230" height="90" rx="10" />
+  </g>
+  <text x="302" y="674" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#dff3ea" font-weight="700">Log &amp; Behavioral Analytics</text>
+  <text x="302" y="698" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#9fe3c0">IDS / IPS correlation</text>
+
+  <path d="M60 220c220 40 440 -20 660 30s440 60 660 -20 460 -30 500 10" stroke="#e15b5b" stroke-width="1.6" fill="none" opacity="0.25" stroke-dasharray="3 6" />
+</svg>

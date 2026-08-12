@@ -1,0 +1,1112 @@
+/* ============================================================
+   SALESFORCE FINANCIAL SERVICES CLOUD PAGE
+   Standalone Salesforce industry solution page — NOT part of the
+   Salesforce Clouds hierarchy. Reuses global tokens/utilities
+   from src/css/global.css (.container, .section, .section-heading, .btn*).
+   ============================================================ */
+
+.salesforce-financial-services {
+  --fsc-hover-navy: #1d4056;
+  --fsc-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.fsc-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.fsc-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.fsc-btn.btn-primary:hover {
+  background: var(--fsc-hover-navy);
+}
+
+.fsc-section-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ============================================================
+   STICKY CTA — desktop only
+   ============================================================ */
+.fsc-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.fsc-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fsc-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .fsc-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.fsc-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.fsc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.fsc-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.fsc-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.fsc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.fsc-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.fsc-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.fsc-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.fsc-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .fsc-hero__inner { grid-template-columns: 1fr; }
+  .fsc-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .fsc-hero { padding-top: 120px; padding-bottom: 60px; }
+  .fsc-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY — auto-scrolling logo marquee
+   ============================================================ */
+.fsc-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.fsc-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.fsc-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.fsc-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: fsc-marquee 26s linear infinite;
+}
+
+.fsc-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fsc-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.fsc-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes fsc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fsc-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   SHARED "HEAD" LAYOUT — heading beside an illustration
+   ============================================================ */
+.fsc-challenges__head,
+.fsc-services__head,
+.fsc-ai__head,
+.fsc-process__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.fsc-capabilities__head,
+.fsc-integrations__head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.fsc-challenges__illo,
+.fsc-services__illo,
+.fsc-ai__illo,
+.fsc-process__illo,
+.fsc-capabilities__illo,
+.fsc-integrations__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(15, 36, 56, 0.1));
+}
+
+.fsc-challenges__head .section-heading,
+.fsc-services__head .section-heading,
+.fsc-ai__head .section-heading,
+.fsc-process__head .section-heading,
+.fsc-capabilities__head .section-heading,
+.fsc-integrations__head .section-heading {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .fsc-challenges__head,
+  .fsc-services__head,
+  .fsc-ai__head,
+  .fsc-process__head,
+  .fsc-capabilities__head,
+  .fsc-integrations__head {
+    grid-template-columns: 1fr;
+  }
+  .fsc-challenges__illo,
+  .fsc-services__illo,
+  .fsc-ai__illo,
+  .fsc-process__illo,
+  .fsc-capabilities__illo,
+  .fsc-integrations__illo {
+    max-width: 200px;
+    order: -1;
+  }
+}
+
+/* ============================================================
+   CHALLENGES WE SOLVE
+   ============================================================ */
+.fsc-challenges {
+  background: var(--color-bg-light);
+}
+
+.fsc-challenges__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.fsc-challenge-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.fsc-challenge-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(214, 66, 66, 0.08);
+  color: #d64242;
+  margin-bottom: 12px;
+}
+
+.fsc-challenge-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fsc-challenge-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.fsc-challenge-card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+  .fsc-challenges__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .fsc-challenges__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-challenges__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   OUR FINANCIAL SERVICES CLOUD SERVICES
+   ============================================================ */
+.fsc-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fsc-service-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.fsc-service-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-dark-navy);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.fsc-service-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.fsc-service-card__illo {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.fsc-service-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.fsc-service-card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+@media (max-width: 1200px) {
+  .fsc-services__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .fsc-services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   PLATFORM CAPABILITIES
+   ============================================================ */
+.fsc-capabilities {
+  background: var(--color-bg-light);
+}
+
+.fsc-capabilities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.fsc-capability-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-capability-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-capability-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+}
+
+.fsc-capability-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fsc-capability-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .fsc-capabilities__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-capabilities__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INDUSTRIES WE SERVE
+   ============================================================ */
+.fsc-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.fsc-industry-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-industry-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+}
+
+.fsc-industry-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fsc-industry-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .fsc-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   AI + FINANCIAL SERVICES CLOUD
+   ============================================================ */
+.fsc-ai {
+  background: var(--color-bg-light);
+}
+
+.fsc-ai__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fsc-ai-card {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition);
+}
+
+.fsc-ai-card:hover {
+  transform: translateY(-5px);
+}
+
+.fsc-ai-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.fsc-ai-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fsc-ai-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.fsc-ai-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+.fsc-ai__cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+@media (max-width: 1100px) {
+  .fsc-ai__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .fsc-ai__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INTEGRATION SECTION
+   ============================================================ */
+.fsc-integrations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.fsc-integration-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-integration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-integration-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.fsc-integration-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fsc-integration-card h3 {
+  font-size: 13px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .fsc-integrations__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-integrations__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   IMPLEMENTATION PROCESS
+   ============================================================ */
+.fsc-process {
+  background: var(--color-bg-light);
+}
+
+.fsc-process__rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 22px;
+}
+
+.fsc-step-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-step-card__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+}
+
+.fsc-step-card h3 {
+  font-size: 12.5px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.fsc-step-card p {
+  font-size: 10.5px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+.fsc-step-card__arrow {
+  position: absolute;
+  top: 22px;
+  right: -18px;
+  color: var(--color-primary-green);
+  font-size: 14px;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .fsc-process__rail { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .fsc-process__rail { grid-template-columns: repeat(2, 1fr); }
+  .fsc-step-card__arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .fsc-process__rail { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   BENEFITS
+   ============================================================ */
+.fsc-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.fsc-benefit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-benefit-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+}
+
+.fsc-benefit-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fsc-benefit-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+
+.fsc-benefit-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .fsc-benefits__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY MIRKETA
+   ============================================================ */
+.fsc-why {
+  background: var(--color-bg-light);
+}
+
+.fsc-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.fsc-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.fsc-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.fsc-why-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.fsc-why-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fsc-why-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.fsc-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .fsc-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fsc-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SUCCESS METRICS — animated counters
+   ============================================================ */
+.fsc-metrics {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 70px 0;
+}
+
+.fsc-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.fsc-metric-stat {
+  text-align: center;
+}
+
+.fsc-metric-stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fsc-metric-stat span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .fsc-metrics__grid { grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
+}
+@media (max-width: 560px) {
+  .fsc-metrics__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   CUSTOMER SUCCESS STORIES
+   ============================================================ */
+.fsc-case-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fsc-case-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  border-radius: 14px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
+
+.fsc-case-card h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.fsc-case-card__fields {
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.fsc-case-card__fields div {
+  margin-bottom: 12px;
+}
+
+.fsc-case-card__fields dt {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 3px;
+}
+
+.fsc-case-card__fields dd {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.fsc-case-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+
+.fsc-case-card__metrics strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--color-dark-navy);
+  margin-bottom: 2px;
+}
+
+.fsc-case-card__metrics span {
+  font-size: 10px;
+  color: var(--color-gray-300);
+  line-height: 1.3;
+}
+
+.fsc-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .fsc-cases__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.fsc-faq {
+  background: var(--color-white);
+}
+
+.fsc-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.fsc-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg-light);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.fsc-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.fsc-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.fsc-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.fsc-faq-item {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.fsc-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.fsc-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fsc-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsc-faq-item.is-open .fsc-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.fsc-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: fsc-fade-in 0.3s ease;
+}
+
+@keyframes fsc-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fsc-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.fsc-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.fsc-faq__links a {
+  color: var(--fsc-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.fsc-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.fsc-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.fsc-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.fsc-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.fsc-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.fsc-final-cta__all-services {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.fsc-final-cta__all-services:hover {
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .fsc-final-cta h2 { font-size: 24px; }
+}

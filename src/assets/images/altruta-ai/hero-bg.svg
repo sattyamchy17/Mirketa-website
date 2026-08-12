@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="altBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#061a1a" />
+      <stop offset="55%" stop-color="#0a2440" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="altGlowGreen" cx="0.76" cy="0.26" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="altGlowTeal" cx="0.16" cy="0.78" r="0.5">
+      <stop offset="0%" stop-color="#3fb8c9" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#3fb8c9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#altBg)" />
+  <rect width="1600" height="900" fill="url(#altGlowGreen)" />
+  <rect width="1600" height="900" fill="url(#altGlowTeal)" />
+
+  <!-- faint global grid -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 260H1600 M0 480H1600 M0 700H1600" />
+    <path d="M420 0V900 M840 0V900 M1260 0V900" />
+  </g>
+
+  <!-- donor network: constellation of connected supporter nodes -->
+  <g transform="translate(1180,380)" stroke="#21ad65" fill="none">
+    <circle r="190" stroke-opacity="0.14" stroke-width="1.4" />
+    <circle r="140" stroke-opacity="0.2" stroke-width="1.4" />
+    <circle r="90" stroke-opacity="0.32" stroke-width="1.4" />
+  </g>
+  <g fill="#21ad65" opacity="0.85">
+    <circle cx="1180" cy="200" r="4.5" />
+    <circle cx="1040" cy="330" r="4" />
+    <circle cx="1330" cy="330" r="4" />
+    <circle cx="1090" cy="470" r="3.5" />
+    <circle cx="1290" cy="460" r="3.5" />
+    <circle cx="1180" cy="560" r="4" />
+  </g>
+  <g stroke="#8fd9b3" stroke-width="1.1" opacity="0.55">
+    <path d="M1180 200L1040 330M1180 200L1330 330M1040 330L1090 470M1330 330L1290 460M1090 470L1180 560M1290 460L1180 560" />
+  </g>
+
+  <!-- rising impact trend line -->
+  <path d="M120 640 L280 600 L420 630 L560 540 L700 560 L840 460 L980 480 L1120 380" stroke="#21ad65" stroke-width="2.5" fill="none" opacity="0.55" stroke-linecap="round" stroke-linejoin="round" />
+  <g fill="#21ad65" opacity="0.8">
+    <circle cx="420" cy="630" r="3.5" />
+    <circle cx="700" cy="560" r="3.5" />
+    <circle cx="980" cy="480" r="3.5" />
+  </g>
+
+  <!-- floating dashboard tile silhouettes -->
+  <g fill="#0d2233" stroke="#21ad65" stroke-width="1.3" opacity="0.85">
+    <rect x="180" y="200" width="150" height="100" rx="10" />
+    <rect x="260" y="640" width="130" height="86" rx="10" />
+  </g>
+  <g stroke="#8fd9b3" stroke-width="1.1" opacity="0.65">
+    <path d="M198 230h60M198 248h100M198 266h50" />
+    <path d="M278 668h60M278 684h90" />
+  </g>
+
+  <!-- soft floating accent dots -->
+  <g fill="#3fb8c9" opacity="0.5">
+    <circle cx="1500" cy="150" r="3" />
+    <circle cx="1460" cy="720" r="3.5" />
+    <circle cx="60" cy="440" r="3" />
+  </g>
+</svg>

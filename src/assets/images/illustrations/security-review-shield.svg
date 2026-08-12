@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g fill="#e8f8f0" stroke="#21ad65" stroke-width="1.4">
+    <path d="M110 20l40 16v36c0 34-26 54-40 60-14-6-40-26-40-60V36z" />
+  </g>
+  <path d="M92 78l14 14 24-28" stroke="#21ad65" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="150" y="60" width="56" height="18" rx="9" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1" />
+  <text x="178" y="72" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#3a8ee0" text-anchor="middle" font-weight="600">Reviewed</text>
+  <text x="110" y="140" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#5a6a7a" text-anchor="middle" font-weight="600">Security &amp; compliance verified</text>
+</svg>

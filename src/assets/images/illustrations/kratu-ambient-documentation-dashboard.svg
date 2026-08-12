@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="28" y="28" width="80" height="46" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="34" y="40" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">AMBIENT CAPTURE</text>
+  <path d="M34 58c3-10 5 10 8 0s5 8 8-2 5 6 8-4 5 8 8 0 5-6 8 2" stroke="#3a8ee0" stroke-width="1.6" stroke-linecap="round" fill="none" />
+  <circle cx="98" cy="58" r="3" fill="#3a8ee0" />
+  <rect x="116" y="28" width="76" height="46" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="122" y="40" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">CODING ACCURACY</text>
+  <circle cx="138" cy="58" r="15" fill="none" stroke="#21ad65" stroke-opacity="0.2" stroke-width="5" />
+  <circle cx="138" cy="58" r="15" fill="none" stroke="#21ad65" stroke-width="5" stroke-dasharray="88 94" stroke-linecap="round" transform="rotate(-90 138 58)" />
+  <text x="138" y="61" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#21ad65" text-anchor="middle">94%</text>
+  <text x="160" y="52" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438">Denial risk</text>
+  <text x="160" y="62" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438">Low</text>
+  <rect x="28" y="82" width="164" height="46" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="36" y="94" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">CHART SUMMARY GENERATED</text>
+  <path d="M36 104h64M36 111h96M36 118h48" stroke="#0f2438" stroke-opacity="0.35" stroke-width="1.6" stroke-linecap="round" />
+  <circle cx="176" cy="112" r="10" fill="#21ad65" fill-opacity="0.15" />
+  <path d="M172 112l3 3 6-6" stroke="#21ad65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

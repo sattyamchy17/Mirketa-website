@@ -1,0 +1,194 @@
+/* ============================================================
+   CONSULTATION SECTION — premium below-hero "Schedule a Free
+   Consultation" band. 50/50 content + form layout, with the shared
+   ContactForm restyled into a white glassmorphism card over soft
+   decorative color blooms. Only the presentation is scoped/
+   overridden here — ContactForm.css and its markup/functionality
+   are untouched.
+   ============================================================ */
+
+.consultation-section {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0;
+  background: linear-gradient(180deg, var(--color-bg-light) 0%, #eaf5ee 100%);
+}
+
+.consultation-section__decor {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.consultation-section__decor--a {
+  width: 380px;
+  height: 380px;
+  background: var(--color-primary-green);
+  opacity: 0.22;
+  top: -160px;
+  left: -110px;
+}
+
+.consultation-section__decor--b {
+  width: 320px;
+  height: 320px;
+  background: var(--color-dark-navy);
+  opacity: 0.12;
+  bottom: -170px;
+  right: -90px;
+}
+
+.consultation-section__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.consultation-section__content {
+  max-width: 480px;
+}
+
+.consultation-section__eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.consultation-section__content h2 {
+  color: var(--color-dark-navy);
+  margin-bottom: 16px;
+}
+
+.consultation-section__description {
+  color: var(--color-text);
+  font-size: 15.5px;
+  margin-bottom: 28px;
+}
+
+.consultation-section__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.consultation-section__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-dark-navy);
+  font-weight: 500;
+}
+
+.consultation-section__benefits li span {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.consultation-section__benefits li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.consultation-section__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.consultation-section__trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-gray-300);
+}
+
+.consultation-section__trust-badge img {
+  height: 16px;
+  width: auto;
+}
+
+.consultation-section__card {
+  position: relative;
+}
+
+/* Restyle the shared ContactForm's own card into a frosted-glass
+   surface, scoped to this section only. */
+.consultation-section .contact-form-card {
+  background: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 30px 70px rgba(15, 36, 56, 0.16), 0 8px 24px rgba(15, 36, 56, 0.06);
+}
+
+.consultation-section .contact-form__field input,
+.consultation-section .contact-form__field textarea {
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.consultation-section .contact-form__field input:user-invalid,
+.consultation-section .contact-form__field textarea:user-invalid {
+  border-color: #d9534f;
+  box-shadow: 0 0 0 4px rgba(217, 83, 79, 0.12);
+}
+
+.consultation-section .contact-form__field input:user-valid,
+.consultation-section .contact-form__field textarea:user-valid {
+  border-color: var(--color-primary-green);
+}
+
+@media (max-width: 960px) {
+  .consultation-section__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .consultation-section__content {
+    max-width: none;
+    text-align: center;
+  }
+
+  .consultation-section__benefits {
+    align-items: center;
+  }
+
+  .consultation-section__benefits li {
+    text-align: left;
+  }
+
+  .consultation-section__trust {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .consultation-section { padding: 52px 0; }
+  .consultation-section .contact-form-card { padding: 30px 22px; }
+  .consultation-section__decor { display: none; }
+}

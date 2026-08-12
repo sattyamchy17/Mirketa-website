@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <circle cx="76" cy="80" r="40" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.6" />
+  <circle cx="76" cy="80" r="20" fill="none" stroke="#3a8ee0" stroke-width="1.3" stroke-dasharray="5 4" />
+  <path d="M76 60v40M56 80h40" stroke="#21ad65" stroke-width="1.2" opacity="0.55" />
+  <path d="M104 52l6-6M116 80h8M104 108l6 6" stroke="#21ad65" stroke-width="1.6" strokeLinecap="round" />
+
+  <rect x="126" y="24" width="84" height="30" rx="10" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.35" />
+  <g font-family="IBM Plex Sans, sans-serif" font-size="7.5" fill="#0f2438">
+    <text x="134" y="36" font-weight="700">Invoice auto-matched</text>
+    <text x="134" y="46" fill="#5a6a7a">PO #4021 — 3-way match</text>
+  </g>
+  <rect x="126" y="62" width="84" height="30" rx="10" fill="#eaf2fb" stroke="#3a8ee0" stroke-opacity="0.4" />
+  <g font-family="IBM Plex Sans, sans-serif" font-size="7.5" fill="#0f2438">
+    <text x="134" y="74" font-weight="700">Forecast anomaly</text>
+    <text x="134" y="84" fill="#5a6a7a">Demand spike detected</text>
+  </g>
+  <path d="M60 130h100" stroke="#0f2438" stroke-opacity="0.12" />
+  <text x="160" y="134" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#0f2438">-42% Cycle Time</text>
+</svg>

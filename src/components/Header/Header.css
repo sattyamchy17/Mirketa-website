@@ -1,0 +1,749 @@
+:root {
+  --mega-hover-blue: #2f6fb0;
+}
+
+.site-header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ---------- Top strip ---------- */
+.top-strip {
+  background: rgba(15, 36, 56, 0.55);
+  color: #fff;
+  overflow: hidden;
+  max-height: 38px;
+  transition: max-height var(--transition), opacity var(--transition), padding var(--transition);
+}
+
+.site-header-wrap--scrolled .top-strip {
+  background: var(--color-dark-navy);
+}
+
+.top-strip--hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.top-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 38px;
+  font-size: 12px;
+}
+
+.top-strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.top-strip__links {
+  display: flex;
+  gap: 24px;
+}
+
+.top-strip__links a {
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.top-strip__links a:hover {
+  color: var(--color-primary-green);
+}
+
+/* ---------- Main header ---------- */
+.site-header {
+  position: relative;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+}
+
+.site-header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  transition: height var(--transition);
+}
+
+.site-header--scrolled .site-header__inner {
+  height: 72px;
+}
+
+.site-header--scrolled {
+  background: var(--color-white);
+  box-shadow: var(--shadow-light);
+}
+
+/* ============================================================
+   LIGHT-HERO OVERRIDE
+   Some page layouts (HeroEditorial, HeroCentered) use a light
+   background instead of the dark hero the header normally
+   floats over. Those components add "has-light-hero" to <html>
+   on mount, which forces the pre-scroll header into the same
+   readable state it normally only reaches once scrolled.
+   ============================================================ */
+.has-light-hero .site-header:not(.site-header--scrolled) {
+  background: var(--color-white);
+  box-shadow: var(--shadow-light);
+}
+
+.has-light-hero .site-header:not(.site-header--scrolled) .site-header__logo-img--light {
+  filter: none;
+}
+
+.has-light-hero .site-header:not(.site-header--scrolled) .mega-nav__trigger {
+  color: var(--color-dark-navy);
+}
+
+.has-light-hero .site-header:not(.site-header--scrolled) .site-header__ghost-btn {
+  color: var(--color-dark-navy) !important;
+  border-color: var(--color-border) !important;
+}
+
+.has-light-hero .site-header:not(.site-header--scrolled) .hamburger span {
+  background: var(--color-dark-navy);
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-header__logo-img {
+  height: 34px;
+  width: auto;
+  transition: filter var(--transition);
+}
+
+/* The source logo file is dark navy — invert it to white while the header
+   sits transparent over the dark hero, before the white scrolled state. */
+.site-header__logo-img--light {
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   MEGA NAV — trigger bar
+   ============================================================ */
+.mega-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mega-nav__item {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.mega-nav__trigger {
+  display: flex;
+  align-items: center;
+  padding: 10px 13px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.site-header--scrolled .mega-nav__trigger {
+  color: var(--color-dark-navy);
+}
+
+/* Hover-underline indicator */
+.mega-nav__trigger::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--color-primary-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.mega-nav__item:hover .mega-nav__trigger,
+.mega-nav__item.is-active .mega-nav__trigger {
+  color: var(--color-primary-green);
+}
+
+.mega-nav__item:hover .mega-nav__trigger::after,
+.mega-nav__item.is-active .mega-nav__trigger::after {
+  transform: scaleX(1);
+}
+
+/* Active-section indicator (current route) — a solid dot under the label,
+   distinct from the hover-underline so both states can coexist. */
+.mega-nav__item.is-current .mega-nav__trigger {
+  color: var(--color-primary-green);
+}
+
+.mega-nav__item.is-current .mega-nav__trigger::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+/* ============================================================
+   MEGA PANEL — single shared dropdown surface, sized and
+   centered to match the header's own content span (logo to
+   "Book a Discovery Call"), not the full viewport. It is a
+   child of .site-header__inner (which is position:relative),
+   so its left/right:0 resolve against that element's own
+   padding edge rather than the page width.
+   Content swaps instantly; visibility fades + slides via CSS so
+   both opening and closing stay smooth.
+   ============================================================ */
+.mega-panel {
+  position: absolute;
+  top: 100%;
+  /* Matches .container's own horizontal padding (see global.css) so the
+     panel's visible edges align with the logo and the "Book a Discovery
+     Call" button — not with the outer edge of the header's box, which
+     touches the viewport at widths below the container's 1440px cap. */
+  left: 40px;
+  right: 40px;
+  margin-top: 12px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-medium);
+  border-radius: var(--radius);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity var(--transition), transform var(--transition);
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  z-index: 20;
+}
+
+/* No `visibility` toggle here on purpose: `inert` (set in JSX) already keeps
+   the closed panel out of the focus/AT tree, and `visibility` transitions
+   don't resolve synchronously across frames — that gap silently swallowed
+   focus() calls when opening the menu via keyboard. */
+.mega-panel.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mega-panel__inner {
+  padding: 32px 32px 28px;
+}
+
+.mega-panel__columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 36px;
+}
+
+.mega-panel__column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
+}
+
+/* ---------- Groups ---------- */
+.mega-group__heading {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mega-group__heading--link {
+  display: block;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.mega-group__heading--link:hover,
+.mega-group__heading--link:focus-visible {
+  color: var(--color-dark-navy);
+}
+
+.mega-group__heading--link:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.mega-group__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mega-group + .mega-group {
+  margin-top: 4px;
+}
+
+/* Stagger-in animation for links, triggered whenever the panel becomes active. */
+.mega-panel.is-active .mega-group__list > li {
+  animation: mega-item-in 0.32s ease both;
+  animation-delay: calc(var(--i, 0) * 28ms);
+}
+
+@keyframes mega-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: var(--color-text);
+  transition: color var(--transition), background var(--transition), padding-left var(--transition);
+}
+
+.mega-link:hover,
+.mega-link:focus-visible {
+  color: var(--mega-hover-blue);
+  background: var(--color-bg-light);
+  padding-left: 14px;
+}
+
+.mega-link--sub {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+/* ============================================================
+   L4 FLYOUT — "Salesforce Clouds" cascades into its own dark
+   submenu, opened on hover/focus of the parent list item. Pure
+   CSS :hover/:focus-within so keyboard tabbing into the flyout
+   keeps it visible without extra JS state.
+   ============================================================ */
+.mega-group__item--has-flyout {
+  position: relative;
+}
+
+/* .mega-panel__columns is a grid, and grid items paint as largely
+   self-contained units in DOM order — a z-index set several levels
+   deep inside column 1 does not reliably out-paint column 2's content
+   where the flyout visually overlaps it. Lifting the whole column that
+   currently contains an open flyout above its sibling columns fixes
+   this at the level where the paint-order boundary actually exists. */
+.mega-panel__column:has(.mega-group__item--has-flyout) {
+  position: relative;
+  z-index: 5;
+}
+
+.mega-link__flyout-indicator {
+  flex-shrink: 0;
+  color: var(--color-gray-400);
+  font-size: 15px;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.mega-group__item--has-flyout:hover .mega-link__flyout-indicator,
+.mega-group__item--has-flyout:focus-within .mega-link__flyout-indicator {
+  color: var(--color-primary-green);
+}
+
+.mega-flyout {
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  margin-left: 14px;
+  width: 260px;
+  background: var(--color-dark-navy);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-medium);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-6px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 30;
+}
+
+.mega-group__item--has-flyout:hover .mega-flyout,
+.mega-group__item--has-flyout:focus-within .mega-flyout {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.mega-flyout ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mega-flyout__link {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.mega-flyout__link:hover,
+.mega-flyout__link:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.mega-flyout__link.is-active {
+  border-left-color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.16);
+  color: var(--color-primary-green);
+  font-weight: 700;
+}
+
+/* If the flyout would run off the right edge of the viewport (e.g. the
+   "Salesforce" column ever moves to the last column position), flip it
+   to open leftward instead of clipping. */
+@media (max-width: 1360px) {
+  .mega-panel__column:last-child .mega-flyout,
+  .mega-panel__column:nth-last-child(2) .mega-flyout {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 14px;
+  }
+}
+
+.mega-group__sublist {
+  margin: 0 0 4px 26px;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-border);
+}
+
+/* ---------- Featured card ---------- */
+.mega-panel__column--featured {
+  background: linear-gradient(150deg, #0f2438 0%, #0d3b3d 100%);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+
+.mega-featured-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: #fff;
+}
+
+.mega-featured-card h4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.mega-featured-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.mega-featured-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  transition: gap var(--transition);
+}
+
+.mega-featured-card__cta:hover {
+  gap: 10px;
+}
+
+/* ---------- Industry grid variant ---------- */
+.mega-panel--grid .mega-panel__columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mega-group__list--industry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+}
+
+.mega-industry-link {
+  display: block;
+  padding: 10px;
+  margin: 0 -10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark-navy);
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  border: 1px solid transparent;
+}
+
+.mega-industry-link:hover,
+.mega-industry-link:focus-visible {
+  color: var(--mega-hover-blue);
+  background: var(--color-bg-light);
+  border-color: var(--color-border);
+}
+
+@media (max-width: 1280px) {
+  .mega-group__list--industry {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Header actions ---------- */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header__ghost-btn {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  height: 44px;
+  padding: 0 20px;
+}
+
+.site-header--scrolled .site-header__ghost-btn {
+  color: var(--color-dark-navy) !important;
+  border-color: var(--color-border) !important;
+}
+
+.site-header__actions .btn-primary {
+  height: 44px;
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  transition: transform var(--transition), opacity var(--transition), background var(--transition);
+  margin: 0 auto;
+}
+
+.site-header--scrolled .hamburger span {
+  background: var(--color-dark-navy);
+}
+
+.hamburger.is-open span {
+  background: var(--color-dark-navy);
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE MENU — 3-level accordion
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(380px, 90vw);
+  height: 100vh;
+  background: var(--color-white);
+  box-shadow: -12px 0 40px rgba(15, 36, 56, 0.18);
+  z-index: 1200;
+  padding: 100px 24px 24px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-menu--open {
+  transform: translateX(0);
+}
+
+.mobile-menu__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 36, 56, 0.45);
+  z-index: 1100;
+}
+
+.mobile-menu__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu__trigger {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 16px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--transition);
+}
+
+.mobile-menu__trigger[aria-expanded="true"] {
+  color: var(--color-primary-green);
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding-left: 4px;
+}
+
+.mobile-submenu--open {
+  max-height: 2000px;
+  padding-bottom: 12px;
+}
+
+.mobile-submenu__group + .mobile-submenu__group {
+  margin-top: 14px;
+}
+
+.mobile-submenu__heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  font-weight: 700;
+  margin: 10px 0 6px;
+}
+
+.mobile-submenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mobile-submenu a {
+  display: block;
+  font-size: 14px;
+  color: var(--color-text);
+  padding: 4px 0;
+}
+
+.mobile-submenu__sublist {
+  margin: 4px 0 4px 22px;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-border);
+}
+
+.mobile-submenu__sublist a {
+  font-size: 13px;
+  color: var(--color-gray-300);
+}
+
+.mobile-submenu__sublist a.is-active {
+  color: var(--color-primary-green);
+  font-weight: 700;
+}
+
+.mobile-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.mobile-menu__footer .btn {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .mega-nav {
+    display: none;
+  }
+
+  .site-header__ghost-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header__actions .btn-primary {
+    display: none;
+  }
+
+  .top-strip__item span,
+  .top-strip {
+    font-size: 11px;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  .mega-panel,
+  .mega-nav__trigger::after,
+  .hamburger span,
+  .mobile-menu,
+  .mobile-submenu {
+    transition-duration: 0.01ms !important;
+  }
+
+  .mega-panel.is-active .mega-group__list > li {
+    animation: none;
+  }
+}

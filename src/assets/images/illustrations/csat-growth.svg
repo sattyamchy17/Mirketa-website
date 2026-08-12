@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g stroke="#0f2438" stroke-opacity="0.12"><path d="M28 136h164" /></g>
+  <g fill="#21ad65" opacity="0.85">
+    <rect x="40" y="108" width="20" height="28" rx="3" />
+    <rect x="72" y="92" width="20" height="44" rx="3" />
+    <rect x="104" y="70" width="20" height="66" rx="3" />
+    <rect x="136" y="46" width="20" height="90" rx="3" />
+  </g>
+  <path d="M46 104l30-18 30-24 34-22" stroke="#3a8ee0" stroke-width="2.2" fill="none" stroke-linecap="round" />
+  <circle cx="146" cy="46" r="16" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.4" />
+  <path d="M140 46l4 4 8-8" stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="146" y="26" font-family="IBM Plex Sans, sans-serif" font-size="10" font-weight="700" fill="#0f2438" text-anchor="middle">CSAT 96%</text>
+</svg>

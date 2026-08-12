@@ -1,0 +1,1113 @@
+/* ============================================================
+   ORACLE FUSION APPLICATIONS IMPLEMENTATION PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*).
+   ============================================================ */
+
+.oracle-fusion-applications {
+  --ofa-hover-navy: #1d4056;
+  --ofa-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.ofa-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.ofa-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ofa-btn.btn-primary:hover {
+  background: var(--ofa-hover-navy);
+}
+
+/* ============================================================
+   STICKY CTA
+   ============================================================ */
+.ofa-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.ofa-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ofa-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .ofa-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.ofa-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.ofa-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.ofa-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.ofa-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.ofa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.ofa-badge__spark {
+  color: var(--color-primary-green);
+}
+
+.ofa-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.ofa-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.ofa-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ofa-hero__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ofa-hero__metrics li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ofa-hero__metrics li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.ofa-hero__metrics li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ofa-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .ofa-hero__inner { grid-template-columns: 1fr; }
+  .ofa-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .ofa-hero { padding-top: 120px; padding-bottom: 60px; }
+  .ofa-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY GLOBAL ENTERPRISES
+   ============================================================ */
+.ofa-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.ofa-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.ofa-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ofa-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: ofa-marquee 26s linear infinite;
+}
+
+.ofa-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ofa-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.ofa-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes ofa-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ofa-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   ORACLE FUSION IMPLEMENTATION SERVICES — centered card grid
+   ============================================================ */
+.ofa-apps {
+  background: var(--color-bg-light);
+}
+
+.ofa-apps__head {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ofa-apps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.ofa-app-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ofa-app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.ofa-app-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.ofa-app-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ofa-app-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.ofa-app-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .ofa-apps__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .ofa-apps__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ORACLE CLOUD APPLICATIONS EXPERTISE — alternating full-width bands
+   ============================================================ */
+.ofa-expertise {
+  background: var(--color-white);
+  padding-bottom: 0;
+}
+
+.ofa-expertise__bands {
+  margin-top: 20px;
+}
+
+.ofa-expertise__band {
+  padding: 56px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.ofa-expertise__band:nth-child(odd) {
+  background: var(--color-bg-light);
+}
+
+.ofa-expertise__band-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.ofa-expertise__band--reverse .ofa-expertise__band-inner {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.ofa-expertise__band--reverse .ofa-expertise__band-inner > *:first-child {
+  order: 2;
+}
+
+.ofa-expertise__band--reverse .ofa-expertise__band-inner > *:last-child {
+  order: 1;
+}
+
+.ofa-expertise__num {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.ofa-expertise__band-inner h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.ofa-expertise__band-inner p {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.ofa-expertise__illo {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  justify-self: center;
+  filter: drop-shadow(0 16px 36px rgba(15, 36, 56, 0.12));
+}
+
+.ofa-expertise__placeholder {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1.4 / 1;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: rgba(33, 173, 101, 0.08);
+  color: var(--color-primary-green);
+}
+
+.ofa-expertise__placeholder span svg {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 900px) {
+  .ofa-expertise__band-inner,
+  .ofa-expertise__band--reverse .ofa-expertise__band-inner {
+    grid-template-columns: 1fr;
+  }
+  .ofa-expertise__band--reverse .ofa-expertise__band-inner > *:first-child,
+  .ofa-expertise__band--reverse .ofa-expertise__band-inner > *:last-child {
+    order: initial;
+  }
+  .ofa-expertise__illo,
+  .ofa-expertise__placeholder { order: -1; max-width: 240px; }
+}
+
+/* ============================================================
+   INDUSTRIES WE SERVE — dense icon-row grid
+   ============================================================ */
+.ofa-industries {
+  background: var(--color-bg-light);
+}
+
+.ofa-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.ofa-industry-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 14px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ofa-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.ofa-industry-card__icon {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.ofa-industry-card__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.ofa-industry-card h3 {
+  font-size: 12.5px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .ofa-industries__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .ofa-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   ORACLE IMPLEMENTATION METHODOLOGY — numbered horizontal journey
+   ============================================================ */
+.ofa-methodology {
+  background: var(--color-white);
+}
+
+.ofa-methodology__journey {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  padding-top: 10px;
+}
+
+.ofa-methodology__line {
+  position: absolute;
+  top: 20px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: var(--color-border);
+  z-index: 0;
+}
+
+.ofa-methodology__stop {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.ofa-methodology__dot {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 0 0 6px var(--color-white);
+}
+
+.ofa-methodology__stop h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.ofa-methodology__stop p {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .ofa-methodology__journey { grid-template-columns: repeat(4, 1fr); gap: 24px 12px; }
+  .ofa-methodology__line { display: none; }
+}
+@media (max-width: 560px) {
+  .ofa-methodology__journey { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   ORACLE + AI + AUTOMATION — asymmetric 2-column
+   ============================================================ */
+.ofa-ai {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+}
+
+.ofa-ai .ofa-eyebrow {
+  color: #8fe3b5;
+}
+
+.ofa-ai .section-heading h2 {
+  color: #fff;
+}
+
+.ofa-ai .section-heading p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ofa-ai__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.ofa-ai__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 44px rgba(0, 0, 0, 0.35));
+}
+
+.ofa-ai__list {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ofa-ai__list li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.ofa-ai__list-icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.16);
+  color: var(--color-primary-green);
+}
+
+.ofa-ai__list-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ofa-ai__list h3 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.ofa-ai__list p {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ofa-ai__grid { grid-template-columns: 1fr; }
+  .ofa-ai__illo { max-width: 320px; margin: 0 auto; order: -1; }
+}
+
+/* ============================================================
+   MIGRATION & UPGRADE SERVICES — before/after comparison layout
+   ============================================================ */
+.ofa-migration {
+  background: var(--color-bg-light);
+}
+
+.ofa-migration__head {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.ofa-migration__head .section-heading {
+  margin-bottom: 0;
+}
+
+.ofa-migration__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 30px rgba(15, 36, 56, 0.12));
+}
+
+.ofa-migration__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.ofa-migration-card {
+  background: var(--color-white);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-light);
+}
+
+.ofa-migration-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.ofa-migration-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .ofa-migration__head { grid-template-columns: 1fr; }
+  .ofa-migration__illo { max-width: 220px; order: -1; margin: 0 auto; }
+  .ofa-migration__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .ofa-migration__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   INTEGRATION CAPABILITIES — compact icon grid
+   ============================================================ */
+.ofa-integrations {
+  background: var(--color-white);
+}
+
+.ofa-integrations__head {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.ofa-integrations__head .section-heading {
+  margin-bottom: 0;
+}
+
+.ofa-integrations__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(15, 36, 56, 0.1));
+}
+
+.ofa-integrations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ofa-integration-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ofa-integration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.ofa-integration-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.ofa-integration-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ofa-integration-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .ofa-integrations__head { grid-template-columns: 1fr; }
+  .ofa-integrations__illo { max-width: 180px; order: -1; margin: 0 auto; }
+  .ofa-integrations__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .ofa-integrations__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY CHOOSE MIRKETA
+   ============================================================ */
+.ofa-why {
+  background: var(--color-bg-light);
+}
+
+.ofa-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.ofa-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ofa-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.ofa-why-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.ofa-why-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ofa-why-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.ofa-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .ofa-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .ofa-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CUSTOMER SUCCESS METRICS — animated counters
+   ============================================================ */
+.ofa-metrics {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 80px 0;
+}
+
+.ofa-metrics__heading {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.ofa-metrics__heading h2,
+.ofa-metrics__heading p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ofa-metrics__heading p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ofa-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px 20px;
+}
+
+.ofa-metric-stat {
+  text-align: center;
+}
+
+.ofa-metric-stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ofa-metric-stat span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .ofa-metrics__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   CASE STUDY — single featured enterprise success story
+   ============================================================ */
+.ofa-case {
+  background: var(--color-white);
+}
+
+.ofa-case__card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.ofa-case__narrative {
+  background: var(--color-white);
+  padding: 44px 40px;
+  border: 1px solid var(--color-border);
+  border-right: none;
+}
+
+.ofa-case__narrative h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.ofa-case__industry {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.ofa-case__fields {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ofa-case__fields dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 4px;
+}
+
+.ofa-case__fields dd {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ofa-case__metrics {
+  background: linear-gradient(150deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 44px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ofa-case__metrics-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8fe3b5;
+  margin: 0 0 4px;
+}
+
+.ofa-case__metric strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ofa-case__metric span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .ofa-case__card { grid-template-columns: 1fr; }
+  .ofa-case__narrative { border-right: 1px solid var(--color-border); border-bottom: none; padding: 32px 26px; }
+  .ofa-case__metrics { padding: 32px 26px; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.ofa-faq {
+  background: var(--color-bg-light);
+}
+
+.ofa-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.ofa-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.ofa-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.ofa-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.ofa-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.ofa-faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.ofa-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.ofa-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ofa-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ofa-faq-item.is-open .ofa-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.ofa-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: ofa-fade-in 0.3s ease;
+}
+
+@keyframes ofa-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ofa-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.ofa-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.ofa-faq__links a {
+  color: var(--ofa-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.ofa-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.ofa-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ofa-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.ofa-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.ofa-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .ofa-final-cta h2 { font-size: 24px; }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="30" y="28" width="54" height="40" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <path d="M42 46h2l3 15h14l4-11h-15" stroke="#21ad65" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="49" cy="65" r="1.8" fill="#21ad65" />
+  <circle cx="59" cy="65" r="1.8" fill="#21ad65" />
+  <rect x="94" y="28" width="52" height="40" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="120" y="46" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#3a8ee0" text-anchor="middle">ORDERS</text>
+  <text x="120" y="60" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="700" fill="#0f2438" text-anchor="middle">4,812</text>
+  <rect x="156" y="28" width="50" height="40" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="181" y="46" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#0f2438" text-anchor="middle">REVENUE</text>
+  <text x="181" y="60" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="700" fill="#178a4f" text-anchor="middle">+24%</text>
+  <g stroke="#0f2438" stroke-opacity="0.12">
+    <path d="M30 100h176M30 116h176M30 132h176" />
+  </g>
+  <path d="M30 122c14-16 28-24 42-16s28 18 42 6 28-22 42-14 28 10 40 2" stroke="#21ad65" stroke-width="2.2" stroke-linecap="round" fill="none" />
+</svg>

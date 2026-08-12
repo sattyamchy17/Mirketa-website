@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <path d="M40 180 H600" stroke="#e4e8ec" stroke-width="2" />
+  <g fill="#21ad65">
+    <circle cx="40" cy="180" r="8" /><circle cx="152" cy="180" r="8" /><circle cx="264" cy="180" r="8" />
+    <circle cx="376" cy="180" r="8" /><circle cx="488" cy="180" r="8" /><circle cx="600" cy="180" r="8" />
+  </g>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="#1d4056" text-anchor="middle" font-weight="600">
+    <text x="40" y="150">Case opened</text>
+    <text x="152" y="150">Context reviewed</text>
+    <text x="264" y="150">Precedent found</text>
+    <text x="376" y="150">Guidance prepared</text>
+    <text x="488" y="150">Guardrails checked</text>
+    <text x="600" y="150">Response approved</text>
+  </g>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="9.5" fill="#77828e" text-anchor="middle">
+    <text x="40" y="210">Rep opens case</text>
+    <text x="152" y="210">AI reads history</text>
+    <text x="264" y="210">Similar cases</text>
+    <text x="376" y="210">Next steps</text>
+    <text x="488" y="210">Trusted context</text>
+    <text x="600" y="210">Sent to customer</text>
+  </g>
+</svg>

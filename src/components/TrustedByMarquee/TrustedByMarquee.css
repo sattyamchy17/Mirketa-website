@@ -1,0 +1,60 @@
+/* ============================================================
+   TRUSTED BY MARQUEE — shared scrolling badge band
+   ============================================================ */
+
+.trusted-marquee {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.trusted-marquee__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.trusted-marquee__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.trusted-marquee__scroll {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: trusted-marquee-scroll 26s linear infinite;
+}
+
+.trusted-marquee__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.trusted-marquee__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.trusted-marquee__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes trusted-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trusted-marquee__scroll { animation: none; }
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   BLOG INDEX PAGE
+   Header uses the same dark-navy treatment as every other page's
+   hero (see global .statistics section) so the sitewide header's
+   default light-text styling stays correct without any extra
+   light-hero handling.
+   ============================================================ */
+.blog-index__header {
+  position: relative;
+  background: linear-gradient(120deg, #0f2438 0%, #0d3b3d 100%);
+  padding: 150px 0 64px;
+}
+
+.blog-index__eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 22px 0 14px;
+}
+
+.blog-index__header h1 {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 16px;
+}
+
+.blog-index__intro {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  max-width: 620px;
+}
+
+.blog-index__content {
+  background: var(--color-bg-light);
+}
+
+.blog-index__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.blog-index__filter {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-gray-200);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 9px 18px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.blog-index__filter:hover {
+  border-color: var(--color-primary-green);
+  color: var(--color-primary-green);
+}
+
+.blog-index__filter.is-active {
+  background: var(--color-primary-green);
+  border-color: var(--color-primary-green);
+  color: #fff;
+}
+
+.blog-index__status {
+  text-align: center;
+  padding: 60px 0;
+  font-size: 16px;
+  color: var(--color-gray-300);
+}
+
+.blog-index__status--error {
+  color: #c0392b;
+}
+
+.blog-index__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .blog-index__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-index__header {
+    padding: 130px 0 48px;
+  }
+  .blog-index__header h1 {
+    font-size: 28px;
+  }
+  .blog-index__grid {
+    grid-template-columns: 1fr;
+  }
+}

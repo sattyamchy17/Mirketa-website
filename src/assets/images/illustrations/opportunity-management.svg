@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="40" y="26" width="140" height="108" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.3" />
+  <circle cx="66" cy="52" r="12" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.4" />
+  <path d="M60 52l4 4 8-9" stroke="#21ad65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="86" y="49" font-family="IBM Plex Sans, sans-serif" font-size="10" font-weight="700" fill="#0f2438">Enterprise Renewal</text>
+  <text x="86" y="61" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#5a6a7a">Stage: Negotiation</text>
+  <rect x="60" y="76" width="100" height="8" rx="4" fill="#e4e8ec" />
+  <rect x="60" y="76" width="72" height="8" rx="4" fill="#21ad65" />
+  <g font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#5a6a7a">
+    <text x="60" y="102">Amount</text>
+    <text x="60" y="116" font-weight="700" fill="#0f2438" font-size="11">$248,000</text>
+    <text x="130" y="102">Close Date</text>
+    <text x="130" y="116" font-weight="700" fill="#0f2438" font-size="11">Q3</text>
+  </g>
+  <circle cx="30" cy="30" r="4" fill="#3a8ee0" opacity="0.6" />
+  <circle cx="190" cy="130" r="4" fill="#3a8ee0" opacity="0.6" />
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="28" y="30" width="46" height="30" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <circle cx="51" cy="41" r="5" fill="none" stroke="#21ad65" stroke-width="1.6" />
+  <path d="M45 50h12" stroke="#21ad65" stroke-width="1.4" stroke-linecap="round" />
+  <text x="51" y="72" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" text-anchor="middle">Agent 1</text>
+  <rect x="87" y="30" width="46" height="30" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <circle cx="110" cy="41" r="5" fill="none" stroke="#3a8ee0" stroke-width="1.6" />
+  <path d="M104 50h12" stroke="#3a8ee0" stroke-width="1.4" stroke-linecap="round" />
+  <text x="110" y="72" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" text-anchor="middle">Agent 2</text>
+  <rect x="146" y="30" width="46" height="30" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <circle cx="169" cy="41" r="5" fill="none" stroke="#0f2438" stroke-width="1.6" />
+  <path d="M163 50h12" stroke="#0f2438" stroke-width="1.4" stroke-linecap="round" />
+  <text x="169" y="72" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" text-anchor="middle">Agent 3</text>
+  <path d="M74 45h13" stroke="#21ad65" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M83 41l4 4-4 4" stroke="#21ad65" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M133 45h13" stroke="#3a8ee0" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M142 41l4 4-4 4" stroke="#3a8ee0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="30" y="94" width="160" height="38" rx="8" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.12" />
+  <path d="M40 116l16-14 14 10 18-16 16 8 14-10 34 18" stroke="#21ad65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <circle cx="56" cy="102" r="2.4" fill="#21ad65" />
+  <circle cx="70" cy="112" r="2.4" fill="#21ad65" />
+  <circle cx="88" cy="96" r="2.4" fill="#21ad65" />
+  <circle cx="104" cy="104" r="2.4" fill="#21ad65" />
+  <circle cx="118" cy="94" r="2.4" fill="#21ad65" />
+  <text x="110" y="128" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" text-anchor="middle" opacity="0.7">Orchestrated Output</text>
+</svg>

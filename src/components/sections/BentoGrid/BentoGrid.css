@@ -1,0 +1,94 @@
+/* ============================================================
+   BENTO GRID — one large feature tile + smaller supporting
+   tiles, as an alternative to a uniform card grid.
+   ============================================================ */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  gap: 20px;
+}
+
+.bento-grid__tile {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  grid-column: span 2;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.bento-grid__tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(33, 173, 101, 0.3);
+}
+
+.bento-grid__tile--large {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: var(--color-dark-navy);
+  border-color: var(--color-dark-navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-grid__tile--large .bento-grid__title {
+  color: #fff;
+  font-size: 24px;
+}
+
+.bento-grid__tile--large .bento-grid__description {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+}
+
+.bento-grid__tile--large .bento-grid__icon {
+  background: rgba(33, 173, 101, 0.2);
+  color: #6fe3a0;
+}
+
+.bento-grid__icon {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(33, 173, 101, 0.12);
+  color: var(--color-primary-green);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.bento-grid__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bento-grid__title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-dark-navy);
+  margin: 0 0 8px;
+}
+
+.bento-grid__description {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-grid__tile { grid-column: span 2; }
+  .bento-grid__tile--large { grid-row: span 1; }
+}
+
+@media (max-width: 560px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-grid__tile,
+  .bento-grid__tile--large { grid-column: span 1; }
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="afBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05100e" />
+      <stop offset="55%" stop-color="#0a1f1c" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="afPulseFill" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#afBg)" />
+
+  <!-- radar / pulse core, right of center -->
+  <g transform="translate(1080,430)">
+    <circle r="260" fill="url(#afPulseFill)" />
+    <circle r="220" fill="none" stroke="#21ad65" stroke-opacity="0.14" stroke-width="1.4" />
+    <circle r="160" fill="none" stroke="#21ad65" stroke-opacity="0.22" stroke-width="1.4" />
+    <circle r="100" fill="none" stroke="#21ad65" stroke-opacity="0.34" stroke-width="1.4" />
+    <!-- agent core -->
+    <rect x="-34" y="-34" width="68" height="68" rx="18" fill="#0d2233" stroke="#21ad65" stroke-width="2.4" />
+    <circle cx="0" cy="0" r="10" fill="#21ad65" />
+    <path d="M0 -20v-10M0 20v10M-20 0h-10M20 0h10" stroke="#21ad65" stroke-width="2.2" stroke-linecap="round" />
+
+    <!-- radiating action nodes with labels represented as small tag shapes -->
+    <g stroke="#21ad65" stroke-width="1.2" opacity="0.6">
+      <path d="M0 -100 L0 -170" />
+      <path d="M87 -50 L150 -95" />
+      <path d="M87 50 L150 95" />
+      <path d="M0 100 L0 170" />
+      <path d="M-87 50 L-150 95" />
+      <path d="M-87 -50 L-150 -95" />
+    </g>
+    <g fill="#0d2233" stroke="#8fd9b3" stroke-width="1.6">
+      <rect x="-32" y="-198" width="64" height="26" rx="6" />
+      <rect x="140" y="-112" width="64" height="26" rx="6" />
+      <rect x="140" y="86" width="64" height="26" rx="6" />
+      <rect x="-32" y="172" width="64" height="26" rx="6" />
+      <rect x="-204" y="86" width="64" height="26" rx="6" />
+      <rect x="-204" y="-112" width="64" height="26" rx="6" />
+    </g>
+  </g>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+    <path d="M0 220H1600 M0 440H1600 M0 660H1600" />
+    <path d="M350 0V900 M700 0V900 M1050 0V900 M1400 0V900" />
+  </g>
+
+  <!-- code-bracket accent, left side -->
+  <g font-family="IBM Plex Mono, Menlo, monospace" fill="#21ad65" opacity="0.1" font-size="140" font-weight="700">
+    <text x="50" y="300">AI</text>
+  </g>
+
+  <!-- soft floating accent dots -->
+  <g fill="#21ad65" opacity="0.5">
+    <circle cx="180" cy="640" r="4" />
+    <circle cx="270" cy="720" r="3" />
+    <circle cx="120" cy="760" r="3" />
+    <circle cx="300" cy="180" r="3.5" />
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!--
+      Per-page <title>, <meta name="description">, <link rel="canonical">,
+      Open Graph, and Twitter Card tags are intentionally NOT set here.
+      This is a client-rendered SPA — every route renders its own <Seo>
+      component (src/components/Seo/Seo.jsx), which is the single source
+      of truth for that route's metadata. Duplicating generic tags here
+      as well as in React was tested and confirmed to produce two
+      competing <title>/<meta>/<link> nodes in the live DOM, which is
+      invalid HTML and behaves unpredictably across different social
+      "unfurl" parsers (some take the first tag, some take the last).
+      NOTE: non-JS-executing crawlers (most social link-preview bots)
+      will not see any title/description/OG data at all, since they
+      never run the React bundle that injects it. Google/Bing's
+      crawlers do execute JavaScript and will see the correct per-page
+      values. Closing this gap for non-JS bots requires build-time
+      prerendering or SSR, which is a separate, larger change.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mirketa Inc.",
+        "url": "https://www.mirketa.com",
+        "logo": "https://www.mirketa.com/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/mirketainc",
+          "https://twitter.com/MirketaInc",
+          "https://www.facebook.com/MirketaInc"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-855-647-5382",
+          "contactType": "customer service"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

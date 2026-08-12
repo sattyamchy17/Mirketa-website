@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="264" viewBox="0 0 360 264" fill="none">
+  <!-- column headers -->
+  <text x="14" y="12" text-anchor="start" font-family="IBM Plex Sans, Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.2" fill="#c23a3a" opacity="0.85">AI MODELS</text>
+  <text x="346" y="12" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.2" fill="#c23a3a" opacity="0.85">ENTERPRISE SYSTEMS</text>
+
+  <!-- left column: AI models -->
+  <g fill="none" stroke="#c23a3a" stroke-width="1.4">
+    <rect x="14" y="24" width="64" height="30" rx="6" />
+    <rect x="14" y="84" width="64" height="30" rx="6" />
+    <rect x="14" y="144" width="64" height="30" rx="6" />
+    <rect x="14" y="204" width="64" height="30" rx="6" />
+  </g>
+  <g font-family="IBM Plex Sans, Arial, sans-serif" font-size="9" font-weight="600" fill="#8a2a2a" text-anchor="middle">
+    <text x="46" y="42">GPT-4o</text>
+    <text x="46" y="102">Claude 3.5</text>
+    <text x="46" y="162">Gemini 2.0</text>
+    <text x="46" y="222">Llama 3</text>
+  </g>
+
+  <!-- right column: enterprise systems -->
+  <g fill="none" stroke="#c23a3a" stroke-width="1.4">
+    <rect x="282" y="24" width="64" height="30" rx="6" />
+    <rect x="282" y="84" width="64" height="30" rx="6" />
+    <rect x="282" y="144" width="64" height="30" rx="6" />
+    <rect x="282" y="204" width="64" height="30" rx="6" />
+  </g>
+  <g font-family="IBM Plex Sans, Arial, sans-serif" font-size="9" font-weight="600" fill="#8a2a2a" text-anchor="middle">
+    <text x="314" y="42">CRM</text>
+    <text x="314" y="102">ERP</text>
+    <text x="314" y="162">Legacy DB</text>
+    <text x="314" y="222">Custom App</text>
+  </g>
+
+  <!-- chaotic many-to-many tangle -->
+  <g stroke="#c23a3a" stroke-width="1" opacity="0.55">
+    <path d="M78 39 L282 39" /><path d="M78 39 L282 99" /><path d="M78 39 L282 159" /><path d="M78 39 L282 219" />
+    <path d="M78 99 L282 39" /><path d="M78 99 L282 99" /><path d="M78 99 L282 159" /><path d="M78 99 L282 219" />
+    <path d="M78 159 L282 39" /><path d="M78 159 L282 99" /><path d="M78 159 L282 159" /><path d="M78 159 L282 219" />
+    <path d="M78 219 L282 39" /><path d="M78 219 L282 99" /><path d="M78 219 L282 159" /><path d="M78 219 L282 219" />
+  </g>
+  <g fill="#c23a3a">
+    <circle cx="78" cy="39" r="3" /><circle cx="78" cy="99" r="3" /><circle cx="78" cy="159" r="3" /><circle cx="78" cy="219" r="3" />
+    <circle cx="282" cy="39" r="3" /><circle cx="282" cy="99" r="3" /><circle cx="282" cy="159" r="3" /><circle cx="282" cy="219" r="3" />
+  </g>
+</svg>

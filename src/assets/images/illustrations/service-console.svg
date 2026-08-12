@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="26" y="26" width="46" height="108" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1" />
+  <g stroke="#3a8ee0" stroke-width="1" opacity="0.6"><path d="M34 40h30M34 52h20M34 64h26" /></g>
+  <rect x="34" y="80" width="30" height="16" rx="4" fill="#e8f8f0" />
+  <rect x="34" y="102" width="30" height="16" rx="4" fill="#eef1f5" />
+  <rect x="80" y="26" width="70" height="52" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1" />
+  <g stroke="#0f2438" stroke-opacity="0.5" stroke-width="1"><path d="M88 40h50M88 52h34M88 64h44" /></g>
+  <rect x="80" y="84" width="70" height="50" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <path d="M90 108l6 6 12-14" stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="115" y="128" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#21ad65" text-anchor="middle" font-weight="600">Macro applied</text>
+  <rect x="158" y="26" width="34" height="108" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1" />
+  <circle cx="175" cy="42" r="8" fill="#fff" stroke="#3a8ee0" stroke-width="1" />
+  <g stroke="#3a8ee0" stroke-width="1" opacity="0.6"><path d="M166 62h18M166 74h18M166 86h18" /></g>
+</svg>

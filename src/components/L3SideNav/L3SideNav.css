@@ -1,0 +1,97 @@
+/* ============================================================
+   L3 SIDE NAV — shared dark vertical sub-navigation
+   Used inside an .xxx-l3-layout grid (sidebar column) on any
+   L3 page nested under an L2 platform hub. Sticky on desktop,
+   horizontal scrollable strip on tablet/mobile.
+   ============================================================ */
+
+.l3-side-nav {
+  position: sticky;
+  top: 96px;
+  background: var(--color-dark-navy);
+  border-radius: var(--radius);
+  padding: 22px 0;
+  overflow: hidden;
+}
+
+.l3-side-nav__eyebrow {
+  padding: 0 24px 14px;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.l3-side-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.l3-side-nav__link {
+  display: block;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  border-left: 3px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.l3-side-nav__link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.l3-side-nav__link:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: -2px;
+  color: #fff;
+}
+
+.l3-side-nav__link.is-active {
+  background: rgba(33, 173, 101, 0.16);
+  color: var(--color-primary-green);
+  border-left-color: var(--color-primary-green);
+  font-weight: 700;
+  cursor: default;
+}
+
+@media (max-width: 1024px) {
+  .l3-side-nav {
+    position: static;
+    padding: 6px;
+  }
+
+  .l3-side-nav__eyebrow {
+    padding: 10px 14px 6px;
+  }
+
+  .l3-side-nav__list {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .l3-side-nav__link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 12px 18px;
+  }
+
+  .l3-side-nav__link.is-active {
+    border-left-color: transparent;
+    border-bottom-color: var(--color-primary-green);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .l3-side-nav__link {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}

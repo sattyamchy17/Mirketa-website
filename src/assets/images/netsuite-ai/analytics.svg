@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="0 0 640 380" fill="none">
+  <rect x="40" y="30" width="560" height="320" rx="16" fill="#0f2438" />
+  <text x="66" y="62" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="700" fill="#8fd9b3">Month-End Close Progress</text>
+  <g stroke="#1c3a52" stroke-width="1">
+    <path d="M66 310H574 M66 250H574 M66 190H574 M66 130H574" />
+  </g>
+  <path d="M66 290 L150 270 L234 280 L318 220 L402 230 L486 150 L574 120" stroke="#21ad65" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M66 290 L150 270 L234 280 L318 220 L402 230 L486 150 L574 120 V350 H66 Z" fill="#21ad65" opacity="0.08" />
+  <g fill="#21ad65"><circle cx="318" cy="220" r="4" /><circle cx="574" cy="120" r="5" /></g>
+  <rect x="470" y="70" width="104" height="30" rx="8" fill="#21ad65" opacity="0.16" />
+  <text x="522" y="90" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9.5" font-weight="700" fill="#8fe3b5">Ahead of plan</text>
+</svg>

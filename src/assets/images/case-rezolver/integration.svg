@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <g stroke="#21ad65" stroke-width="1.3" opacity="0.5">
+    <path d="M320 250 L150 130 M320 250 L490 130 M320 250 L150 370 M320 250 L490 370" />
+  </g>
+  <path d="M320 310a80 80 0 01-4-160 108 108 0 01206-26 68 68 0 0170 102 74 74 0 01-14 84H332a80 80 0 01-12 0z" fill="#0f2438" />
+  <text x="320" y="262" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="15" font-weight="700" fill="#8fd9b3">Service Cloud</text>
+
+  <rect x="90" y="102" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+  <text x="150" y="136" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1d4056">Knowledge</text>
+
+  <rect x="430" y="102" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+  <text x="490" y="130" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="#1d4056">Case History</text>
+
+  <rect x="90" y="342" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+  <text x="150" y="376" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1d4056">Policies</text>
+
+  <rect x="430" y="342" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+  <text x="490" y="376" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="#1d4056">Product Data</text>
+</svg>

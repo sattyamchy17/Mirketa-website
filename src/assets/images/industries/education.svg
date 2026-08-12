@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480" viewBox="0 0 400 480">
+  <defs>
+    <linearGradient id="eduGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16324a" />
+      <stop offset="100%" stop-color="#0a1826" />
+    </linearGradient>
+    <radialGradient id="eduGlow" cx="0.7" cy="0.18" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="480" fill="url(#eduGrad)" />
+  <rect width="400" height="480" fill="url(#eduGlow)" />
+
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 120H400 M0 240H400 M0 360H400" />
+  </g>
+
+  <g transform="translate(200,108)">
+    <path d="M0 -18 L48 4 L0 26 L-48 4 Z" fill="#21ad65" opacity="0.95" />
+    <path d="M-24 12 v20 c0 7 11 12 24 12 s24 -5 24 -12 v-20" fill="none" stroke="#21ad65" stroke-width="2.4" />
+    <line x1="46" y1="6" x2="46" y2="34" stroke="#21ad65" stroke-width="2.4" />
+    <circle cx="46" cy="38" r="2.6" fill="#21ad65" />
+  </g>
+
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2" opacity="0.95">
+    <rect x="48" y="176" width="304" height="128" rx="12" />
+  </g>
+  <text x="70" y="204" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#dff3ea" font-weight="700">Student Success Dashboard</text>
+  <g fill="#eaf2fb" opacity="0.9">
+    <rect x="70" y="220" width="70" height="52" rx="6" opacity="0.5" />
+    <rect x="152" y="204" width="70" height="68" rx="6" opacity="0.75" />
+    <rect x="234" y="188" width="70" height="84" rx="6" opacity="0.95" />
+  </g>
+  <text x="70" y="290" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#9fe3c0">Retention +18% this term</text>
+
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.1" opacity="0.9">
+    <rect x="60" y="330" width="150" height="70" rx="10" />
+  </g>
+  <text x="76" y="358" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#dff3ea" font-weight="700">Unified Student View</text>
+  <text x="76" y="378" font-family="IBM Plex Sans, sans-serif" font-size="8.5" fill="#9fe3c0">Enrollment to alumni</text>
+
+  <g fill="#0d2848" stroke="#d9678c" stroke-width="1.1" opacity="0.9">
+    <rect x="220" y="330" width="132" height="70" rx="10" />
+  </g>
+  <text x="236" y="358" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#f6dde6" font-weight="700">Predictive Retention</text>
+  <text x="236" y="378" font-family="IBM Plex Sans, sans-serif" font-size="8.5" fill="#f2c6d5">Early risk signals</text>
+
+  <g fill="#21ad65" opacity="0.6">
+    <circle cx="340" cy="70" r="4" /><circle cx="60" cy="420" r="3.5" />
+  </g>
+</svg>

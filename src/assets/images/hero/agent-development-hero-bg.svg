@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="adBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1f" />
+      <stop offset="55%" stop-color="#0f1f3a" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="adGlow" cx="0.78" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="adGlow2" cx="0.2" cy="0.75" r="0.45">
+      <stop offset="0%" stop-color="#3d7bd9" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3d7bd9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#adBg)" />
+  <rect width="1600" height="900" fill="url(#adGlow)" />
+  <rect width="1600" height="900" fill="url(#adGlow2)" />
+
+  <!-- faint code-bracket / terminal motifs, left side -->
+  <g font-family="IBM Plex Mono, Menlo, monospace" fill="#21ad65" opacity="0.14" font-size="120" font-weight="700">
+    <text x="60" y="260">&lt;/&gt;</text>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600 M0 320H1600 M0 490H1600 M0 660H1600" />
+  </g>
+
+  <!-- central agent avatar: rounded node with orbiting workflow icons -->
+  <g transform="translate(1080,430)">
+    <circle r="120" fill="none" stroke="#21ad65" stroke-opacity="0.25" stroke-width="1" />
+    <circle r="86" fill="none" stroke="#21ad65" stroke-opacity="0.35" stroke-width="1" />
+    <rect x="-46" y="-46" width="92" height="92" rx="24" fill="#0d2233" stroke="#21ad65" stroke-width="2.4" />
+    <!-- simple circuit-brain glyph -->
+    <path d="M-22 -6h14v-14M8 -6h14M-22 10h44M-6 10v14M14 10v10" stroke="#21ad65" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <circle cx="-22" cy="-20" r="3" fill="#21ad65" />
+    <circle cx="22" cy="-6" r="3" fill="#21ad65" />
+    <circle cx="-6" cy="24" r="3" fill="#21ad65" />
+    <circle cx="14" cy="20" r="3" fill="#21ad65" />
+
+    <!-- orbiting workflow nodes -->
+    <g stroke="#21ad65" stroke-width="1.2" opacity="0.55">
+      <path d="M0 -86 L0 -120" />
+      <path d="M74 -43 L104 -60" />
+      <path d="M74 43 L104 60" />
+      <path d="M0 86 L0 120" />
+      <path d="M-74 43 L-104 60" />
+      <path d="M-74 -43 L-104 -60" />
+    </g>
+    <g fill="#0d2233" stroke="#8fd9b3" stroke-width="1.6">
+      <rect x="-16" y="-138" width="32" height="24" rx="5" />
+      <rect x="96" y="-74" width="32" height="24" rx="5" />
+      <rect x="96" y="48" width="32" height="24" rx="5" />
+      <rect x="-16" y="122" width="32" height="24" rx="5" />
+      <rect x="-128" y="48" width="32" height="24" rx="5" />
+      <rect x="-128" y="-74" width="32" height="24" rx="5" />
+    </g>
+  </g>
+
+  <!-- soft floating accent dots -->
+  <g fill="#21ad65" opacity="0.5">
+    <circle cx="160" cy="620" r="4" />
+    <circle cx="260" cy="700" r="3" />
+    <circle cx="120" cy="760" r="3" />
+    <circle cx="300" cy="120" r="4" />
+  </g>
+</svg>

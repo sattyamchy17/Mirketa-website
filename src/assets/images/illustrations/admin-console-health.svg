@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="20" y="20" width="180" height="120" rx="10" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.35" />
+  <text x="110" y="38" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#0f2438" text-anchor="middle">Health Check</text>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="7.5" fill="#0f2438">
+    <circle cx="38" cy="58" r="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+    <path d="M35 58l2 2 4-5" stroke="#21ad65" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="50" y="61">Security review</text>
+
+    <circle cx="38" cy="80" r="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+    <path d="M35 80l2 2 4-5" stroke="#21ad65" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="50" y="83">Backup completed</text>
+
+    <circle cx="38" cy="102" r="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+    <path d="M35 102l2 2 4-5" stroke="#21ad65" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="50" y="105">Sandbox refreshed</text>
+
+    <circle cx="38" cy="124" r="6" fill="none" stroke="#3a8ee0" stroke-width="1.2" />
+    <text x="50" y="127">Release scheduled</text>
+  </g>
+</svg>

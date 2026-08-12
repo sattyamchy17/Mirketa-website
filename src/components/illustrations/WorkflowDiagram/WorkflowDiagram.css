@@ -1,0 +1,76 @@
+.illus-workflow {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-light);
+}
+
+.illus-workflow__title {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  margin: 0 0 24px;
+}
+
+.illus-workflow__track {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.illus-workflow__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.illus-workflow__node {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.1);
+  border: 1.5px solid var(--color-primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.illus-workflow__node-num {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-primary-green);
+}
+
+.illus-workflow__step p {
+  margin: 10px 0 0;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.illus-workflow__arrow {
+  position: absolute;
+  top: 20px;
+  right: -16px;
+  color: var(--color-gray-300);
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  .illus-workflow__track { justify-content: center; }
+  .illus-workflow__arrow { display: none; }
+}

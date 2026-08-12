@@ -1,0 +1,11 @@
+/* ============================================================
+   CYBERSECURITY SOC ANALYST — page-specific overrides only.
+   All shared job-detail layout/styling lives in
+   src/pages/careers/JobDetails/JobDetails.css; this file exists
+   so each job page can carry its own small visual accents
+   without touching the shared template (per-job folders follow
+   this same pattern as new roles are added).
+   ============================================================ */
+.job-cybersecurity-soc-analyst .job-hero {
+  background-color: #070f1c;
+}

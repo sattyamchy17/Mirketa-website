@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="28" y="28" width="52" height="52" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="36" y="42" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">CPU</text>
+  <circle cx="54" cy="60" r="13" fill="none" stroke="#21ad65" stroke-width="4" stroke-dasharray="52 100" stroke-linecap="round" transform="rotate(-90 54 60)" />
+  <text x="54" y="64" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#21ad65" text-anchor="middle">52%</text>
+  <rect x="86" y="28" width="52" height="52" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="94" y="42" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">MEMORY</text>
+  <circle cx="112" cy="60" r="13" fill="none" stroke="#3a8ee0" stroke-width="4" stroke-dasharray="68 100" stroke-linecap="round" transform="rotate(-90 112 60)" />
+  <text x="112" y="64" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#3a8ee0" text-anchor="middle">68%</text>
+  <rect x="144" y="28" width="48" height="52" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="150" y="42" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">NODES</text>
+  <text x="150" y="60" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700" fill="#0f2438">24</text>
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M28 108h164M28 122h164M28 136h164" />
+  </g>
+  <g fill="#21ad65">
+    <rect x="32" y="118" width="8" height="18" rx="2" />
+    <rect x="46" y="104" width="8" height="32" rx="2" />
+    <rect x="60" y="112" width="8" height="24" rx="2" />
+    <rect x="74" y="98" width="8" height="38" rx="2" />
+    <rect x="88" y="110" width="8" height="26" rx="2" />
+  </g>
+  <text x="104" y="120" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">Resource utilization, 7d</text>
+</svg>

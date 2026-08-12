@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="30" y="30" width="52" height="34" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <rect x="38" y="36" width="36" height="6" rx="2" fill="#3a8ee0" opacity="0.6" />
+  <rect x="38" y="46" width="36" height="6" rx="2" fill="#3a8ee0" opacity="0.4" />
+  <rect x="38" y="56" width="20" height="6" rx="2" fill="#3a8ee0" opacity="0.6" />
+  <rect x="92" y="30" width="52" height="34" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="118" y="52" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#21ad65" text-anchor="middle">99.2%</text>
+  <rect x="154" y="30" width="52" height="34" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <path d="M164 52l5 5 10-10" stroke="#0f2438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M30 96h176M30 112h176" />
+  </g>
+  <path d="M30 108c14-14 26-18 40-4s28 8 42-8 24-2 24-2 24 6 40-6" stroke="#3a8ee0" stroke-width="2" stroke-linecap="round" fill="none" />
+  <text x="30" y="124" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#0f2438" opacity="0.6">Patch Rollout Progress</text>
+  <rect x="30" y="130" width="176" height="6" rx="3" fill="#0f2438" opacity="0.1" />
+  <rect x="30" y="130" width="128" height="6" rx="3" fill="#21ad65" />
+</svg>

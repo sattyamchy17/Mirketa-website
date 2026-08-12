@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="30" y="28" width="160" height="20" rx="6" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <circle cx="40" cy="38" r="3" fill="#3a8ee0" />
+  <rect x="50" y="34" width="90" height="4" rx="2" fill="#3a8ee0" opacity="0.5" />
+  <rect x="160" y="32" width="22" height="12" rx="6" fill="#3a8ee0" opacity="0.15" />
+  <rect x="30" y="54" width="160" height="20" rx="6" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <circle cx="40" cy="64" r="3" fill="#21ad65" />
+  <rect x="50" y="60" width="90" height="4" rx="2" fill="#21ad65" opacity="0.5" />
+  <rect x="160" y="58" width="22" height="12" rx="6" fill="#21ad65" opacity="0.2" />
+  <rect x="30" y="80" width="160" height="20" rx="6" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <circle cx="40" cy="90" r="3" fill="#0f2438" />
+  <rect x="50" y="86" width="90" height="4" rx="2" fill="#0f2438" opacity="0.4" />
+  <rect x="160" y="84" width="22" height="12" rx="6" fill="#0f2438" opacity="0.15" />
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M30 116h160" />
+  </g>
+  <path d="M40 128a10 10 0 0120 0v4" stroke="#21ad65" stroke-width="2" fill="none" />
+  <rect x="34" y="130" width="10" height="10" rx="2" stroke="#21ad65" stroke-width="1.4" />
+  <rect x="56" y="130" width="10" height="10" rx="2" stroke="#21ad65" stroke-width="1.4" />
+  <text x="120" y="136" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#0f2438" opacity="0.6">Case Queue</text>
+</svg>

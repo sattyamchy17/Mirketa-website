@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="28" y="28" width="88" height="58" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="36" y="44" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.6">HR CASES OPEN</text>
+  <text x="36" y="66" font-family="IBM Plex Sans, sans-serif" font-size="20" font-weight="700" fill="#21ad65">14</text>
+  <path d="M36 78l8-8 6 4 10-10" stroke="#21ad65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="124" y="28" width="68" height="58" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="132" y="44" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.6">SLA MET</text>
+  <text x="132" y="66" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700" fill="#3a8ee0">96%</text>
+  <circle cx="176" cy="60" r="9" fill="none" stroke="#3a8ee0" stroke-width="2" stroke-dasharray="6 3" />
+  <g>
+    <rect x="28" y="96" width="164" height="14" rx="4" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.15" />
+    <circle cx="36" cy="103" r="3" fill="#e0a63a" />
+    <text x="46" y="106" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438">Payroll config change request</text>
+  </g>
+  <g>
+    <rect x="28" y="114" width="164" height="14" rx="4" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.15" />
+    <circle cx="36" cy="121" r="3" fill="#21ad65" />
+    <text x="46" y="124" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438">Benefits enrollment issue — resolved</text>
+  </g>
+  <g fill="#0f2438" fill-opacity="0.5">
+    <circle cx="34" cy="138" r="6" />
+    <circle cx="48" cy="138" r="6" fill-opacity="0.7" />
+  </g>
+  <text x="60" y="141" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">HR Ops Team On Duty</text>
+</svg>

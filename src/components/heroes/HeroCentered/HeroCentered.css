@@ -1,0 +1,117 @@
+/* ============================================================
+   HERO CENTERED — Layout B
+   Light background, centered badge/H1/description/CTAs, with a
+   large visual centered beneath the copy instead of beside it.
+   ============================================================ */
+
+.hero-centered {
+  background: var(--color-bg-light);
+  padding-top: 140px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.hero-centered__breadcrumb {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.hero-centered__copy {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.hero-centered__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.12);
+  border: 1px solid rgba(33, 173, 101, 0.3);
+  color: #1c9457;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 22px;
+}
+
+.hero-centered h1 {
+  font-size: 44px;
+  line-height: 1.16;
+  color: var(--color-dark-navy);
+  margin-bottom: 22px;
+}
+
+.hero-centered__description {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 62ch;
+  margin: 0 auto 32px;
+}
+
+.hero-centered__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.hero-centered__metrics {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  padding: 18px 0 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-centered__metrics li {
+  position: relative;
+  padding-left: 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.hero-centered__metrics li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+.hero-centered__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-centered__visual {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .hero-centered { padding-top: 116px; }
+  .hero-centered h1 { font-size: 32px; }
+  .hero-centered__visual { margin-top: 40px; }
+}
+
+@media (max-width: 560px) {
+  .hero-centered h1 { font-size: 26px; }
+  .hero-centered__ctas { flex-direction: column; align-items: stretch; }
+}

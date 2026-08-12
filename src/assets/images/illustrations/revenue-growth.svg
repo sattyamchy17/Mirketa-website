@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g stroke="#0f2438" stroke-opacity="0.12">
+    <path d="M28 136h164" />
+  </g>
+  <g fill="#21ad65" opacity="0.85">
+    <rect x="40" y="104" width="20" height="32" rx="3" />
+    <rect x="72" y="86" width="20" height="50" rx="3" />
+    <rect x="104" y="66" width="20" height="70" rx="3" />
+    <rect x="136" y="40" width="20" height="96" rx="3" />
+  </g>
+  <path d="M46 100l30-20 30-20 34-24" stroke="#3a8ee0" stroke-width="2.2" fill="none" stroke-linecap="round" />
+  <path d="M110 36h30v22" stroke="#3a8ee0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="146" cy="40" r="5" fill="#0f2438" />
+  <text x="146" y="26" font-family="IBM Plex Sans, sans-serif" font-size="10" font-weight="700" fill="#0f2438" text-anchor="middle">+41%</text>
+  <text x="146" y="150" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#5a6a7a" text-anchor="middle">YoY Revenue</text>
+</svg>

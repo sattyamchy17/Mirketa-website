@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <text x="30" y="34" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#0f2438" opacity="0.7">INTEGRATION PROCESSES</text>
+  <rect x="28" y="46" width="50" height="34" rx="7" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="53" y="66" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">Source</text>
+  <path d="M78 63h20" stroke="#0f2438" stroke-opacity="0.3" stroke-width="1.4" />
+  <rect x="98" y="46" width="50" height="34" rx="7" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="123" y="60" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">Map &amp;</text>
+  <text x="123" y="70" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">Transform</text>
+  <path d="M148 63h20" stroke="#0f2438" stroke-opacity="0.3" stroke-width="1.4" />
+  <rect x="168" y="46" width="26" height="34" rx="7" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="181" y="66" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" text-anchor="middle">Dest</text>
+  <rect x="28" y="94" width="80" height="22" rx="6" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.15" />
+  <text x="36" y="108" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.6">Runs today</text>
+  <text x="88" y="108" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#21ad65" text-anchor="end">312</text>
+  <rect x="116" y="94" width="76" height="22" rx="6" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.15" />
+  <text x="124" y="108" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.6">Success rate</text>
+  <text x="184" y="108" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#3a8ee0" text-anchor="end">99.4%</text>
+  <path d="M40 132l6-8 6 4 8-12 6 6 8-10" stroke="#21ad65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

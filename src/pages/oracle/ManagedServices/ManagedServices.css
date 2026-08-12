@@ -1,0 +1,1378 @@
+/* ============================================================
+   ORACLE MANAGED SERVICES PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*). Content on
+   this page is provided verbatim by the client; layout follows
+   the structure implied by that content.
+   ============================================================ */
+
+.oracle-managed-services {
+  --oms-hover-navy: #1d4056;
+  --oms-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.oms-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.oms-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.oms-btn.btn-primary:hover {
+  background: var(--oms-hover-navy);
+}
+
+/* ============================================================
+   STICKY CTA
+   ============================================================ */
+.oms-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.oms-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.oms-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .oms-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.oms-breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding-top: 28px;
+}
+
+.oms-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12.5px;
+}
+
+.oms-breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--transition);
+}
+
+.oms-breadcrumb a:hover {
+  color: var(--color-primary-green);
+}
+
+.oms-breadcrumb span[aria-current] {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.oms-breadcrumb span[aria-hidden] {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 4px;
+}
+
+/* ============================================================
+   HERO — CSS-only monitoring background + live dashboard widget
+   ============================================================ */
+.oms-hero {
+  position: relative;
+  background-color: #081b30;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 140px;
+  padding-bottom: 90px;
+  overflow: hidden;
+}
+
+.oms-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8, 27, 48, 0.72) 0%, rgba(14, 44, 72, 0.6) 55%, rgba(15, 36, 56, 0.72) 100%);
+}
+
+.oms-hero__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.oms-hero__bg::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(33, 173, 101, 0.22) 0%, transparent 70%);
+}
+
+.oms-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.oms-hero h1 {
+  color: #fff;
+  font-size: 33px;
+  margin-bottom: 18px;
+  line-height: 1.32;
+}
+
+.oms-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+
+.oms-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  max-width: 540px;
+}
+
+.oms-hero__stat {
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  padding-left: 14px;
+}
+
+.oms-hero__stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--color-primary-green);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.oms-hero__stat span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .oms-hero__inner { grid-template-columns: 1fr; }
+  .oms-dashboard { max-width: 480px; margin: 0 auto; }
+}
+@media (max-width: 768px) {
+  .oms-hero { padding-top: 120px; padding-bottom: 60px; }
+  .oms-hero h1 { font-size: 25px; }
+  .oms-hero__stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- Live dashboard widget --- */
+.oms-dashboard {
+  background: #0d2848;
+  border: 1px solid rgba(33, 173, 101, 0.3);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.oms-dashboard__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.oms-dashboard__head h2 {
+  color: #fff;
+  font-size: 15px;
+  margin: 0;
+}
+
+.oms-dashboard__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #8fe3b5;
+}
+
+.oms-dashboard__live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  animation: oms-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes oms-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(33, 173, 101, 0.5); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 4px rgba(33, 173, 101, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oms-dashboard__live-dot { animation: none; }
+}
+
+.oms-dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.oms-dashboard__stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.oms-dashboard__stat-label {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 6px;
+}
+
+.oms-dashboard__stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.oms-dashboard__stat-caption {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.oms-dashboard__tickets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oms-dashboard__tickets li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.oms-dashboard__ticket-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 3px;
+}
+
+.oms-dashboard__ticket-meta {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.oms-dashboard__ticket-status {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.oms-dashboard__ticket-status--active {
+  background: rgba(33, 173, 101, 0.18);
+  color: #8fe3b5;
+}
+
+.oms-dashboard__ticket-status--resolved {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.oms-dashboard__ticket-status--in-sprint {
+  background: rgba(58, 142, 224, 0.2);
+  color: #9fd6ff;
+}
+
+@media (max-width: 480px) {
+  .oms-dashboard__stats { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TRUST / EXPERTISE BADGES
+   ============================================================ */
+.oms-trust {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 26px 0;
+}
+
+.oms-trust__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.oms-trust__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border-radius: 20px;
+  padding: 8px 16px 8px 12px;
+}
+
+.oms-trust__badge span {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary-green);
+}
+
+.oms-trust__badge span svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   WHY MIRKETA (1) — 6 feature cards
+   ============================================================ */
+.oms-why-1 {
+  background: var(--color-white);
+}
+
+.oms-why-1__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.oms-why-1-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.oms-why-1-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.oms-why-1-card__icon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  margin-bottom: 16px;
+}
+
+.oms-why-1-card__icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.oms-why-1-card h3 {
+  font-size: 15.5px;
+  margin-bottom: 8px;
+}
+
+.oms-why-1-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .oms-why-1__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .oms-why-1__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHAT'S INCLUDED — 4 pillar cards
+   ============================================================ */
+.oms-included {
+  background: var(--color-bg-light);
+}
+
+.oms-included__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.oms-included-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+
+.oms-included-card__icon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.oms-included-card__icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.oms-included-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 14px;
+}
+
+.oms-included-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oms-included-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+}
+
+.oms-included-card li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.oms-included-card li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .oms-included__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   DELIVERY MODEL — onshore / offshore split
+   ============================================================ */
+.oms-delivery {
+  background: var(--color-white);
+}
+
+.oms-delivery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.oms-delivery-card {
+  border-radius: var(--radius);
+  padding: 30px 26px;
+}
+
+.oms-delivery-card:first-child {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+}
+
+.oms-delivery-card:last-child {
+  background: rgba(58, 142, 224, 0.06);
+  border: 1px solid rgba(58, 142, 224, 0.2);
+}
+
+.oms-delivery-card__icon {
+  display: flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.oms-delivery-card:first-child .oms-delivery-card__icon {
+  color: var(--color-primary-green);
+}
+
+.oms-delivery-card:last-child .oms-delivery-card__icon {
+  color: var(--oms-blue);
+}
+
+.oms-delivery-card__icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.oms-delivery-card h3 {
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+
+.oms-delivery-card__subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 14px;
+}
+
+.oms-delivery-card > p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.oms-delivery-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oms-delivery-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--color-dark-navy);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.oms-delivery-card li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.oms-delivery-card li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  .oms-delivery__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TOOLING & WAYS OF WORKING — 5-item strip
+   ============================================================ */
+.oms-tooling {
+  background: var(--color-bg-light);
+}
+
+.oms-tooling__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.oms-tooling__head .section-heading {
+  margin-bottom: 0;
+}
+
+.oms-tooling__illo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 700px) {
+  .oms-tooling__head { grid-template-columns: 1fr; }
+  .oms-tooling__illo { max-width: 200px; order: -1; margin-bottom: 16px; }
+}
+
+.oms-tooling__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.oms-tooling-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.oms-tooling-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.oms-tooling-card span {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.oms-tooling-card span svg {
+  width: 19px;
+  height: 19px;
+}
+
+.oms-tooling-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.oms-tooling-card p {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .oms-tooling__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .oms-tooling__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   PILLAR COVERAGE — 5-column scope grid
+   ============================================================ */
+.oms-pillars {
+  background: var(--color-white);
+}
+
+.oms-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.oms-pillar-column {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+}
+
+.oms-pillar-column__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.oms-pillar-column__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.oms-pillar-column h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.oms-pillar-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.oms-pillar-column li {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+  padding-left: 12px;
+  border-left: 2px solid var(--color-border);
+}
+
+@media (max-width: 1000px) {
+  .oms-pillars__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .oms-pillars__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HOW WE WORK — 5-step process
+   ============================================================ */
+.oms-process {
+  background: var(--color-bg-light);
+}
+
+.oms-process__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.oms-process-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+}
+
+.oms-process-card__num {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-bg-light);
+}
+
+.oms-process-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.oms-process-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.oms-process-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.oms-process-card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .oms-process__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .oms-process__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ENGAGEMENT MODELS — 3-col comparison
+   ============================================================ */
+.oms-engagement {
+  background: var(--color-white);
+}
+
+.oms-engagement__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.oms-engagement-card {
+  position: relative;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.oms-engagement-card.is-featured {
+  background: var(--color-white);
+  border: 2px solid var(--color-primary-green);
+  box-shadow: var(--shadow-medium);
+  transform: scale(1.02);
+}
+
+.oms-engagement-card__badge {
+  position: absolute;
+  top: -13px;
+  left: 24px;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.oms-engagement-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.oms-engagement-card > p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.oms-engagement-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oms-engagement-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--color-dark-navy);
+  line-height: 1.5;
+}
+
+.oms-engagement-card li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.oms-engagement-card li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .oms-engagement__grid { grid-template-columns: 1fr; }
+  .oms-engagement-card.is-featured { transform: none; }
+}
+
+/* ============================================================
+   SERVICE TIERS — Silver / Gold / Platinum pricing cards
+   ============================================================ */
+.oms-tiers {
+  background: var(--color-bg-light);
+}
+
+.oms-tiers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.oms-tier-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+}
+
+.oms-tier-card.is-featured {
+  border: 2px solid var(--color-primary-green);
+  box-shadow: var(--shadow-medium);
+  transform: scale(1.03);
+}
+
+.oms-tier-card__badge {
+  position: absolute;
+  top: -13px;
+  left: 26px;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.oms-tier-card h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.oms-tier-card__subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.oms-tier-card__description {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.oms-tier-card ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.oms-tier-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--color-dark-navy);
+  line-height: 1.5;
+}
+
+.oms-tier-card li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.oms-tier-card li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.oms-tier-card__cta {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .oms-tiers__grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .oms-tier-card.is-featured { transform: none; }
+}
+
+/* ============================================================
+   WHY MIRKETA (2) — feature cards + stat band
+   ============================================================ */
+.oms-why-2 {
+  background: var(--color-white);
+}
+
+.oms-why-2__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 44px;
+}
+
+.oms-why-2-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+}
+
+.oms-why-2-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.oms-why-2-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.oms-why-2-card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.oms-why-2-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.oms-why-2__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+}
+
+.oms-why-2__stat {
+  text-align: center;
+}
+
+.oms-why-2__stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--color-primary-green);
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.oms-why-2__stat span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .oms-why-2__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .oms-why-2__stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .oms-why-2__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CLIENT STORIES — testimonials
+   ============================================================ */
+.oms-testimonials {
+  background: var(--color-bg-light);
+}
+
+.oms-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.oms-testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-light);
+  margin: 0;
+}
+
+.oms-testimonial-card__stars {
+  display: flex;
+  gap: 3px;
+  color: #f5a623;
+  margin-bottom: 12px;
+}
+
+.oms-testimonial-card__stars span {
+  display: flex;
+  width: 15px;
+  height: 15px;
+}
+
+.oms-testimonial-card__stars span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.oms-testimonial-card__mark {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary-green);
+  opacity: 0.4;
+  margin-bottom: 8px;
+}
+
+.oms-testimonial-card__mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.oms-testimonial-card blockquote {
+  font-size: 13.5px;
+  color: var(--color-dark-navy);
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+.oms-testimonial-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 16px;
+}
+
+.oms-testimonial-card__avatar {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.oms-testimonial-card figcaption strong {
+  font-size: 13px;
+  color: var(--color-dark-navy);
+}
+
+@media (max-width: 900px) {
+  .oms-testimonials__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ — category tabs
+   ============================================================ */
+.oms-faq {
+  background: var(--color-white);
+}
+
+.oms-faq__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.oms-faq__tab {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-gray-300);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.oms-faq__tab:hover {
+  color: var(--color-dark-navy);
+}
+
+.oms-faq__tab:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.oms-faq__tab.is-active {
+  background: var(--color-primary-green);
+  border-color: var(--color-primary-green);
+  color: #fff;
+}
+
+.oms-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.oms-faq-item {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.oms-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.oms-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.oms-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oms-faq-item.is-open .oms-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.oms-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: oms-fade-in 0.3s ease;
+}
+
+@keyframes oms-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.oms-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.oms-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.oms-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.oms-final-cta h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.oms-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .oms-final-cta h2 { font-size: 22px; }
+}

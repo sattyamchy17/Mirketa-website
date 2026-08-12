@@ -1,0 +1,119 @@
+/* ============================================================
+   HERO ASYMMETRIC — Layout C
+   70/30 split: dominant content column + a narrow vertical
+   stat rail, rather than a full dashboard mock beside the copy.
+   ============================================================ */
+
+.hero-asymmetric {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.hero-asymmetric__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(8, 27, 48, 0.95) 0%, rgba(8, 27, 48, 0.8) 60%, rgba(8, 27, 48, 0.55) 100%);
+}
+
+.hero-asymmetric__breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-asymmetric__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.6fr 0.7fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.hero-asymmetric__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 22px;
+}
+
+.hero-asymmetric h1 {
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.18;
+  margin-bottom: 20px;
+  max-width: 18ch;
+}
+
+.hero-asymmetric__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  max-width: 60ch;
+  margin-bottom: 30px;
+}
+
+.hero-asymmetric__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-asymmetric__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-asymmetric__rail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  padding-left: 28px;
+  margin-top: 6px;
+}
+
+.hero-asymmetric__chip strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.hero-asymmetric__chip span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .hero-asymmetric__inner { grid-template-columns: 1fr; }
+  .hero-asymmetric__rail {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-left: 0;
+    padding-top: 24px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-asymmetric { padding-top: 120px; padding-bottom: 60px; }
+  .hero-asymmetric h1 { font-size: 28px; max-width: none; }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="28" y="28" width="60" height="60" rx="10" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="58" y="48" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6" text-anchor="middle">READINESS</text>
+  <circle cx="58" cy="66" r="16" fill="none" stroke="#21ad65" stroke-opacity="0.2" stroke-width="5" />
+  <circle cx="58" cy="66" r="16" fill="none" stroke="#21ad65" stroke-width="5" stroke-dasharray="65 100" stroke-linecap="round" transform="rotate(-90 58 66)" />
+  <text x="58" y="70" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="700" fill="#21ad65" text-anchor="middle">65</text>
+  <rect x="96" y="28" width="96" height="60" rx="10" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="104" y="40" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">SIX DIMENSIONS</text>
+  <g stroke="#3a8ee0" stroke-width="5" stroke-linecap="round">
+    <path d="M104 50h48" opacity="0.9" />
+    <path d="M104 59h36" opacity="0.75" />
+    <path d="M104 68h56" opacity="0.9" />
+    <path d="M104 77h28" opacity="0.6" />
+  </g>
+  <rect x="28" y="96" width="164" height="38" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="36" y="108" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">MATURITY LEVEL</text>
+  <circle cx="42" cy="122" r="6" fill="none" stroke="#0f2438" stroke-opacity="0.3" stroke-width="2" />
+  <circle cx="62" cy="122" r="6" fill="none" stroke="#0f2438" stroke-opacity="0.3" stroke-width="2" />
+  <circle cx="82" cy="122" r="6" fill="#21ad65" />
+  <circle cx="102" cy="122" r="6" fill="none" stroke="#0f2438" stroke-opacity="0.3" stroke-width="2" />
+  <text x="112" y="126" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="700" fill="#0f2438">Scaling</text>
+</svg>

@@ -1,0 +1,956 @@
+/* ============================================================
+   SALESFORCE DEVELOPER SERVICES PAGE
+   Standalone Salesforce service page — NOT part of the
+   Salesforce Clouds hierarchy. Reuses global tokens/utilities
+   from src/css/global.css (.container, .section, .section-heading, .btn*).
+   ============================================================ */
+
+.salesforce-developer-services {
+  --sds-hover-navy: #1d4056;
+  --sds-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.sds-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.sds-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.sds-btn.btn-primary:hover {
+  background: var(--sds-hover-navy);
+}
+
+.sds-section-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ============================================================
+   STICKY CTA — desktop only
+   ============================================================ */
+.sds-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.sds-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sds-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .sds-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.sds-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.sds-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.sds-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.sds-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.sds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.sds-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.sds-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.sds-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.sds-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .sds-hero__inner { grid-template-columns: 1fr; }
+  .sds-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .sds-hero { padding-top: 120px; padding-bottom: 60px; }
+  .sds-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY — auto-scrolling logo marquee
+   ============================================================ */
+.sds-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.sds-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.sds-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.sds-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: sds-marquee 26s linear infinite;
+}
+
+.sds-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sds-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.sds-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes sds-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sds-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   SHARED "HEAD" LAYOUT — heading beside an illustration
+   ============================================================ */
+.sds-services__head,
+.sds-capabilities__head,
+.sds-process__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.sds-technologies__head,
+.sds-integrations__head {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+
+.sds-services__illo,
+.sds-capabilities__illo,
+.sds-process__illo,
+.sds-technologies__illo,
+.sds-integrations__illo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(15, 36, 56, 0.1));
+}
+
+.sds-services__head .section-heading,
+.sds-capabilities__head .section-heading,
+.sds-process__head .section-heading,
+.sds-technologies__head .section-heading,
+.sds-integrations__head .section-heading {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .sds-services__head,
+  .sds-capabilities__head,
+  .sds-process__head,
+  .sds-technologies__head,
+  .sds-integrations__head {
+    grid-template-columns: 1fr;
+  }
+  .sds-services__illo,
+  .sds-capabilities__illo,
+  .sds-process__illo,
+  .sds-technologies__illo,
+  .sds-integrations__illo {
+    max-width: 200px;
+    order: -1;
+  }
+}
+
+/* ============================================================
+   SALESFORCE DEVELOPMENT SERVICES — 20-item grid
+   ============================================================ */
+.sds-services {
+  background: var(--color-bg-light);
+}
+
+.sds-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.sds-service-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sds-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sds-service-card__icon {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.sds-service-card__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.sds-service-card__illo {
+  width: 100%;
+  max-width: 110px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sds-service-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.sds-service-card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .sds-services__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .sds-services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sds-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SALESFORCE TECHNOLOGIES
+   ============================================================ */
+.sds-technologies__wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.sds-technologies__wall li {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.sds-technologies__wall li:hover {
+  border-color: var(--color-primary-green);
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   INDUSTRIES WE SERVE
+   ============================================================ */
+.sds-industries {
+  background: var(--color-bg-light);
+}
+
+.sds-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.sds-industry-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sds-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.sds-industry-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+}
+
+.sds-industry-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sds-industry-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .sds-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sds-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   DEVELOPMENT CAPABILITIES
+   ============================================================ */
+.sds-capabilities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sds-capability-card {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition);
+}
+
+.sds-capability-card:hover {
+  transform: translateY(-4px);
+}
+
+.sds-capability-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.sds-capability-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sds-capability-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .sds-capabilities__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sds-capabilities__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SALESFORCE INTEGRATION EXPERTISE
+   ============================================================ */
+.sds-integrations {
+  background: var(--color-bg-light);
+}
+
+.sds-integrations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sds-integration-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sds-integration-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.sds-integration-card__icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.sds-integration-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sds-integration-card h3 {
+  font-size: 13.5px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .sds-integrations__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sds-integrations__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   DEVELOPMENT PROCESS
+   ============================================================ */
+.sds-process {
+  background: var(--color-white);
+}
+
+.sds-process__rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 22px;
+}
+
+.sds-step-card {
+  position: relative;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+}
+
+.sds-step-card__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.sds-step-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.sds-step-card p {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+.sds-step-card__arrow {
+  position: absolute;
+  top: 24px;
+  right: -18px;
+  color: var(--color-primary-green);
+  font-size: 14px;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .sds-process__rail { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .sds-process__rail { grid-template-columns: repeat(2, 1fr); }
+  .sds-step-card__arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .sds-process__rail { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY MIRKETA
+   ============================================================ */
+.sds-why {
+  background: var(--color-bg-light);
+}
+
+.sds-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.sds-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sds-why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-light);
+}
+
+.sds-why-card__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.sds-why-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sds-why-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.sds-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .sds-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sds-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SUCCESS METRICS — animated counters
+   ============================================================ */
+.sds-metrics {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 70px 0;
+}
+
+.sds-metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.sds-metric-stat {
+  text-align: center;
+}
+
+.sds-metric-stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sds-metric-stat span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .sds-metrics__grid { grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
+}
+@media (max-width: 560px) {
+  .sds-metrics__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   CASE STUDIES
+   ============================================================ */
+.sds-case-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sds-case-card__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  border-radius: 14px;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+}
+
+.sds-case-card h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.sds-case-card__fields {
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.sds-case-card__fields div {
+  margin-bottom: 12px;
+}
+
+.sds-case-card__fields dt {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 3px;
+}
+
+.sds-case-card__fields dd {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.sds-case-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+
+.sds-case-card__metrics strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--color-dark-navy);
+  margin-bottom: 2px;
+}
+
+.sds-case-card__metrics span {
+  font-size: 10px;
+  color: var(--color-gray-300);
+  line-height: 1.3;
+}
+
+.sds-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .sds-cases__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.sds-faq {
+  background: var(--color-bg-light);
+}
+
+.sds-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.sds-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.sds-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.sds-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.sds-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.sds-faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.sds-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.sds-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sds-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sds-faq-item.is-open .sds-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.sds-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: sds-fade-in 0.3s ease;
+}
+
+@keyframes sds-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sds-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.sds-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.sds-faq__links a {
+  color: var(--sds-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.sds-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.sds-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sds-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.sds-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.sds-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.sds-final-cta__all-services {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.sds-final-cta__all-services:hover {
+  color: var(--color-primary-green);
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .sds-final-cta h2 { font-size: 24px; }
+}

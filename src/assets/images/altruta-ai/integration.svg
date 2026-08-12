@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <g stroke="#21ad65" stroke-width="1.3" opacity="0.5">
+    <path d="M320 240 L180 140 M320 240 L460 140 M320 240 L180 340 M320 240 L460 340" />
+  </g>
+  <path d="M320 300a80 80 0 01-4-160 108 108 0 01206-26 68 68 0 0170 102 74 74 0 01-14 84H332a80 80 0 01-12 0z" fill="#0f2438" />
+  <text x="320" y="252" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="15" font-weight="700" fill="#8fd9b3">Salesforce</text>
+
+  <g>
+    <rect x="120" y="112" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+    <text x="180" y="146" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1d4056">Data Cloud</text>
+  </g>
+  <g>
+    <rect x="400" y="112" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+    <text x="460" y="146" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1d4056">Einstein</text>
+  </g>
+  <g>
+    <rect x="120" y="312" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+    <text x="180" y="346" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1d4056">Agentforce</text>
+  </g>
+  <g>
+    <rect x="400" y="312" width="120" height="56" rx="12" fill="#ffffff" stroke="#21ad65" stroke-width="1.5" />
+    <text x="460" y="340" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11.5" font-weight="600" fill="#1d4056">Prompt Builder</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="20" y="96" width="180" height="10" rx="5" fill="#0f2438" opacity="0.06" />
+  <g stroke="#21ad65" stroke-width="1.4" fill="none">
+    <circle cx="70" cy="58" r="14" fill="#e8f8f0" />
+    <path d="M52 96c2-14 10-20 18-20s16 6 18 20" />
+  </g>
+  <g stroke="#3a8ee0" stroke-width="1.4" fill="none">
+    <circle cx="110" cy="46" r="16" fill="#eaf2fb" />
+    <path d="M88 96c2-16 12-24 22-24s20 8 22 24" />
+  </g>
+  <g stroke="#0f2438" stroke-width="1.4" fill="none">
+    <circle cx="152" cy="58" r="14" fill="#eef1f5" />
+    <path d="M134 96c2-14 10-20 18-20s16 6 18 20" />
+  </g>
+  <rect x="88" y="16" width="44" height="22" rx="6" fill="#f8f8fd" stroke="#21ad65" stroke-opacity="0.35" />
+  <path d="M96 27l4 4 8-9" stroke="#21ad65" stroke-width="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  <text x="110" y="122" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#5a6a7a" text-anchor="middle">Workforce headcount: 2,480</text>
+</svg>

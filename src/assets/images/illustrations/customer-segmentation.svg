@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <circle cx="88" cy="80" r="50" fill="#e8f8f0" fill-opacity="0.6" stroke="#21ad65" stroke-width="1.4" />
+  <circle cx="132" cy="80" r="50" fill="#eaf2fb" fill-opacity="0.6" stroke="#3a8ee0" stroke-width="1.4" />
+  <text x="70" y="84" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#21ad65" font-weight="700" text-anchor="middle">VIP</text>
+  <text x="150" y="84" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#3a8ee0" font-weight="700" text-anchor="middle">New</text>
+  <text x="110" y="84" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" font-weight="700" text-anchor="middle">Both</text>
+  <g fill="#0f2438" opacity="0.7">
+    <circle cx="70" cy="60" r="2.5" /><circle cx="60" cy="90" r="2.5" /><circle cx="95" cy="100" r="2.5" />
+    <circle cx="150" cy="60" r="2.5" /><circle cx="160" cy="95" r="2.5" /><circle cx="125" cy="55" r="2.5" />
+  </g>
+</svg>

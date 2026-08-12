@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1000" viewBox="0 0 1920 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="scdBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071a2e" />
+      <stop offset="55%" stop-color="#0d2c46" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="scdGlowGreen" cx="0.76" cy="0.26" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="scdGlowBlue" cx="0.16" cy="0.8" r="0.5">
+      <stop offset="0%" stop-color="#3a8ee0" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#3a8ee0" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1000" fill="url(#scdBg)" />
+  <rect width="1920" height="1000" fill="url(#scdGlowGreen)" />
+  <rect width="1920" height="1000" fill="url(#scdGlowBlue)" />
+
+  <g stroke="#ffffff" stroke-opacity="0.035" stroke-width="1">
+    <path d="M0 280H1920 M0 540H1920 M0 800H1920" />
+    <path d="M480 0V1000 M960 0V1000 M1440 0V1000" />
+  </g>
+
+  <!-- network of connected cloud nodes, representing the multi-cloud ecosystem -->
+  <g stroke="#21ad65" stroke-width="1.3" opacity="0.45" stroke-dasharray="3 6">
+    <path d="M1180 220 L1400 340 L1620 260 M1400 340 L1360 560 M1180 220 L980 380 M980 380 L1360 560" />
+  </g>
+
+  <!-- glassmorphic cloud glyphs at each node -->
+  <g fill="#0d2848" stroke="#3a8ee0" stroke-width="1.3" opacity="0.9">
+    <path d="M1140 200a30 30 0 01-3-60 40 40 0 0179-11 25 25 0 0126 36 28 28 0 01-7 35h-92a30 30 0 01-3 0z" />
+    <path d="M1580 244a26 26 0 01-3-52 35 35 0 0169-9 22 22 0 0123 31 24 24 0 01-6 30h-80a26 26 0 01-3 0z" />
+    <path d="M1330 578a28 28 0 01-3-56 38 38 0 0174-10 24 24 0 0125 34 27 27 0 01-7 32h-86a28 28 0 01-3 0z" />
+    <path d="M950 400a24 24 0 01-3-48 32 32 0 0163-8 20 20 0 0121 29 22 22 0 01-6 27h-72a24 24 0 01-3 0z" />
+  </g>
+  <g fill="#21ad65" opacity="0.85">
+    <path d="M1128 172l6 6 12-14" stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M1568 216l5 5 10-12" stroke="#21ad65" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M1318 550l5 5 11-13" stroke="#21ad65" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- floating CRM dashboard cards -->
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2" opacity="0.85">
+    <rect x="1140" y="620" width="160" height="110" rx="12" />
+  </g>
+  <g stroke="#9fd6ff" stroke-width="1" opacity="0.55">
+    <path d="M1162 646h70M1162 664h110M1162 682h50" />
+  </g>
+  <g fill="#21ad65" opacity="0.85">
+    <rect x="1162" y="700" width="8" height="18" />
+    <rect x="1176" y="690" width="8" height="28" />
+    <rect x="1190" y="704" width="8" height="14" />
+    <rect x="1204" y="682" width="8" height="36" />
+  </g>
+
+  <!-- mobile CRM silhouette -->
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.3" opacity="0.85">
+    <rect x="90" y="380" width="110" height="200" rx="16" />
+  </g>
+  <g stroke="#9fd6ff" stroke-width="1" opacity="0.5">
+    <path d="M108 416h74M108 434h50M108 452h60" />
+    <rect x="108" y="490" width="74" height="46" rx="6" fill="none" stroke="#21ad65" />
+  </g>
+
+  <!-- soft floating accent dots -->
+  <g fill="#3a8ee0" opacity="0.5">
+    <circle cx="1780" cy="700" r="3.5" />
+    <circle cx="420" cy="180" r="3" />
+    <circle cx="300" cy="900" r="3.5" />
+    <circle cx="1850" cy="150" r="3" />
+  </g>
+</svg>

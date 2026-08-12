@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="dcBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#04101c" />
+      <stop offset="55%" stop-color="#082238" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="dcGlow" cx="0.82" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#dcBg)" />
+  <rect width="1600" height="900" fill="url(#dcGlow)" />
+
+  <!-- converging diagonal data-stream lines toward the Data Cloud hub -->
+  <g stroke="#21ad65" stroke-width="1.2" opacity="0.5">
+    <path d="M0 120 L1120 430" />
+    <path d="M0 280 L1120 450" />
+    <path d="M0 440 L1120 470" />
+    <path d="M0 600 L1120 490" />
+    <path d="M0 760 L1120 510" />
+  </g>
+  <g stroke="#4a9fe0" stroke-width="1" opacity="0.35" stroke-dasharray="2 5">
+    <path d="M0 200 L1120 435" />
+    <path d="M0 360 L1120 460" />
+    <path d="M0 520 L1120 480" />
+    <path d="M0 680 L1120 500" />
+  </g>
+
+  <!-- source system nodes, left edge -->
+  <g fill="#0d2233" stroke="#8fd9b3" stroke-width="1.6">
+    <rect x="-14" y="104" width="34" height="32" rx="6" />
+    <rect x="-14" y="264" width="34" height="32" rx="6" />
+    <rect x="-14" y="424" width="34" height="32" rx="6" />
+    <rect x="-14" y="584" width="34" height="32" rx="6" />
+    <rect x="-14" y="744" width="34" height="32" rx="6" />
+  </g>
+
+  <!-- outbound activation lines from the hub, right side -->
+  <g stroke="#21ad65" stroke-width="1.2" opacity="0.55">
+    <path d="M1120 470 L1560 260" />
+    <path d="M1120 480 L1560 400" />
+    <path d="M1120 490 L1560 540" />
+    <path d="M1120 500 L1560 680" />
+  </g>
+  <g fill="#0d2233" stroke="#8fd9b3" stroke-width="1.6">
+    <rect x="1546" y="244" width="46" height="32" rx="6" />
+    <rect x="1546" y="384" width="46" height="32" rx="6" />
+    <rect x="1546" y="524" width="46" height="32" rx="6" />
+    <rect x="1546" y="664" width="46" height="32" rx="6" />
+  </g>
+
+  <!-- central Data Cloud hub -->
+  <g transform="translate(1120,470)">
+    <circle r="100" fill="none" stroke="#21ad65" stroke-opacity="0.18" stroke-width="1.4" />
+    <circle r="66" fill="none" stroke="#21ad65" stroke-opacity="0.3" stroke-width="1.4" />
+    <rect x="-46" y="-34" width="92" height="68" rx="16" fill="#0d2233" stroke="#21ad65" stroke-width="2.4" />
+    <path d="M-24 -4a12 12 0 0110-19 15 15 0 0128 6 11 11 0 01-2 22h-34a10 10 0 01-2-9z" fill="none" stroke="#21ad65" stroke-width="2" stroke-linejoin="round" />
+    <circle cx="0" cy="18" r="2.4" fill="#21ad65" />
+  </g>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <path d="M0 220H1600 M0 440H1600 M0 660H1600" />
+    <path d="M400 0V900 M800 0V900 M1200 0V900" />
+  </g>
+
+  <g fill="#21ad65" opacity="0.5">
+    <circle cx="160" cy="150" r="3.5" />
+    <circle cx="260" cy="700" r="3" />
+    <circle cx="120" cy="640" r="3" />
+  </g>
+</svg>

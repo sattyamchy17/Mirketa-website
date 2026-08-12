@@ -1,0 +1,78 @@
+/* ============================================================
+   TIMELINE — vertical connected-spine process presentation.
+   ============================================================ */
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 23px;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 36px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__marker {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline__num {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+}
+
+.timeline__content {
+  padding-top: 8px;
+}
+
+.timeline__title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  color: var(--color-dark-navy);
+  margin: 0 0 8px;
+}
+
+.timeline__description {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--color-text);
+  margin: 0;
+  max-width: 56ch;
+}
+
+@media (max-width: 560px) {
+  .timeline::before { left: 19px; }
+  .timeline__marker { width: 40px; height: 40px; }
+  .timeline__item { gap: 16px; }
+}

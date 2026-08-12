@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="aeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1826" />
+      <stop offset="50%" stop-color="#0d2a3d" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+    <radialGradient id="aeGlow1" cx="0.85" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#aeBg)" />
+  <rect width="1600" height="900" fill="url(#aeGlow1)" />
+
+  <!-- orchestration node graph, right-hand side, dense enterprise-system feel -->
+  <g stroke="#21ad65" stroke-width="1.2" opacity="0.55">
+    <path d="M980 200 L1120 260 L1260 190 L1400 260" />
+    <path d="M1120 260 L1120 400" />
+    <path d="M1260 190 L1260 340 L1400 400" />
+    <path d="M1120 400 L1260 460 L1420 420" />
+    <path d="M980 200 L980 420 L1120 400" />
+  </g>
+  <g fill="#21ad65">
+    <circle cx="980" cy="200" r="6" />
+    <circle cx="1120" cy="260" r="8" />
+    <circle cx="1260" cy="190" r="5" />
+    <circle cx="1400" cy="260" r="5" />
+    <circle cx="1120" cy="400" r="7" />
+    <circle cx="1260" cy="340" r="5" />
+    <circle cx="1400" cy="400" r="5" />
+    <circle cx="980" cy="420" r="5" />
+    <circle cx="1260" cy="460" r="7" />
+    <circle cx="1420" cy="420" r="5" />
+  </g>
+
+  <!-- central "hub" chip representing the orchestration layer -->
+  <rect x="1085" y="365" width="70" height="70" rx="16" fill="#0f2438" stroke="#21ad65" stroke-width="2" opacity="0.9" />
+  <path d="M1105 400h30M1120 385v30" stroke="#21ad65" stroke-width="2.4" stroke-linecap="round" />
+
+  <!-- subtle grid mesh across whole canvas -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <path d="M0 200 H1600 M0 400 H1600 M0 600 H1600" />
+    <path d="M300 0 V900 M600 0 V900 M900 0 V900 M1200 0 V900" />
+  </g>
+
+  <!-- soft floating accent dots, left side -->
+  <g fill="#21ad65" opacity="0.7">
+    <circle cx="140" cy="150" r="4" />
+    <circle cx="220" cy="620" r="5" />
+    <circle cx="90" cy="700" r="3" />
+    <circle cx="300" cy="760" r="4" />
+  </g>
+</svg>

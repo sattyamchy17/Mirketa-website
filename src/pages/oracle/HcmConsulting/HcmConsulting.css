@@ -1,0 +1,1068 @@
+/* ============================================================
+   ORACLE HCM CONSULTING & DEVELOPMENT SERVICES PAGE (L3)
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*) plus the
+   shared L3SideNav component styles. The outer sidebar+content
+   chrome intentionally matches ErpConsulting.css for
+   cross-page consistency across Fusion Implementation L3 pages;
+   inner section treatments are deliberately varied.
+   ============================================================ */
+
+.oracle-hcm-consulting {
+  --ohc-hover-navy: #1d4056;
+  --ohc-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.ohc-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.ohc-section-intro {
+  color: var(--color-gray-300);
+  font-size: 13.5px;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 0 24px;
+}
+
+.ohc-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ohc-btn.btn-primary:hover {
+  background: var(--ohc-hover-navy);
+}
+
+/* ============================================================
+   STICKY CTA
+   ============================================================ */
+.ohc-sticky-cta {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.ohc-sticky-cta.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ohc-sticky-cta .btn {
+  box-shadow: var(--shadow-medium);
+}
+
+@media (max-width: 1024px) {
+  .ohc-sticky-cta { display: none; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.ohc-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.ohc-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.ohc-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.ohc-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.ohc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.ohc-badge__spark {
+  color: var(--color-primary-green);
+}
+
+.ohc-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.ohc-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.ohc-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ohc-hero__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ohc-hero__metrics li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ohc-hero__metrics li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.ohc-hero__metrics li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ohc-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .ohc-hero__inner { grid-template-columns: 1fr; }
+  .ohc-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .ohc-hero { padding-top: 120px; padding-bottom: 60px; }
+  .ohc-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   TRUSTED BY GLOBAL ENTERPRISES
+   ============================================================ */
+.ohc-trusted {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 34px 0;
+}
+
+.ohc-trusted__label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 22px;
+}
+
+.ohc-trusted__track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ohc-trusted__marquee {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: ohc-marquee 26s linear infinite;
+}
+
+.ohc-trusted__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ohc-trusted__badge img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.ohc-trusted__badge span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+@keyframes ohc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ohc-trusted__marquee { animation: none; }
+}
+
+/* ============================================================
+   L3 LAYOUT — sidebar + content column
+   ============================================================ */
+.ohc-l3-layout {
+  background: var(--color-bg-light);
+  padding: 64px 0 80px;
+}
+
+.ohc-l3-layout__grid {
+  display: grid;
+  grid-template-columns: 264px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ohc-l3-layout__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ohc-l3-layout__content > section {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 24px;
+}
+
+.ohc-l3-layout__content > section:last-child {
+  margin-bottom: 0;
+}
+
+.ohc-l3-layout__content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .ohc-l3-layout { padding: 40px 0 56px; }
+  .ohc-l3-layout__grid { grid-template-columns: 1fr; gap: 20px; }
+  .ohc-l3-layout__content > section { padding: 26px 22px; }
+}
+
+/* ============================================================
+   ORACLE HCM CONSULTING SERVICES — 2-col icon card grid
+   ============================================================ */
+.ohc-services__head {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ohc-services__illo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+@media (max-width: 700px) {
+  .ohc-services__head { grid-template-columns: 1fr; }
+  .ohc-services__illo { max-width: 200px; order: -1; margin-bottom: 16px; }
+}
+
+.ohc-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.ohc-service-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ohc-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.ohc-service-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.ohc-service-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.ohc-service-card h3 {
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+
+.ohc-service-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .ohc-services__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ORACLE HCM MODULES — dense 3-col compact tile grid
+   ============================================================ */
+.ohc-modules {
+  background: var(--color-bg-light) !important;
+}
+
+.ohc-modules__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ohc-module-tile {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px 10px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ohc-module-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-light);
+}
+
+.ohc-module-tile span {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 8px;
+}
+
+.ohc-module-tile span svg {
+  width: 15px;
+  height: 15px;
+}
+
+.ohc-module-tile h3 {
+  font-size: 11.5px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .ohc-modules__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   HR TRANSFORMATION BENEFITS — 2-col benefit tiles
+   ============================================================ */
+.ohc-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.ohc-benefit-tile {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+}
+
+.ohc-benefit-tile span[aria-hidden] {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.12);
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.ohc-benefit-tile span[aria-hidden] svg {
+  width: 13px;
+  height: 13px;
+}
+
+.ohc-benefit-tile h3 {
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.ohc-benefit-tile p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .ohc-benefits__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ORACLE HCM IMPLEMENTATION METHODOLOGY — horizontal scroll strip
+   ============================================================ */
+.ohc-methodology {
+  background: var(--color-bg-light) !important;
+}
+
+.ohc-methodology__strip {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ohc-methodology__stage {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ohc-methodology__card {
+  width: 200px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  flex-shrink: 0;
+}
+
+.ohc-methodology__num {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.ohc-methodology__card h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.ohc-methodology__card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.ohc-methodology__arrow {
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+  color: var(--color-primary-green);
+  font-size: 15px;
+}
+
+/* ============================================================
+   AI-POWERED HCM — featured pair + compact list
+   ============================================================ */
+.ohc-ai__featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.ohc-ai-featured-card {
+  background: linear-gradient(135deg, rgba(33, 173, 101, 0.1), rgba(58, 142, 224, 0.08));
+  border: 1px solid rgba(33, 173, 101, 0.25);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+}
+
+.ohc-ai-featured-card span {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.ohc-ai-featured-card span svg {
+  width: 19px;
+  height: 19px;
+}
+
+.ohc-ai-featured-card h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.ohc-ai-featured-card p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ohc-ai__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ohc-ai__list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.ohc-ai__list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.ohc-ai__list-icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+}
+
+.ohc-ai__list-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.ohc-ai__list h3 {
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+.ohc-ai__list p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .ohc-ai__featured { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   ORACLE HCM INTEGRATION SERVICES — pill row
+   ============================================================ */
+.ohc-integrations__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ohc-integration-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 9px 16px 9px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ohc-integration-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.ohc-integration-pill span {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.ohc-integration-pill span svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ============================================================
+   WHY CHOOSE MIRKETA — left-accent-bar cards
+   ============================================================ */
+.ohc-why {
+  background: var(--color-bg-light) !important;
+}
+
+.ohc-why__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.ohc-why-card {
+  display: flex;
+  gap: 14px;
+  background: var(--color-white);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 18px 18px;
+  box-shadow: var(--shadow-light);
+}
+
+.ohc-why-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+}
+
+.ohc-why-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ohc-why-card h3 {
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.ohc-why-card p {
+  font-size: 11.5px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .ohc-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CUSTOMER SUCCESS METRICS — inset dark horizontal stat row
+   ============================================================ */
+.ohc-metrics {
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+}
+
+.ohc-metrics__card {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  border-radius: var(--radius);
+  padding: 40px;
+}
+
+.ohc-metrics__card .ohc-eyebrow {
+  color: #8fe3b5;
+}
+
+.ohc-metrics__card h2 {
+  color: #fff;
+}
+
+.ohc-metrics__card .ohc-section-intro {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.ohc-metrics__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 32px;
+  margin-top: 8px;
+}
+
+.ohc-metric-stat {
+  text-align: left;
+}
+
+.ohc-metric-stat strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  color: var(--color-primary-green);
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ohc-metric-stat span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.4;
+}
+
+/* ============================================================
+   CASE STUDY — full-width two-column (narrative timeline + ROI grid)
+   ============================================================ */
+.ohc-case {
+  background: var(--color-white);
+}
+
+.ohc-case__industry {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-gray-300);
+  margin-top: 8px;
+}
+
+.ohc-case__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ohc-case__narrative {
+  display: flex;
+  flex-direction: column;
+}
+
+.ohc-case__field {
+  display: flex;
+  gap: 18px;
+}
+
+.ohc-case__field-marker {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ohc-case__field-marker span:first-child {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.ohc-case__field-line {
+  width: 2px;
+  flex-grow: 1;
+  min-height: 26px;
+  background: var(--color-border);
+  margin: 4px 0;
+}
+
+.ohc-case__field {
+  padding-bottom: 22px;
+}
+
+.ohc-case__field-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin: 2px 0 6px;
+}
+
+.ohc-case__field p:not(.ohc-case__field-label) {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ohc-case__roi {
+  background: linear-gradient(150deg, #081b30 0%, var(--color-dark-navy) 100%);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+
+.ohc-case__roi-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8fe3b5;
+  margin: 0 0 20px;
+}
+
+.ohc-case__roi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ohc-case__roi-tile strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ohc-case__roi-tile span {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 900px) {
+  .ohc-case__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.ohc-faq {
+  background: var(--color-bg-light);
+}
+
+.ohc-faq__search-wrap {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.ohc-faq__search {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.ohc-faq__search:focus {
+  border-color: var(--color-primary-green);
+  box-shadow: 0 0 0 3px rgba(33, 173, 101, 0.15);
+}
+
+.ohc-faq__list {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.ohc-faq__empty {
+  text-align: center;
+  color: var(--color-gray-300);
+  font-size: 14px;
+  padding: 30px 0;
+}
+
+.ohc-faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.ohc-faq-item.is-open {
+  border-color: var(--color-primary-green);
+}
+
+.ohc-faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ohc-faq-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ohc-faq-item.is-open .ohc-faq-item__icon {
+  background: var(--color-primary-green);
+  color: #fff;
+}
+
+.ohc-faq-item__answer {
+  padding: 0 22px 22px;
+  animation: ohc-fade-in 0.3s ease;
+}
+
+@keyframes ohc-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ohc-faq-item__answer p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+}
+
+.ohc-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.ohc-faq__links a {
+  color: var(--ohc-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.ohc-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.ohc-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ohc-final-cta h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.ohc-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.ohc-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   RESPONSIVE — global section-level adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .ohc-final-cta h2 { font-size: 24px; }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <text x="30" y="34" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#0f2438" opacity="0.7">MIGRATION WAVES</text>
+  <rect x="28" y="46" width="164" height="18" rx="5" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.1" />
+  <text x="36" y="58" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438">Wave 1 — Dev/Test</text>
+  <text x="176" y="58" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#21ad65" font-weight="700">Done</text>
+  <rect x="28" y="68" width="164" height="18" rx="5" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.1" />
+  <text x="36" y="80" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438">Wave 2 — Core apps</text>
+  <text x="164" y="80" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#3a8ee0" font-weight="700">Active</text>
+  <rect x="28" y="90" width="164" height="18" rx="5" fill="#ffffff" stroke="#0f2438" stroke-opacity="0.2" stroke-width="1.1" />
+  <text x="36" y="102" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.6">Wave 3 — Cutover</text>
+  <text x="168" y="102" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#0f2438" opacity="0.5">Planned</text>
+  <path d="M40 128l4-10 6 6 8-14 6 4 8-10" stroke="#3a8ee0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <text x="130" y="128" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#0f2438" opacity="0.6">Zero-downtime cutover</text>
+</svg>

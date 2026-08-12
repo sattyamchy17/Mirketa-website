@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <rect x="14" y="14" width="192" height="132" rx="14" fill="#f0faf5" stroke="#21ad65" stroke-opacity="0.25" />
+  <rect x="30" y="30" width="52" height="34" rx="8" fill="#e8f8f0" stroke="#21ad65" stroke-width="1.2" />
+  <text x="56" y="52" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="700" fill="#21ad65" text-anchor="middle">$4.2M</text>
+  <rect x="92" y="30" width="52" height="34" rx="8" fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2" />
+  <text x="118" y="52" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="700" fill="#3a8ee0" text-anchor="middle">98%</text>
+  <rect x="154" y="30" width="52" height="34" rx="8" fill="#eef1f5" stroke="#0f2438" stroke-width="1.2" />
+  <text x="180" y="52" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="700" fill="#0f2438" text-anchor="middle">2.4d</text>
+  <g stroke="#0f2438" stroke-opacity="0.15">
+    <path d="M30 96h176M30 112h176M30 128h176" />
+  </g>
+  <g fill="#21ad65" opacity="0.85">
+    <rect x="40" y="108" width="10" height="20" rx="2" />
+    <rect x="58" y="96" width="10" height="32" rx="2" />
+    <rect x="76" y="102" width="10" height="26" rx="2" />
+    <rect x="94" y="88" width="10" height="40" rx="2" />
+  </g>
+  <path d="M112 118c14-18 26-22 40-8s28 6 42-10 24-6 24-6" stroke="#3a8ee0" stroke-width="2" stroke-linecap="round" />
+</svg>

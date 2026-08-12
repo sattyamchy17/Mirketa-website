@@ -1,0 +1,447 @@
+/* ============================================================
+   CAREERS HUB PAGE
+   Reuses global tokens/utilities (.container, .section,
+   .section-heading, .btn*) plus the shared HeroVisual component.
+   ============================================================ */
+
+.careers-page {
+  overflow-x: clip;
+}
+
+.careers-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+/* ---------- Subtle entrance animations ---------- */
+@keyframes careers-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.careers-fade-up {
+  animation: careers-fade-up 0.8s ease both;
+}
+
+.careers-fade-up--delay-1 {
+  animation-delay: 0.15s;
+}
+
+.careers-reveal,
+.careers-reveal-left,
+.careers-reveal-right {
+  animation: careers-fade-up 0.7s ease both;
+}
+
+.careers-reveal-stagger > * {
+  animation: careers-fade-up 0.6s ease both;
+}
+
+.careers-reveal-stagger > *:nth-child(2) { animation-delay: 0.06s; }
+.careers-reveal-stagger > *:nth-child(3) { animation-delay: 0.12s; }
+.careers-reveal-stagger > *:nth-child(4) { animation-delay: 0.18s; }
+.careers-reveal-stagger > *:nth-child(5) { animation-delay: 0.24s; }
+.careers-reveal-stagger > *:nth-child(6) { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .careers-fade-up,
+  .careers-reveal,
+  .careers-reveal-left,
+  .careers-reveal-right,
+  .careers-reveal-stagger > * {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.careers-hero {
+  position: relative;
+  background-color: #0a1f34;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+  padding-bottom: 90px;
+}
+
+.careers-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(10, 31, 52, 0.94) 0%, rgba(10, 31, 52, 0.72) 55%, rgba(10, 31, 52, 0.4) 100%);
+}
+
+.careers-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.careers-hero__text h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 620px;
+}
+
+.careers-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16.5px;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.careers-hero__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   WHY JOIN — bento grid (not a generic 3-card layout)
+   ============================================================ */
+.careers-why {
+  background: var(--color-bg-light);
+}
+
+.careers-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 20px;
+  margin-top: 44px;
+}
+
+.careers-bento-tile {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  grid-column: span 2;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.careers-bento-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary-green);
+}
+
+.careers-bento-tile--large {
+  grid-column: span 4;
+  grid-row: span 1;
+  background: linear-gradient(160deg, var(--color-dark-navy) 0%, #16324a 100%);
+  border-color: transparent;
+}
+
+.careers-bento-tile--large h3,
+.careers-bento-tile--large p {
+  color: #fff;
+}
+
+.careers-bento-tile--large .careers-bento-tile__icon {
+  color: var(--color-primary-green);
+}
+
+.careers-bento-tile--large p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.careers-bento-tile__icon {
+  width: 30px;
+  height: 30px;
+  color: var(--color-primary-green);
+}
+
+.careers-bento-tile__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.careers-bento-tile h3 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.careers-bento-tile p {
+  font-size: 13.5px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ============================================================
+   CULTURE — split content layout
+   ============================================================ */
+.careers-culture__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.careers-culture__grid p {
+  color: var(--color-text);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.careers-culture__pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.careers-culture-pillar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  padding: 18px 20px;
+}
+
+.careers-culture-pillar span {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary-green);
+}
+
+.careers-culture-pillar span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.careers-culture-pillar p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+/* ============================================================
+   JOB OPENINGS
+   ============================================================ */
+.careers-jobs {
+  background: var(--color-dark-navy);
+}
+
+.careers-jobs .section-heading h2 {
+  color: #fff;
+}
+
+.careers-jobs .section-heading p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.careers-jobs__empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+}
+
+.careers-jobs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 44px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-primary-green);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.job-card__icon {
+  width: 34px;
+  height: 34px;
+  color: var(--color-primary-green);
+  margin-bottom: 16px;
+}
+
+.job-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.job-card h3 {
+  color: #fff;
+  font-size: 19px;
+  margin-bottom: 16px;
+}
+
+.job-card__meta {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.job-card__meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.job-card__meta li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.job-card__meta li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.job-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary-green);
+  font-weight: 600;
+  font-size: 14px;
+  transition: gap var(--transition);
+}
+
+.job-card__cta span {
+  width: 16px;
+  height: 16px;
+}
+
+.job-card__cta span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.job-card:hover .job-card__cta {
+  gap: 10px;
+}
+
+/* ============================================================
+   CAREER GROWTH
+   ============================================================ */
+.careers-growth__list {
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.careers-growth__list li {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: var(--radius-btn);
+  padding: 18px 20px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.careers-final-cta {
+  background: linear-gradient(160deg, var(--color-dark-navy) 0%, #0d3b3d 100%);
+  padding: var(--section-padding-y) 0;
+}
+
+.careers-final-cta__inner {
+  text-align: center;
+  max-width: 640px;
+}
+
+.careers-final-cta h2 {
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.careers-final-cta p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 28px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .careers-hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .careers-hero__text h1,
+  .careers-hero__description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .careers-hero__ctas {
+    justify-content: center;
+  }
+  .careers-hero__visual {
+    max-width: 480px;
+    margin: 32px auto 0;
+  }
+  .careers-bento-tile {
+    grid-column: span 4;
+  }
+  .careers-culture__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-hero {
+    padding-top: 130px;
+  }
+  .careers-hero__text h1 {
+    font-size: 30px;
+  }
+  .careers-bento {
+    grid-template-columns: 1fr;
+  }
+  .careers-bento-tile,
+  .careers-bento-tile--large {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .careers-hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

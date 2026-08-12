@@ -1,0 +1,322 @@
+/* ============================================================
+   JOB DETAILS — reusable template shared by every job page.
+   Reuses global tokens/utilities (.container, .btn*) plus the
+   shared Breadcrumb and CareerApplicationForm components.
+   ============================================================ */
+
+.job-details {
+  overflow-x: clip;
+}
+
+/* ---------- Subtle entrance animation ---------- */
+@keyframes job-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.job-fade-up {
+  animation: job-fade-up 0.7s ease both;
+}
+
+.job-fade-up--delay-1 {
+  animation-delay: 0.12s;
+}
+
+.job-reveal {
+  animation: job-fade-up 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-fade-up,
+  .job-reveal {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   JOB HERO
+   ============================================================ */
+.job-hero {
+  position: relative;
+  background-color: #0f2438;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 140px;
+  padding-bottom: 64px;
+}
+
+.job-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(15, 36, 56, 0.94) 0%, rgba(15, 36, 56, 0.75) 55%, rgba(15, 36, 56, 0.5) 100%);
+}
+
+.job-hero__breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.job-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.job-hero__text h1 {
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.job-hero__summary {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  max-width: 560px;
+}
+
+.job-hero__panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.job-hero__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 0 22px;
+}
+
+.job-hero__facts dt {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 4px;
+}
+
+.job-hero__facts dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.job-hero__apply {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   BODY SECTIONS
+   ============================================================ */
+.job-details__body {
+  padding: 72px 0 0;
+  max-width: 920px;
+}
+
+.job-section {
+  padding-bottom: 48px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.job-section:last-child {
+  border-bottom: none;
+}
+
+.job-section h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.job-section p {
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.job-section--highlight {
+  background: linear-gradient(160deg, rgba(33, 173, 101, 0.06) 0%, rgba(29, 64, 86, 0.05) 100%);
+  border: 1px solid rgba(33, 173, 101, 0.18);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.job-checklist,
+.job-grid-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.job-grid-list {
+  grid-template-columns: 1fr 1fr;
+}
+
+.job-checklist li,
+.job-grid-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.job-checklist li span,
+.job-grid-list li span {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--color-primary-green);
+}
+
+.job-checklist li span svg,
+.job-grid-list li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Job Information ---------- */
+.job-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.job-info-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  padding: 18px 20px;
+}
+
+.job-info-card h3 {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+  margin-bottom: 6px;
+}
+
+.job-info-card p {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--color-dark-navy);
+  margin: 0;
+}
+
+.job-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fff8e6;
+  border: 1px solid #f0d489;
+  border-radius: var(--radius-btn);
+  padding: 16px 18px;
+}
+
+.job-notice__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #a67c00;
+  margin-top: 1px;
+}
+
+.job-notice__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.job-notice p {
+  font-size: 13.5px;
+  color: #7a5c00;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Apply banner ---------- */
+.job-apply-banner {
+  text-align: center;
+  background: var(--color-dark-navy);
+  border-radius: var(--radius);
+  padding: 48px 32px;
+  margin-bottom: 64px !important;
+  border-bottom: none !important;
+}
+
+.job-apply-banner h2 {
+  color: #fff;
+}
+
+.job-apply-banner p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 24px;
+}
+
+.job-details__back {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 40px 64px;
+}
+
+.job-details__back a {
+  color: var(--color-primary-green);
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .job-hero__inner {
+    grid-template-columns: 1fr;
+  }
+  .job-hero__panel {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-hero {
+    padding-top: 120px;
+  }
+  .job-hero__text h1 {
+    font-size: 28px;
+  }
+  .job-info-grid,
+  .job-grid-list {
+    grid-template-columns: 1fr;
+  }
+  .job-details__body {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-hero__panel {
+    max-width: none;
+  }
+  .job-section--highlight,
+  .job-apply-banner {
+    padding: 24px 20px;
+  }
+}

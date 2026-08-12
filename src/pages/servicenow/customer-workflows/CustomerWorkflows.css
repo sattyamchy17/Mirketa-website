@@ -1,0 +1,860 @@
+/* ============================================================
+   SERVICENOW CUSTOMER WORKFLOWS PAGE (L3)
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .section, .section-heading, .btn*) plus shared
+   components (Breadcrumb, StickyCta, TrustedByMarquee,
+   FaqAccordion). Unique layout flavor: full-width alternating
+   bands for Features, vertical connected stepper for Process.
+   ============================================================ */
+
+.customer-workflows {
+  --sncw-hover-navy: #1d4056;
+  --sncw-blue: #3a8ee0;
+  overflow-x: clip;
+}
+
+.sncw-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.sncw-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.sncw-btn.btn-primary:hover {
+  background: var(--sncw-hover-navy);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.sncw-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.sncw-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.68) 55%, rgba(8, 27, 48, 0.34) 100%);
+}
+
+.sncw-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.sncw-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.sncw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.sncw-badge__spark {
+  color: var(--color-primary-green);
+}
+
+.sncw-hero h1 {
+  color: #fff;
+  font-size: 34px;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.sncw-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  margin-bottom: 26px;
+  max-width: 580px;
+}
+
+.sncw-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.sncw-hero__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sncw-hero__metrics li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sncw-hero__metrics li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-primary-green);
+}
+
+.sncw-hero__metrics li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sncw-hero__visual {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .sncw-hero__inner { grid-template-columns: 1fr; }
+  .sncw-hero__visual { max-width: 480px; margin: 32px auto 0; }
+}
+@media (max-width: 768px) {
+  .sncw-hero { padding-top: 120px; padding-bottom: 60px; }
+  .sncw-hero h1 { font-size: 26px; }
+}
+
+/* ============================================================
+   OVERVIEW
+   ============================================================ */
+.sncw-overview {
+  background: var(--color-white);
+}
+
+.sncw-overview__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.sncw-overview__text {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.sncw-overview__links {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.sncw-overview__links a {
+  color: var(--sncw-blue);
+  font-weight: 600;
+}
+
+.sncw-overview__callout {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.sncw-overview__illo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+}
+
+.sncw-overview__callout h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.sncw-overview__callout ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sncw-overview__callout li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-dark-navy);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.sncw-overview__callout li span {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary-green);
+}
+
+.sncw-overview__callout li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .sncw-overview__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CHALLENGES
+   ============================================================ */
+.sncw-challenges {
+  background: var(--color-bg-light);
+}
+
+.sncw-challenges__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.sncw-challenge-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sncw-challenge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.sncw-challenge-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: #94a3af;
+  margin-bottom: 14px;
+}
+
+.sncw-challenge-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.sncw-challenge-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.sncw-challenge-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .sncw-challenges__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sncw-challenges__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SOLUTIONS
+   ============================================================ */
+.sncw-solutions {
+  background: var(--color-white);
+}
+
+.sncw-solutions__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.sncw-solution-card {
+  background: rgba(33, 173, 101, 0.06);
+  border: 1px solid rgba(33, 173, 101, 0.2);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition);
+}
+
+.sncw-solution-card:hover {
+  transform: translateY(-4px);
+}
+
+.sncw-solution-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.sncw-solution-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.sncw-solution-card h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.sncw-solution-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .sncw-solutions__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sncw-solutions__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FEATURES — full-width alternating bands
+   ============================================================ */
+.sncw-features {
+  background: var(--color-bg-light);
+  padding-bottom: 0;
+}
+
+.sncw-bands {
+  margin-top: 16px;
+}
+
+.sncw-band {
+  padding: 56px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.sncw-band:nth-child(even) {
+  background: var(--color-white);
+}
+
+.sncw-band__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.sncw-band--reverse .sncw-band__inner {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.sncw-band--reverse .sncw-band__content {
+  order: 2;
+}
+
+.sncw-band--reverse .sncw-band__panel {
+  order: 1;
+}
+
+.sncw-band__icon {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  margin-bottom: 16px;
+}
+
+.sncw-band__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.sncw-band__content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.sncw-band__content p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.sncw-band__points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sncw-band__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  color: var(--color-dark-navy);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.sncw-band__points li span {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  color: var(--color-primary-green);
+}
+
+.sncw-band__points li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sncw-band__panel {
+  display: flex;
+  justify-content: center;
+}
+
+.sncw-band__panel-shape {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1.3 / 1;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(33, 173, 101, 0.12), rgba(58, 142, 224, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sncw-band__panel-icon {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  color: var(--color-primary-green);
+  opacity: 0.7;
+}
+
+.sncw-band__panel-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .sncw-band__inner,
+  .sncw-band--reverse .sncw-band__inner {
+    grid-template-columns: 1fr;
+  }
+  .sncw-band--reverse .sncw-band__content,
+  .sncw-band--reverse .sncw-band__panel {
+    order: initial;
+  }
+  .sncw-band__panel { order: -1; }
+  .sncw-band__panel-shape { max-width: 180px; }
+}
+
+/* ============================================================
+   BENEFITS
+   ============================================================ */
+.sncw-benefits {
+  background: var(--color-white);
+}
+
+.sncw-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.sncw-benefit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+}
+
+.sncw-benefit-item span[aria-hidden] {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(33, 173, 101, 0.12);
+  color: var(--color-primary-green);
+}
+
+.sncw-benefit-item span[aria-hidden] svg {
+  width: 13px;
+  height: 13px;
+}
+
+.sncw-benefit-item h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+}
+
+.sncw-benefit-item p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .sncw-benefits__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   IMPLEMENTATION PROCESS — vertical connected stepper
+   ============================================================ */
+.sncw-process {
+  background: var(--color-bg-light);
+}
+
+.sncw-process__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sncw-process-step {
+  display: flex;
+  gap: 22px;
+}
+
+.sncw-process-step__rail {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sncw-process-step__marker {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sncw-process-step:not(:last-child) .sncw-process-step__rail::after {
+  content: "";
+  width: 2px;
+  flex-grow: 1;
+  min-height: 30px;
+  background: var(--color-border);
+  margin: 4px 0;
+}
+
+.sncw-process-step__content {
+  padding-bottom: 30px;
+}
+
+.sncw-process-step__content h3 {
+  font-size: 16px;
+  margin: 6px 0 6px;
+}
+
+.sncw-process-step__content p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   INDUSTRIES
+   ============================================================ */
+.sncw-industries {
+  background: var(--color-white);
+}
+
+.sncw-industries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.sncw-industry-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sncw-industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.sncw-industry-card__icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  margin-bottom: 12px;
+}
+
+.sncw-industry-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sncw-industry-card h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.sncw-industry-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .sncw-industries__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .sncw-industries__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   WHY MIRKETA
+   ============================================================ */
+.sncw-why {
+  background: var(--color-bg-light);
+}
+
+.sncw-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.sncw-why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sncw-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-light);
+}
+
+.sncw-why-card__icon {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.sncw-why-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.sncw-why-card h4 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.sncw-why-card p {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .sncw-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .sncw-why__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   TECHNOLOGY STACK
+   ============================================================ */
+.sncw-stack {
+  background: var(--color-white);
+}
+
+.sncw-stack__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sncw-stack-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 10px 18px 10px 12px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.sncw-stack-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.sncw-stack-chip__icon {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary-green);
+  flex-shrink: 0;
+}
+
+.sncw-stack-chip__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.sncw-stack-chip__label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.sncw-faq {
+  background: var(--color-bg-light);
+}
+
+.sncw-faq__links {
+  max-width: 840px;
+  margin: 28px auto 0;
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.sncw-faq__links a {
+  color: var(--sncw-blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.sncw-final-cta {
+  background: linear-gradient(120deg, #081b30 0%, var(--color-dark-navy) 100%);
+  padding: 90px 0;
+  text-align: center;
+}
+
+.sncw-final-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sncw-final-cta h2 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.sncw-final-cta p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14.5px;
+  margin-bottom: 30px;
+}
+
+.sncw-final-cta__ctas {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .sncw-final-cta h2 { font-size: 22px; }
+}

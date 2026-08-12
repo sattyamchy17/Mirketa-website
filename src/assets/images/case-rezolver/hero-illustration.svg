@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="440" viewBox="0 0 580 440" fill="none">
+  <defs>
+    <linearGradient id="crCardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#123049" />
+      <stop offset="100%" stop-color="#0c2436" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="572" height="432" rx="22" fill="url(#crCardGrad)" stroke="#21ad65" stroke-opacity="0.35" stroke-width="1.5" />
+
+  <!-- console header -->
+  <circle cx="30" cy="30" r="5" fill="#c96a3c" opacity="0.7" />
+  <circle cx="48" cy="30" r="5" fill="#e0a23f" opacity="0.7" />
+  <circle cx="66" cy="30" r="5" fill="#21ad65" opacity="0.8" />
+  <text x="30" y="62" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#8fd9b3" opacity="0.8">SERVICE CONSOLE · CASE #43821</text>
+  <rect x="440" y="42" width="110" height="22" rx="11" fill="rgba(33,173,101,0.16)" stroke="#21ad65" stroke-width="1" />
+  <text x="495" y="57" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9.5" font-weight="700" fill="#8fe3b5">Precedent Found</text>
+
+  <!-- incoming case summary -->
+  <rect x="30" y="82" width="520" height="60" rx="12" fill="#0f2438" stroke="#1c3a52" stroke-width="1" />
+  <text x="48" y="104" font-family="IBM Plex Sans, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff" opacity="0.85">Intermittent SKU sync error after account migration</text>
+  <rect x="48" y="114" width="300" height="7" rx="3.5" fill="#ffffff" opacity="0.25" />
+  <rect x="48" y="126" width="220" height="7" rx="3.5" fill="#ffffff" opacity="0.2" />
+
+  <!-- AI resolution guidance panel -->
+  <rect x="30" y="156" width="330" height="180" rx="14" fill="#0f2438" stroke="#21ad65" stroke-opacity="0.3" stroke-width="1.3" />
+  <text x="48" y="180" font-family="IBM Plex Serif, serif" font-size="13" font-weight="700" fill="#8fd9b3">AI Resolution Guidance</text>
+  <g>
+    <rect x="48" y="196" width="120" height="22" rx="11" fill="#1c3a52" />
+    <text x="108" y="210" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#ffffff">Resolved Cases</text>
+    <rect x="178" y="196" width="120" height="22" rx="11" fill="#1c3a52" />
+    <text x="238" y="210" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#ffffff">Knowledge Article</text>
+  </g>
+  <rect x="48" y="228" width="140" height="22" rx="11" fill="#1c3a52" />
+  <text x="118" y="242" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#ffffff">Known Issue</text>
+  <rect x="48" y="262" width="292" height="6" rx="3" fill="#ffffff" opacity="0.22" />
+  <rect x="48" y="276" width="260" height="6" rx="3" fill="#ffffff" opacity="0.22" />
+  <rect x="48" y="298" width="140" height="24" rx="12" fill="#21ad65" />
+  <text x="118" y="314" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10" font-weight="700" fill="#0f2438">Apply Next Step</text>
+
+  <!-- secure case context panel -->
+  <rect x="376" y="156" width="174" height="180" rx="14" fill="#0f2438" stroke="#1c3a52" stroke-width="1.2" />
+  <text x="392" y="180" font-family="IBM Plex Serif, serif" font-size="12" font-weight="700" fill="#ffffff" opacity="0.85">Secure Context</text>
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="398" cy="204" r="3" fill="#21ad65" opacity="1" /><text x="410" y="208" font-family="IBM Plex Sans, sans-serif" font-size="9.5">Customer · protected</text>
+    <circle cx="398" cy="228" r="3" fill="#21ad65" opacity="1" /><text x="410" y="232" font-family="IBM Plex Sans, sans-serif" font-size="9.5">Account · governed</text>
+    <circle cx="398" cy="252" r="3" fill="#21ad65" opacity="1" /><text x="410" y="256" font-family="IBM Plex Sans, sans-serif" font-size="9.5">Policy · enforced</text>
+  </g>
+  <rect x="392" y="278" width="142" height="40" rx="10" fill="#1c3a52" opacity="0.6" />
+  <text x="463" y="302" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#8fe3b5">Guardrails checked</text>
+
+  <!-- footer status -->
+  <rect x="30" y="356" width="520" height="1" fill="#1c3a52" />
+  <circle cx="42" cy="382" r="4" fill="#21ad65" />
+  <text x="54" y="386" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#ffffff" opacity="0.6">Agent approval required before sending</text>
+</svg>

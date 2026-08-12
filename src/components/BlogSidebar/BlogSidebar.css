@@ -1,0 +1,96 @@
+/* ============================================================
+   BLOG SIDEBAR — compact related-content rail
+   ============================================================ */
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 993px) {
+  .blog-sidebar {
+    position: sticky;
+    top: 104px;
+    align-self: start;
+  }
+}
+
+.blog-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blog-sidebar__heading {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.blog-sidebar__item:hover,
+.blog-sidebar__item:focus-visible {
+  background: var(--color-bg-light);
+  border-color: rgba(33, 173, 101, 0.3);
+}
+
+.blog-sidebar__thumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 68px;
+  border-radius: 8px;
+  background-color: var(--color-bg-light);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform var(--transition);
+}
+
+.blog-sidebar__item:hover .blog-sidebar__thumb,
+.blog-sidebar__item:focus-visible .blog-sidebar__thumb {
+  transform: scale(1.05);
+}
+
+.blog-sidebar__item-title {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-dark-navy);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-sidebar__item:hover .blog-sidebar__item-title,
+.blog-sidebar__item:focus-visible .blog-sidebar__item-title {
+  color: var(--color-primary-green);
+}
+
+@media (max-width: 992px) {
+  .blog-sidebar {
+    gap: 40px;
+  }
+}

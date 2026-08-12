@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <defs>
+    <radialGradient id="nsOvGlow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#nsOvGlow)" />
+
+  <g fill="#c9d3da">
+    <circle cx="120" cy="120" r="10" /><circle cx="180" cy="90" r="8" /><circle cx="150" cy="180" r="9" />
+    <circle cx="90" cy="220" r="7" /><circle cx="220" cy="200" r="8" /><circle cx="130" cy="260" r="10" />
+  </g>
+  <g stroke="#c9d3da" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.6">
+    <path d="M120 120 L320 240 M180 90 L320 240 M150 180 L320 240 M90 220 L320 240 M220 200 L320 240 M130 260 L320 240" />
+  </g>
+
+  <rect x="280" y="200" width="80" height="80" rx="16" fill="#21ad65" />
+  <path d="M310 240l8 8 16-18" stroke="#0f2438" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <path d="M360 240 L520 240" stroke="#21ad65" stroke-width="2.4" fill="none" stroke-dasharray="5 5" />
+  <path d="M508 232l14 8-14 8" stroke="#21ad65" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <rect x="480" y="330" width="140" height="70" rx="12" fill="#0f2438" />
+  <text x="550" y="358" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" font-weight="700" fill="#8fd9b3">Decision</text>
+  <text x="550" y="376" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9" fill="#ffffff" opacity="0.6">Governed &amp; explainable</text>
+</svg>

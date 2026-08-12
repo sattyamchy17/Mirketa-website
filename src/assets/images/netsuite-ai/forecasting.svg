@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="0 0 640 380" fill="none">
+  <rect x="40" y="30" width="560" height="320" rx="16" fill="#f8f8fd" />
+  <g stroke="#e4e8ec" stroke-width="1">
+    <path d="M66 310H574 M66 250H574 M66 190H574 M66 130H574" />
+  </g>
+  <path d="M66 250 L150 230 L234 240 L318 190" stroke="#1d4056" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M318 190 L402 170 L486 120 L574 90" stroke="#21ad65" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 6" />
+  <path d="M300 60 L300 340" stroke="#c9d3da" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text x="300" y="52" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9.5" fill="#77828e">Today</text>
+  <g fill="#21ad65"><circle cx="318" cy="190" r="5" /></g>
+  <rect x="380" y="100" width="150" height="30" rx="8" fill="#21ad65" opacity="0.14" />
+  <text x="455" y="120" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="9.5" font-weight="700" fill="#1d4056">Forecast: High confidence</text>
+</svg>

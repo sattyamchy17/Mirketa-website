@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="aoBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060d14" />
+      <stop offset="55%" stop-color="#0b1c28" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <radialGradient id="aoGlow" cx="0.68" cy="0.45" r="0.6">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#aoBg)" />
+  <rect width="1600" height="900" fill="url(#aoGlow)" />
+
+  <!-- full-bleed blueprint schematic grid -->
+  <g stroke="#21ad65" stroke-opacity="0.08" stroke-width="1">
+    <path d="M0 100H1600 M0 200H1600 M0 300H1600 M0 400H1600 M0 500H1600 M0 600H1600 M0 700H1600 M0 800H1600" />
+    <path d="M100 0V900 M200 0V900 M300 0V900 M400 0V900 M500 0V900 M600 0V900 M700 0V900 M800 0V900 M900 0V900 M1000 0V900 M1100 0V900 M1200 0V900 M1300 0V900 M1400 0V900 M1500 0V900" />
+  </g>
+
+  <!-- control-tower hub with radiating spokes to enterprise system nodes -->
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.65">
+    <path d="M1000 450 L1180 320" />
+    <path d="M1000 450 L1220 460" />
+    <path d="M1000 450 L1170 610" />
+    <path d="M1000 450 L980 640" />
+    <path d="M1000 450 L800 560" />
+    <path d="M1000 450 L770 380" />
+    <path d="M1000 450 L840 280" />
+  </g>
+
+  <!-- legacy / enterprise system nodes (small squares) -->
+  <g fill="none" stroke="#8fd9b3" stroke-width="1.6">
+    <rect x="1165" y="300" width="30" height="30" rx="5" />
+    <rect x="1205" y="445" width="30" height="30" rx="5" />
+    <rect x="1155" y="595" width="30" height="30" rx="5" />
+    <rect x="965" y="625" width="30" height="30" rx="5" />
+    <rect x="785" y="545" width="30" height="30" rx="5" />
+    <rect x="755" y="365" width="30" height="30" rx="5" />
+    <rect x="825" y="265" width="30" height="30" rx="5" />
+  </g>
+
+  <!-- central orchestration hub -->
+  <circle cx="1000" cy="450" r="46" fill="#0b1c28" stroke="#21ad65" stroke-width="2.4" />
+  <circle cx="1000" cy="450" r="30" fill="none" stroke="#21ad65" stroke-width="1.2" opacity="0.6" />
+  <path d="M984 450h32M1000 434v32" stroke="#21ad65" stroke-width="2.6" stroke-linecap="round" />
+
+  <!-- faint secondary node cluster, left side -->
+  <g stroke="#21ad65" stroke-width="1" opacity="0.3">
+    <path d="M180 180 L280 230 L200 300" />
+    <path d="M280 230 L340 190" />
+  </g>
+  <g fill="#21ad65" opacity="0.5">
+    <circle cx="180" cy="180" r="4" />
+    <circle cx="280" cy="230" r="5" />
+    <circle cx="200" cy="300" r="4" />
+    <circle cx="340" cy="190" r="4" />
+  </g>
+
+  <g fill="#21ad65" opacity="0.55">
+    <circle cx="120" cy="700" r="4" />
+    <circle cx="220" cy="760" r="3" />
+    <circle cx="90" cy="800" r="3" />
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160" viewBox="0 0 220 160" fill="none">
+  <g fill="#eaf2fb" stroke="#3a8ee0" stroke-width="1.2">
+    <rect x="20" y="24" width="180" height="26" rx="7" />
+    <rect x="20" y="58" width="180" height="26" rx="7" />
+  </g>
+  <g fill="#e8f8f0" stroke="#21ad65" stroke-width="1.3">
+    <rect x="20" y="92" width="180" height="26" rx="7" />
+  </g>
+  <path d="M36 105l4 4 8-9" stroke="#21ad65" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <g font-family="IBM Plex Sans, sans-serif" font-size="7.5" fill="#0f2438">
+    <text x="56" y="41">Case #4021 — Flow error</text>
+    <text x="56" y="75">Case #4022 — Report request</text>
+    <text x="56" y="109">Case #4020 — Resolved</text>
+  </g>
+  <rect x="150" y="128" width="50" height="16" rx="8" fill="#f8f8fd" stroke="#21ad65" stroke-opacity="0.4" />
+  <text x="175" y="139" font-family="IBM Plex Sans, sans-serif" font-size="6.5" fill="#21ad65" text-anchor="middle" font-weight="600">SLA: 2h</text>
+</svg>
