@@ -6,12 +6,12 @@ import { Images } from "../../assets/images/index.js";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
-import rajeevPhoto from "../../assets/team/ceo (1).jpg";
-import maureenPhoto from "../../assets/team/Maureen (1).jpg";
-import salilPhoto from "../../assets/team/Salil-Prasad.jpg";
-import ajayPhoto from "../../assets/team/Ajay.jpg";
-import rahulPhoto from "../../assets/team/Rahul-Pasricha.jpg";
-import priyankaPhoto from "../../assets/team/HR2-copy.webp";
+import rajeevPhoto from "../../assets/Team/ceo (1).jpg";
+import maureenPhoto from "../../assets/Team/Maureen (1).jpg";
+import salilPhoto from "../../assets/Team/Salil-Prasad.jpg";
+import ajayPhoto from "../../assets/Team/Ajay.jpg";
+import rahulPhoto from "../../assets/Team/Rahul-Pasricha.jpg";
+import priyankaPhoto from "../../assets/Team/HR2-copy.webp";
 import "./About.css";
 
 const BREADCRUMB_ITEMS = [{ label: "Home", href: "/" }, { label: "About Us" }];
