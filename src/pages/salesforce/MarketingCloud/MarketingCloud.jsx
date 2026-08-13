@@ -991,8 +991,8 @@ function FaqSection() {
           <Link to="/platforms/salesforce/clouds/service-cloud">Salesforce Service Cloud</Link>,{" "}
           <Link to="/data-cloud">Salesforce Data Cloud</Link>, <Link to="/agentforce">Agentforce</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>, <Link to="/ai-enablement">AI Enablement</Link>,{" "}
-          <a href="#services">Integration Services</a>, <Link to="/insights/customer-success">Customer Success</Link>,{" "}
-          <Link to="/insights/blogs">Blogs</Link>.
+          <a href="#services">Integration Services</a>, <Link to="/insights">Customer Success</Link>,{" "}
+          <Link to="/blog">Blogs</Link>.
         </p>
       </div>
     </section>

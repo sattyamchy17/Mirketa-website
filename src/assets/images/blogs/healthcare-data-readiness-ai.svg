@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2438" /><stop offset="100%" stop-color="#0a1826" />
+    </linearGradient>
+    <radialGradient id="gl8" cx="0.7" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.3" /><stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g8)" /><rect width="1200" height="675" fill="url(#gl8)" />
+  <g stroke="#ffffff" stroke-opacity="0.04"><path d="M0 225H1200 M0 450H1200 M300 0V675 M600 0V675 M900 0V675" /></g>
+  <g transform="translate(600,300)">
+    <path d="M0 -70a70 70 0 010 140 70 70 0 010 -140z" fill="#0d2848" stroke="#21ad65" stroke-width="2.4" />
+    <rect x="-8" y="-34" width="16" height="68" rx="4" fill="#eaf2fb" />
+    <rect x="-34" y="-8" width="68" height="16" rx="4" fill="#eaf2fb" />
+  </g>
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2"><rect x="150" y="160" width="250" height="110" rx="12" /></g>
+  <text x="172" y="192" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">FHIR Interoperability</text>
+  <text x="172" y="216" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="#9fe3c0">EHR ↔ Practice Mgmt ↔ Payer</text>
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.2"><rect x="800" y="420" width="250" height="110" rx="12" /></g>
+  <text x="822" y="452" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">HIPAA Access Log</text>
+  <text x="822" y="474" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#9fe3c0">Every PHI access traced</text>
+  <g fill="#21ad65" opacity="0.6"><circle cx="1040" cy="140" r="4" /><circle cx="150" cy="540" r="3.5" /></g>
+</svg>

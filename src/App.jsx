@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import ScrollToHash from "./components/ScrollToHash/ScrollToHash.jsx";
 import Home from "./pages/Home/Home.jsx";
+import About from "./pages/About/About.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 import AIConsulting from "./pages/AIConsulting/AIConsulting.jsx";
 import AIReadiness from "./pages/AIReadiness/AIReadiness.jsx";
+import AIRoadmapGovernance from "./pages/AIRoadmapGovernance/AIRoadmapGovernance.jsx";
 import AIEnablement from "./pages/AIEnablement/AIEnablement.jsx";
 import AgenticOrchestration from "./pages/AgenticOrchestration/AgenticOrchestration.jsx";
 import AgentDevelopment from "./pages/AgentDevelopment/AgentDevelopment.jsx";
@@ -72,12 +76,16 @@ const careerChildPath = (fullSlug) => fullSlug.split("/").pop();
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <Header />
       <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/company/contact" element={<Contact />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />
           <Route path="/ai-readiness" element={<AIReadiness />} />
+          <Route path="/ai-roadmap-governance" element={<AIRoadmapGovernance />} />
           <Route path="/ai-enablement" element={<AIEnablement />} />
           <Route path="/agentic-orchestration" element={<AgenticOrchestration />} />
           <Route path="/agent-development" element={<AgentDevelopment />} />

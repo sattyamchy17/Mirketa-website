@@ -97,6 +97,13 @@ import iconDimensionTalent from "./icons/dimension-talent.svg";
 import iconDimensionGovernance from "./icons/dimension-governance.svg";
 import illoAiReadinessMaturityScorecard from "./illustrations/ai-readiness-maturity-scorecard.svg";
 
+// ---------- AI Roadmap Governance page ----------
+import heroAiRoadmapGovernance from "./hero/ai-roadmap-governance-hero-bg.svg";
+import iconDimensionSecurity from "./icons/dimension-security.svg";
+
+// ---------- About Us page ----------
+import heroAboutUs from "./hero/about-us-hero-bg.svg";
+
 // ---------- AI Readiness page: use-case readiness tiers ----------
 import iconTierQuickwins from "./icons/tier-quickwins.svg";
 import iconTierStrategic from "./icons/tier-strategic.svg";
@@ -563,6 +570,9 @@ export const Images = {
   iconDimensionProcess,
   iconDimensionTalent,
   iconDimensionGovernance,
+  heroAiRoadmapGovernance,
+  iconDimensionSecurity,
+  heroAboutUs,
   illoAiReadinessMaturityScorecard,
 
   iconTierQuickwins,

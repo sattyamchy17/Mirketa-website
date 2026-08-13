@@ -1,0 +1,439 @@
+/* ============================================================
+   ABOUT US PAGE — page-scoped styles.
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .content-wrap, .section, .section-heading, .btn*).
+   Follows the same full-bleed hero + card-grid recipe established
+   by src/pages/AIReadiness/AIReadiness.css.
+   ============================================================ */
+
+.about-page {
+  --abt-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.abt-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.abt-btn.btn-primary:hover {
+  background: var(--abt-hover-navy);
+}
+
+.abt-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(0);
+  pointer-events: none;
+  animation: abt-ripple 0.6s ease-out;
+}
+
+@keyframes abt-ripple {
+  to { transform: scale(2.2); opacity: 0; }
+}
+
+/* ============================================================
+   HERO — full-bleed background illustration
+   ============================================================ */
+.abt-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0a1826;
+  color: #fff;
+  padding-top: 140px;
+  padding-bottom: 110px;
+}
+
+.abt-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.abt-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 18, 28, 0.75) 0%, rgba(8, 18, 28, 0.55) 45%, rgba(8, 18, 28, 0.92) 100%);
+}
+
+.abt-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.abt-hero__text {
+  max-width: 720px;
+}
+
+.abt-hero h1 {
+  color: #fff;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.abt-hero__paragraph {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.abt-hero__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.abt-scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 14px;
+  z-index: 2;
+  background: var(--color-dark-navy);
+}
+
+.abt-scroll-indicator span {
+  display: block;
+  width: 4px;
+  height: 8px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  background: var(--color-primary-green);
+  animation: abt-scroll-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes abt-scroll-dot {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(14px); opacity: 0.3; }
+}
+
+@media (max-width: 1024px) {
+  .abt-hero { padding-top: 120px; text-align: center; }
+  .abt-hero__text { max-width: 100%; }
+  .abt-hero__paragraph { max-width: 100%; }
+  .abt-hero__ctas { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .abt-hero h1 { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .abt-hero__ctas { flex-direction: column; align-items: stretch; }
+}
+
+/* ============================================================
+   WHO WE ARE
+   ============================================================ */
+.abt-who {
+  background: var(--color-white);
+  padding-top: 130px;
+}
+
+.abt-who__copy {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.abt-who__copy p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   WHAT WE BELIEVE — values grid
+   ============================================================ */
+.abt-values {
+  background: var(--color-bg-light);
+}
+
+.abt-values__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 24px;
+}
+
+.abt-value-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary-green);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.abt-value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.abt-value-card h3 {
+  font-size: 16.5px;
+  margin-bottom: 10px;
+}
+
+.abt-value-card p {
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+}
+
+/* ============================================================
+   OUR EXPERTISE
+   ============================================================ */
+.abt-expertise {
+  background: var(--color-white);
+}
+
+.abt-expertise__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.abt-expertise-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.abt-expertise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary-green);
+}
+
+.abt-expertise-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--color-dark-navy);
+}
+
+.abt-expertise-card p {
+  font-size: 13px;
+  color: var(--color-gray-300);
+  margin-bottom: 16px;
+}
+
+.abt-expertise-card__link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-primary-green);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .abt-expertise__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .abt-expertise__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   MEET OUR TEAM — the primary visual focus of the page.
+   Desktop: 3 cards per row. Tablet: 2. Mobile: 1.
+   ============================================================ */
+.abt-team {
+  background: var(--color-bg-light);
+}
+
+.abt-team .section-heading p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--color-gray-300);
+  font-size: 16px;
+}
+
+.abt-team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.abt-team-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.abt-team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.abt-team-card__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--color-bg-light);
+}
+
+.abt-team-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.abt-team-card__body {
+  padding: 22px 22px 26px;
+  position: relative;
+}
+
+.abt-team-card__body h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  margin-bottom: 4px;
+}
+
+.abt-team-card__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.abt-team-card__bio {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-300);
+}
+
+.abt-team-card__linkedin {
+  position: absolute;
+  top: -46px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-navy);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.abt-team-card__linkedin:hover {
+  color: var(--color-primary-green);
+  transform: translateY(-2px);
+}
+
+.abt-team-card__linkedin svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 900px) {
+  .abt-team__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .abt-team__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CULTURE / PEOPLE
+   ============================================================ */
+.abt-culture {
+  background: var(--color-white);
+}
+
+.abt-culture__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.abt-culture__text p {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.abt-culture__visual {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.abt-culture__visual img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .abt-culture__inner { grid-template-columns: 1fr; gap: 32px; }
+  .abt-culture__visual { order: -1; padding: 32px; }
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.abt-final-cta {
+  background: linear-gradient(135deg, #0f2438 0%, #0d3b3d 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.abt-final-cta__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.abt-final-cta__inner h2 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.abt-final-cta__inner p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 32px;
+}
+
+.abt-final-cta__ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .abt-final-cta__ctas { flex-direction: column; align-items: stretch; }
+}

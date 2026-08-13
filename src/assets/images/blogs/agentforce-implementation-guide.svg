@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a2e1f" /><stop offset="100%" stop-color="#0a1826" />
+    </linearGradient>
+    <radialGradient id="gl5" cx="0.7" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.32" /><stop offset="100%" stop-color="#21ad65" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g5)" /><rect width="1200" height="675" fill="url(#gl5)" />
+  <g stroke="#ffffff" stroke-opacity="0.04"><path d="M0 225H1200 M0 450H1200 M300 0V675 M600 0V675 M900 0V675" /></g>
+  <g transform="translate(600,290)">
+    <path d="M-90 30h180a45 45 0 000-90 65 65 0 00-125-20 50 50 0 00-55 60 40 40 0 000 50z" fill="#0d2848" stroke="#21ad65" stroke-width="2.2" />
+    <rect x="-22" y="-8" width="44" height="44" rx="6" fill="none" stroke="#eaf2fb" stroke-width="2" />
+    <text y="20" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="20" fill="#eaf2fb" font-weight="700">AI</text>
+  </g>
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2"><rect x="150" y="150" width="240" height="105" rx="12" /></g>
+  <text x="172" y="182" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">Case Routing Agent</text>
+  <text x="172" y="206" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="#9fe3c0">Triaged: 148 · Escalated: 6</text>
+  <g fill="#eaf2fb" opacity="0.9"><rect x="172" y="222" width="130" height="8" rx="4" /></g>
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.2"><rect x="800" y="420" width="250" height="110" rx="12" /></g>
+  <text x="822" y="452" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">Guardrails</text>
+  <text x="822" y="474" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#9fe3c0">Refunds &gt; $500 → human review</text>
+  <text x="822" y="494" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#9fe3c0">All actions logged</text>
+  <g fill="#21ad65" opacity="0.6"><circle cx="1040" cy="140" r="4" /><circle cx="150" cy="540" r="3.5" /></g>
+</svg>

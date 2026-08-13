@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Images } from "../../assets/images/index.js";
 import "./Header.css";
@@ -13,14 +13,14 @@ import "./Header.css";
 const NAV_ITEMS = [
   {
     label: "AI Solutions",
-    prefixes: ["/ai-solutions", "/ai-readiness", "/ai-consulting", "/ai-enablement", "/agentic-orchestration", "/agent-development", "/ai-data-foundations", "/salesforce-ai-services", "/agentforce", "/data-cloud", "/ai-accelerator-aria", "/kratu-ai", "/altruta-ai", "/salesforce-ai-case-management", "/netsuite-ai"],
+    prefixes: ["/ai-solutions", "/ai-readiness", "/ai-roadmap-governance", "/ai-consulting", "/ai-enablement", "/agentic-orchestration", "/agent-development", "/ai-data-foundations", "/salesforce-ai-services", "/agentforce", "/data-cloud", "/ai-velocity-engines", "/ai-accelerator-aria", "/kratu-ai", "/altruta-ai", "/salesforce-ai-case-management", "/netsuite-ai"],
     columns: [
       [
         {
           heading: "AI Consulting and Development",
           items: [
             { label: "AI Readiness Assessment", href: "/ai-readiness" },
-            { label: "AI Roadmap & Governance", href: "/ai-solutions/roadmap-governance" },
+            { label: "AI Roadmap & Governance", href: "/ai-roadmap-governance" },
             { label: "AI Enablement", href: "/ai-enablement" },
             { label: "Agentic Orchestration & Legacy Integration", href: "/agentic-orchestration" },
             { label: "Agent Development", href: "/agent-development" },
@@ -35,12 +35,12 @@ const NAV_ITEMS = [
             { label: "View All AI Velocity Engines", href: "/ai-velocity-engines" },
             { label: "Donor AI – AltrutaAI", href: "/altruta-ai" },
             { label: "Aria AI", href: "/ai-accelerator-aria" },
-            { label: "Vendor Compliance AI", href: "/ai-solutions/velocity/vendor-compliance-ai" },
+            { label: "Vendor Compliance AI", href: "/ai-velocity-engines" },
             { label: "Kratu AI (ElixirAI)", href: "/kratu-ai" },
             { label: "Case Rezolver & Management", href: "/salesforce-ai-case-management" },
-            { label: "Scribe – Ambient Listening", href: "/ai-solutions/velocity/scribe" },
-            { label: "Code Analysis", href: "/ai-solutions/velocity/code-analysis" },
-            { label: "Scheduling – Smart Appointment", href: "/ai-solutions/velocity/smart-scheduling" },
+            { label: "Scribe – Ambient Listening", href: "/ai-velocity-engines" },
+            { label: "Code Analysis", href: "/ai-velocity-engines" },
+            { label: "Scheduling – Smart Appointment", href: "/ai-velocity-engines" },
           ],
         },
       ],
@@ -189,13 +189,14 @@ const NAV_ITEMS = [
         {
           items: [
             { label: "Private Equity", href: "/industry/private-equity" },
-            {
-              label: "Nonprofits",
-              href: "/industries/nonprofits",
-              children: [{ label: "Salesforce Nonprofit Cloud", href: "/industries/nonprofits/salesforce-nonprofit-cloud" }],
-            },
+            // No dedicated Nonprofits/Manufacturing industry page exists in
+            // this project — these previously pointed at /industries/* pages
+            // that were never built. Both now point at the real Salesforce
+            // Cloud content that actually covers them (same destinations
+            // already used by the Salesforce Clouds L4 flyout below).
+            { label: "Nonprofits", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
             { label: "Healthcare", href: "/industry/healthcare" },
-            { label: "Manufacturing", href: "/industries/manufacturing" },
+            { label: "Manufacturing", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
             { label: "Education", href: "/industry/education" },
           ],
         },
@@ -260,27 +261,37 @@ const NAV_ITEMS = [
   },
   {
     label: "Company",
-    prefixes: ["/company"],
+    prefixes: ["/company", "/about-us"],
     columns: [
       [
         {
           items: [
-            { label: "About Mirketa", href: "/company/about" },
+            { label: "About Mirketa", href: "/about-us" },
             { label: "Careers", href: "/company/careers" },
-            { label: "Press & Newsroom", href: "/company/press" },
+            // No Press/Newsroom page exists in this project yet — rendered
+            // without an href (see the !link.href branch below) rather
+            // than linking to a page that was never built.
+            { label: "Press & Newsroom" },
           ],
         },
       ],
       [
         {
           heading: "Partners & Certifications",
+          // Links to each platform's real hub page (see App.jsx) — these
+          // previously pointed at /company/partners/* pages that never
+          // existed. `platformStyle` gives this group's rows the green
+          // hover/active accent instead of the sitewide default blue.
+          // AWS has no dedicated page yet (see the AWS entry's comment in
+          // src/config/pageSlugs.js) — rendered without an href rather
+          // than guessing a destination.
+          platformStyle: true,
           items: [
-            { label: "Salesforce", href: "/company/partners/salesforce" },
-            { label: "Salesforce Nonprofit Cloud", href: "/company/partners/salesforce-nonprofit-cloud" },
-            { label: "Oracle", href: "/company/partners/oracle" },
-            { label: "NetSuite", href: "/company/partners/netsuite" },
-            { label: "ServiceNow", href: "/company/partners/servicenow" },
-            { label: "AWS", href: "/company/partners/aws" },
+            { label: "Salesforce", href: "/platforms/salesforce/clouds", activePrefix: "/platforms/salesforce" },
+            { label: "ServiceNow", href: "/platforms/servicenow", activePrefix: "/platforms/servicenow" },
+            { label: "Oracle", href: "/platforms/oracle/fusion-implementation", activePrefix: "/platforms/oracle" },
+            { label: "NetSuite", href: "/platforms/netsuite/implementation", activePrefix: "/platforms/netsuite" },
+            { label: "AWS" },
           ],
         },
       ],
@@ -297,9 +308,11 @@ const NAV_ITEMS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+  const [activeFlyout, setActiveFlyout] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState(null);
   const closeTimer = useRef(null);
+  const flyoutCloseTimer = useRef(null);
   const navRef = useRef(null);
   const panelRef = useRef(null);
   const location = useLocation();
@@ -346,6 +359,12 @@ export default function Header() {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  // The L4 flyout is scoped to whichever L1 menu is currently open — reset it
+  // whenever that changes so a stale flyout never lingers into a new panel.
+  useEffect(() => {
+    setActiveFlyout(null);
+  }, [activeMenu]);
+
   const handleEnter = (label) => {
     clearTimeout(closeTimer.current);
     setActiveMenu(label);
@@ -353,6 +372,17 @@ export default function Header() {
 
   const handleLeave = () => {
     closeTimer.current = setTimeout(() => setActiveMenu(null), 150);
+  };
+
+  // Same open/close-with-delay pattern as handleEnter/handleLeave above, just
+  // scoped to which L3 item's L4 column is showing inside the active panel.
+  const handleFlyoutEnter = (link) => {
+    clearTimeout(flyoutCloseTimer.current);
+    setActiveFlyout(link);
+  };
+
+  const handleFlyoutLeave = () => {
+    flyoutCloseTimer.current = setTimeout(() => setActiveFlyout(null), 150);
   };
 
   const closeAndFocusTrigger = (label) => {
@@ -456,7 +486,7 @@ export default function Header() {
             </nav>
 
             <div className="site-header__actions">
-              <Link to="/company/contact" className="btn btn-outline-dark site-header__ghost-btn">
+              <Link to="/company/contact#contact-form" className="btn btn-outline-dark site-header__ghost-btn">
                 Talk to an Expert
               </Link>
               <Link to="/company/contact#book" className="btn btn-primary">
@@ -494,8 +524,15 @@ export default function Header() {
               {panelContentItem && (
                 <div className="mega-panel__inner">
                   <div className={`mega-panel__columns ${panelContentItem.isIndustryGrid ? "mega-panel__columns--grid" : ""}`}>
-                    {panelContentItem.columns.map((column, colIndex) => (
-                      <div className="mega-panel__column" key={colIndex}>
+                    {panelContentItem.columns.map((column, colIndex) => {
+                      // Renders right after whichever column actually contains the
+                      // open flyout's trigger, so both the visual grid position and
+                      // the keyboard tab order flow logically: L3 trigger, then
+                      // immediately its own L4 children, then on to the next column.
+                      const flyoutBelongsHere = activeFlyout && column.some((group) => group.items.includes(activeFlyout));
+                      return (
+                      <Fragment key={colIndex}>
+                      <div className="mega-panel__column">
                         {column.map((group, groupIndex) => (
                           <div className="mega-group" key={group.heading || groupIndex}>
                             {group.heading && (
@@ -517,17 +554,35 @@ export default function Header() {
                                   key={link.label}
                                   style={{ "--i": i }}
                                   className={link.flyout ? "mega-group__item--has-flyout" : undefined}
+                                  onMouseEnter={link.flyout ? () => handleFlyoutEnter(link) : undefined}
+                                  onMouseLeave={link.flyout ? handleFlyoutLeave : undefined}
                                 >
-                                  {link.href.startsWith("http") ? (
+                                  {!link.href ? (
+                                    // No real destination exists yet for this platform (see the
+                                    // comment on the data above) — a plain, non-interactive row
+                                    // rather than a guessed or dead link.
+                                    <span className="mega-link mega-link--static">{link.label}</span>
+                                  ) : link.href.startsWith("http") ? (
                                     <a href={link.href} target="_blank" rel="nofollow noopener noreferrer" className={panelContentItem.isIndustryGrid ? "mega-industry-link" : "mega-link"}>
                                       {link.label}
                                     </a>
                                   ) : (
-                                  <Link to={link.href} className={panelContentItem.isIndustryGrid ? "mega-industry-link" : "mega-link"}>
+                                  <Link
+                                    to={link.href}
+                                    className={`${panelContentItem.isIndustryGrid ? "mega-industry-link" : "mega-link"} ${group.platformStyle ? "mega-link--platform" : ""} ${
+                                      activeFlyout?.label === link.label || (link.activePrefix && location.pathname.startsWith(link.activePrefix)) ? "is-active" : ""
+                                    }`}
+                                    onFocus={link.flyout ? () => handleFlyoutEnter(link) : undefined}
+                                  >
                                     {link.label}
                                     {link.flyout && (
                                       <span className="mega-link__flyout-indicator" aria-hidden="true">
                                         ›
+                                      </span>
+                                    )}
+                                    {group.platformStyle && (
+                                      <span className="btn-arrow" aria-hidden="true">
+                                        &rarr;
                                       </span>
                                     )}
                                   </Link>
@@ -543,29 +598,42 @@ export default function Header() {
                                       ))}
                                     </ul>
                                   )}
-                                  {link.flyout && (
-                                    <div className="mega-flyout" role="menu" aria-label={`${link.label} submenu`}>
-                                      <ul>
-                                        {link.flyout.map((f) => {
-                                          const isActive = location.pathname + location.hash === f.href;
-                                          return (
-                                            <li key={f.label}>
-                                              <Link to={f.href} className={`mega-flyout__link ${isActive ? "is-active" : ""}`}>
-                                                {f.label}
-                                              </Link>
-                                            </li>
-                                          );
-                                        })}
-                                      </ul>
-                                    </div>
-                                  )}
                                 </li>
                               ))}
                             </ul>
                           </div>
                         ))}
                       </div>
-                    ))}
+
+                      {/* L4 — the open flyout's own children render as a genuine
+                          grid column right next to the column that triggered it,
+                          never as a floating overlay. Only one can be open at a
+                          time (activeFlyout is a single value), reset whenever
+                          the L1 menu changes. */}
+                      {flyoutBelongsHere && (
+                        <div
+                          className="mega-panel__column mega-panel__column--flyout"
+                          onMouseEnter={() => handleFlyoutEnter(activeFlyout)}
+                          onMouseLeave={handleFlyoutLeave}
+                        >
+                          <p className="mega-group__heading">{activeFlyout.label}</p>
+                          <ul className="mega-group__list" role="menu" aria-label={`${activeFlyout.label} submenu`}>
+                            {activeFlyout.flyout.map((f, i) => {
+                              const isActive = location.pathname + location.hash === f.href;
+                              return (
+                                <li key={f.label} style={{ "--i": i }}>
+                                  <Link to={f.href} className={`mega-link ${isActive ? "is-active" : ""}`}>
+                                    {f.label}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      )}
+                      </Fragment>
+                      );
+                    })}
 
                     {panelContentItem.featured && (
                       <div className="mega-panel__column mega-panel__column--featured">
@@ -624,7 +692,9 @@ export default function Header() {
                     <ul>
                       {group.items.map((link) => (
                         <li key={link.label}>
-                          {link.href.startsWith("http") ? (
+                          {!link.href ? (
+                            <span className="mobile-submenu__static">{link.label}</span>
+                          ) : link.href.startsWith("http") ? (
                             <a href={link.href} target="_blank" rel="nofollow noopener noreferrer" onClick={() => setMobileOpen(false)}>
                               {link.label}
                             </a>
@@ -669,7 +739,7 @@ export default function Header() {
           )}
         </ul>
         <div className="mobile-menu__footer">
-          <Link to="/company/contact" className="btn btn-outline-dark" onClick={() => setMobileOpen(false)}>
+          <Link to="/company/contact#contact-form" className="btn btn-outline-dark" onClick={() => setMobileOpen(false)}>
             Talk to an Expert
           </Link>
           <Link to="/company/contact#book" className="btn btn-primary" onClick={() => setMobileOpen(false)}>

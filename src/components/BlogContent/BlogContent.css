@@ -1,0 +1,26 @@
+/* ============================================================
+   BLOG CONTENT — only the block types the shared article
+   typography (see BlogDetail.css .blog-detail__body h2/p/ul/etc,
+   which applies through any nesting depth) doesn't already cover.
+   ============================================================ */
+.blog-callout {
+  background: var(--color-bg-light);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 18px 24px;
+  margin: 0 0 22px;
+}
+
+.blog-callout p {
+  margin: 0 !important;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+}
+
+.blog-faq {
+  margin-top: 40px;
+}
+
+.blog-faq h2 {
+  margin-bottom: 20px;
+}

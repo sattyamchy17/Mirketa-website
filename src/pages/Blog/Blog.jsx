@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
-import { getAllPosts, getPostsByCategory, getUsedCategories } from "../../sanityQueries.js";
+import { getAllPosts, getPostsByCategory } from "../../blog/blogUtils.js";
+import { BLOG_CATEGORIES } from "../../blog/blogCategories.js";
 import "./Blog.css";
 
 const BREADCRUMB_ITEMS = [{ label: "Home", href: "/" }, { label: "Blog" }];
@@ -16,35 +17,10 @@ const CONSULTATION = {
 };
 
 export default function Blog() {
-  const [posts, setPosts] = useState(null);
-  const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
-  const [status, setStatus] = useState("loading");
 
-  useEffect(() => {
-    getUsedCategories()
-      .then((titles) => setCategories(titles.filter(Boolean)))
-      .catch(() => setCategories([]));
-  }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    setStatus("loading");
-    const request = activeCategory ? getPostsByCategory(activeCategory) : getAllPosts();
-    request
-      .then((data) => {
-        if (cancelled) return;
-        setPosts(data);
-        setStatus("ready");
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setStatus("error");
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [activeCategory]);
+  // Local blog data is synchronous — no fetch/loading state needed.
+  const posts = useMemo(() => (activeCategory ? getPostsByCategory(activeCategory) : getAllPosts()), [activeCategory]);
 
   return (
     <div className="blog-index">
@@ -65,32 +41,28 @@ export default function Blog() {
 
       <section className="section blog-index__content">
         <div className="container">
-          {categories.length > 0 && (
-            <div className="blog-index__filters" role="tablist" aria-label="Filter articles by category">
-              <button type="button" className={`blog-index__filter ${!activeCategory ? "is-active" : ""}`} onClick={() => setActiveCategory(null)}>
-                All
+          <div className="blog-index__filters" role="tablist" aria-label="Filter articles by category">
+            <button type="button" className={`blog-index__filter ${!activeCategory ? "is-active" : ""}`} onClick={() => setActiveCategory(null)}>
+              All
+            </button>
+            {BLOG_CATEGORIES.map((cat) => (
+              <button
+                key={cat.name}
+                type="button"
+                className={`blog-index__filter ${activeCategory === cat.name ? "is-active" : ""}`}
+                onClick={() => setActiveCategory(cat.name)}
+              >
+                {cat.name}
               </button>
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  className={`blog-index__filter ${activeCategory === cat ? "is-active" : ""}`}
-                  onClick={() => setActiveCategory(cat)}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          )}
+            ))}
+          </div>
 
-          {status === "loading" && <p className="blog-index__status">Loading articles...</p>}
-          {status === "error" && <p className="blog-index__status blog-index__status--error">Unable to load articles. Please try again.</p>}
-          {status === "ready" && posts.length === 0 && <p className="blog-index__status">No articles found.</p>}
-
-          {status === "ready" && posts.length > 0 && (
+          {posts.length === 0 ? (
+            <p className="blog-index__status">No articles found.</p>
+          ) : (
             <div className="blog-index__grid">
               {posts.map((post) => (
-                <BlogCard post={post} key={post._id} />
+                <BlogCard post={post} key={post.slug} />
               ))}
             </div>
           )}

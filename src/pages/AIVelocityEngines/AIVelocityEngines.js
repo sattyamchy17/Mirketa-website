@@ -44,18 +44,24 @@ export const INDUSTRY_FILTERS = [
   { key: "hi-tech", label: "High Tech" },
 ];
 
-// Real Mirketa AI Velocity Engine products with their live internal
-// routes — sourced from this site's own primary navigation, not
-// WordPress content, since these are product pages rather than posts.
+// Real Mirketa AI Velocity Engine products. Four of these (Donor AI,
+// Aria AI, Kratu AI, Case Rezolver) have real dedicated pages elsewhere
+// in this project — linked directly rather than through the
+// "/ai-solutions/velocity/*" prefix this file previously (and
+// incorrectly) claimed was "sourced from this site's own primary
+// navigation"; that prefix was never a real route anywhere. The other
+// four have no dedicated page yet, so `href` is intentionally omitted
+// rather than pointing at a guessed or dead URL — see the `!p.href`
+// branch below.
 export const AI_VELOCITY_PRODUCTS = [
-  { icon: Images.iconVelocityDonor, title: "Donor AI — AltrutaAI", description: "AI-driven donor engagement and retention for nonprofit fundraising teams.", href: "/ai-solutions/velocity/altruta-ai" },
-  { icon: Images.iconAgentTypeConversational, title: "Aria AI", description: "Conversational AI assistant for real-time customer and employee engagement.", href: "/ai-solutions/velocity/aria-ai" },
-  { icon: Images.iconDimensionGovernance, title: "Vendor Compliance AI", description: "Automated vendor risk scoring and compliance monitoring at scale.", href: "/ai-solutions/velocity/vendor-compliance-ai" },
-  { icon: Images.productElixir, title: "Kratu AI (ElixirAI)", description: "AI-powered healthcare workflow intelligence built on the Elixir platform.", href: "/ai-solutions/velocity/kratu-ai" },
-  { icon: Images.iconAgentTypeTaskExecution, title: "Case Rezolver & Management", description: "Autonomous case triage, routing, and resolution for service teams.", href: "/ai-solutions/velocity/case-rezolver" },
-  { icon: Images.iconVelocityScribe, title: "Scribe — Ambient Listening", description: "Ambient AI transcription and structured note generation from conversations.", href: "/ai-solutions/velocity/scribe" },
-  { icon: Images.iconVelocityCodeAnalysis, title: "Code Analysis", description: "AI-assisted code review, quality scoring, and vulnerability detection.", href: "/ai-solutions/velocity/code-analysis" },
-  { icon: Images.iconVelocityScheduling, title: "Smart Appointment Scheduling", description: "Predictive, AI-optimised appointment scheduling that reduces no-shows.", href: "/ai-solutions/velocity/smart-scheduling" },
+  { icon: Images.iconVelocityDonor, title: "Donor AI — AltrutaAI", description: "AI-driven donor engagement and retention for nonprofit fundraising teams.", href: "/altruta-ai" },
+  { icon: Images.iconAgentTypeConversational, title: "Aria AI", description: "Conversational AI assistant for real-time customer and employee engagement.", href: "/ai-accelerator-aria" },
+  { icon: Images.iconDimensionGovernance, title: "Vendor Compliance AI", description: "Automated vendor risk scoring and compliance monitoring at scale." },
+  { icon: Images.productElixir, title: "Kratu AI (ElixirAI)", description: "AI-powered healthcare workflow intelligence built on the Elixir platform.", href: "/kratu-ai" },
+  { icon: Images.iconAgentTypeTaskExecution, title: "Case Rezolver & Management", description: "Autonomous case triage, routing, and resolution for service teams.", href: "/salesforce-ai-case-management" },
+  { icon: Images.iconVelocityScribe, title: "Scribe — Ambient Listening", description: "Ambient AI transcription and structured note generation from conversations." },
+  { icon: Images.iconVelocityCodeAnalysis, title: "Code Analysis", description: "AI-assisted code review, quality scoring, and vulnerability detection." },
+  { icon: Images.iconVelocityScheduling, title: "Smart Appointment Scheduling", description: "Predictive, AI-optimised appointment scheduling that reduces no-shows." },
 ];
 
 export const SEO = {

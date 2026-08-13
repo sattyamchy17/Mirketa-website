@@ -109,34 +109,29 @@
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
-.blog-detail__meta time {
+.blog-detail__meta time,
+.blog-detail__reading-time {
   font-size: 13.5px;
   color: rgba(255, 255, 255, 0.6);
 }
 
 /* ============================================================
-   70 / 30 MAIN LAYOUT
-   Sidebar is placed AFTER the article in DOM order so it naturally
-   stacks below the article on mobile (no reordering needed) while
-   CSS Grid places it in the second column on desktop.
+   MAIN ARTICLE LAYOUT
+   Single-column body — related articles moved to their own section
+   below the article (see .blog-detail__related) rather than a
+   sidebar, so they read as a clear "what to read next" moment.
    ============================================================ */
 .blog-detail__content {
   padding: 64px 0 80px;
   background: var(--color-white);
 }
 
-.blog-detail__layout {
-  max-width: 1240px;
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
-  gap: 64px;
-  align-items: start;
-}
-
 .blog-detail__body-wrap {
-  min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .blog-detail__body {
@@ -248,17 +243,7 @@
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1200px) {
-  .blog-detail__layout {
-    grid-template-columns: minmax(0, 65%) minmax(260px, 35%);
-    gap: 48px;
-  }
-}
-
 @media (max-width: 992px) {
-  .blog-detail__layout {
-    grid-template-columns: 1fr;
-  }
   .blog-detail__body {
     max-width: none;
   }
@@ -281,4 +266,16 @@
   .blog-detail__body h3 {
     font-size: 19px;
   }
+}
+
+/* ============================================================
+   RELATED ARTICLES — reuses the /blog listing grid (.blog-index__grid)
+   for visual consistency; see src/pages/Blog/Blog.css.
+   ============================================================ */
+.blog-detail__related {
+  background: var(--color-bg-light);
+}
+
+.blog-detail__related h2 {
+  margin-bottom: 32px;
 }

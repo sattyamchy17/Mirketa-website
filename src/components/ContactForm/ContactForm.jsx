@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ContactForm.css";
 
 // ============================================================
@@ -77,6 +77,11 @@ export default function ContactForm({ title }) {
   const captchaSettingsRef = useRef(null);
   const urlFieldRef = useRef(null);
   const recaptchaContainerRef = useRef(null);
+  // This form submits as a native POST straight to Salesforce (see above) —
+  // there's no fetch/AJAX response to await, so there's no in-page success
+  // or error state to show. This just gives honest, immediate feedback that
+  // the click registered, for the moment before the browser navigates away.
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Stamp the hidden URL-tracking field with the current page URL.
   useEffect(() => {
@@ -126,7 +131,7 @@ export default function ContactForm({ title }) {
   return (
     <div className="contact-form-card">
       {title && <h3 className="contact-form-card__title">{title}</h3>}
-      <form className="contact-form" action={SALESFORCE_ACTION} method="POST">
+      <form className="contact-form" action={SALESFORCE_ACTION} method="POST" onSubmit={() => setIsSubmitting(true)}>
         <input type="hidden" name="captcha_settings" ref={captchaSettingsRef} defaultValue={captchaSettingsDefault} />
         <input type="hidden" name="oid" value={ORG_ID} />
         <input type="hidden" name="retURL" value={RET_URL} />
@@ -166,8 +171,8 @@ export default function ContactForm({ title }) {
 
         <div className="contact-form__recaptcha" ref={recaptchaContainerRef} />
 
-        <button type="submit" className="contact-form__submit">
-          Submit
+        <button type="submit" className="contact-form__submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>

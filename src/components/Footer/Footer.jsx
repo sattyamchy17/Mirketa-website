@@ -6,37 +6,36 @@ const FOOTER_COLUMNS = [
   {
     heading: "AI Solutions",
     links: [
-      { label: "Agentic Frameworks", href: "/ai-solutions/agentic-orchestration" },
-      { label: "Data Governance", href: "/ai-solutions/strategy-architecture" },
-      { label: "LLM Provisioning", href: "/ai-solutions/mcp-architecture" },
-      { label: "AI Enablement", href: "/ai-solutions" },
+      { label: "Agentic Frameworks", href: "/agentic-orchestration" },
+      { label: "Data Governance", href: "/ai-roadmap-governance" },
+      { label: "LLM Provisioning", href: "/agentic-orchestration" },
+      { label: "AI Enablement", href: "/ai-enablement" },
     ],
   },
   {
     heading: "Salesforce",
     links: [
-      { label: "Sales & Service Cloud", href: "/platforms/salesforce" },
-      { label: "Health Cloud", href: "/industries/healthcare" },
-      { label: "Nonprofit Cloud", href: "/industries/nonprofits" },
-      { label: "Managed Support", href: "/platforms/systems-integration" },
+      { label: "Sales & Service Cloud", href: "/platforms/salesforce/clouds" },
+      { label: "Health Cloud", href: "/platforms/salesforce/clouds/health-cloud" },
+      { label: "Nonprofit Cloud", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
+      { label: "Managed Support", href: "/platforms/salesforce/admin-support" },
     ],
   },
   {
     heading: "Industries",
     links: [
-      { label: "Healthcare", href: "/industries/healthcare" },
-      { label: "Nonprofit", href: "/industries/nonprofits" },
-      { label: "Financial Services", href: "/industries/financial-services" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
+      { label: "Healthcare", href: "/industry/healthcare" },
+      { label: "Nonprofit", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
+      { label: "Financial Services", href: "/industry/financial-services" },
+      { label: "Manufacturing", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About Us", href: "/company/our-story" },
+      { label: "About Us", href: "/about-us" },
       { label: "Careers", href: "/company/careers" },
       { label: "Contact", href: "/company/contact" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
 ];
@@ -126,9 +125,13 @@ export default function Footer() {
       <div className="site-footer__bottom">
         <div className="content-wrap site-footer__bottom-inner">
           <p>&copy; {year} Mirketa Inc. All rights reserved.</p>
+          {/* No Terms of Service / Privacy Policy page exists in this
+              project yet — plain text rather than a link to a page that
+              doesn't exist. Wire these up once the real legal copy is
+              available. */}
           <div className="site-footer__legal">
-            <Link to="/terms">Terms</Link>
-            <Link to="/privacy-policy">Privacy</Link>
+            <span className="site-footer__legal-static">Terms</span>
+            <span className="site-footer__legal-static">Privacy</span>
           </div>
         </div>
       </div>

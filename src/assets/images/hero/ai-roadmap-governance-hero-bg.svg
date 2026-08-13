@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="argBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#081018" />
+      <stop offset="55%" stop-color="#0c1f2c" />
+      <stop offset="100%" stop-color="#0f2438" />
+    </linearGradient>
+    <linearGradient id="argPathStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#21ad65" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#21ad65" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#argBg)" />
+
+  <!-- faint dot-grid, upper-left -->
+  <g fill="#ffffff" opacity="0.06">
+    <circle cx="60" cy="80" r="2" /><circle cx="120" cy="80" r="2" /><circle cx="180" cy="80" r="2" /><circle cx="240" cy="80" r="2" /><circle cx="300" cy="80" r="2" />
+    <circle cx="60" cy="130" r="2" /><circle cx="120" cy="130" r="2" /><circle cx="180" cy="130" r="2" /><circle cx="240" cy="130" r="2" /><circle cx="300" cy="130" r="2" />
+    <circle cx="60" cy="180" r="2" /><circle cx="120" cy="180" r="2" /><circle cx="180" cy="180" r="2" /><circle cx="240" cy="180" r="2" /><circle cx="300" cy="180" r="2" />
+  </g>
+
+  <!-- ascending roadmap path: strategy -> scale, left to right -->
+  <path d="M40 700 C 260 700, 320 560, 540 560 C 720 560, 760 460, 960 440 C 1140 420, 1180 320, 1400 300"
+        fill="none" stroke="url(#argPathStroke)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.9" />
+  <path d="M40 700 C 260 700, 320 560, 540 560 C 720 560, 760 460, 960 440 C 1140 420, 1180 320, 1400 300"
+        fill="none" stroke="#21ad65" stroke-width="1" opacity="0.18" />
+
+  <!-- roadmap milestone nodes -->
+  <g>
+    <circle cx="40" cy="700" r="7" fill="#0f2438" stroke="#8fd9b3" stroke-width="2" />
+    <circle cx="540" cy="560" r="7" fill="#0f2438" stroke="#8fd9b3" stroke-width="2" />
+    <circle cx="960" cy="440" r="7" fill="#0f2438" stroke="#21ad65" stroke-width="2" />
+    <circle cx="1400" cy="300" r="9" fill="#21ad65" stroke="#eafff1" stroke-width="2" />
+  </g>
+  <g fill="#cfe9db" opacity="0.7" font-family="Arial, sans-serif" font-size="15">
+    <text x="40" y="732">Strategy</text>
+    <text x="500" y="595">Prioritize</text>
+    <text x="915" y="475">Govern</text>
+    <text x="1345" y="270">Scale</text>
+  </g>
+
+  <!-- governance / decision framework panel, upper right -->
+  <g>
+    <rect x="1160" y="90" width="290" height="170" rx="14" fill="#0f2438" stroke="#21ad65" stroke-width="1.4" opacity="0.9" />
+    <rect x="1186" y="118" width="70" height="10" rx="4" fill="#8fd9b3" opacity="0.7" />
+    <g stroke="#8fd9b3" stroke-width="1.6" opacity="0.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1195 155l8 3" />
+    </g>
+    <g fill="none" stroke="#e4e8ec" stroke-width="1.2" opacity="0.45">
+      <line x1="1186" y1="150" x2="1420" y2="150" />
+      <line x1="1186" y1="180" x2="1420" y2="180" />
+      <line x1="1186" y1="210" x2="1420" y2="210" />
+    </g>
+    <g fill="#21ad65">
+      <circle cx="1198" cy="150" r="4.5" />
+      <circle cx="1198" cy="180" r="4.5" />
+      <circle cx="1198" cy="210" r="4.5" />
+    </g>
+    <g fill="#dff5e7" font-family="Arial, sans-serif" font-size="13" opacity="0.85">
+      <text x="1214" y="154">Risk &amp; compliance controls</text>
+      <text x="1214" y="184">Model oversight</text>
+      <text x="1214" y="214">Business alignment</text>
+    </g>
+  </g>
+  <!-- dotted oversight lines connecting the governance panel to the roadmap -->
+  <g stroke="#21ad65" stroke-width="1" stroke-dasharray="3 5" opacity="0.4">
+    <path d="M1230 260 L1080 420" fill="none" />
+    <path d="M1300 260 L1350 300" fill="none" />
+  </g>
+
+  <!-- KPI / measurement bars, lower right -->
+  <g opacity="0.85">
+    <rect x="1230" y="700" width="26" height="60" rx="3" fill="#21ad65" opacity="0.35" />
+    <rect x="1268" y="660" width="26" height="100" rx="3" fill="#21ad65" opacity="0.55" />
+    <rect x="1306" y="610" width="26" height="150" rx="3" fill="#21ad65" opacity="0.8" />
+    <rect x="1344" y="580" width="26" height="180" rx="3" fill="#8fd9b3" opacity="0.9" />
+    <line x1="1218" y1="760" x2="1382" y2="760" stroke="#e4e8ec" stroke-width="1.2" opacity="0.35" />
+  </g>
+
+  <!-- subtle floating accent dots -->
+  <g fill="#21ad65" opacity="0.5">
+    <circle cx="780" cy="200" r="3" />
+    <circle cx="860" cy="150" r="2.5" />
+    <circle cx="200" cy="480" r="3" />
+  </g>
+</svg>

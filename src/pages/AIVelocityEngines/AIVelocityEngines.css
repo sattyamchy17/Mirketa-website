@@ -231,6 +231,22 @@
   color: var(--color-primary-green);
 }
 
+/* No dedicated page exists yet for this product — plain, non-interactive
+   card rather than one that looks clickable but goes nowhere. */
+.ve-product-card--static {
+  cursor: default;
+}
+
+.ve-product-card--static:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--color-bg-light);
+}
+
+.ve-product-card__link--static {
+  color: var(--color-gray-400);
+}
+
 @media (max-width: 1024px) {
   .ve-products__grid { grid-template-columns: 1fr 1fr; }
 }

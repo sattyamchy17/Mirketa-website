@@ -811,10 +811,10 @@ function GetInTouchSection() {
             </li>
           ))}
           <li>
-            <Link to="/insights/customer-success">Customer Success</Link>
+            <Link to="/insights">Customer Success</Link>
           </li>
           <li>
-            <Link to="/insights/blogs">Blogs</Link>
+            <Link to="/blog">Blogs</Link>
           </li>
         </ul>
         <a href="#contact" className="btn btn-primary scd-btn">

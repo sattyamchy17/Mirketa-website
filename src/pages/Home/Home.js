@@ -14,8 +14,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Autoplay } from "swiper/modules";
 import { Images } from "../../assets/images/index.js";
-import { getLatestPosts, cleanSlug } from "../../sanityQueries.js";
-import { urlFor } from "../../sanityImage.js";
+import { getLatestPosts, getLatestPostByCategory } from "../../blog/blogUtils.js";
 
 export const playIcon = Images.iconPlay;
 export const quoteIcon = Images.iconQuote;
@@ -251,7 +250,7 @@ export const AI_SPOTLIGHT_TABS = [
     tag: "",
     heading: "Guardrail Ops",
     description: "Ethics and safety layers for enterprise AI, built directly into every agent workflow we deploy.",
-    cta: { label: "Talk to Our AI Architecture Team", href: "/ai-solutions/strategy-architecture" },
+    cta: { label: "Talk to Our AI Architecture Team", href: "/agent-development" },
   },
   {
     id: "guardian-ops",
@@ -259,7 +258,7 @@ export const AI_SPOTLIGHT_TABS = [
     tag: "",
     heading: "Guardian Ops",
     description: "Continuous monitoring and managed AI operations that keep autonomous agents compliant and on-mission.",
-    cta: { label: "Talk to Our AI Architecture Team", href: "/ai-solutions/managed-operations" },
+    cta: { label: "Talk to Our AI Architecture Team", href: "/agent-development" },
   },
 ];
 
@@ -302,11 +301,22 @@ export const industrySwiperConfig = {
 // ================= CUSTOMER SUCCESS =================
 export const CUSTOMER_SUCCESS_BG = Images.homeCustomerSuccessPhoto;
 
-export const FEATURED_CASE_STUDY = {
-  title: "Fortune 500 Financial Services Transformation",
-  description: "We orchestrated a multi-cloud Salesforce architecture integrated with...",
-  href: "/insights/customer-success/fortune-500-financial-services",
-};
+// Always the latest "Customer Success" post from the local blog (see
+// src/blog/blogUtils.js) — adding a newer post in that category takes over
+// this card automatically, with zero edits needed here.
+const latestCustomerSuccessPost = getLatestPostByCategory("Customer Success");
+
+export const FEATURED_CASE_STUDY = latestCustomerSuccessPost
+  ? {
+      title: latestCustomerSuccessPost.title,
+      description: latestCustomerSuccessPost.excerpt,
+      href: `/blog/${latestCustomerSuccessPost.slug}`,
+    }
+  : {
+      title: "Fortune 500 Financial Services Transformation",
+      description: "We orchestrated a multi-cloud Salesforce architecture integrated with...",
+      href: "/blog",
+    };
 
 // TODO: Add image
 // src/assets/images/testimonials/david-miller.jpg
@@ -400,7 +410,7 @@ export const partnersSwiperConfig = {
 };
 
 // ================= LATEST INSIGHTS =================
-// Backed by live Sanity data (see src/sanityQueries.js's getLatestPosts) —
+// Backed by the local blog data (see src/blog/blogUtils.js's getLatestPosts) —
 // no hardcoded posts here. The 4-item shape below is what the existing
 // LatestInsightsSection JSX/CSS in Home.jsx already expects, so the card
 // markup itself needs zero changes when the data source changes.
@@ -413,12 +423,12 @@ function formatInsightDate(dateString) {
 
 function mapPostToInsight(post) {
   return {
-    category: post.categories?.[0]?.title || "Insights",
-    date: formatInsightDate(post.publishedAt),
+    category: post.category || "Insights",
+    date: formatInsightDate(post.publishedDate),
     title: post.title,
     excerpt: post.excerpt,
-    href: `/blog/${cleanSlug(post.slug?.current)}`,
-    image: post.mainImage ? urlFor(post.mainImage).width(600).height(340).fit("crop").auto("format").url() : Images.aiNetworkPattern,
+    href: `/blog/${post.slug}`,
+    image: post.featuredImage || Images.aiNetworkPattern,
   };
 }
 
@@ -435,34 +445,13 @@ export const insightsSwiperConfig = {
 };
 
 /**
- * Loads the latest published Sanity posts for the "Latest Insights" section.
- * Sanity is the only source of truth here — there is no hardcoded fallback
- * list. `status` is "loading" | "ready" | "error" so the section can show an
- * appropriate small message instead of a blank gap while data is fetched.
+ * Reads the latest posts for the "Latest Insights" section from the local
+ * blog data. Synchronous, so `status` is always "ready" — kept in the
+ * returned shape so LatestInsightsSection's JSX needs no changes.
  */
 export function useInsights() {
-  const [insights, setInsights] = useState([]);
-  const [status, setStatus] = useState("loading");
-
-  useEffect(() => {
-    let cancelled = false;
-    getLatestPosts(LATEST_INSIGHTS_COUNT)
-      .then((posts) => {
-        if (cancelled) return;
-        setInsights(posts.map(mapPostToInsight));
-        setStatus("ready");
-      })
-      .catch((err) => {
-        if (cancelled) return;
-        console.error("Failed to load latest insights from Sanity:", err);
-        setStatus("error");
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  return { insights, status };
+  const insights = getLatestPosts(LATEST_INSIGHTS_COUNT).map(mapPostToInsight);
+  return { insights, status: "ready" };
 }
 
 // ================= SHARED CAROUSEL HELPERS =================

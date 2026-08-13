@@ -100,6 +100,12 @@
   color: var(--color-primary-green);
 }
 
+/* No real page exists yet for this item — plain text, not a link. */
+.site-footer__legal-static {
+  color: var(--color-gray-400);
+  cursor: default;
+}
+
 @media (max-width: 1024px) {
   .site-footer__top {
     grid-template-columns: 1fr;

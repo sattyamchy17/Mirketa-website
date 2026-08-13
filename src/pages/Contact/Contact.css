@@ -1,0 +1,178 @@
+/* ============================================================
+   CONTACT PAGE — page-scoped styles.
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .content-wrap, .section, .section-heading, .btn*)
+   and the light-hero recipe already used by src/pages/Insights/Insights.css.
+   ============================================================ */
+
+.contact-page {
+  --ct-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.ct-eyebrow {
+  color: var(--color-primary-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.ct-btn.btn-primary:hover {
+  background: var(--ct-hover-navy);
+}
+
+.ct-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   HERO — light background, matches the Insights.jsx recipe
+   ============================================================ */
+.ct-hero {
+  background: var(--color-bg-light);
+  padding: 160px 0 72px;
+}
+
+.ct-breadcrumb {
+  padding-top: 0;
+}
+
+.ct-hero__inner {
+  margin-top: 24px;
+}
+
+.ct-hero__text {
+  max-width: 680px;
+}
+
+.ct-hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.ct-hero__paragraph {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.ct-hero__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .ct-hero { padding: 130px 0 48px; }
+  .ct-hero h1 { font-size: 28px; }
+  .ct-hero__ctas { flex-direction: column; align-items: stretch; }
+}
+
+/* ============================================================
+   DISCOVERY CALL
+   ============================================================ */
+.ct-discovery {
+  background: var(--color-white);
+}
+
+.ct-discovery__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.ct-discovery__text p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.ct-discovery__points {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  margin: 0;
+}
+
+.ct-discovery__points li {
+  font-size: 14.5px;
+  color: var(--color-dark-navy);
+  padding-left: 22px;
+  position: relative;
+}
+
+.ct-discovery__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+@media (max-width: 900px) {
+  .ct-discovery__inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ============================================================
+   OTHER WAYS TO REACH US
+   ============================================================ */
+.ct-channels {
+  background: var(--color-bg-light);
+  text-align: center;
+}
+
+.ct-channels__inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ct-channels__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.ct-channel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark-navy);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.ct-channel svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary-green);
+}
+
+.ct-channel:hover,
+.ct-channel:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+  border-color: var(--color-primary-green);
+}

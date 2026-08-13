@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2f3a" /><stop offset="100%" stop-color="#0a1826" />
+    </linearGradient>
+    <radialGradient id="gl7" cx="0.72" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#1fb3a3" stop-opacity="0.3" /><stop offset="100%" stop-color="#1fb3a3" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g7)" /><rect width="1200" height="675" fill="url(#gl7)" />
+  <g stroke="#ffffff" stroke-opacity="0.04"><path d="M0 225H1200 M0 450H1200 M300 0V675 M600 0V675 M900 0V675" /></g>
+  <g stroke="#1fb3a3" stroke-width="2" opacity="0.75" fill="none">
+    <path d="M270 190 C420 190 480 300 600 300" /><path d="M270 300 C420 300 480 300 600 300" /><path d="M270 410 C420 410 480 300 600 300" />
+  </g>
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.6"><circle cx="270" cy="190" r="22" /><circle cx="270" cy="300" r="22" /><circle cx="270" cy="410" r="22" /></g>
+  <circle cx="600" cy="300" r="55" fill="#0d2848" stroke="#21ad65" stroke-width="2.6" />
+  <text x="600" y="295" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="13" fill="#eaf2fb" font-weight="700">Unified</text>
+  <text x="600" y="313" text-anchor="middle" font-family="IBM Plex Serif, serif" font-size="13" fill="#eaf2fb" font-weight="700">Profile</text>
+  <g fill="#0d2848" stroke="#21ad65" stroke-width="1.2"><rect x="780" y="180" width="250" height="105" rx="12" /></g>
+  <text x="802" y="212" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">Identity Resolution</text>
+  <text x="802" y="236" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="#9fe3c0">3 systems → 1 customer record</text>
+  <g fill="#0d2848" stroke="#1fb3a3" stroke-width="1.2"><rect x="780" y="420" width="250" height="100" rx="12" /></g>
+  <text x="802" y="452" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#dff3ea" font-weight="700">Zero Copy</text>
+  <text x="802" y="474" font-family="IBM Plex Sans, sans-serif" font-size="10" fill="#9fe3c0">Query Snowflake data in place</text>
+  <g fill="#1fb3a3" opacity="0.55"><circle cx="1090" cy="580" r="4" /><circle cx="150" cy="150" r="3.5" /></g>
+</svg>

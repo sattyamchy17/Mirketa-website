@@ -930,7 +930,7 @@ function GetInTouchSection() {
           Explore related services: <Link to="/ai-consulting">AI Consulting</Link>, <Link to="/ai-enablement">AI Enablement</Link>,{" "}
           <Link to="/data-cloud">Salesforce Data Cloud</Link>, <Link to="/agentforce">Agentforce</Link>,{" "}
           <a href="#services">Integration Services</a>, <a href="#services">Managed Services</a>,{" "}
-          <Link to="/insights/customer-success">Customer Success</Link>, <Link to="/insights/blogs">Blogs</Link>.
+          <Link to="/insights">Customer Success</Link>, <Link to="/blog">Blogs</Link>.
         </p>
       </div>
     </section>
@@ -955,7 +955,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/" className="svc-final-cta__all-services">
+        <Link to="/platforms/salesforce/clouds" className="svc-final-cta__all-services">
           View All Services →
         </Link>
       </div>

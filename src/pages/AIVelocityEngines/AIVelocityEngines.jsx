@@ -162,14 +162,25 @@ function ProductsSection() {
           </div>
         </div>
         <div className="ve-products__grid ve-reveal-stagger">
-          {AI_VELOCITY_PRODUCTS.map((p) => (
-            <a className="ve-product-card" href={p.href} key={p.title}>
-              <img src={p.icon} alt="" loading="lazy" />
-              <h3>{p.title}</h3>
-              <p>{p.description}</p>
-              <span className="ve-product-card__link">Explore <span aria-hidden="true">→</span></span>
-            </a>
-          ))}
+          {AI_VELOCITY_PRODUCTS.map((p) =>
+            p.href ? (
+              <a className="ve-product-card" href={p.href} key={p.title}>
+                <img src={p.icon} alt="" loading="lazy" />
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+                <span className="ve-product-card__link">Explore <span aria-hidden="true">→</span></span>
+              </a>
+            ) : (
+              // No dedicated page exists yet — a plain, non-interactive card
+              // rather than a guessed or dead link.
+              <div className="ve-product-card ve-product-card--static" key={p.title}>
+                <img src={p.icon} alt="" loading="lazy" />
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+                <span className="ve-product-card__link ve-product-card__link--static">Coming Soon</span>
+              </div>
+            )
+          )}
         </div>
       </div>
     </section>
