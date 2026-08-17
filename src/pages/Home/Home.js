@@ -62,46 +62,31 @@ export const SEO = {
 
 // ================= HERO =================
 // Every slide's own image is the FULL-WIDTH background for that slide —
-// never a boxed/card visual. Slide 1 is the site's original/default hero
-// message, unchanged, using the existing home hero banner as its
-// background and keeping its existing small animated graphic (`visual:
-// true`) as the only slide with a supporting right-side visual, since it
-// has no product photo of its own. Slides 2-4 reuse real hero copy from
-// the pages their images represent (AI Roadmap Governance, Altruta AI,
-// Kratu AI) rather than new marketing copy, and have no separate visual —
-// their own image already fills the background, so layering another copy
-// of it as a small right-side graphic would just duplicate it. Their CTA
-// links point at those pages directly since the original in-page anchors
-// (e.g. "#contact") only resolve on those pages, not on Home.
+// never a boxed/card visual. Exactly 3 slides, one per AI Velocity Engine
+// product banner already in place (`Images.heroSlide*` — binding names
+// are historical and don't all match their current product anymore, see
+// the asset-swap that repointed them). No slide uses the small `visual`
+// graphic overlay here, since each slide's own image already fills the
+// background. CTAs link directly to each product's real page.
 export const HERO_SLIDES = [
   {
-    heading: "AI-Native Digital Transformation for the Modern Enterprise",
+    heading: "Cut Revenue Cloud Configuration Effort by Up to 70%",
     paragraph:
-      "We design, build, and operate agentic AI, CRM, ERP, and cloud platforms that turn fragmented systems into measurable business ones in 90 days.",
-    primaryCta: { label: "Get Your AI Readiness Assessment", href: "/ai-readiness" },
-    secondaryCta: { label: "Explore AI Solutions", href: "/ai-solutions" },
-    bg: Images.homeHeroBanner,
-    visual: true,
-  },
-  {
-    heading: "Build a Governed AI Roadmap That Moves from Strategy to Scale",
-    paragraph: "Most enterprises run AI as a series of disconnected pilots with no shared prioritization logic and no consistent oversight.",
-    primaryCta: { label: "Explore AI Roadmap Governance", href: "/ai-roadmap-governance" },
+      "Turn complex business documents into deployable Salesforce metadata with an enterprise-grade AI agent designed for Agentforce Revenue Management.",
+    primaryCta: { label: "See ARIA in Action", href: "/ai-accelerator-aria" },
     bg: Images.heroSlideAiRoadmapGovernance,
   },
   {
-    heading: "The AI Suite That Helps Nonprofits Raise More, Serve Better, and Prove Impact",
-    paragraph:
-      "Altruta unifies donor management, program and case management, and grant management into one intelligent Salesforce-native platform powered by Data Cloud, Einstein, Agentforce, and Prompt Builder.",
-    primaryCta: { label: "Explore Altruta AI", href: "/altruta-ai" },
-    bg: Images.heroSlideAltrutaAiNonprofit,
+    heading: "Accelerate Care Delivery. Eliminate Documentation Bottlenecks.",
+    paragraph: "Bridge the gap between patient charts, clinical notes, and decision-making with a native AI engine built for modern healthcare providers.",
+    primaryCta: { label: "Discover KRATU AI - Clinical AI", href: "/kratu-ai" },
+    bg: Images.heroSlideKratuAiHealthcare,
   },
   {
-    heading: "Meet Kratu AI: The Intelligence Inside Your Workflows",
-    paragraph:
-      "Kratu AI helps healthcare teams connect clinical documentation, payer intelligence, claims readiness, and denial management inside a smarter healthcare operating model.",
-    primaryCta: { label: "Explore Kratu AI", href: "/kratu-ai" },
-    bg: Images.heroSlideKratuAiHealthcare,
+    heading: "Turn One-Time Donors into Lifelong Champions with Exponential Donor Growth.",
+    paragraph: "Unify fundraising, donor journeys, and grant workflows into a single AI engine designed to maximize lifetime donor value.",
+    primaryCta: { label: "Explore ALTRUTA built specifically for nonprofits", href: "/altruta-ai" },
+    bg: Images.heroSlideAltrutaAiNonprofit,
   },
 ];
 
