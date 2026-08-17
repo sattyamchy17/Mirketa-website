@@ -62,13 +62,26 @@ export const SEO = {
 
 // ================= HERO =================
 // Every slide's own image is the FULL-WIDTH background for that slide —
-// never a boxed/card visual. Exactly 3 slides, one per AI Velocity Engine
-// product banner already in place (`Images.heroSlide*` — binding names
+// never a boxed/card visual. Slide 1 is the site's original/default hero
+// message, unchanged, using the existing home hero banner as its
+// background and keeping its existing small animated graphic (`visual:
+// true`) as the only slide with a supporting right-side visual, since it
+// has no product photo of its own. Slides 2-4 are the AI Velocity Engine
+// product banners already in place (`Images.heroSlide*` — binding names
 // are historical and don't all match their current product anymore, see
-// the asset-swap that repointed them). No slide uses the small `visual`
-// graphic overlay here, since each slide's own image already fills the
-// background. CTAs link directly to each product's real page.
+// the asset-swap that repointed them) and have no separate visual, since
+// each one's own image already fills the background. CTAs link directly
+// to each product's real page.
 export const HERO_SLIDES = [
+  {
+    heading: "AI-Native Digital Transformation for the Modern Enterprise",
+    paragraph:
+      "We design, build, and operate agentic AI, CRM, ERP, and cloud platforms that turn fragmented systems into measurable business ones in 90 days.",
+    primaryCta: { label: "Get Your AI Readiness Assessment", href: "/ai-readiness" },
+    secondaryCta: { label: "Explore AI Solutions", href: "/ai-solutions" },
+    bg: Images.homeHeroBanner,
+    visual: true,
+  },
   {
     heading: "Cut Revenue Cloud Configuration Effort by Up to 70%",
     paragraph:
