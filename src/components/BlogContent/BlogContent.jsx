@@ -8,11 +8,11 @@ import "./BlogContent.css";
 // markup lives; BlogDetail.jsx never hardcodes article content.
 //
 // Supported block types: heading2, heading3, paragraph, list,
-// callout, faq. Paragraph/list text supports two lightweight inline
-// tokens — **bold** and [label](/path or https://url) — parsed by
-// renderInline() below, so authors can add emphasis and internal/
-// external links directly in blogData without a rich-text editor
-// or an extra markdown dependency.
+// callout, table, faq. Paragraph/list/table text supports two
+// lightweight inline tokens — **bold** and [label](/path or
+// https://url) — parsed by renderInline() below, so authors can add
+// emphasis and internal/external links directly in blogData without
+// a rich-text editor or an extra markdown dependency.
 // ============================================================
 
 const INLINE_TOKEN = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
@@ -76,6 +76,32 @@ export default function BlogContent({ blocks }) {
             return (
               <div key={i} className="blog-callout" role="note">
                 <p>{renderInline(block.text)}</p>
+              </div>
+            );
+          case "table":
+            return (
+              <div key={i} className="blog-content__table-wrap">
+                <table className="blog-content__table">
+                  {block.caption && <caption>{block.caption}</caption>}
+                  <thead>
+                    <tr>
+                      {block.headers.map((h, hi) => (
+                        <th key={hi} scope="col">
+                          {renderInline(h)}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.map((row, ri) => (
+                      <tr key={ri}>
+                        {row.map((cell, ci) => (
+                          <td key={ci}>{renderInline(cell)}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             );
           case "faq":

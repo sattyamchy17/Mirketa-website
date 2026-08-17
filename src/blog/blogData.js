@@ -16,6 +16,7 @@ import { post as salesforceAgentforceImplementationEnterpriseGuide } from "./pos
 import { post as modernizingServicenowWorkflowsAiEra } from "./posts/modernizing-servicenow-workflows-ai-era.js";
 import { post as salesforceDataCloudUnifiedCustomerDataFoundation } from "./posts/salesforce-data-cloud-unified-customer-data-foundation.js";
 import { post as healthcareDataReadinessForAiGuide } from "./posts/healthcare-data-readiness-for-ai-guide.js";
+import { post as dataCloudForAgentforce } from "./posts/data-cloud-for-agentforce.js";
 
 export const blogPosts = [
   enterpriseCustomerSuccessUnifiedDataFoundation,
@@ -26,4 +27,5 @@ export const blogPosts = [
   modernizingServicenowWorkflowsAiEra,
   salesforceDataCloudUnifiedCustomerDataFoundation,
   healthcareDataReadinessForAiGuide,
+  dataCloudForAgentforce,
 ];

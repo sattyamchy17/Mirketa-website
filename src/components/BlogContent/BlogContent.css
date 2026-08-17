@@ -24,3 +24,45 @@
 .blog-faq h2 {
   margin-bottom: 20px;
 }
+
+.blog-content__table-wrap {
+  overflow-x: auto;
+  margin: 0 0 26px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.blog-content__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.blog-content__table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 14px 18px 0;
+  font-size: 13px;
+  color: var(--color-gray-300);
+}
+
+.blog-content__table th {
+  background: var(--color-bg-light);
+  text-align: left;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  padding: 12px 18px;
+  white-space: nowrap;
+}
+
+.blog-content__table td {
+  padding: 14px 18px;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.blog-content__table tbody tr:hover {
+  background: var(--color-bg-light);
+}

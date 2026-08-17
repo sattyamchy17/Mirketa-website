@@ -415,7 +415,10 @@ export default function Header() {
     }
   };
 
-  const isSectionActive = (item) => item.prefixes.some((p) => location.pathname.startsWith(p));
+  // "Industry" is excluded from the current-section highlight by request —
+  // every other item keeps the standard green active-state treatment when
+  // its route prefix matches the current page.
+  const isSectionActive = (item) => item.label !== "Industry" && item.prefixes.some((p) => location.pathname.startsWith(p));
 
   return (
     <>
