@@ -41,6 +41,14 @@
   align-items: center;
   gap: 6px;
   color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+
+.top-strip__phones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
 }
 
 .top-strip__links {
@@ -727,6 +735,20 @@
   .top-strip__item span,
   .top-strip {
     font-size: 11px;
+  }
+
+  .top-strip__phones {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Two phone numbers plus the Careers/Contact links no longer fit on one
+     line at this width — the top strip keeps a fixed height for its
+     show/hide-on-scroll animation, so links (available elsewhere in the
+     header/footer) give way to keep both numbers on a single row. */
+  .top-strip__links {
+    display: none;
   }
 }
 

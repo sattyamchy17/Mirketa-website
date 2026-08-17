@@ -17,11 +17,15 @@ const NAV_ITEMS = [
     columns: [
       [
         {
-          heading: "AI Consulting and Development",
+          heading: "AI Consulting",
           items: [
             { label: "AI Readiness Assessment", href: "/ai-readiness" },
             { label: "AI Roadmap & Governance", href: "/ai-roadmap-governance" },
-            { label: "AI Enablement", href: "/ai-enablement" },
+          ],
+        },
+        {
+          heading: "AI Enablement",
+          items: [
             { label: "Agentic Orchestration & Legacy Integration", href: "/agentic-orchestration" },
             { label: "Agent Development", href: "/agent-development" },
             { label: "AI Data Foundations", href: "/ai-data-foundations" },
@@ -32,15 +36,14 @@ const NAV_ITEMS = [
         {
           heading: "AI Velocity Engines",
           items: [
-            { label: "View All AI Velocity Engines", href: "/ai-velocity-engines" },
-            { label: "Donor AI – AltrutaAI", href: "/altruta-ai" },
-            { label: "Aria AI", href: "/ai-accelerator-aria" },
-            { label: "Vendor Compliance AI", href: "/ai-velocity-engines" },
-            { label: "Kratu AI (ElixirAI)", href: "/kratu-ai" },
+            { label: "ARIA - AI based RCA", href: "/ai-accelerator-aria" },
+            { label: "ALTRUTA - AI Nonprofit Suite", href: "/altruta-ai" },
+            { label: "KRATU AI - Clinical AI", href: "/kratu-ai" },
             { label: "Case Rezolver & Management", href: "/salesforce-ai-case-management" },
-            { label: "Scribe – Ambient Listening", href: "/ai-velocity-engines" },
-            { label: "Code Analysis", href: "/ai-velocity-engines" },
-            { label: "Scheduling – Smart Appointment", href: "/ai-velocity-engines" },
+            // Existing "Vulnerability Remediation Agent" content on the
+            // Agentic Orchestration page — no dedicated page exists for
+            // this item, so it links there rather than to a new/guessed URL.
+            { label: "AI-Driven Vulnerability Management", href: "/agentic-orchestration" },
           ],
         },
       ],
@@ -297,7 +300,7 @@ const NAV_ITEMS = [
       ],
     ],
     featured: {
-      title: "Talk to an Expert",
+      title: "Schedule a Discovery Call",
       description: "Get a same-week call with a Mirketa solution architect.",
       cta: "Book a Discovery Call",
       href: "/company/contact#book",
@@ -430,12 +433,20 @@ export default function Header() {
       <div className={`site-header-wrap ${scrolled ? "site-header-wrap--scrolled" : ""}`}>
         <div className={`top-strip ${scrolled ? "top-strip--hidden" : ""}`}>
           <div className="container top-strip__inner">
-            <a href="tel:+18556475382" className="top-strip__item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.9.8.6 0 1 .4 1 1v3.6c0 .6-.4 1-1 1C11.4 21.6 2.4 12.6 2.4 1.3c0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.4.3 2.7.8 3.9.1.3.1.7-.2 1L6.6 10.8z" fill="currentColor" />
-              </svg>
-              +1 (855) MIRKETA
-            </a>
+            <div className="top-strip__phones">
+              <a href="tel:+18556475382" className="top-strip__item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.9.8.6 0 1 .4 1 1v3.6c0 .6-.4 1-1 1C11.4 21.6 2.4 12.6 2.4 1.3c0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.4.3 2.7.8 3.9.1.3.1.7-.2 1L6.6 10.8z" fill="currentColor" />
+                </svg>
+                <span aria-hidden="true">🇺🇸</span> +1 (855) MIRKETA
+              </a>
+              <a href="tel:+919876543210" className="top-strip__item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.9.8.6 0 1 .4 1 1v3.6c0 .6-.4 1-1 1C11.4 21.6 2.4 12.6 2.4 1.3c0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.4.3 2.7.8 3.9.1.3.1.7-.2 1L6.6 10.8z" fill="currentColor" />
+                </svg>
+                <span aria-hidden="true">🇮🇳</span> +91 98765 43210
+              </a>
+            </div>
             <div className="top-strip__links">
               <Link to="/company/careers">Careers</Link>
               <Link to="/company/contact">Contact</Link>
@@ -486,9 +497,6 @@ export default function Header() {
             </nav>
 
             <div className="site-header__actions">
-              <Link to="/company/contact#contact-form" className="btn btn-outline-dark site-header__ghost-btn">
-                Talk to an Expert
-              </Link>
               <Link to="/company/contact#book" className="btn btn-primary">
                 Book a Discovery Call
                 <span className="btn-arrow">&rarr;</span>
@@ -739,9 +747,6 @@ export default function Header() {
           )}
         </ul>
         <div className="mobile-menu__footer">
-          <Link to="/company/contact#contact-form" className="btn btn-outline-dark" onClick={() => setMobileOpen(false)}>
-            Talk to an Expert
-          </Link>
           <Link to="/company/contact#book" className="btn btn-primary" onClick={() => setMobileOpen(false)}>
             Book a Discovery Call
           </Link>

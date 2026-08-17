@@ -3,30 +3,45 @@
    ============================================================ */
 .hero {
   position: relative;
-  background: var(--color-dark-navy);
   color: #fff;
   overflow: hidden;
-  padding-top: 170px;
-  padding-bottom: 90px;
 }
 
-.hero__bg {
+/* Each slide carries its own full-width background image — there is no
+   separate boxed/card element for it, so the image visually extends
+   across the complete banner with the overlay and content painted
+   directly on top. */
+.hero-slide {
+  position: relative;
+  min-height: 720px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 170px 0 90px;
+  background-color: var(--color-dark-navy);
+  background-image: var(--hero-slide-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slide__overlay {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 78% 30%, rgba(33, 173, 101, 0.28) 0%, rgba(33, 173, 101, 0) 45%),
-    radial-gradient(circle at 15% 85%, rgba(0, 137, 124, 0.25) 0%, rgba(0, 137, 124, 0) 50%),
-    linear-gradient(160deg, rgba(15, 36, 56, 0.88) 0%, rgba(19, 44, 68, 0.82) 55%, rgba(10, 24, 38, 0.92) 100%),
-    var(--hero-photo, none);
-  background-size: cover, cover, cover, cover;
-  background-position: center, center, center, center;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   z-index: 0;
+  /* Darker on the left (where the text sits) fading lighter toward the
+     right, so the background image stays visible rather than fully
+     obscured — plus a soft brand-green accent for continuity with the
+     rest of the site. */
+  background-image:
+    radial-gradient(circle at 82% 28%, rgba(33, 173, 101, 0.22) 0%, rgba(33, 173, 101, 0) 45%),
+    linear-gradient(100deg, rgba(8, 18, 28, 0.94) 0%, rgba(15, 36, 56, 0.8) 42%, rgba(15, 36, 56, 0.48) 100%);
 }
 
 .hero__inner {
   position: relative;
   z-index: 1;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 460px;
   gap: 60px;
@@ -128,13 +143,93 @@
 .hero-particle--4 { top: 82%; left: 68%; }
 .hero-particle--5 { top: 46%; left: 92%; width: 5px; height: 5px; }
 
+/* ---------- Hero slider (Swiper) ---------- */
+.hero-swiper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* Entrance stagger for each slide's content — heading, then description,
+   then the CTAs, then the supporting visual (when present) — replayed
+   every time a slide becomes active via Swiper's own `.swiper-slide-active`
+   class, rather than a one-off animation on first mount. Confined to
+   users who haven't asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .swiper-slide-active .hero__text h1 {
+    animation: hero-slide-in 0.6s ease both;
+  }
+  .swiper-slide-active .hero__text p {
+    animation: hero-slide-in 0.6s ease both 0.15s;
+  }
+  .swiper-slide-active .hero__ctas {
+    animation: hero-slide-in 0.6s ease both 0.3s;
+  }
+  .swiper-slide-active .hero__graphic {
+    animation: hero-slide-in 0.6s ease both 0.15s;
+  }
+}
+
+@keyframes hero-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-swiper__pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-swiper__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+  margin: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.hero-swiper__pagination .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hero-swiper__pagination .swiper-pagination-bullet:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.hero-swiper__pagination .swiper-pagination-bullet-active {
+  background: var(--color-primary-green);
+  transform: scale(1.2);
+}
+
 @media (max-width: 1024px) {
-  .hero {
-    padding-top: 150px;
+  .hero-slide {
+    min-height: 600px;
+    padding: 150px 0 80px;
   }
   .hero__inner {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  .hero__text {
+    margin: 0 auto;
   }
   .hero__text h1,
   .hero__text p {
@@ -149,13 +244,20 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .hero-slide {
+    min-height: 680px;
+    padding: 120px 0 90px;
+  }
   .hero__text h1 {
     font-size: 26px;
   }
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
+  }
+  .hero__graphic {
+    max-width: 240px;
   }
 }
 

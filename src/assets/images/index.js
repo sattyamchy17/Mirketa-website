@@ -104,6 +104,11 @@ import iconDimensionSecurity from "./icons/dimension-security.svg";
 // ---------- About Us page ----------
 import heroAboutUs from "./hero/about-us-hero-bg.svg";
 
+// ---------- Home page: hero slider ----------
+import heroSlideAiRoadmapGovernance from "../slider/ai_roadmap_governance_dark_hires.png";
+import heroSlideAltrutaAiNonprofit from "../slider/altruta_ai_nonprofit_hires.png";
+import heroSlideKratuAiHealthcare from "../slider/kratu_ai_healthcare_hires.png";
+
 // ---------- AI Readiness page: use-case readiness tiers ----------
 import iconTierQuickwins from "./icons/tier-quickwins.svg";
 import iconTierStrategic from "./icons/tier-strategic.svg";
@@ -573,6 +578,9 @@ export const Images = {
   heroAiRoadmapGovernance,
   iconDimensionSecurity,
   heroAboutUs,
+  heroSlideAiRoadmapGovernance,
+  heroSlideAltrutaAiNonprofit,
+  heroSlideKratuAiHealthcare,
   illoAiReadinessMaturityScorecard,
 
   iconTierQuickwins,

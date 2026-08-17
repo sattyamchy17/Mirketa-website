@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/pagination";
 import Seo from "../../components/Seo/Seo.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import VideoModal from "../../components/VideoModal/VideoModal.jsx";
@@ -11,8 +12,8 @@ const FEATURED_CASE_STUDY_YOUTUBE_ID = "WK8V3TT2cFc";
 
 import {
   // Hero
-  HERO_CONTENT,
-  HERO_BG_PHOTO,
+  HERO_SLIDES,
+  heroSwiperConfig,
   useHeroAnimation,
   // Client logos
   TRUST_BADGES,
@@ -75,53 +76,79 @@ export default function Home() {
 }
 
 // ================= HERO =================
+// Every slide is one full-width background image with an overlay and the
+// content sitting directly on top — never a boxed/card visual. Slide 1
+// (index 0) keeps the site's original animated graphic as its small
+// supporting visual, since it's the only slide without a product photo of
+// its own; the ambient orbit/particle/glow-line loop keeps running via
+// graphicRef regardless of which slide is currently active.
 function HeroSection() {
-  const textRef = useRef(null);
   const graphicRef = useRef(null);
-  useHeroAnimation(textRef, graphicRef);
+  useHeroAnimation(graphicRef);
+
+  const [reduceMotion, setReduceMotion] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+  }, []);
+
+  const swiperProps = reduceMotion ? { ...heroSwiperConfig, autoplay: false, speed: 0 } : heroSwiperConfig;
 
   return (
-    <section className="hero" aria-label="Introduction">
-      <div className="hero__bg" style={{ "--hero-photo": cssUrl(HERO_BG_PHOTO) }} />
-      <div className="container hero__inner">
-        <div className="hero__text" ref={textRef}>
-          <h1>{HERO_CONTENT.heading}</h1>
-          <p>{HERO_CONTENT.paragraph}</p>
-          <div className="hero__ctas">
-            <Link to={HERO_CONTENT.primaryCta.href} className="btn btn-primary">
-              {HERO_CONTENT.primaryCta.label}
-              <span className="btn-arrow">&rarr;</span>
-            </Link>
-            <Link to={HERO_CONTENT.secondaryCta.href} className="btn btn-secondary">
-              {HERO_CONTENT.secondaryCta.label}
-            </Link>
-          </div>
-        </div>
+    <section className="hero" aria-label="Introduction" aria-roledescription="carousel">
+      <Swiper {...swiperProps} className="hero-swiper">
+        {HERO_SLIDES.map((slide) => (
+          <SwiperSlide key={slide.heading}>
+            <div className="hero-slide" style={{ "--hero-slide-bg": cssUrl(slide.bg) }}>
+              <div className="hero-slide__overlay" aria-hidden="true" />
+              <div className="container hero__inner">
+                <div className="hero__text">
+                  <h1>{slide.heading}</h1>
+                  <p>{slide.paragraph}</p>
+                  <div className="hero__ctas">
+                    <Link to={slide.primaryCta.href} className="btn btn-primary">
+                      {slide.primaryCta.label}
+                      <span className="btn-arrow">&rarr;</span>
+                    </Link>
+                    {slide.secondaryCta && (
+                      <Link to={slide.secondaryCta.href} className="btn btn-secondary">
+                        {slide.secondaryCta.label}
+                      </Link>
+                    )}
+                  </div>
+                </div>
 
-        <div className="hero__graphic" ref={graphicRef} aria-hidden="true">
-          <div className="hero-orbit hero-orbit--1" />
-          <div className="hero-orbit hero-orbit--2" />
+                {slide.visual && (
+                  <div className="hero__graphic" ref={graphicRef} aria-hidden="true">
+                    <div className="hero-orbit hero-orbit--1" />
+                    <div className="hero-orbit hero-orbit--2" />
 
-          <svg className="hero-glow-lines" viewBox="0 0 400 400" fill="none">
-            <path className="hero-glow-line" d="M40 200 H140" stroke="#21ad65" strokeWidth="2" />
-            <path className="hero-glow-line" d="M360 160 H260" stroke="#21ad65" strokeWidth="2" />
-            <path className="hero-glow-line" d="M200 40 V140" stroke="#21ad65" strokeWidth="2" />
-            <path className="hero-glow-line" d="M200 360 V260" stroke="#21ad65" strokeWidth="2" />
-            <path className="hero-glow-line" d="M90 90 L150 150" stroke="#21ad65" strokeWidth="2" />
-            <path className="hero-glow-line" d="M310 310 L250 250" stroke="#21ad65" strokeWidth="2" />
-          </svg>
+                    <svg className="hero-glow-lines" viewBox="0 0 400 400" fill="none">
+                      <path className="hero-glow-line" d="M40 200 H140" stroke="#21ad65" strokeWidth="2" />
+                      <path className="hero-glow-line" d="M360 160 H260" stroke="#21ad65" strokeWidth="2" />
+                      <path className="hero-glow-line" d="M200 40 V140" stroke="#21ad65" strokeWidth="2" />
+                      <path className="hero-glow-line" d="M200 360 V260" stroke="#21ad65" strokeWidth="2" />
+                      <path className="hero-glow-line" d="M90 90 L150 150" stroke="#21ad65" strokeWidth="2" />
+                      <path className="hero-glow-line" d="M310 310 L250 250" stroke="#21ad65" strokeWidth="2" />
+                    </svg>
 
-          <div className="hero-chip">
-            <span>AI</span>
-          </div>
+                    <div className="hero-chip">
+                      <span>AI</span>
+                    </div>
 
-          <span className="hero-particle hero-particle--1" />
-          <span className="hero-particle hero-particle--2" />
-          <span className="hero-particle hero-particle--3" />
-          <span className="hero-particle hero-particle--4" />
-          <span className="hero-particle hero-particle--5" />
-        </div>
-      </div>
+                    <span className="hero-particle hero-particle--1" />
+                    <span className="hero-particle hero-particle--2" />
+                    <span className="hero-particle hero-particle--3" />
+                    <span className="hero-particle hero-particle--4" />
+                    <span className="hero-particle hero-particle--5" />
+                  </div>
+                )}
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+        <div className="hero-swiper__pagination" role="tablist" aria-label="Hero slides" />
+      </Swiper>
     </section>
   );
 }

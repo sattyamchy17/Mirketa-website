@@ -12,7 +12,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Keyboard, A11y } from "swiper/modules";
 import { Images } from "../../assets/images/index.js";
 import { getLatestPosts, getLatestPostByCategory } from "../../blog/blogUtils.js";
 
@@ -61,31 +61,74 @@ export const SEO = {
 };
 
 // ================= HERO =================
-export const HERO_CONTENT = {
-  heading: "AI-Native Digital Transformation for the Modern Enterprise",
-  paragraph:
-    "We design, build, and operate agentic AI, CRM, ERP, and cloud platforms that turn fragmented systems into measurable business ones in 90 days.",
-  primaryCta: { label: "Get Your AI Readiness Assessment", href: "/ai-readiness"},
-  secondaryCta: { label: "Explore AI Solutions", href: "/ai-solutions" },
-};
+// Every slide's own image is the FULL-WIDTH background for that slide —
+// never a boxed/card visual. Slide 1 is the site's original/default hero
+// message, unchanged, using the existing home hero banner as its
+// background and keeping its existing small animated graphic (`visual:
+// true`) as the only slide with a supporting right-side visual, since it
+// has no product photo of its own. Slides 2-4 reuse real hero copy from
+// the pages their images represent (AI Roadmap Governance, Altruta AI,
+// Kratu AI) rather than new marketing copy, and have no separate visual —
+// their own image already fills the background, so layering another copy
+// of it as a small right-side graphic would just duplicate it. Their CTA
+// links point at those pages directly since the original in-page anchors
+// (e.g. "#contact") only resolve on those pages, not on Home.
+export const HERO_SLIDES = [
+  {
+    heading: "AI-Native Digital Transformation for the Modern Enterprise",
+    paragraph:
+      "We design, build, and operate agentic AI, CRM, ERP, and cloud platforms that turn fragmented systems into measurable business ones in 90 days.",
+    primaryCta: { label: "Get Your AI Readiness Assessment", href: "/ai-readiness" },
+    secondaryCta: { label: "Explore AI Solutions", href: "/ai-solutions" },
+    bg: Images.homeHeroBanner,
+    visual: true,
+  },
+  {
+    heading: "Build a Governed AI Roadmap That Moves from Strategy to Scale",
+    paragraph: "Most enterprises run AI as a series of disconnected pilots with no shared prioritization logic and no consistent oversight.",
+    primaryCta: { label: "Explore AI Roadmap Governance", href: "/ai-roadmap-governance" },
+    bg: Images.heroSlideAiRoadmapGovernance,
+  },
+  {
+    heading: "The AI Suite That Helps Nonprofits Raise More, Serve Better, and Prove Impact",
+    paragraph:
+      "Altruta unifies donor management, program and case management, and grant management into one intelligent Salesforce-native platform powered by Data Cloud, Einstein, Agentforce, and Prompt Builder.",
+    primaryCta: { label: "Explore Altruta AI", href: "/altruta-ai" },
+    bg: Images.heroSlideAltrutaAiNonprofit,
+  },
+  {
+    heading: "Meet Kratu AI: The Intelligence Inside Your Workflows",
+    paragraph:
+      "Kratu AI helps healthcare teams connect clinical documentation, payer intelligence, claims readiness, and denial management inside a smarter healthcare operating model.",
+    primaryCta: { label: "Explore Kratu AI", href: "/kratu-ai" },
+    bg: Images.heroSlideKratuAiHealthcare,
+  },
+];
 
-export const HERO_BG_PHOTO = Images.homeHeroBanner;
+export const heroSwiperConfig = {
+  modules: [Autoplay, Pagination, Keyboard, A11y],
+  loop: true,
+  speed: 900,
+  autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
+  keyboard: { enabled: true },
+  pagination: { clickable: true, el: ".hero-swiper__pagination" },
+  a11y: { enabled: true, prevSlideMessage: "Previous slide", nextSlideMessage: "Next slide" },
+};
 
 // ================= CONTACT CTA =================
 export const CONTACT_CTA_BG = Images.homeContactCtaBg;
 
-/** GSAP entrance + ambient loop animation for the hero graphic and copy. */
-export function useHeroAnimation(textRef, graphicRef) {
+/**
+ * Continuous ambient loop animation for the hero graphic (orbit rotation,
+ * floating particles, pulsing glow lines) — runs indefinitely regardless
+ * of which slide is active. The one-time text entrance this hook used to
+ * also handle has moved to a CSS animation keyed off `.swiper-slide-active`
+ * (see Home.css) so it replays correctly every time a slide becomes
+ * active, not just once on first mount.
+ */
+export function useHeroAnimation(graphicRef) {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(textRef.current.children, {
-        y: 28,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: "power3.out",
-      });
-
       gsap.to(".hero-orbit", {
         rotation: 360,
         repeat: -1,
