@@ -581,13 +581,10 @@ function OverviewSection() {
   return (
     <section className="section ops-overview" aria-labelledby="ops-overview-heading">
       <div className="container">
-        <div className="ops-overview__head">
-          <div className="section-heading ops-reveal">
-            <p className="ops-eyebrow">{OVERVIEW.eyebrow}</p>
-            <h2 id="ops-overview-heading">{OVERVIEW.heading}</h2>
-            <p>{OVERVIEW.intro}</p>
-          </div>
-          <img src={Images.illoOracleSupportSlaDashboard} alt="" aria-hidden="true" className="ops-overview__illo" loading="lazy" />
+        <div className="section-heading ops-reveal">
+          <p className="ops-eyebrow">{OVERVIEW.eyebrow}</p>
+          <h2 id="ops-overview-heading">{OVERVIEW.heading}</h2>
+          <p>{OVERVIEW.intro}</p>
         </div>
         <div className="ops-overview__list ops-reveal-stagger">
           {OVERVIEW.items.map((o) => (

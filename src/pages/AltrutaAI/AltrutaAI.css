@@ -509,7 +509,7 @@
   text-transform: uppercase;
   padding: 5px 14px;
   border-radius: 14px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   margin-bottom: 16px;
 }

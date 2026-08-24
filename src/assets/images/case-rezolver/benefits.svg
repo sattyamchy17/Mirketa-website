@@ -1,27 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" fill="none">
-  <rect x="60" y="40" width="520" height="340" rx="18" fill="#f8f8fd" />
+  <rect x="40" y="30" width="560" height="360" rx="18" fill="#f8f8fd" stroke="#e3e7ec" stroke-width="1.5" />
+
+  <!-- case record card -->
+  <rect x="72" y="66" width="216" height="126" rx="12" fill="#ffffff" stroke="#e3e7ec" />
+  <text x="92" y="90" font-family="IBM Plex Sans, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.04em" fill="#1d4056">CASE RECORD</text>
+  <circle cx="96" cy="108" r="10" fill="#0f2438" />
+  <path d="M91 108a5 5 0 0110 0" stroke="#8fd9b3" stroke-width="1.1" fill="none" />
+  <rect x="114" y="102" width="150" height="7" rx="3.5" fill="#1d4056" opacity="0.75" />
+  <rect x="114" y="114" width="110" height="6" rx="3" fill="#c9d3da" />
+  <rect x="92" y="132" width="98" height="18" rx="9" fill="#eef6f1" />
+  <text x="141" y="144.5" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="600" fill="#178a4f">Enterprise Tier</text>
+  <rect x="92" y="160" width="180" height="6" rx="3" fill="#e3e7ec" />
+  <rect x="92" y="172" width="150" height="6" rx="3" fill="#e3e7ec" />
+
+  <!-- connecting arrow -->
+  <path d="M292 128h48" stroke="#8fa2af" stroke-width="1.4" stroke-dasharray="3 3" />
+  <path d="M334 122l10 6-10 6" stroke="#8fa2af" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="316" y="112" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#8fa2af">trusted context</text>
+
+  <!-- AI recommendation card -->
+  <rect x="352" y="66" width="216" height="126" rx="12" fill="#0f2438" />
+  <text x="372" y="90" font-family="IBM Plex Sans, sans-serif" font-size="8.5" font-weight="700" letter-spacing="0.04em" fill="#8fd9b3">AI RECOMMENDATION</text>
+  <path d="M372 106l5 5 9-10" stroke="#21ad65" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="390" y="114" font-family="IBM Plex Sans, sans-serif" font-size="8.5" fill="#ffffff" opacity="0.85">Policy validated</text>
+  <path d="M372 128l5 5 9-10" stroke="#3fb8c9" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="390" y="136" font-family="IBM Plex Sans, sans-serif" font-size="8.5" fill="#ffffff" opacity="0.85">Precedent: Case #38210</text>
+  <rect x="372" y="150" width="164" height="6" rx="3" fill="#ffffff" opacity="0.25" />
+  <rect x="372" y="162" width="130" height="6" rx="3" fill="#ffffff" opacity="0.25" />
+  <rect x="372" y="174" width="90" height="18" rx="9" fill="#21ad65" />
+  <text x="417" y="186.5" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="700" fill="#0f2438">Recommended</text>
+
+  <!-- governance strip -->
   <g>
-    <circle cx="100" cy="90" r="16" fill="#21ad65" />
-    <path d="M92 90l6 6 10-12" stroke="#0f2438" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-    <rect x="130" y="80" width="380" height="9" rx="4.5" fill="#1d4056" opacity="0.8" />
-    <rect x="130" y="98" width="280" height="7" rx="3.5" fill="#c9d3da" />
+    <rect x="72" y="222" width="152" height="44" rx="10" fill="#ffffff" stroke="#e3e7ec" />
+    <circle cx="94" cy="244" r="10" fill="#eef6f1" />
+    <path d="M94 238l6 3v5c0 3.5-2.5 5.5-6 7-3.5-1.5-6-3.5-6-7v-5l6-3z" fill="none" stroke="#21ad65" stroke-width="1.4" />
+    <text x="112" y="241" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="600" fill="#1d4056">Precedent-aware</text>
+    <text x="112" y="253" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#8fa2af">Grounded, not generic</text>
   </g>
   <g>
-    <circle cx="100" cy="160" r="16" fill="#21ad65" />
-    <path d="M92 160l6 6 10-12" stroke="#0f2438" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-    <rect x="130" y="150" width="380" height="9" rx="4.5" fill="#1d4056" opacity="0.8" />
-    <rect x="130" y="168" width="320" height="7" rx="3.5" fill="#c9d3da" />
+    <rect x="244" y="222" width="152" height="44" rx="10" fill="#ffffff" stroke="#e3e7ec" />
+    <circle cx="266" cy="244" r="10" fill="#eef6f1" />
+    <path d="M266 238l6 3v5c0 3.5-2.5 5.5-6 7-3.5-1.5-6-3.5-6-7v-5l6-3z" fill="none" stroke="#21ad65" stroke-width="1.4" />
+    <text x="284" y="241" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="600" fill="#1d4056">Policy governed</text>
+    <text x="284" y="253" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#8fa2af">Access &amp; audit aware</text>
   </g>
   <g>
-    <circle cx="100" cy="230" r="16" fill="#21ad65" />
-    <path d="M92 230l6 6 10-12" stroke="#0f2438" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-    <rect x="130" y="220" width="380" height="9" rx="4.5" fill="#1d4056" opacity="0.8" />
-    <rect x="130" y="238" width="260" height="7" rx="3.5" fill="#c9d3da" />
+    <rect x="416" y="222" width="152" height="44" rx="10" fill="#ffffff" stroke="#e3e7ec" />
+    <circle cx="438" cy="244" r="10" fill="#eef6f1" />
+    <path d="M438 238l6 3v5c0 3.5-2.5 5.5-6 7-3.5-1.5-6-3.5-6-7v-5l6-3z" fill="none" stroke="#21ad65" stroke-width="1.4" />
+    <text x="456" y="241" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="600" fill="#1d4056">Human reviewed</text>
+    <text x="456" y="253" font-family="IBM Plex Sans, sans-serif" font-size="7" fill="#8fa2af">Rep stays in control</text>
   </g>
-  <g>
-    <circle cx="100" cy="300" r="16" fill="#21ad65" />
-    <path d="M92 300l6 6 10-12" stroke="#0f2438" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-    <rect x="130" y="290" width="380" height="9" rx="4.5" fill="#1d4056" opacity="0.8" />
-    <rect x="130" y="308" width="300" height="7" rx="3.5" fill="#c9d3da" />
-  </g>
+
+  <line x1="72" y1="292" x2="568" y2="292" stroke="#e3e7ec" />
+  <text x="72" y="316" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#8fa2af">Purpose-built for Salesforce Service Cloud &#8212; not a generic chatbot bolted onto CRM.</text>
 </svg>

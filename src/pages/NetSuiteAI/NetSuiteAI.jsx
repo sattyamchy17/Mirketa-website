@@ -9,12 +9,10 @@ import heroBg from "../../assets/images/netsuite-ai/hero-bg.svg";
 import heroIllustration from "../../assets/images/netsuite-ai/hero-illustration.svg";
 import overviewImg from "../../assets/images/netsuite-ai/overview.svg";
 import erpDashboardImg from "../../assets/images/netsuite-ai/erp-dashboard.svg";
-import featuresImg from "../../assets/images/netsuite-ai/features.svg";
 import automationImg from "../../assets/images/netsuite-ai/automation.svg";
 import analyticsImg from "../../assets/images/netsuite-ai/analytics.svg";
 import forecastingImg from "../../assets/images/netsuite-ai/forecasting.svg";
 import integrationImg from "../../assets/images/netsuite-ai/integration.svg";
-import benefitsImg from "../../assets/images/netsuite-ai/benefits.svg";
 import ctaImg from "../../assets/images/netsuite-ai/cta.svg";
 import "./NetSuiteAI.css";
 
@@ -169,12 +167,12 @@ const SERVICES = {
   heading: "NetSuite AI services built around the work your teams do every day.",
   intro: "Our role is to help you choose the right AI use cases, connect them safely to NetSuite, and keep improving them after launch.",
   items: [
-    { icon: Ico.search, title: "NetSuite AI Readiness Assessment", description: "Evaluate data quality, process readiness, automation opportunities, security considerations, and practical ROI before committing to a build.", cta: "Start with readiness" },
-    { icon: Ico.chartUp, title: "Predictive Analytics in NetSuite", description: "Improve forecasting, cash visibility, demand planning, inventory confidence, and variance analysis with practical models and business-friendly outputs.", cta: "Improve forecasts" },
-    { icon: Ico.robot, title: "NetSuite AI Agents & Chatbots", description: "Create governed assistants that help users answer ERP questions, review exceptions, draft follow-ups, and move work forward with clear guardrails.", cta: "Design AI agents" },
-    { icon: Ico.workflow, title: "NetSuite Workflow Automation", description: "Automate repetitive tasks, approvals, notifications, exception routing, and cross-functional handoffs while respecting existing controls.", cta: "Automate workflows" },
-    { icon: Ico.report, title: "NetSuite AI Reporting", description: "Turn dense transaction and performance data into readable explanations, executive summaries, KPI narratives, and decision-ready dashboards.", cta: "Modernize reporting" },
-    { icon: Ico.plug, title: "NetSuite AI Integration", description: "Connect NetSuite with CRM, ecommerce, warehouse, service, finance, BI, and data platforms so AI has the context it needs to be useful.", cta: "Connect the ecosystem" },
+    { icon: Ico.search, title: "NetSuite AI Readiness Assessment", description: "Evaluate data quality, process readiness, automation opportunities, security considerations, and practical ROI before committing to a build.", cta: "Start with readiness", badge: "Start Here", bullets: ["Data quality", "Process readiness", "Automation opportunities", "Security considerations", "Practical ROI"] },
+    { icon: Ico.chartUp, title: "Predictive Analytics in NetSuite", description: "Improve forecasting, cash visibility, demand planning, inventory confidence, and variance analysis with practical models and business-friendly outputs.", cta: "Improve forecasts", bullets: ["Forecasting", "Cash visibility", "Demand planning", "Inventory confidence", "Variance analysis"] },
+    { icon: Ico.robot, title: "NetSuite AI Agents & Chatbots", description: "Create governed assistants that help users answer ERP questions, review exceptions, draft follow-ups, and move work forward with clear guardrails.", cta: "Design AI agents", bullets: ["Answer ERP questions", "Review exceptions", "Draft follow-ups", "Clear guardrails"] },
+    { icon: Ico.workflow, title: "NetSuite Workflow Automation", description: "Automate repetitive tasks, approvals, notifications, exception routing, and cross-functional handoffs while respecting existing controls.", cta: "Automate workflows", bullets: ["Repetitive tasks", "Approvals", "Notifications", "Exception routing", "Cross-functional handoffs"] },
+    { icon: Ico.report, title: "NetSuite AI Reporting", description: "Turn dense transaction and performance data into readable explanations, executive summaries, KPI narratives, and decision-ready dashboards.", cta: "Modernize reporting", bullets: ["Readable explanations", "Executive summaries", "KPI narratives", "Decision-ready dashboards"] },
+    { icon: Ico.plug, title: "NetSuite AI Integration", description: "Connect NetSuite with CRM, ecommerce, warehouse, service, finance, BI, and data platforms so AI has the context it needs to be useful.", cta: "Connect the ecosystem", bullets: ["CRM", "Ecommerce", "Warehouse & service", "Finance & BI", "Data platforms"] },
   ],
 };
 
@@ -592,15 +590,20 @@ function ServicesSection() {
           <h2 id="ns-services-heading">{SERVICES.heading}</h2>
           <p>{SERVICES.intro}</p>
         </div>
-        <div className="ns-services__image ns-reveal">
-          <img src={featuresImg} alt="Grid of six NetSuite AI service tiles" loading="lazy" />
-        </div>
         <div className="ns-services__grid ns-reveal-stagger">
           {SERVICES.items.map((s) => (
             <div className="ns-service-card" key={s.title}>
-              <span className="ns-service-card__icon">{s.icon}</span>
+              <div className="ns-service-card__head">
+                <span className="ns-service-card__icon">{s.icon}</span>
+                {s.badge && <span className="ns-service-card__badge">{s.badge}</span>}
+              </div>
               <h3>{s.title}</h3>
               <p>{s.description}</p>
+              <ul className="ns-service-card__bullets">
+                {s.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
               <a href="#contact" className="ns-service-card__cta">
                 {s.cta} <span aria-hidden="true">→</span>
               </a>
@@ -790,23 +793,22 @@ function IndustriesSection() {
 function ImplementationSection() {
   return (
     <section className="section ns-implementation" aria-labelledby="ns-implementation-heading">
-      <div className="container ns-implementation__grid">
-        <div className="ns-implementation__text ns-reveal">
+      <div className="container">
+        <div className="section-heading ns-reveal">
           <p className="ns-eyebrow">{IMPLEMENTATION.eyebrow}</p>
           <h2 id="ns-implementation-heading">{IMPLEMENTATION.heading}</h2>
           <p>{IMPLEMENTATION.intro}</p>
-          <img className="ns-implementation__image" src={benefitsImg} alt="Checklist of implementation components from roadmap through rollout" loading="lazy" />
         </div>
-        <div className="ns-implementation__list ns-reveal-stagger">
+        <div className="ns-timeline ns-reveal-stagger">
           {IMPLEMENTATION.items.map((item, i) => (
-            <div className="ns-implementation-card" key={item.title}>
-              <span className="ns-implementation-card__icon">{item.icon}</span>
-              <div>
-                <h3>
-                  {i + 1}. {item.title}
-                </h3>
-                <p>{item.description}</p>
+            <div className="ns-timeline-step" key={item.title}>
+              <div className="ns-timeline-step__marker">
+                <span className="ns-timeline-step__icon">{item.icon}</span>
+                <span className="ns-timeline-step__badge">{String(i + 1).padStart(2, "0")}</span>
               </div>
+              {i < IMPLEMENTATION.items.length - 1 && <span className="ns-timeline-step__connector" aria-hidden="true" />}
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>

@@ -619,13 +619,10 @@ function FeaturesSection() {
   return (
     <section className="section scnc-features" aria-labelledby="scnc-features-heading">
       <div className="container">
-        <div className="scnc-features__head scnc-reveal">
-          <img src={Images.illoServicenowDevopsPipeline} alt="" aria-hidden="true" className="scnc-features__illo" loading="lazy" />
-          <div className="section-heading">
-            <p className="scnc-eyebrow">{FEATURES.eyebrow}</p>
-            <h2 id="scnc-features-heading">{FEATURES.heading}</h2>
-            <p>{FEATURES.intro}</p>
-          </div>
+        <div className="section-heading scnc-reveal">
+          <p className="scnc-eyebrow">{FEATURES.eyebrow}</p>
+          <h2 id="scnc-features-heading">{FEATURES.heading}</h2>
+          <p>{FEATURES.intro}</p>
         </div>
         <div className="scnc-features__grid scnc-reveal-stagger">
           {FEATURES.items.map((f) => (

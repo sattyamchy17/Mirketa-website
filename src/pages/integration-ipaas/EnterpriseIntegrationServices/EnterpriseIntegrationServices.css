@@ -280,7 +280,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
@@ -520,7 +520,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;

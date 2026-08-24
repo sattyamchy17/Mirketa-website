@@ -88,6 +88,12 @@ const Ico = {
   check: (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l5 5L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
   ),
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><path d="M9 12l2 2 4-4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  sprint: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0113.9-5.4M20 12a8 8 0 01-13.9 5.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /><path d="M17.5 3.5v3.4h-3.4M6.5 20.5v-3.4h3.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
 };
 
 // ============================================================
@@ -153,6 +159,13 @@ const SERVICES = {
     { icon: Ico.flow, title: "Salesforce Business Automation", description: "Flow Builder, Process Builder, and custom automation solutions that eliminate manual work and accelerate your core business processes.", capabilities: ["Flow Automation", "Approval Processes", "Lead Assignment Rules"] },
   ],
 };
+
+const SERVICES_TRUST = [
+  { icon: Ico.award, title: "Salesforce Certified Consultants", description: "Active certifications across Sales Cloud, Service Cloud, Marketing Cloud, and Platform Developer tracks." },
+  { icon: Ico.shield, title: "Enterprise-Grade Security", description: "Rigorous UAT, regression testing, and security reviews before every production deployment." },
+  { icon: Ico.sprint, title: "Agile Delivery Methodology", description: "Two-week sprints with regular demos keep stakeholders aligned throughout the build." },
+  { icon: Ico.lifering, title: "Long-Term Managed Support", description: "A structured hypercare period with a clear transition to our managed services team." },
+];
 
 const DEEP_DIVE = {
   eyebrow: "Deep Dive",
@@ -523,13 +536,10 @@ function ServicesSection() {
   return (
     <section className="section svc-services" id="services" aria-labelledby="svc-services-heading">
       <div className="container">
-        <div className="svc-services__head svc-reveal">
-          <div className="section-heading">
-            <p className="svc-eyebrow">{SERVICES.eyebrow}</p>
-            <h2 id="svc-services-heading">{SERVICES.heading}</h2>
-            <p>{SERVICES.intro}</p>
-          </div>
-          <img src={Images.illoSalesforceConsultingRoadmapTimeline} alt="" aria-hidden="true" className="svc-services__illo" loading="lazy" />
+        <div className="section-heading svc-reveal">
+          <p className="svc-eyebrow">{SERVICES.eyebrow}</p>
+          <h2 id="svc-services-heading">{SERVICES.heading}</h2>
+          <p>{SERVICES.intro}</p>
         </div>
         <div className="svc-services__grid svc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -545,6 +555,18 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="svc-services__trust svc-reveal-stagger">
+          {SERVICES_TRUST.map((t) => (
+            <div className="svc-trust-item" key={t.title}>
+              <span className="svc-trust-item__icon">{t.icon}</span>
+              <div>
+                <strong>{t.title}</strong>
+                <span>{t.description}</span>
+              </div>
             </div>
           ))}
         </div>

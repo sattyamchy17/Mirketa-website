@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Images } from "../../assets/images/index.js";
@@ -224,14 +225,83 @@ const WHY_MIRKETA = [
   { title: "Global Delivery, Local Understanding", description: "Teams across the US and India delivering around the clock." },
 ];
 
+// Every item links to its real, existing page — verified against
+// src/App.jsx / src/config/pageSlugs.js rather than guessed. A few labels
+// (e.g. "Salesforce Support", "iPaaS Development") don't have a page of
+// their own; those point at the closest real page that actually covers
+// that work rather than a dead or invented URL.
 const SERVICE_GROUPS = [
-  { icon: Images.clientSalesforce, title: "Salesforce", items: ["Salesforce Dev and Consulting", "Salesforce Clouds", "Salesforce Developer Services", "Salesforce Support"] },
-  { icon: Images.iconPlatformOracle, title: "Oracle Apps", items: ["Oracle Fusion Applications Implementation", "Oracle Managed Services"] },
-  { icon: Images.iconPlatformNetsuite, title: "NetSuite", items: ["NetSuite Implementation", "NetSuite Managed Services", "NetSuite AI Solutions"] },
-  { icon: Images.iconPlatformServicenow, title: "ServiceNow", items: ["ServiceNow Consulting and Development", "Technology, Customer, Employee & Creator Workflows", "ServiceNow Managed Services"] },
-  { icon: Images.iconPlatformWorkday, title: "Workday", items: ["Workday Consulting and Development", "Workday Managed Services"] },
-  { icon: Images.iconPlatformCloud, title: "Cloud Infra Services", items: ["Cloud Setup and Migration", "Cloud Infra Management", "SRE Services", "Security Monitoring Services"] },
-  { icon: Images.iconPlatformIntegration, title: "Systems Integration", items: ["Enterprise Integration Services", "iPaaS Development", "Boomi Services", "MuleSoft Services"] },
+  {
+    icon: Images.clientSalesforce,
+    title: "Salesforce",
+    description: "Consulting, development, and managed services across the Salesforce platform.",
+    items: [
+      { label: "Salesforce Dev and Consulting", href: "/platforms/salesforce/development-consulting" },
+      { label: "Salesforce Clouds", href: "/platforms/salesforce/clouds" },
+      { label: "Salesforce Developer Services", href: "/platforms/salesforce/developer-services" },
+      { label: "Salesforce Support", href: "/platforms/salesforce/admin-support" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformOracle,
+    title: "Oracle Apps",
+    description: "Implementation and managed services for Oracle Fusion Applications.",
+    items: [
+      { label: "Oracle Fusion Applications Implementation", href: "/platforms/oracle/fusion-implementation" },
+      { label: "Oracle Managed Services", href: "/platforms/oracle/support-services" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformNetsuite,
+    title: "NetSuite",
+    description: "Implementation, managed services, and AI consulting for NetSuite.",
+    items: [
+      { label: "NetSuite Implementation", href: "/platforms/netsuite/implementation" },
+      { label: "NetSuite Managed Services", href: "/platforms/netsuite/managed-services" },
+      { label: "NetSuite AI Solutions", href: "/platforms/netsuite/ai-consulting" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformServicenow,
+    title: "ServiceNow",
+    description: "Consulting, workflow implementation, and managed services across ServiceNow.",
+    items: [
+      { label: "ServiceNow Consulting and Development", href: "/platforms/servicenow/consulting-development-services" },
+      { label: "Technology, Customer, Employee & Creator Workflows", href: "/platforms/servicenow" },
+      { label: "ServiceNow Managed Services", href: "/platforms/servicenow/support-managed-services" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformWorkday,
+    title: "Workday",
+    description: "Consulting, development, and managed services for Workday.",
+    items: [
+      { label: "Workday Consulting and Development", href: "/platforms/workday/consulting-development" },
+      { label: "Workday Managed Services", href: "/platforms/workday/managed-services" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformCloud,
+    title: "Cloud Infra Services",
+    description: "Cloud setup, infrastructure management, and site reliability engineering.",
+    items: [
+      { label: "Cloud Setup and Migration", href: "/platforms/cloud/setup-migration" },
+      { label: "Cloud Infra Management", href: "/platforms/cloud/infra-management" },
+      { label: "SRE Services", href: "/platforms/cloud/sre-security" },
+      { label: "Security Monitoring Services", href: "/platforms/cloud/sre-security" },
+    ],
+  },
+  {
+    icon: Images.iconPlatformIntegration,
+    title: "Systems Integration",
+    description: "Enterprise integration services built on Boomi and MuleSoft.",
+    items: [
+      { label: "Enterprise Integration Services", href: "/enterprise-integration-services" },
+      { label: "iPaaS Development", href: "/enterprise-integration-services" },
+      { label: "Boomi Services", href: "/boomi-integration-services-solutions" },
+      { label: "MuleSoft Services", href: "/mulesoft-implementation" },
+    ],
+  },
 ];
 
 const INDUSTRIES = [
@@ -822,9 +892,10 @@ function WhyMirketaSection() {
   );
 }
 
-// ================= SERVICES OFFERED (CAPABILITY MATRIX) =================
+// ================= SERVICES OFFERED (CATEGORY TABS + PANEL) =================
 function ServicesSection() {
-  const [openGroup, setOpenGroup] = useState(SERVICE_GROUPS[0].title);
+  const [activeTitle, setActiveTitle] = useState(SERVICE_GROUPS[0].title);
+  const active = SERVICE_GROUPS.find((g) => g.title === activeTitle);
 
   return (
     <section className="section ar-services" aria-labelledby="ar-services-heading">
@@ -835,37 +906,62 @@ function ServicesSection() {
           <p>Readiness is only step one — Mirketa delivers across the entire enterprise technology estate.</p>
         </div>
 
-        <div className="ar-capability-matrix ar-reveal">
+        <div className="ar-services__tabs ar-reveal" role="tablist" aria-label="Service categories">
           {SERVICE_GROUPS.map((group) => {
-            const isOpen = openGroup === group.title;
+            const isActive = group.title === activeTitle;
             return (
-              <div className={`ar-capability-row ${isOpen ? "is-open" : ""}`} key={group.title}>
-                <button
-                  className="ar-capability-row__trigger"
-                  aria-expanded={isOpen}
-                  aria-controls={`ar-capability-panel-${group.title}`}
-                  onClick={() => setOpenGroup(isOpen ? null : group.title)}
-                >
-                  <span className="ar-capability-row__icon">
-                    <img src={group.icon} alt="" width="22" height="22" />
-                  </span>
-                  <span className="ar-capability-row__title">{group.title}</span>
-                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true">
-                    <path d="M1 1l6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <div className="ar-capability-row__panel" id={`ar-capability-panel-${group.title}`}>
-                  <div className="ar-capability-row__tags">
-                    {group.items.map((item) => (
-                      <span className="ar-tag" key={item}>
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <button
+                key={group.title}
+                role="tab"
+                id={`ar-services-tab-${group.title}`}
+                aria-selected={isActive}
+                aria-controls={`ar-services-panel-${group.title}`}
+                className={`ar-services__tab ${isActive ? "is-active" : ""}`}
+                onClick={() => setActiveTitle(group.title)}
+              >
+                <span className="ar-services__tab-icon">
+                  <img src={group.icon} alt="" width="18" height="18" />
+                </span>
+                {group.title}
+              </button>
             );
           })}
+        </div>
+
+        <div
+          className="ar-services__panel ar-reveal"
+          role="tabpanel"
+          id={`ar-services-panel-${active.title}`}
+          aria-labelledby={`ar-services-tab-${active.title}`}
+          key={active.title}
+        >
+          <div className="ar-services__panel-header">
+            <span className="ar-services__panel-icon">
+              <img src={active.icon} alt="" width="26" height="26" />
+            </span>
+            <div>
+              <h3>{active.title}</h3>
+              <p>{active.description}</p>
+            </div>
+          </div>
+
+          <ul className="ar-services__list">
+            {active.items.map((item) => (
+              <li key={item.label}>
+                <Link to={item.href} className="ar-services__item">
+                  <span className="ar-services__item-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12.5l5 5L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="ar-services__item-title">{item.label}</span>
+                  <span className="ar-services__item-arrow" aria-hidden="true">
+                    &rarr;
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

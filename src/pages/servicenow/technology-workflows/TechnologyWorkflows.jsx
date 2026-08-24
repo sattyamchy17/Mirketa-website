@@ -651,13 +651,10 @@ function FeaturesSection() {
   return (
     <section className="section sntw-features" aria-labelledby="sntw-features-heading">
       <div className="container">
-        <div className="sntw-features__head sntw-reveal">
-          <img src={Images.illoServicenowItsmDashboard} alt="" aria-hidden="true" className="sntw-features__illo" loading="lazy" />
-          <div className="section-heading">
-            <p className="sntw-eyebrow">{FEATURES.eyebrow}</p>
-            <h2 id="sntw-features-heading">{FEATURES.heading}</h2>
-            <p>{FEATURES.intro}</p>
-          </div>
+        <div className="section-heading sntw-reveal">
+          <p className="sntw-eyebrow">{FEATURES.eyebrow}</p>
+          <h2 id="sntw-features-heading">{FEATURES.heading}</h2>
+          <p>{FEATURES.intro}</p>
         </div>
         <div className="sntw-features__grid sntw-reveal-stagger">
           {FEATURES.items.map((f) => (

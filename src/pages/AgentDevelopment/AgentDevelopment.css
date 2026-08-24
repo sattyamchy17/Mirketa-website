@@ -503,7 +503,7 @@
   font-family: "IBM Plex Mono", Menlo, monospace;
   font-size: 11px;
   color: var(--color-primary-green);
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   border: 1px solid rgba(33, 173, 101, 0.3);
   padding: 4px 10px;
   border-radius: 6px;

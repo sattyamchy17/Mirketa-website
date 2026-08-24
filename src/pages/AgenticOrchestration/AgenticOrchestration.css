@@ -124,7 +124,7 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--color-primary-green);
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   border: 1px solid rgba(33, 173, 101, 0.35);
   padding: 7px 14px;
   border-radius: 20px;
@@ -374,108 +374,125 @@
 }
 
 /* ============================================================
-   CORE CAPABILITIES DEEP DIVE — alternating rows
+   CORE CAPABILITIES DEEP DIVE — 2x2 enterprise card grid
    ============================================================ */
 .ao-deep-dive {
   background: var(--color-white);
 }
 
-.ao-deep-dive__list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.ao-deep-dive__row {
+.ao-deep-dive__grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 40px;
-  align-items: center;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--color-border);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.ao-deep-dive__list .ao-deep-dive__row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.ao-deep-dive__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: var(--shadow-light);
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
 }
 
-.ao-deep-dive__row.is-reversed {
-  direction: rtl;
+.ao-deep-dive__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--color-primary-green);
 }
 
-.ao-deep-dive__row.is-reversed > * {
-  direction: ltr;
-}
-
-.ao-deep-dive__media {
-  position: relative;
-  background: linear-gradient(160deg, #0f2438, #0d3b3d);
-  border-radius: var(--radius);
-  height: 180px;
+.ao-deep-dive__card-top {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.ao-deep-dive__media img {
-  width: 56px;
-  height: 56px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 .ao-deep-dive__index {
-  position: absolute;
-  top: 12px;
-  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f8f8f8;
+  color: var(--color-primary-green);
   font-family: var(--font-heading);
-  font-size: 15px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.28);
+  font-size: 14px;
 }
 
-.ao-deep-dive__body h3 {
-  font-size: 21px;
+/* These icons are white-stroke (designed for a dark tile, as they're used
+   elsewhere on this page) — kept on a small dark-navy badge here rather
+   than swapped for new icon assets, so they stay visible on the white
+   card instead of disappearing. */
+.ao-deep-dive__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--color-dark-navy);
+  transition: transform 280ms ease;
+}
+
+.ao-deep-dive__icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ao-deep-dive__card:hover .ao-deep-dive__icon {
+  transform: scale(1.08);
+}
+
+.ao-deep-dive__card h3 {
+  font-size: 22px;
   margin-bottom: 12px;
 }
 
-.ao-deep-dive__body > p {
-  font-size: 14.5px;
+.ao-deep-dive__card > p {
+  font-size: 15px;
   color: var(--color-gray-300);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-.ao-deep-dive__body ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.ao-deep-dive__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.ao-deep-dive__benefits li {
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
-}
-
-.ao-deep-dive__body li {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text);
-  padding-left: 16px;
-  position: relative;
 }
 
-.ao-deep-dive__body li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-primary-green);
+.ao-deep-dive__benefits svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: var(--color-primary-green);
 }
 
-@media (max-width: 900px) {
-  .ao-deep-dive__row,
-  .ao-deep-dive__row.is-reversed {
+@media (max-width: 640px) {
+  .ao-deep-dive__grid {
     grid-template-columns: 1fr;
-    direction: ltr;
   }
-  .ao-deep-dive__media { height: 130px; }
-  .ao-deep-dive__body ul { grid-template-columns: 1fr; }
+  .ao-deep-dive__card {
+    padding: 22px;
+  }
 }
 
 /* ============================================================
@@ -754,8 +771,18 @@
   grid-column: 3;
 }
 
+/* Positioned relative to .ao-delivery__item (its nearest positioned
+   ancestor) instead of placed as a grid cell — top:50%/translateY(-50%)
+   centers it against that item's actual rendered height, which is set by
+   its card, so it re-centers automatically if the card's content/height
+   changes rather than relying on grid row auto-sizing. left:50% keeps it
+   on .ao-delivery__timeline::before, since each item spans the timeline's
+   full width. */
 .ao-delivery__marker {
-  grid-column: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -769,7 +796,6 @@
   font-size: 16px;
   box-shadow: 0 0 0 6px var(--color-bg-light);
   z-index: 1;
-  margin: 0 auto;
 }
 
 .ao-delivery__card {
@@ -806,7 +832,10 @@
   .ao-delivery__item.is-reversed {
     grid-template-columns: 44px 1fr;
   }
-  .ao-delivery__marker { grid-column: 1; margin: 0; }
+  /* Line moves to left:21px on mobile — re-center the marker on that same
+     point instead of the item's horizontal midpoint. Vertical centering
+     (top:50%/translateY(-50%), set above) is unaffected by this breakpoint. */
+  .ao-delivery__marker { left: 21px; transform: translate(-50%, -50%); }
   .ao-delivery__item .ao-delivery__card,
   .ao-delivery__item.is-reversed .ao-delivery__card {
     grid-column: 2;

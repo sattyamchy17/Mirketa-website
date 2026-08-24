@@ -303,32 +303,6 @@
   background: var(--color-white);
 }
 
-.ops-overview__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 32px;
-  align-items: center;
-  max-width: 1040px;
-  margin: 0 auto 36px;
-}
-
-.ops-overview__head .section-heading {
-  margin-bottom: 0;
-}
-
-.ops-overview__illo {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-}
-
-@media (max-width: 700px) {
-  .ops-overview__head { grid-template-columns: 1fr; }
-  .ops-overview__illo { max-width: 200px; order: -1; margin-bottom: 16px; }
-}
-
 .ops-overview__list {
   display: flex;
   flex-direction: column;

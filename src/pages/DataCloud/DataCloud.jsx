@@ -134,11 +134,33 @@ const AUDIENCE_SEGMENTS = [
 
 const ACTIVATION_STATUS = ["Sales Cloud", "Service Cloud", "Marketing Cloud", "Agentforce AI"];
 
-const DASHBOARD_PERFORMANCE = [
-  { value: "+40%", label: "Einstein Prediction Accuracy" },
-  { value: "98.5%", label: "Agentforce Context Quality" },
-  { value: "+35%", label: "Personalisation Lift" },
-  { value: "Real-Time", label: "Data Freshness" },
+const DASHBOARD_KPIS = [
+  { value: "+40%", label: "Einstein Prediction Accuracy", description: "Real-time, unified customer context sharpens every Einstein prediction." },
+  { value: "98.5%", label: "Agentforce Context Quality", description: "Agentforce agents act on complete, current customer context, not fragments." },
+  { value: "+35%", label: "Personalisation Lift", description: "Unified profiles power sharper segmentation and messaging." },
+  { value: "Real-Time", label: "Data Freshness", description: "Continuous ingestion keeps every profile current, never batch-delayed." },
+];
+
+const INTELLIGENCE = {
+  heading: "Real-Time Customer Intelligence",
+  description: "Data Cloud continuously ingests, unifies, and activates customer data across CRM, marketing, commerce, and service channels — powering Einstein AI and Agentforce with real-time, unified customer context.",
+  checklist: [
+    "Unified Customer Profiles",
+    "Identity Resolution",
+    "Real-Time Segmentation",
+    "Streaming Data Pipelines",
+    "AI-Powered Predictions",
+    "Cross-Cloud Activation",
+    "Trusted Governance",
+    "Enterprise Scale",
+  ],
+};
+
+const PERFORMANCE_STRIP = [
+  { icon: Images.iconCapabilityIngestion, title: "Real-Time Processing", description: "Real-time and batch ingestion from every connected source." },
+  { icon: Images.iconIdentityResolution, title: "Identity Resolution", description: "Deterministic and probabilistic profile matching." },
+  { icon: Images.iconDimensionGovernance, title: "Enterprise Governance", description: "GDPR, CCPA, and HIPAA-ready compliance controls." },
+  { icon: Images.iconEinsteinPredictive, title: "AI-Ready Data", description: "Powers Einstein predictions and Agentforce agents." },
 ];
 
 const USE_CASES = [
@@ -301,6 +323,26 @@ function useInView(threshold = 0.2) {
   }, [threshold]);
 
   return [ref, inView];
+}
+
+function useCountUp(target, inView, duration = 1400, decimals = 0) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    let frame;
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(target * eased);
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [inView, target, duration]);
+
+  return decimals > 0 ? value.toFixed(decimals) : Math.round(value);
 }
 
 function useRipple() {
@@ -636,73 +678,126 @@ function IngestionBar({ metric }) {
   );
 }
 
+function KpiCard({ kpi }) {
+  const [ref, inView] = useInView(0.5);
+  const match = kpi.value.match(/^([+-]?)([\d.]+)(.*)$/);
+  const sign = match ? match[1] : "";
+  const target = match ? parseFloat(match[2]) : 0;
+  const suffix = match ? match[3] : "";
+  const decimals = match && match[2].includes(".") ? match[2].split(".")[1].length : 0;
+  const count = useCountUp(target, inView, 1400, decimals);
+
+  return (
+    <div ref={ref} className="dc-kpi">
+      <div className="dc-kpi__value">
+        {match ? (
+          `${sign}${count}${suffix}`
+        ) : (
+          <span className="dc-kpi__live">
+            <span className="dc-kpi__live-dot" aria-hidden="true" />
+            {kpi.value}
+          </span>
+        )}
+      </div>
+      <h3>{kpi.label}</h3>
+      <p>{kpi.description}</p>
+    </div>
+  );
+}
+
 function DashboardSection() {
   return (
     <section className="section dc-dashboard" aria-labelledby="dc-dashboard-heading">
       <div className="container">
-        <div className="dc-dashboard__head dc-reveal">
-          <div className="section-heading">
-            <p className="dc-eyebrow">Live Data Cloud Metrics</p>
-            <h2 id="dc-dashboard-heading">See Salesforce Data Cloud in Action</h2>
-          </div>
-          <img src={Images.illoDataCloudUnifiedProfileDashboard} alt="" aria-hidden="true" className="dc-dashboard__illo" loading="lazy" />
+        <div className="section-heading dc-reveal">
+          <p className="dc-eyebrow">Live Data Cloud Metrics</p>
+          <h2 id="dc-dashboard-heading">See Salesforce Data Cloud in Action</h2>
+          <p>Experience how Salesforce Data Cloud unifies customer data in real time, powers AI-driven insights, and enables teams to make faster, smarter decisions with trusted enterprise data.</p>
         </div>
-        <div className="dc-console dc-reveal">
-          <div className="dc-console__titlebar">
-            <span className="dc-console__dot dc-console__dot--red" />
-            <span className="dc-console__dot dc-console__dot--yellow" />
-            <span className="dc-console__dot dc-console__dot--green" />
-            <span className="dc-console__filename">data-cloud-console — live</span>
-            <span className="dc-console__live"><span /> 2.4M records/hr</span>
-          </div>
-          <div className="dc-console__grid">
-            <div className="dc-console__panel">
-              <h3>Data Ingestion</h3>
-              {INGESTION_METRICS.map((m) => (
-                <IngestionBar key={m.source} metric={m} />
-              ))}
+
+        <div className="dc-kpis dc-reveal-stagger">
+          {DASHBOARD_KPIS.map((kpi) => (
+            <KpiCard key={kpi.label} kpi={kpi} />
+          ))}
+        </div>
+
+        <div className="dc-analytics dc-reveal">
+          <div className="dc-console">
+            <div className="dc-console__titlebar">
+              <span className="dc-console__dot dc-console__dot--red" />
+              <span className="dc-console__dot dc-console__dot--yellow" />
+              <span className="dc-console__dot dc-console__dot--green" />
+              <span className="dc-console__filename">data-cloud-console — live</span>
+              <span className="dc-console__live"><span /> 2.4M records/hr</span>
             </div>
-            <div className="dc-console__panel">
-              <h3>Unified Customer Profile</h3>
-              <div className="dc-profile-card">
-                <span className="dc-profile-card__id">{UNIFIED_PROFILE.id}</span>
-                <p>{UNIFIED_PROFILE.matched}</p>
-                <span className="dc-profile-card__confidence">{UNIFIED_PROFILE.confidence}</span>
-                <div className="dc-profile-card__sources">
-                  {UNIFIED_PROFILE.sources.map((s) => (
-                    <span key={s}>{s}</span>
+            <div className="dc-console__grid">
+              <div className="dc-console__panel">
+                <h3>Data Ingestion</h3>
+                {INGESTION_METRICS.map((m) => (
+                  <IngestionBar key={m.source} metric={m} />
+                ))}
+              </div>
+              <div className="dc-console__panel">
+                <h3>Unified Customer Profile</h3>
+                <div className="dc-profile-card">
+                  <span className="dc-profile-card__id">{UNIFIED_PROFILE.id}</span>
+                  <p>{UNIFIED_PROFILE.matched}</p>
+                  <span className="dc-profile-card__confidence">{UNIFIED_PROFILE.confidence}</span>
+                  <div className="dc-profile-card__sources">
+                    {UNIFIED_PROFILE.sources.map((s) => (
+                      <span key={s}>{s}</span>
+                    ))}
+                  </div>
+                </div>
+                <h3 className="dc-console__panel-subheading">Cross-Cloud Activation</h3>
+                <div className="dc-activation-grid">
+                  {ACTIVATION_STATUS.map((a) => (
+                    <div className="dc-activation-chip" key={a}>
+                      <span className="dc-activation-chip__dot" /> {a}
+                    </div>
                   ))}
                 </div>
               </div>
-              <h3 className="dc-console__panel-subheading">Cross-Cloud Activation</h3>
-              <div className="dc-activation-grid">
-                {ACTIVATION_STATUS.map((a) => (
-                  <div className="dc-activation-chip" key={a}>
-                    <span className="dc-activation-chip__dot" /> {a}
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="dc-console__panel">
-              <h3>Active Audience Segments</h3>
-              <div className="dc-segments-list">
-                {AUDIENCE_SEGMENTS.map((seg) => (
-                  <div className="dc-segments-list__row" key={seg.name}>
-                    <span>{seg.name}</span>
-                    <strong>{seg.count}</strong>
-                  </div>
-                ))}
+              <div className="dc-console__panel">
+                <h3>Active Audience Segments</h3>
+                <div className="dc-segments-list">
+                  {AUDIENCE_SEGMENTS.map((seg) => (
+                    <div className="dc-segments-list__row" key={seg.name}>
+                      <span>{seg.name}</span>
+                      <strong>{seg.count}</strong>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-          <div className="dc-console__performance">
-            {DASHBOARD_PERFORMANCE.map((p) => (
-              <div className="dc-console__performance-item" key={p.label}>
-                <strong>{p.value}</strong>
-                <span>{p.label}</span>
-              </div>
-            ))}
+
+          <div className="dc-intelligence">
+            <h3>{INTELLIGENCE.heading}</h3>
+            <p>{INTELLIGENCE.description}</p>
+            <ul className="dc-intelligence__checklist">
+              {INTELLIGENCE.checklist.map((item) => (
+                <li key={item}>
+                  <img src={Images.iconCheckCircle} alt="" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
+        </div>
+
+        <div className="dc-performance-strip dc-reveal-stagger">
+          {PERFORMANCE_STRIP.map((p) => (
+            <div className="dc-performance-item" key={p.title}>
+              <span className="dc-performance-item__icon">
+                <img src={p.icon} alt="" aria-hidden="true" />
+              </span>
+              <div>
+                <strong>{p.title}</strong>
+                <span>{p.description}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

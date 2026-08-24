@@ -624,7 +624,19 @@ function SolutionsSection() {
 // ============================================================
 
 function FeaturesSection() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openSet, setOpenSet] = useState(() => new Set([0]));
+
+  const toggle = (i) => {
+    setOpenSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) {
+        next.delete(i);
+      } else {
+        next.add(i);
+      }
+      return next;
+    });
+  };
 
   return (
     <section className="section snew-features" aria-labelledby="snew-features-heading">
@@ -637,25 +649,27 @@ function FeaturesSection() {
             <p>{FEATURES.intro}</p>
           </div>
         </div>
-        <div className="snew-features__accordion">
+        <div className="snew-features__grid snew-reveal-stagger">
           {FEATURES.items.map((f, i) => {
-            const open = openIndex === i;
+            const open = openSet.has(i);
             const panelId = `snew-feature-panel-${i}`;
             return (
-              <div className={`snew-feature-item ${open ? "is-open" : ""}`} key={f.title}>
+              <div className={`snew-feature-card ${open ? "is-open" : ""}`} key={f.title}>
                 <button
                   type="button"
-                  className="snew-feature-item__question"
+                  className="snew-feature-card__trigger"
                   aria-expanded={open}
                   aria-controls={panelId}
-                  onClick={() => setOpenIndex(open ? -1 : i)}
+                  onClick={() => toggle(i)}
                 >
-                  <span className="snew-feature-item__num">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="snew-feature-item__icon">{f.icon}</span>
-                  <span className="snew-feature-item__title">{f.title}</span>
-                  <span className="snew-feature-item__toggle" aria-hidden="true">{open ? "−" : "+"}</span>
+                  <div className="snew-feature-card__head">
+                    <span className="snew-feature-card__icon">{f.icon}</span>
+                    <span className="snew-feature-card__toggle" aria-hidden="true">{open ? "−" : "+"}</span>
+                  </div>
+                  <span className="snew-feature-card__num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="snew-feature-card__title">{f.title}</span>
                 </button>
-                <div id={panelId} className="snew-feature-item__answer" role="region" hidden={!open}>
+                <div id={panelId} className="snew-feature-card__answer" role="region" hidden={!open}>
                   <p>{f.description}</p>
                 </div>
               </div>

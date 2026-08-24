@@ -6,6 +6,7 @@ import { Images } from "../../assets/images/index.js";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
+import HeroVisual from "../../components/HeroVisual/HeroVisual.jsx";
 import rajeevPhoto from "../../assets/Team/ceo (1).jpg";
 import maureenPhoto from "../../assets/Team/Maureen (1).jpg";
 import salilPhoto from "../../assets/Team/Salil-Prasad.jpg";
@@ -17,6 +18,15 @@ import "./About.css";
 const BREADCRUMB_ITEMS = [{ label: "Home", href: "/" }, { label: "About Us" }];
 
 gsap.registerPlugin(ScrollTrigger);
+
+const Ico = {
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /><path d="M9 12l2 2 4-4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  users: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" strokeWidth="1.5" /><path d="M3.5 20c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /><circle cx="17" cy="9" r="2.4" stroke="currentColor" strokeWidth="1.4" /><path d="M15 20c.3-2.2 1.8-3.6 3.6-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg>
+  ),
+};
 
 // ============================================================
 // DATA
@@ -33,6 +43,24 @@ const HERO = {
     "Mirketa is an enterprise technology consulting company that helps organizations modernize how they work with Salesforce, AI, data, and cloud platforms. Behind every engagement is a team of consultants, architects, and engineers who bring platform depth to real business outcomes.",
   primaryCta: { label: "Talk to an Expert", href: "#contact" },
   secondaryCta: { label: "Meet the Team", href: "#team" },
+};
+
+const HERO_DASHBOARD = {
+  title: "Mirketa at a Glance",
+  liveLabel: "Since 2013",
+  stats: [
+    { label: "Salesforce Partnership", value: "Crest Partner", caption: "Enterprise clients since 2013" },
+    { label: "Workplace Recognition", value: "Inc. Best", caption: "Recognized as a Best Workplace" },
+  ],
+  rows: [
+    { title: "Salesforce Practice", meta: "Consulting, development, and managed services", status: "Crest Partner", tone: "good" },
+    { title: "Security & Compliance", meta: "SOC 2 Type II certified, HIPAA-ready", status: "Certified", tone: "good" },
+    { title: "AI & Data Foundations", meta: "Readiness, governance, agentic orchestration", status: "Active", tone: "neutral" },
+  ],
+  floatingCards: [
+    { icon: Ico.shield, title: "SOC 2 Type II", subtitle: "HIPAA-ready delivery" },
+    { icon: Ico.users, title: "Senior-Led Teams", subtitle: "Engaged strategy through go-live" },
+  ],
 };
 
 const ABOUT = {
@@ -257,6 +285,15 @@ function HeroSection({ ripple, textRef }) {
             </a>
           </div>
         </div>
+
+        <HeroVisual
+          dashboardTitle={HERO_DASHBOARD.title}
+          liveLabel={HERO_DASHBOARD.liveLabel}
+          stats={HERO_DASHBOARD.stats}
+          rows={HERO_DASHBOARD.rows}
+          floatingCards={HERO_DASHBOARD.floatingCards}
+          className="abt-hero__visual"
+        />
       </div>
 
       <button

@@ -191,13 +191,11 @@ import iconEinsteinPredictive from "./icons/einstein-predictive.svg";
 import iconEinsteinBots from "./icons/einstein-bots.svg";
 import iconEinsteinCopilot from "./icons/einstein-copilot.svg";
 import productFinacast from "./products/finacast.svg";
-import illoSalesforceAiInsightsDashboard from "./illustrations/salesforce-ai-insights-dashboard.svg";
 
 // ---------- Agentforce page ----------
 import heroAgentforce from "./hero/agentforce-hero-bg.svg";
 import iconCapabilitySlack from "./icons/capability-slack.svg";
 import iconAgentActions from "./icons/agent-actions.svg";
-import illoAgentforceActionConsole from "./illustrations/agentforce-action-console.svg";
 
 // ---------- Data Cloud page ----------
 import heroDataCloud from "./hero/data-cloud-hero-bg.svg";
@@ -205,7 +203,6 @@ import iconIdentityResolution from "./icons/identity-resolution.svg";
 import iconCapabilityIngestion from "./icons/capability-ingestion.svg";
 import iconCapabilitySegments from "./icons/capability-segments.svg";
 import iconLayerHarmonise from "./icons/layer-harmonise.svg";
-import illoDataCloudUnifiedProfileDashboard from "./illustrations/data-cloud-unified-profile-dashboard.svg";
 
 // ---------- AI Velocity Engines hub page ----------
 import heroAiVelocityEngines from "./hero/ai-velocity-engines-hero-bg.svg";
@@ -245,7 +242,6 @@ import illoAriaQuoteToCashPipeline from "./illustrations/aria-quote-to-cash-pipe
 
 // ---------- Salesforce Development & Consulting Services page ----------
 import heroSalesforceConsulting from "./hero/salesforce-consulting-hero-bg.svg";
-import illoSalesforceConsultingRoadmapTimeline from "./illustrations/salesforce-consulting-roadmap-timeline.svg";
 
 // ---------- Salesforce Clouds page ----------
 import heroSalesforceClouds from "./hero/salesforce-clouds-hero-bg.svg";
@@ -400,7 +396,6 @@ import illoOracleScmSupplyChainDashboard from "./illustrations/oracle-scm-supply
 
 // ---------- Oracle Premium Support Service page (L2) ----------
 import heroOraclePremiumSupport from "./hero/oracle-premium-support-hero-bg.svg";
-import illoOracleSupportSlaDashboard from "./illustrations/oracle-support-sla-dashboard.svg";
 
 // ---------- Oracle Managed Services page (L2) ----------
 import heroOracleManagedServices from "./hero/oracle-managed-services-hero-bg.svg";
@@ -415,8 +410,6 @@ import heroServiceNowEmployeeWorkflows from "./hero/servicenow-employee-workflow
 import heroServiceNowCreatorWorkflows from "./hero/servicenow-creator-workflows-hero-bg.svg";
 import heroServiceNowSupportManagedServices from "./hero/servicenow-support-managed-services-hero-bg.svg";
 import illoServicenowHubDashboard from "./illustrations/servicenow-hub-dashboard.svg";
-import illoServicenowItsmDashboard from "./illustrations/servicenow-itsm-dashboard.svg";
-import illoServicenowDevopsPipeline from "./illustrations/servicenow-devops-pipeline.svg";
 import illoServicenowCsmQueue from "./illustrations/servicenow-csm-queue.svg";
 import illoServicenowHrsdOnboarding from "./illustrations/servicenow-hrsd-onboarding.svg";
 import illoServicenowAppBuilder from "./illustrations/servicenow-app-builder.svg";
@@ -433,7 +426,6 @@ import illoNetsuiteAiForecastDashboard from "./illustrations/netsuite-ai-forecas
 // ---------- Workday module ----------
 import heroWorkdayConsultingDevelopment from "./hero/workday-consulting-development-hero-bg.svg";
 import heroWorkdaySupportManagedServices from "./hero/workday-support-managed-services-hero-bg.svg";
-import illoWorkdaySupportCaseDashboard from "./illustrations/workday-support-case-dashboard.svg";
 import illoWorkdayConsultingOrgDashboard from "./illustrations/workday-consulting-org-dashboard.svg";
 
 // ---------- Cloud (AWS/Azure/GCP) module ----------
@@ -655,19 +647,16 @@ export const Images = {
   iconEinsteinBots,
   iconEinsteinCopilot,
   productFinacast,
-  illoSalesforceAiInsightsDashboard,
 
   heroAgentforce,
   iconCapabilitySlack,
   iconAgentActions,
-  illoAgentforceActionConsole,
 
   heroDataCloud,
   iconIdentityResolution,
   iconCapabilityIngestion,
   iconCapabilitySegments,
   iconLayerHarmonise,
-  illoDataCloudUnifiedProfileDashboard,
 
   heroAiVelocityEngines,
   iconVelocityDonor,
@@ -733,7 +722,6 @@ export const Images = {
   illoKratuAmbientDocumentationDashboard,
 
   heroSalesforceConsulting,
-  illoSalesforceConsultingRoadmapTimeline,
 
   heroSalesforceClouds,
   illoSalesforceCloudsArchitectureMap,
@@ -850,7 +838,6 @@ export const Images = {
   illoOracleScmSupplyChainDashboard,
 
   heroOraclePremiumSupport,
-  illoOracleSupportSlaDashboard,
 
   heroOracleManagedServices,
   illoOracleManagedOpsDashboard,
@@ -863,8 +850,6 @@ export const Images = {
   heroServiceNowCreatorWorkflows,
   heroServiceNowSupportManagedServices,
   illoServicenowHubDashboard,
-  illoServicenowItsmDashboard,
-  illoServicenowDevopsPipeline,
   illoServicenowCsmQueue,
   illoServicenowHrsdOnboarding,
   illoServicenowAppBuilder,
@@ -877,7 +862,6 @@ export const Images = {
   illoNetsuiteAiForecastDashboard,
   heroWorkdayConsultingDevelopment,
   heroWorkdaySupportManagedServices,
-  illoWorkdaySupportCaseDashboard,
   illoWorkdayConsultingOrgDashboard,
   heroCloudSetupMigration,
   heroCloudSreSecurity,

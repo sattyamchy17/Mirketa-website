@@ -458,35 +458,41 @@
    ============================================================ */
 .ns-services {
   background: var(--color-white);
+  padding: 110px 0;
 }
 
-.ns-services__image {
-  max-width: 560px;
-  margin: 0 auto 44px;
-}
-
-.ns-services__image img {
-  width: 100%;
+.ns-services .section-heading {
+  margin-bottom: 60px;
 }
 
 .ns-services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 .ns-service-card {
+  background: var(--color-white);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  border-radius: 18px;
+  box-shadow: var(--shadow-light);
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .ns-service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  border-color: var(--color-primary-green);
   box-shadow: var(--shadow-medium);
+}
+
+.ns-service-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
 
 .ns-service-card__icon {
@@ -498,12 +504,27 @@
   border-radius: 10px;
   background: var(--color-dark-navy);
   color: var(--color-primary-green);
-  margin-bottom: 18px;
+  transition: transform var(--transition);
+}
+
+.ns-service-card:hover .ns-service-card__icon {
+  transform: scale(1.1);
 }
 
 .ns-service-card__icon svg {
   width: 20px;
   height: 20px;
+}
+
+.ns-service-card__badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-green);
+  background: rgba(33, 173, 101, 0.1);
+  border-radius: 12px;
+  padding: 4px 10px;
 }
 
 .ns-service-card h3 {
@@ -515,8 +536,35 @@
   font-size: 12.5px;
   color: var(--color-gray-300);
   line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.ns-service-card__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   margin-bottom: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
   flex-grow: 1;
+}
+
+.ns-service-card__bullets li {
+  font-size: 12px;
+  color: var(--color-text);
+  padding-left: 16px;
+  position: relative;
+}
+
+.ns-service-card__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
 }
 
 .ns-service-card__cta {
@@ -540,6 +588,7 @@
   .ns-services__grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
+  .ns-services { padding: 72px 0; }
   .ns-services__grid { grid-template-columns: 1fr; }
 }
 
@@ -964,76 +1013,141 @@
    ============================================================ */
 .ns-implementation {
   background: var(--color-bg-light);
+  padding: 110px 0;
 }
 
-.ns-implementation__grid {
+.ns-implementation .section-heading {
+  margin-bottom: 64px;
+}
+
+/* -- horizontal timeline (desktop) -- */
+.ns-timeline {
+  position: relative;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.ns-implementation__text h2 {
-  font-size: 27px;
-  margin-bottom: 16px;
+.ns-timeline::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: calc(12.5% + 8px);
+  right: calc(12.5% + 8px);
+  height: 0;
+  border-top: 1px dashed var(--color-border);
+  z-index: 0;
 }
 
-.ns-implementation__text > p {
-  font-size: 14px;
-  color: var(--color-gray-300);
-  margin-bottom: 24px;
+.ns-timeline-step {
+  position: relative;
+  text-align: center;
+  padding: 0 16px;
 }
 
-.ns-implementation__image {
-  width: 100%;
-  border-radius: var(--radius);
-}
-
-.ns-implementation__list {
+.ns-timeline-step__marker {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.ns-implementation-card {
-  display: flex;
-  gap: 16px;
-  background: var(--color-white);
-  border-radius: var(--radius-btn);
-  padding: 18px 20px;
-  box-shadow: var(--shadow-light);
-}
-
-.ns-implementation-card__icon {
-  flex-shrink: 0;
-  display: flex;
-  width: 36px;
-  height: 36px;
+  width: 64px;
+  height: 64px;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: var(--color-bg-light);
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-light);
   color: var(--color-primary-green);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.ns-implementation-card__icon svg {
-  width: 18px;
-  height: 18px;
+.ns-timeline-step:hover .ns-timeline-step__marker {
+  transform: translateY(-4px) scale(1.06);
+  border-color: var(--color-primary-green);
+  box-shadow: var(--shadow-medium);
 }
 
-.ns-implementation-card h3 {
-  font-size: 14px;
-  margin-bottom: 6px;
+.ns-timeline-step__icon {
+  display: flex;
 }
 
-.ns-implementation-card p {
-  font-size: 12.5px;
+.ns-timeline-step__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ns-timeline-step__badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-dark-navy);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ns-timeline-step__connector {
+  display: none;
+}
+
+.ns-timeline-step h3 {
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.ns-timeline-step p {
+  font-size: 12px;
   color: var(--color-gray-300);
   line-height: 1.6;
 }
 
 @media (max-width: 900px) {
-  .ns-implementation__grid { grid-template-columns: 1fr; }
+  .ns-timeline::before {
+    display: none;
+  }
+  .ns-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 460px;
+  }
+  .ns-timeline-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+    text-align: left;
+    padding: 0 0 32px;
+  }
+  .ns-timeline-step:last-child {
+    padding-bottom: 0;
+  }
+  .ns-timeline-step__marker {
+    margin: 0;
+    grid-row: 1 / span 2;
+  }
+  .ns-timeline-step__connector {
+    display: block;
+    position: absolute;
+    top: 64px;
+    left: 32px;
+    width: 1px;
+    height: calc(100% - 64px);
+    border-left: 1px dashed var(--color-border);
+  }
+  .ns-timeline-step:hover .ns-timeline-step__connector {
+    border-left-color: var(--color-primary-green);
+  }
+}
+@media (max-width: 480px) {
+  .ns-implementation { padding: 72px 0; }
 }
 
 /* ============================================================

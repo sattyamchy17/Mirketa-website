@@ -55,7 +55,7 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;

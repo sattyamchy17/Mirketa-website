@@ -474,7 +474,6 @@ function SolutionSection() {
     <section className="section wss-solution" aria-labelledby="wss-solution-heading">
       <div className="container wss-solution__grid">
         <div className="wss-reveal-left">
-          <img src={Images.illoWorkdaySupportCaseDashboard} alt="" aria-hidden="true" className="wss-solution__illo" loading="lazy" />
           <p className="wss-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="wss-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (

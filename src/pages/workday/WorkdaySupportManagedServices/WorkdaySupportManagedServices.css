@@ -9,7 +9,6 @@
 
 .workday-support-managed-services {
   --wss-hover-navy: #1d4056;
-  --wss-orange: #e2793a;
   overflow-x: clip;
 }
 
@@ -200,15 +199,6 @@
   align-items: center;
 }
 
-.wss-solution__illo {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-  margin-bottom: 16px;
-}
-
 .wss-solution h2 {
   margin-bottom: 18px;
 }
@@ -247,7 +237,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
@@ -438,7 +428,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
@@ -490,8 +480,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(226, 121, 58, 0.14);
-  color: var(--wss-orange);
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
@@ -536,8 +526,8 @@
 
 .wss-case-card__tag {
   display: inline-block;
-  background: rgba(226, 121, 58, 0.14);
-  color: #96501b;
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
   font-size: 11.5px;
   font-weight: 700;
   padding: 4px 12px;

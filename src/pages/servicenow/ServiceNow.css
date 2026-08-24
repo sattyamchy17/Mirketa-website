@@ -678,7 +678,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
 }
 

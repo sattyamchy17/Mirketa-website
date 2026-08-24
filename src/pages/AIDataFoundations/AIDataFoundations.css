@@ -116,7 +116,7 @@
   font-size: 11.5px;
   font-weight: 600;
   color: var(--color-primary-green);
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   border: 1px solid rgba(33, 173, 101, 0.35);
   padding: 6px 13px;
   border-radius: 20px;
@@ -381,6 +381,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Shifts the centered text right of the accent line below instead of
+     directly on top of it — without this the line ran straight through
+     the middle of the label, reading as a strikethrough. */
+  padding-left: 16px;
 }
 
 .adf-strata__flow span {
@@ -397,7 +401,7 @@
 .adf-strata__flow::before {
   content: "";
   position: absolute;
-  left: 27px;
+  left: 10px;
   top: 8px;
   bottom: 8px;
   width: 2px;

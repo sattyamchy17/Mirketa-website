@@ -73,6 +73,10 @@ const MODES = [
   {
     icon: Images.iconAriaModeUpload,
     name: "Document Upload",
+    // `blurb` is a verbatim first sentence of the real `description` below —
+    // used on the summary card so it isn't a newly-written claim, just a
+    // shorter excerpt of the same content shown in the detail panel.
+    blurb: "Upload your Excel, Word, or PDF files.",
     title: "Upload. Extract. Validate.",
     description:
       "Upload your Excel, Word, or PDF files. Aria's AI parser extracts records, maps them to Salesforce objects, and presents them in an editable review table. You validate and add to the change set.",
@@ -81,6 +85,7 @@ const MODES = [
   {
     icon: Images.iconAriaModeWizard,
     name: "Guided Wizard",
+    blurb: "A strict linear wizard where each element is configured and locked before the next unlocks.",
     title: "Step by step, validated at every gate.",
     description:
       "A strict linear wizard where each element is configured and locked before the next unlocks. Aria generates Expression Sets and Decision Tables and validates the full price waterfall before deployment.",
@@ -89,11 +94,32 @@ const MODES = [
   {
     icon: Images.iconAriaModePrompt,
     name: "Template + Prompt",
+    blurb: "Pre-built base templates are loaded automatically.",
     title: "Start from a base. Refine with language.",
     description:
       "Pre-built base templates are loaded automatically. You describe what you want in plain English and Aria updates the configuration, maps changes to Salesforce metadata, and records them in the change set.",
     modules: ["Quote Templates", "Billing Rules & Invoice Setup", "CLM Clause Library", "Approval Chains"],
   },
+];
+
+// Generic across all three modes (capture → process → validate → deploy),
+// reusing real, already-established Aria facts rather than inventing new
+// ones — the icons and concepts here are the same ones used in CAPABILITIES
+// below (Validation Before Every Step, Deployable Change Sets).
+const ARIA_PIPELINE = [
+  { icon: Images.iconAriaModeUpload, title: "Capture Input", caption: "Upload a file, complete a wizard, or write a prompt" },
+  { icon: Images.iconAriaCapCopilot, title: "AI Processing", caption: "Aria parses input and generates configuration" },
+  { icon: Images.iconAriaCapValidation, title: "Validate", caption: "Field-level rules and schema checks before deployment" },
+  { icon: Images.iconAriaCapChangeset, title: "Change Set Ready", caption: "Deployable Salesforce Metadata API package" },
+];
+
+// Status captions reuse real facts from CAPABILITIES below (Session
+// Persistence, Production Deployment Guard, Validation Before Every Step)
+// rather than new claims.
+const ARIA_STATUS = [
+  { icon: Images.iconAriaCapSession, title: "Active Session", caption: "Configuration state persists for 8 hours" },
+  { icon: Images.iconAriaCapProdguard, title: "Sandbox Mode", caption: "Production deployment requires explicit confirmation" },
+  { icon: Images.iconAriaCapValidation, title: "Validation Active", caption: "Every module validated before reaching the change set" },
 ];
 
 const MODULE_GROUPS = [
@@ -479,36 +505,65 @@ function HowItWorksSection() {
           <p>Aria doesn't take a one-size-fits-all approach. Each configuration area uses the mode that gets the best result fastest.</p>
         </div>
 
-        <div className="ara-modes__layout ara-reveal">
-          <div className="ara-modes__tabs" role="tablist" aria-label="Aria interaction modes">
-            {MODES.map((m, i) => (
-              <button
-                key={m.name}
-                type="button"
-                role="tab"
-                id={`ara-mode-tab-${i}`}
-                aria-selected={active === i}
-                aria-controls={`ara-mode-panel-${i}`}
-                className={`ara-modes__tab ${active === i ? "is-active" : ""}`}
-                onClick={() => setActive(i)}
-              >
-                <img src={m.icon} alt="" aria-hidden="true" />
-                <span>{m.name}</span>
-              </button>
-            ))}
-          </div>
+        <div className="ara-modes__cards ara-reveal-stagger" role="tablist" aria-label="Aria interaction modes">
+          {MODES.map((m, i) => (
+            <button
+              key={m.name}
+              type="button"
+              role="tab"
+              id={`ara-mode-tab-${i}`}
+              aria-selected={active === i}
+              aria-controls="ara-mode-panel"
+              className={`ara-modes__card ${active === i ? "is-active" : ""}`}
+              onClick={() => setActive(i)}
+            >
+              <span className="ara-modes__card-badge">{String(i + 1).padStart(2, "0")}</span>
+              <img src={m.icon} alt="" aria-hidden="true" className="ara-modes__card-icon" />
+              <h3>{m.name}</h3>
+              <p>{m.blurb}</p>
+            </button>
+          ))}
+        </div>
 
-          <div className="ara-modes__panel ara-zoom-in" role="tabpanel" id={`ara-mode-panel-${active}`} aria-labelledby={`ara-mode-tab-${active}`} key={active}>
-            <h3>{mode.title}</h3>
-            <p>{mode.description}</p>
-            <div className="ara-modes__modules">
+        <div className="ara-modes__panel ara-reveal" role="tabpanel" id="ara-mode-panel" aria-labelledby={`ara-mode-tab-${active}`}>
+          <div className="ara-modes__panel-grid" key={active}>
+            <div className="ara-modes__pipeline">
+              {ARIA_PIPELINE.map((step, i) => (
+                <div className="ara-modes__pipeline-step" style={{ "--i": i }} key={step.title}>
+                  <div className="ara-modes__pipeline-icon">
+                    <img src={step.icon} alt="" aria-hidden="true" />
+                  </div>
+                  <div className="ara-modes__pipeline-copy">
+                    <h4>{step.title}</h4>
+                    <p>{step.caption}</p>
+                  </div>
+                  {i < ARIA_PIPELINE.length - 1 && <span className="ara-modes__pipeline-arrow" aria-hidden="true" />}
+                </div>
+              ))}
+            </div>
+
+            <div className="ara-modes__detail">
+              <h3>{mode.title}</h3>
+              <p>{mode.description}</p>
               <span className="ara-modes__modules-label">Applicable modules</span>
-              <ul>
+              <ul className="ara-modes__detail-list">
                 {mode.modules.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
               </ul>
             </div>
+          </div>
+
+          <div className="ara-modes__status">
+            {ARIA_STATUS.map((s) => (
+              <div className="ara-modes__status-item" key={s.title}>
+                <img src={s.icon} alt="" aria-hidden="true" />
+                <div>
+                  <strong>{s.title}</strong>
+                  <span>{s.caption}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

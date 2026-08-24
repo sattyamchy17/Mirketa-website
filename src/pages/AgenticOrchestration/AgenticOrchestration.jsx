@@ -761,22 +761,27 @@ function DeepDiveSection() {
             production-ready, reusable, and built to integrate with your existing systems.
           </p>
         </div>
-        <div className="ao-deep-dive__list">
-          {CAPABILITIES_DEEP_DIVE.map((cap, i) => (
-            <article className={`ao-deep-dive__row ${i % 2 === 1 ? "is-reversed" : ""} ao-reveal`} key={cap.title}>
-              <div className="ao-deep-dive__media">
+        <div className="ao-deep-dive__grid ao-reveal-stagger">
+          {CAPABILITIES_DEEP_DIVE.map((cap) => (
+            <article className="ao-deep-dive__card" key={cap.title}>
+              <div className="ao-deep-dive__card-top">
                 <span className="ao-deep-dive__index">{cap.index}</span>
-                <img src={cap.icon} alt="" loading="lazy" />
+                <span className="ao-deep-dive__icon">
+                  <img src={cap.icon} alt="" loading="lazy" />
+                </span>
               </div>
-              <div className="ao-deep-dive__body">
-                <h3>{cap.title}</h3>
-                <p>{cap.description}</p>
-                <ul>
-                  {cap.benefits.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              </div>
+              <h3>{cap.title}</h3>
+              <p>{cap.description}</p>
+              <ul className="ao-deep-dive__benefits">
+                {cap.benefits.map((b) => (
+                  <li key={b}>
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M5 12.5l5 5L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>

@@ -298,33 +298,6 @@
   background: var(--color-bg-light);
 }
 
-.scnc-features__head {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  margin-bottom: 32px;
-}
-
-.scnc-features__head .section-heading {
-  margin-bottom: 0;
-}
-
-.scnc-features__illo {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-  flex-shrink: 0;
-}
-
-@media (max-width: 768px) {
-  .scnc-features__head {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .scnc-features__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -412,7 +385,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
 }
 

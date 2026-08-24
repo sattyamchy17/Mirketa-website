@@ -529,32 +529,38 @@ function ServicesSection() {
 // PROVEN RESULTS — Lightning-style KPI widget tiles
 // ============================================================
 
+function ResultWidget({ result }) {
+  const [ref, inView] = useInView(0.5);
+  const match = result.value.match(/^([\d.]+)(.*)$/);
+  const target = match ? parseFloat(match[1]) : 0;
+  const suffix = match ? match[2] : "";
+  const decimals = match && match[1].includes(".") ? match[1].split(".")[1].length : 0;
+  const count = useCountUp(target, inView, 1400, decimals);
+
+  return (
+    <div ref={ref} className="sf-widget">
+      <div className="sf-widget__value">
+        {count}
+        {suffix}
+      </div>
+      <h3>{result.label}</h3>
+      <p>{result.description}</p>
+    </div>
+  );
+}
+
 function ResultsSection() {
   return (
     <section className="section sf-results" aria-labelledby="sf-results-heading">
       <div className="container">
-        <div className="sf-results__head sf-reveal">
-          <div className="section-heading">
-            <p className="sf-eyebrow">Proven Results</p>
-            <h2 id="sf-results-heading">Driving Real-World Results with Salesforce AI</h2>
-            <p>These metrics reflect the transformative power of Salesforce AI across industries, moving beyond theoretical potential to proven operational success.</p>
-          </div>
-          <img src={Images.illoSalesforceAiInsightsDashboard} alt="" aria-hidden="true" className="sf-results__illo" loading="lazy" />
+        <div className="section-heading sf-reveal">
+          <p className="sf-eyebrow">Proven Results</p>
+          <h2 id="sf-results-heading">Driving Real-World Results with Salesforce AI</h2>
+          <p>These metrics reflect the transformative power of Salesforce AI across industries, moving beyond theoretical potential to proven operational success.</p>
         </div>
         <div className="sf-widgets sf-reveal-stagger">
           {RESULTS.map((r) => (
-            <div className="sf-widget" key={r.label}>
-              <div className="sf-widget__titlebar">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div className="sf-widget__body">
-                <div className="sf-widget__value">{r.value}</div>
-                <h3>{r.label}</h3>
-                <p>{r.description}</p>
-              </div>
-            </div>
+            <ResultWidget key={r.label} result={r} />
           ))}
         </div>
       </div>

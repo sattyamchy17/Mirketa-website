@@ -721,7 +721,7 @@
 
 .ae-mcp__layer--highlight {
   border-color: var(--color-primary-green);
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
 }
 
 .ae-mcp__layer-label {
@@ -771,7 +771,7 @@
   font-size: 15px;
   font-weight: 500;
   color: #fff;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   border: 1px solid rgba(33, 173, 101, 0.3);
   border-radius: var(--radius);
   padding: 20px 28px;

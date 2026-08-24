@@ -72,10 +72,18 @@
 .abt-hero__inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
 }
 
 .abt-hero__text {
   max-width: 720px;
+}
+
+.abt-hero__visual {
+  margin-top: 12px;
 }
 
 .abt-hero h1 {
@@ -129,9 +137,11 @@
 
 @media (max-width: 1024px) {
   .abt-hero { padding-top: 120px; text-align: center; }
+  .abt-hero__inner { grid-template-columns: 1fr; }
   .abt-hero__text { max-width: 100%; }
   .abt-hero__paragraph { max-width: 100%; }
   .abt-hero__ctas { justify-content: center; }
+  .abt-hero__visual { max-width: 480px; margin: 32px auto 0; }
 }
 
 @media (max-width: 768px) {

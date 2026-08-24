@@ -281,65 +281,156 @@
   background: var(--color-bg-light);
 }
 
-.ara-modes__layout {
+/* -- three mode cards -- */
+.ara-modes__cards {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
 }
 
-.ara-modes__tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.ara-modes__tab {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.ara-modes__card {
   text-align: left;
-  padding: 16px 18px;
-  border-radius: var(--radius-btn);
-  border: 1px solid var(--color-border);
   background: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-dark-navy);
-  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  padding: 30px 26px;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
-.ara-modes__tab img {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
-
-.ara-modes__tab:hover {
-  transform: translateX(3px);
-}
-
-.ara-modes__tab.is-active {
+.ara-modes__card:hover,
+.ara-modes__card:focus-visible {
+  transform: translateY(-4px);
   border-color: var(--color-primary-green);
-  background: rgba(33, 173, 101, 0.08);
-  color: var(--color-primary-green);
+  box-shadow: var(--shadow-medium);
 }
 
+.ara-modes__card.is-active {
+  border-color: var(--color-primary-green);
+  box-shadow: var(--shadow-medium);
+}
+
+.ara-modes__card-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-green);
+  margin-bottom: 14px;
+}
+
+.ara-modes__card-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 16px;
+  transition: transform var(--transition);
+}
+
+.ara-modes__card:hover .ara-modes__card-icon,
+.ara-modes__card.is-active .ara-modes__card-icon {
+  transform: scale(1.12);
+}
+
+.ara-modes__card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: var(--color-dark-navy);
+}
+
+.ara-modes__card p {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+/* -- workflow showcase panel -- */
 .ara-modes__panel {
   background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-medium);
-  padding: 36px 38px;
-  min-height: 280px;
+  padding: 40px;
 }
 
-.ara-modes__panel h3 {
+.ara-modes__panel-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 44px;
+  animation: ara-fade-in 0.3s ease;
+}
+
+/* left: connected pipeline steps */
+.ara-modes__pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ara-modes__pipeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 28px;
+  animation: ara-fade-in 0.4s ease both;
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+.ara-modes__pipeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.ara-modes__pipeline-arrow {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  width: 1px;
+  height: calc(100% - 40px);
+  background: var(--color-border);
+}
+
+.ara-modes__pipeline-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.ara-modes__pipeline-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.ara-modes__pipeline-copy h4 {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  margin-bottom: 3px;
+}
+
+.ara-modes__pipeline-copy p {
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+}
+
+/* right: active mode detail */
+.ara-modes__detail h3 {
   font-size: 22px;
   margin-bottom: 14px;
 }
 
-.ara-modes__panel p {
+.ara-modes__detail p {
   font-size: 14.5px;
   color: var(--color-gray-300);
   margin-bottom: 24px;
@@ -355,38 +446,83 @@
   margin-bottom: 12px;
 }
 
-.ara-modes__modules ul {
+.ara-modes__detail-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 18px;
 }
 
-.ara-modes__modules li {
+.ara-modes__detail-list li {
   font-size: 13px;
   color: var(--color-text);
-  padding-left: 18px;
+  padding-left: 20px;
   position: relative;
 }
 
-.ara-modes__modules li::before {
+.ara-modes__detail-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  top: 3px;
+  width: 12px;
+  height: 12px;
   background: var(--color-primary-green);
+  clip-path: polygon(20% 45%, 0% 65%, 40% 100%, 100% 15%, 80% 0%, 38% 65%);
+}
+
+/* bottom status bar */
+.ara-modes__status {
+  display: flex;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-border);
+}
+
+.ara-modes__status-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  border-left: 1px solid var(--color-border);
+}
+
+.ara-modes__status-item:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.ara-modes__status-item img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.ara-modes__status-item strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+}
+
+.ara-modes__status-item span {
+  display: block;
+  font-size: 12px;
+  color: var(--color-gray-300);
 }
 
 @media (max-width: 900px) {
-  .ara-modes__layout { grid-template-columns: 1fr; }
-  .ara-modes__tabs { flex-direction: row; overflow-x: auto; }
-  .ara-modes__tab { flex-shrink: 0; }
+  .ara-modes__cards { grid-template-columns: 1fr 1fr; }
+  .ara-modes__panel-grid { grid-template-columns: 1fr; }
+  .ara-modes__status { flex-direction: column; gap: 18px; }
+  .ara-modes__status-item { border-left: none; padding-left: 0; border-top: 1px solid var(--color-border); padding-top: 18px; }
+  .ara-modes__status-item:first-child { border-top: none; padding-top: 0; }
 }
 @media (max-width: 560px) {
+  .ara-modes__cards { grid-template-columns: 1fr; }
   .ara-modes__panel { padding: 26px 22px; }
-  .ara-modes__modules ul { grid-template-columns: 1fr; }
+  .ara-modes__detail-list { grid-template-columns: 1fr; }
 }
 
 /* ============================================================

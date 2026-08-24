@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+  <rect x="40" y="40" width="560" height="400" rx="16" fill="#0f2438" />
+
+  <!-- compose panel -->
+  <rect x="90" y="90" width="330" height="200" rx="14" fill="#123049" />
+  <text x="114" y="120" font-family="IBM Plex Sans, sans-serif" font-size="9" font-weight="700" fill="#8fd9b3">DRAFT RESPONSE</text>
+
+  <rect x="114" y="138" width="282" height="7" rx="3.5" fill="#ffffff" opacity="0.32" />
+  <rect x="114" y="154" width="250" height="7" rx="3.5" fill="#ffffff" opacity="0.32" />
+  <rect x="114" y="170" width="266" height="7" rx="3.5" fill="#ffffff" opacity="0.32" />
+  <rect x="114" y="186" width="180" height="7" rx="3.5" fill="#ffffff" opacity="0.2" />
+
+  <circle cx="378" cy="230" r="16" fill="#21ad65" />
+  <path d="M371 230l6-8 4 4 8-10" stroke="#0f2438" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- action toolbar -->
+  <rect x="114" y="248" width="82" height="24" rx="12" fill="#0f2438" stroke="#21ad65" stroke-width="1" />
+  <text x="155" y="264" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="600" fill="#8fd9b3">Explain</text>
+  <rect x="204" y="248" width="102" height="24" rx="12" fill="#0f2438" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+  <text x="255" y="264" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="600" fill="#ffffff" opacity="0.7">Ask Follow-up</text>
+  <rect x="314" y="248" width="96" height="24" rx="12" fill="#0f2438" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+  <text x="362" y="264" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7.5" font-weight="600" fill="#ffffff" opacity="0.7">Escalate</text>
+
+  <!-- escalation summary card -->
+  <rect x="440" y="90" width="110" height="200" rx="14" fill="#123049" />
+  <text x="456" y="116" font-family="IBM Plex Sans, sans-serif" font-size="8" font-weight="700" fill="#8fd9b3">SUMMARY</text>
+  <rect x="456" y="130" width="78" height="6" rx="3" fill="#ffffff" opacity="0.28" />
+  <rect x="456" y="142" width="60" height="6" rx="3" fill="#ffffff" opacity="0.28" />
+  <rect x="456" y="154" width="70" height="6" rx="3" fill="#ffffff" opacity="0.28" />
+  <rect x="456" y="180" width="78" height="18" rx="9" fill="#21ad65" opacity="0.9" />
+  <text x="495" y="192.5" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="7" font-weight="700" fill="#0f2438">Editable</text>
+
+  <text x="90" y="332" font-family="IBM Plex Sans, sans-serif" font-size="8" fill="#ffffff" opacity="0.5">Customer-ready drafts, follow-up questions, and escalation summaries — always editable by the rep.</text>
+</svg>

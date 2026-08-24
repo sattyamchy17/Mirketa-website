@@ -44,12 +44,19 @@ const OVERVIEW = {
 };
 
 const CAPABILITIES = [
-  { icon: Images.iconCapabilityAgentforce, title: "Customizable AI Agents", description: "Role-specific agents for sales, service, marketing, HR" },
-  { icon: Images.iconPillarConnectivity, title: "Seamless CRM Integration", description: "Real-time connections to Salesforce, ERPs, HRIS, data warehouses" },
-  { icon: Images.iconCapabilitySlack, title: "Slack-Native Collaboration", description: "Direct Slack integration for workflow automation" },
-  { icon: Images.iconProcessReasonPlan, title: "Atlas Reasoning Engine", description: "Multi-step problem-solving with data retrieval and citations" },
-  { icon: Images.iconDimensionGovernance, title: "Einstein Trust Layer", description: "Enterprise security preventing data leakage to external LLMs" },
-  { icon: Images.iconEinsteinPredictive, title: "Real-Time Analytics", description: "Performance tracking via dashboards and Tableau visualizations" },
+  { icon: Images.iconCapabilityAgentforce, title: "Customizable AI Agents", description: "Role-specific agents for sales, service, marketing, HR", bullets: ["Sales agents", "Service agents", "Marketing agents", "HR agents", "Multi-agent architecture"] },
+  { icon: Images.iconPillarConnectivity, title: "Seamless CRM Integration", description: "Real-time connections to Salesforce, ERPs, HRIS, data warehouses", bullets: ["Salesforce integration", "ERP systems", "HRIS platforms", "Data warehouses", "MuleSoft connectors"] },
+  { icon: Images.iconCapabilitySlack, title: "Slack-Native Collaboration", description: "Direct Slack integration for workflow automation", bullets: ["Slack integration", "Workflow automation", "Flow automation", "REST/SOAP APIs"] },
+  { icon: Images.iconProcessReasonPlan, title: "Atlas Reasoning Engine", description: "Multi-step problem-solving with data retrieval and citations", bullets: ["Multi-step reasoning", "Data Cloud retrieval", "Action planning", "Inline citations", "Contextual memory"] },
+  { icon: Images.iconDimensionGovernance, title: "Einstein Trust Layer", description: "Enterprise security preventing data leakage to external LLMs", bullets: ["Data masking", "Zero LLM retention", "Audit trails", "GDPR/HIPAA compliance", "Toxicity detection"] },
+  { icon: Images.iconEinsteinPredictive, title: "Real-Time Analytics", description: "Performance tracking via dashboards and Tableau visualizations", bullets: ["Performance dashboards", "Tableau visualizations", "KPI reporting", "Agent performance analytics"] },
+];
+
+const PLATFORM_HIGHLIGHTS = [
+  { title: "Enterprise Ready", description: "Proven across 200+ enterprise deployments." },
+  { title: "Secure by Design", description: "Data masking, audit trails, and GDPR/HIPAA compliance built in." },
+  { title: "Native Salesforce Integration", description: "Built natively on the Salesforce platform, powered by Data Cloud." },
+  { title: "Scalable Automation", description: "Multi-agent architecture built for enterprise-wide orchestration." },
 ];
 
 const USE_CASES = [
@@ -473,20 +480,42 @@ function CapabilitiesSection() {
   return (
     <section className="section af-capabilities" id="capabilities" aria-labelledby="af-capabilities-heading">
       <div className="container">
-        <div className="af-capabilities__head af-reveal">
-          <div className="section-heading">
-            <p className="af-eyebrow">Core Platform Capabilities</p>
-            <h2 id="af-capabilities-heading">Six Pillars of the Agentforce Platform</h2>
-          </div>
-          <img src={Images.illoAgentforceActionConsole} alt="" aria-hidden="true" className="af-capabilities__illo" loading="lazy" />
+        <div className="section-heading af-reveal">
+          <p className="af-eyebrow">Core Platform Capabilities</p>
+          <h2 id="af-capabilities-heading">Six Pillars of the Agentforce Platform</h2>
+          <p>Everything Agentforce does is powered by six foundational capabilities that work together to orchestrate intelligent, secure, and scalable enterprise AI agents across your organization.</p>
         </div>
-        <div className="af-hive af-reveal-stagger">
-          {CAPABILITIES.map((cap) => (
-            <div className="af-hex" key={cap.title}>
-              <div className="af-hex__inner">
-                <img src={cap.icon} alt="" loading="lazy" />
-                <h3>{cap.title}</h3>
-                <p>{cap.description}</p>
+
+        <div className="af-pillars af-reveal-stagger">
+          {CAPABILITIES.map((cap, i) => (
+            <div className="af-pillar-card" key={cap.title}>
+              <div className="af-pillar-card__head">
+                <span className="af-pillar-card__badge">{String(i + 1).padStart(2, "0")}</span>
+                <span className="af-pillar-card__icon">
+                  <img src={cap.icon} alt="" loading="lazy" />
+                </span>
+              </div>
+              <h3>{cap.title}</h3>
+              <p>{cap.description}</p>
+              <ul className="af-pillar-card__bullets">
+                {cap.bullets.map((b) => (
+                  <li key={b}>
+                    <img src={Images.iconCheckCircle} alt="" aria-hidden="true" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="af-pillars__summary af-reveal-stagger">
+          {PLATFORM_HIGHLIGHTS.map((h) => (
+            <div className="af-summary-item" key={h.title}>
+              <img src={Images.iconCheckCircle} alt="" aria-hidden="true" />
+              <div>
+                <strong>{h.title}</strong>
+                <span>{h.description}</span>
               </div>
             </div>
           ))}

@@ -26,7 +26,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   border: 1px solid rgba(33, 173, 101, 0.3);
   color: #1c9457;
   font-size: 12.5px;

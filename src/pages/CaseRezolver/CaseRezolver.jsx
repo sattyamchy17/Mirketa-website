@@ -9,12 +9,18 @@ import heroBg from "../../assets/images/case-rezolver/hero-bg.svg";
 import heroIllustration from "../../assets/images/case-rezolver/hero-illustration.svg";
 import overviewImg from "../../assets/images/case-rezolver/overview.svg";
 import workflowImg from "../../assets/images/case-rezolver/workflow.svg";
-import integrationImg from "../../assets/images/case-rezolver/integration.svg";
 import automationImg from "../../assets/images/case-rezolver/automation.svg";
-import featuresImg from "../../assets/images/case-rezolver/features.svg";
 import benefitsImg from "../../assets/images/case-rezolver/benefits.svg";
 import analyticsImg from "../../assets/images/case-rezolver/analytics.svg";
 import ctaImg from "../../assets/images/case-rezolver/cta.svg";
+import capWorkspaceImg from "../../assets/images/case-rezolver/cap-workspace.svg";
+import capContextImg from "../../assets/images/case-rezolver/cap-context.svg";
+import capKnowledgeImg from "../../assets/images/case-rezolver/cap-knowledge.svg";
+import capSecureImg from "../../assets/images/case-rezolver/cap-secure.svg";
+import capPrecedentImg from "../../assets/images/case-rezolver/cap-precedent.svg";
+import capResponseImg from "../../assets/images/case-rezolver/cap-response.svg";
+import capExplainableImg from "../../assets/images/case-rezolver/cap-explainable.svg";
+import capOutcomeImg from "../../assets/images/case-rezolver/cap-outcome.svg";
 import "./CaseRezolver.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -191,11 +197,11 @@ const DIFFERENCE = {
   intro:
     "Mirketa's accelerator combines Salesforce delivery experience, service-process knowledge, and reusable AI patterns so clients can move faster than a custom build while retaining governance, configurability, and business fit.",
   items: [
-    { title: "Built around the case record", description: "Agents stay in the Salesforce workflow, with guidance surfaced where investigation, communication, escalation, and closure happen." },
-    { title: "Trusted recommendation behavior", description: "The assistant is designed to recommend only when context supports it and to guide escalation when the answer is not clear." },
-    { title: "Precedent-aware intelligence", description: "Prior resolutions, policies, product knowledge, and customer context work together so reps see why a path is recommended." },
-    { title: "Governance from pilot to scale", description: "Access, auditability, source visibility, and human review are part of the operating model, not afterthoughts." },
-    { title: "Flexible enterprise deployment", description: "The accelerator can align with each client's security, data, model, integration, and packaging preferences." },
+    { icon: Ico.workspace, title: "Built around the case record", description: "Agents stay in the Salesforce workflow, with guidance surfaced where investigation, communication, escalation, and closure happen." },
+    { icon: Ico.shieldCheck, title: "Trusted recommendation behavior", description: "The assistant is designed to recommend only when context supports it and to guide escalation when the answer is not clear." },
+    { icon: Ico.compare, title: "Precedent-aware intelligence", description: "Prior resolutions, policies, product knowledge, and customer context work together so reps see why a path is recommended." },
+    { icon: Ico.eye, title: "Governance from pilot to scale", description: "Access, auditability, source visibility, and human review are part of the operating model, not afterthoughts." },
+    { icon: Ico.building, title: "Flexible enterprise deployment", description: "The accelerator can align with each client's security, data, model, integration, and packaging preferences." },
   ],
 };
 
@@ -205,14 +211,14 @@ const CAPABILITIES = {
   intro:
     "The page-level details stay business-safe, but the accelerator includes reusable components for case understanding, guided resolution, agent communication, governance, and measurement.",
   items: [
-    { icon: Ico.workspace, title: "Agent workspace assistant", description: "Surface summaries, suggested actions, and response guidance directly inside the Salesforce Service Cloud experience." },
-    { icon: Ico.context, title: "Context-aware recommendations", description: "Use case details, relevant history, policies, and product context to help reps move from issue diagnosis to next action." },
-    { icon: Ico.knowledge, title: "Knowledge activation", description: "Make approved support knowledge easier to find and reuse without requiring agents to manually search every repository." },
-    { icon: Ico.lock, title: "Secure customer context", description: "Respect access rules, data sensitivity, and enterprise governance expectations as case information is used for AI assistance." },
-    { icon: Ico.compare, title: "Precedent matching", description: "Help agents compare the current issue with similar cases and known patterns to choose a more reliable path." },
-    { icon: Ico.reply, title: "Response assistance", description: "Draft customer-friendly explanations, follow-up questions, and escalation summaries that agents can review and edit." },
-    { icon: Ico.eye, title: "Explainable guidance", description: "Show supporting context and rationale so agents understand why a recommendation is being suggested." },
-    { icon: Ico.ruler, title: "Outcome measurement", description: "Track usage, acceptance, resolution outcomes, and productivity indicators to inform service leadership decisions." },
+    { icon: Ico.workspace, img: capWorkspaceImg, imgAlt: "Salesforce workspace with an AI assistant rail surfacing a case summary, suggested action, and response guidance", title: "Agent workspace assistant", description: "Surface summaries, suggested actions, and response guidance directly inside the Salesforce Service Cloud experience.", tags: ["Case summaries", "Suggested actions", "Response guidance"] },
+    { icon: Ico.context, img: capContextImg, imgAlt: "Case details, relevant history, policies, and product context converging into a recommended next action", title: "Context-aware recommendations", description: "Use case details, relevant history, policies, and product context to help reps move from issue diagnosis to next action.", tags: ["Case details", "Relevant history", "Policy & product context"] },
+    { icon: Ico.knowledge, img: capKnowledgeImg, imgAlt: "Knowledge repository being searched with a matched, approved article surfaced automatically", title: "Knowledge activation", description: "Make approved support knowledge easier to find and reuse without requiring agents to manually search every repository.", tags: ["Approved knowledge", "Faster to find", "Reusable across cases"] },
+    { icon: Ico.lock, img: capSecureImg, imgAlt: "Customer record with sensitive fields masked under role-based access, protected by a governance shield", title: "Secure customer context", description: "Respect access rules, data sensitivity, and enterprise governance expectations as case information is used for AI assistance.", tags: ["Access rules", "Data sensitivity", "Enterprise governance"] },
+    { icon: Ico.compare, img: capPrecedentImg, imgAlt: "Current case compared against three similar prior cases with match confidence scores", title: "Precedent matching", description: "Help agents compare the current issue with similar cases and known patterns to choose a more reliable path.", tags: ["Similar cases", "Known patterns", "Reliable path"] },
+    { icon: Ico.reply, img: capResponseImg, imgAlt: "Draft customer response with explain, follow-up, and escalate actions, plus an editable escalation summary", title: "Response assistance", description: "Draft customer-friendly explanations, follow-up questions, and escalation summaries that agents can review and edit.", tags: ["Customer-friendly drafts", "Follow-up questions", "Escalation summaries"] },
+    { icon: Ico.eye, img: capExplainableImg, imgAlt: "Recommendation panel showing the exact policy, precedent case, and knowledge article behind the suggestion", title: "Explainable guidance", description: "Show supporting context and rationale so agents understand why a recommendation is being suggested.", tags: ["Supporting context", "Clear rationale", "Understandable guidance"] },
+    { icon: Ico.ruler, img: capOutcomeImg, imgAlt: "Analytics dashboard tracking acceptance, resolution, productivity, and usage trends over time", title: "Outcome measurement", description: "Track usage, acceptance, resolution outcomes, and productivity indicators to inform service leadership decisions.", tags: ["Usage & acceptance", "Resolution outcomes", "Productivity indicators"] },
   ],
 };
 
@@ -565,7 +571,7 @@ function MeetSection() {
           </ul>
         </div>
         <div className="cr-meet__image cr-zoom-in">
-          <img src={overviewImg} alt="AI assistant reviewing a case summary and surfacing a human-approved next step" loading="lazy" />
+          <img src={overviewImg} alt="Salesforce case console showing an AI-generated case summary, matched precedent, a suggested response, and an agent-approved next step" loading="lazy" />
         </div>
       </div>
 
@@ -595,31 +601,27 @@ function MeetSection() {
 function ArchitectureSection() {
   return (
     <section className="section cr-architecture" aria-labelledby="cr-architecture-heading">
+      <span className="cr-architecture__decoration" aria-hidden="true" />
       <div className="container">
         <div className="section-heading cr-reveal">
           <p className="cr-eyebrow">{ARCHITECTURE.eyebrow}</p>
           <h2 id="cr-architecture-heading">{ARCHITECTURE.heading}</h2>
           <p>{ARCHITECTURE.intro}</p>
         </div>
-        <div className="cr-architecture__image cr-reveal">
-          <img src={integrationImg} alt="Salesforce Service Cloud connected to Knowledge, Case History, Policies, and Product Data sources" loading="lazy" />
-        </div>
         <ul className="cr-architecture__sources cr-reveal-stagger">
           {ARCHITECTURE.dataSources.map((d) => (
             <li key={d}>{d}</li>
           ))}
         </ul>
-        <div className="cr-architecture__zigzag cr-reveal-stagger">
+        <div className="cr-architecture__grid cr-reveal-stagger">
           {ARCHITECTURE.steps.map((s, i) => (
-            <div className={`cr-zigzag-row ${i % 2 === 1 ? "is-reversed" : ""}`} key={s.title}>
-              <div className="cr-zigzag-row__content">
-                <span className="cr-zigzag-row__icon">{s.icon}</span>
-                <h3>
-                  {i + 1}. {s.title}
-                </h3>
-                <p>{s.description}</p>
+            <div className="cr-arch-card" key={s.title}>
+              <div className="cr-arch-card__head">
+                <span className="cr-arch-card__badge">{String(i + 1).padStart(2, "0")}</span>
+                <span className="cr-arch-card__icon">{s.icon}</span>
               </div>
-              <span className="cr-zigzag-row__node" aria-hidden="true" />
+              <h3>{s.title}</h3>
+              <p>{s.description}</p>
             </div>
           ))}
         </div>
@@ -636,19 +638,34 @@ function DifferenceSection() {
   return (
     <section className="section cr-difference" aria-labelledby="cr-difference-heading">
       <div className="container">
-        <div className="section-heading cr-reveal">
-          <p className="cr-eyebrow">{DIFFERENCE.eyebrow}</p>
-          <h2 id="cr-difference-heading">{DIFFERENCE.heading}</h2>
-          <p>{DIFFERENCE.intro}</p>
+        <div className="cr-difference__split">
+          <div className="cr-difference__visual cr-reveal">
+            <img src={benefitsImg} alt="A governed Salesforce case record connected to an AI recommendation panel with policy validation and matched precedent, backed by precedent-aware, policy-governed, human-reviewed controls" loading="lazy" />
+          </div>
+          <div className="cr-difference__content cr-reveal">
+            <p className="cr-eyebrow">{DIFFERENCE.eyebrow}</p>
+            <h2 id="cr-difference-heading">{DIFFERENCE.heading}</h2>
+            <p className="cr-difference__intro">{DIFFERENCE.intro}</p>
+            <div className="cr-difference__blocks cr-reveal-stagger">
+              {DIFFERENCE.items.map((d) => (
+                <div className="cr-difference-block" key={d.title}>
+                  <span className="cr-difference-block__icon">{d.icon}</span>
+                  <div>
+                    <h3>{d.title}</h3>
+                    <p>{d.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="cr-difference__image cr-reveal">
-          <img src={benefitsImg} alt="Checklist of Case Rezolver differentiators including governance and precedent-aware intelligence" loading="lazy" />
-        </div>
-        <div className="cr-difference__grid cr-reveal-stagger">
-          {DIFFERENCE.items.map((d) => (
-            <div className="cr-difference-card" key={d.title}>
-              <h3>{d.title}</h3>
-              <p>{d.description}</p>
+
+        <div className="cr-difference__kpis cr-reveal-stagger">
+          {HERO_METRICS.map((m) => (
+            <div className="cr-difference-kpi" key={m.title}>
+              <span className="cr-difference-kpi__icon" aria-hidden="true">{Ico.check}</span>
+              <strong>{m.title}</strong>
+              <span>{m.note}</span>
             </div>
           ))}
         </div>
@@ -670,15 +687,26 @@ function CapabilitiesSection() {
           <h2 id="cr-capabilities-heading">{CAPABILITIES.heading}</h2>
           <p>{CAPABILITIES.intro}</p>
         </div>
-        <div className="cr-capabilities__image cr-reveal">
-          <img src={featuresImg} alt="Grid of Salesforce Service Cloud AI capability tiles" loading="lazy" />
-        </div>
-        <div className="cr-capabilities__grid cr-reveal-stagger">
-          {CAPABILITIES.items.map((c) => (
-            <div className="cr-capability-card" key={c.title}>
-              <span className="cr-capability-card__icon">{c.icon}</span>
-              <h3>{c.title}</h3>
-              <p>{c.description}</p>
+
+        <div className="cr-cap-list">
+          {CAPABILITIES.items.map((c, i) => (
+            <div className={`cr-cap-row ${i % 2 === 1 ? "is-reversed" : ""} cr-reveal`} key={c.title}>
+              <div className="cr-cap-row__visual">
+                <img src={c.img} alt={c.imgAlt} loading="lazy" />
+              </div>
+              <div className="cr-cap-row__content">
+                <span className="cr-cap-row__index">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{c.title}</h3>
+                <p>{c.description}</p>
+                <ul className="cr-cap-row__tags">
+                  {c.tags.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+                <a href="#contact" className="cr-cap-row__link">
+                  Learn More <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           ))}
         </div>

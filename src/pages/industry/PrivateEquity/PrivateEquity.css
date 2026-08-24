@@ -9,7 +9,6 @@
 
 .industry-private-equity {
   --pe-hover-navy: #1d4056;
-  --pe-rose: #d9678c;
   overflow-x: clip;
 }
 
@@ -266,7 +265,7 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
@@ -444,8 +443,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(217, 103, 140, 0.14);
-  color: var(--pe-rose);
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
@@ -489,8 +488,8 @@
 
 .pe-case-card__tag {
   display: inline-block;
-  background: rgba(217, 103, 140, 0.14);
-  color: #9c3f5e;
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
   font-size: 11.5px;
   font-weight: 700;
   padding: 4px 12px;
@@ -553,8 +552,8 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(217, 103, 140, 0.14);
-  color: var(--pe-rose);
+  background: rgba(33, 173, 101, 0.14);
+  color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
@@ -603,7 +602,7 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(33, 173, 101, 0.12);
+  background: #f8f8f8;
   color: var(--color-primary-green);
   align-items: center;
   justify-content: center;
