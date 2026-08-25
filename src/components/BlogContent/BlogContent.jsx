@@ -7,8 +7,8 @@ import "./BlogContent.css";
 // src/blog/posts/*.js) into JSX. This is the one place blog body
 // markup lives; BlogDetail.jsx never hardcodes article content.
 //
-// Supported block types: heading2, heading3, paragraph, list,
-// callout, table, faq. Paragraph/list/table text supports two
+// Supported block types: heading2, heading3, heading4, paragraph,
+// list, callout, table, faq. Paragraph/list/table text supports two
 // lightweight inline tokens — **bold** and [label](/path or
 // https://url) — parsed by renderInline() below, so authors can add
 // emphasis and internal/external links directly in blogData without
@@ -60,6 +60,8 @@ export default function BlogContent({ blocks }) {
             return <h2 key={i}>{renderInline(block.text)}</h2>;
           case "heading3":
             return <h3 key={i}>{renderInline(block.text)}</h3>;
+          case "heading4":
+            return <h4 key={i}>{renderInline(block.text)}</h4>;
           case "paragraph":
             return <p key={i}>{renderInline(block.text)}</p>;
           case "list": {

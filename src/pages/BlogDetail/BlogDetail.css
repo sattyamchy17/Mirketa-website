@@ -15,23 +15,45 @@
   gap: 20px;
 }
 
+/* The banner image is rendered in its own layer (.blog-detail__hero-media)
+   with a fixed, shared height — not the header block itself — so every
+   post's banner is exactly the same size regardless of how long its
+   title is. The header can still grow taller for a long title without
+   clipping anything; the extra space just shows the plain gradient
+   below the fixed-height image, never a stretched or inconsistently
+   cropped banner. */
 .blog-detail__hero {
+  --hero-banner-height: 520px;
   position: relative;
   background: linear-gradient(120deg, #0f2438 0%, #0d3b3d 100%);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   padding: 168px 0 64px;
+  min-height: var(--hero-banner-height);
   overflow: hidden;
 }
 
-.blog-detail__hero--image .blog-detail__hero-scrim {
-  background: linear-gradient(100deg, rgba(15, 36, 56, 0.94) 0%, rgba(15, 36, 56, 0.8) 45%, rgba(15, 36, 56, 0.55) 100%);
+.blog-detail__hero-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--hero-banner-height);
+  background-size: cover;
+  /* Featured-image banners have their own title/caption text baked
+     into the artwork near the top and bottom edges (by design, across
+     every uploaded banner). Since the real <h1> is already rendered
+     as HTML further down, centering the crop would let that baked-in
+     title bleed through at the top. Biasing the crop down keeps the
+     artwork's own title band out of view while still showing its
+     footer caption and central illustration. */
+  background-position: center 65%;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .blog-detail__hero-scrim {
   position: absolute;
   inset: 0;
+  background: linear-gradient(100deg, rgba(15, 36, 56, 0.94) 0%, rgba(15, 36, 56, 0.8) 45%, rgba(15, 36, 56, 0.55) 100%);
 }
 
 .blog-detail__hero-inner {
@@ -251,6 +273,7 @@
 
 @media (max-width: 768px) {
   .blog-detail__hero {
+    --hero-banner-height: 380px;
     padding: 130px 0 44px;
   }
   .blog-detail__hero h1 {

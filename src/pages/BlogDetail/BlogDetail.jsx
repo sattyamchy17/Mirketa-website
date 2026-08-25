@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Seo from "../../components/Seo/Seo.jsx";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import BlogContent from "../../components/BlogContent/BlogContent.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
@@ -51,24 +52,40 @@ export default function BlogDetail() {
         canonical={canonicalUrl}
         keywords={[post.primaryKeyword, ...(post.secondaryKeywords || [])].filter(Boolean)}
         ogImage={post.featuredImage ? new URL(post.featuredImage, SITE_URL).href : undefined}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.excerpt,
-          image: post.featuredImage,
-          author: { "@type": "Organization", name: post.author },
-          datePublished: post.publishedDate,
-          mainEntityOfPage: canonicalUrl,
-        }}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            image: post.featuredImage,
+            author: post.author ? { "@type": "Person", name: post.author } : undefined,
+            publisher: { "@type": "Organization", name: "Mirketa Inc.", url: SITE_URL },
+            datePublished: post.publishedDate,
+            dateModified: post.publishedDate,
+            mainEntityOfPage: canonicalUrl,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+              { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl },
+            ],
+          },
+        ]}
       />
 
-      <header
-        className={`blog-detail__hero ${post.featuredImage ? "blog-detail__hero--image" : ""}`}
-        style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}
-      >
-        <div className="blog-detail__hero-scrim" aria-hidden="true" />
+      <header className={`blog-detail__hero ${post.featuredImage ? "blog-detail__hero--image" : ""}`}>
+        {post.featuredImage && (
+          <div className="blog-detail__hero-media" style={{ backgroundImage: `url("${post.featuredImage}")` }}>
+            <div className="blog-detail__hero-scrim" aria-hidden="true" />
+            <span className="sr-only">{post.featuredImageAlt || `${post.title} — featured image`}</span>
+          </div>
+        )}
         <div className="container blog-detail__hero-inner">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
           {post.category && <span className="blog-detail__tag">{post.category}</span>}
           <h1>{post.title}</h1>
           <a href="#contact" className="btn btn-primary blog-detail__cta">

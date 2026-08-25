@@ -17,6 +17,10 @@ import { post as modernizingServicenowWorkflowsAiEra } from "./posts/modernizing
 import { post as salesforceDataCloudUnifiedCustomerDataFoundation } from "./posts/salesforce-data-cloud-unified-customer-data-foundation.js";
 import { post as healthcareDataReadinessForAiGuide } from "./posts/healthcare-data-readiness-for-ai-guide.js";
 import { post as dataCloudForAgentforce } from "./posts/data-cloud-for-agentforce.js";
+import { post as aiCompliance } from "./posts/ai-compliance.js";
+import { post as netsuiteNext } from "./posts/netsuite-next.js";
+import { post as buildVsBuyAi } from "./posts/build-vs-buy-ai.js";
+import { post as salesforceAgentforcePricing } from "./posts/salesforce-agentforce-pricing.js";
 
 export const blogPosts = [
   enterpriseCustomerSuccessUnifiedDataFoundation,
@@ -28,4 +32,8 @@ export const blogPosts = [
   salesforceDataCloudUnifiedCustomerDataFoundation,
   healthcareDataReadinessForAiGuide,
   dataCloudForAgentforce,
+  aiCompliance,
+  netsuiteNext,
+  buildVsBuyAi,
+  salesforceAgentforcePricing,
 ];

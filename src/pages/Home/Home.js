@@ -455,7 +455,7 @@ export const partnersSwiperConfig = {
 // no hardcoded posts here. The 4-item shape below is what the existing
 // LatestInsightsSection JSX/CSS in Home.jsx already expects, so the card
 // markup itself needs zero changes when the data source changes.
-const LATEST_INSIGHTS_COUNT = 4; // matches insightsSwiperConfig's desktop slidesPerView
+const LATEST_INSIGHTS_COUNT = 8; // carousel scrolls, so this can exceed insightsSwiperConfig's slidesPerView
 
 function formatInsightDate(dateString) {
   if (!dateString) return "";

@@ -14,6 +14,7 @@ export default function Seo({
   description,
   canonical,
   keywords = [],
+  robots = "index, follow",
   ogTitle,
   ogDescription,
   ogImage = DEFAULT_OG_IMAGE,
@@ -33,6 +34,7 @@ export default function Seo({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords.length > 0 && <meta name="keywords" content={keywords.join(", ")} />}
+      <meta name="robots" content={robots} />
       {canonical && <link rel="canonical" href={canonical} />}
 
       <meta property="og:type" content="website" />

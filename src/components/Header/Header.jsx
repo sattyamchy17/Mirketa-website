@@ -434,7 +434,7 @@ export default function Header() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M6.6 10.8c1.5 3 3.9 5.4 6.9 6.9l2.3-2.3c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.9.8.6 0 1 .4 1 1v3.6c0 .6-.4 1-1 1C11.4 21.6 2.4 12.6 2.4 1.3c0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.4.3 2.7.8 3.9.1.3.1.7-.2 1L6.6 10.8z" fill="currentColor" />
                 </svg>
-                <span aria-hidden="true">🇺🇸</span> +1 (855) MIRKETA
+                <span aria-hidden="true">🇺🇸</span> 1-855-647-5382
               </a>
               <a href="tel:+919876543210" className="top-strip__item">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">

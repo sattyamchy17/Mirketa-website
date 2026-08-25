@@ -160,6 +160,14 @@ export default function App() {
           <Route path="/insights" element={<Insights />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
+          {/* Requested standalone slugs for individual blog posts — this
+              site's blog architecture serves every post at /blog/:slug,
+              so these aliases resolve the exact requested URLs to the real
+              detail pages rather than restructuring routing per post. */}
+          <Route path="/ai-compliance" element={<Navigate to="/blog/ai-compliance" replace />} />
+          <Route path="/netsuite-next" element={<Navigate to="/blog/netsuite-next" replace />} />
+          <Route path="/build-vs-buy-ai" element={<Navigate to="/blog/build-vs-buy-ai" replace />} />
+          <Route path="/salesforce-agentforce-pricing" element={<Navigate to="/blog/salesforce-agentforce-pricing" replace />} />
 
           {/* Legacy slug redirects — old URLs kept live so bookmarked/indexed
               links land on the new canonical page instead of breaking. */}
