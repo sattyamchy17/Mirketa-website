@@ -86,7 +86,7 @@ const CONSULTATION = {
 const BREADCRUMB_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Platforms & Technology", href: "/" },
-  { label: "ServiceNow", href: "/platforms/servicenow" },
+  { label: "ServiceNow", href: "/servicenow" },
   { label: "Consulting & Development Services" },
 ];
 
@@ -302,16 +302,16 @@ const FAQS = [
 ];
 
 const RELATED_LINKS = [
-  { to: "/platforms/servicenow", label: "ServiceNow Solutions" },
-  { to: "/platforms/servicenow/technology-workflows", label: "ServiceNow Technology Workflows" },
-  { to: "/platforms/servicenow/customer-workflows", label: "ServiceNow Customer Workflows" },
-  { to: "/platforms/servicenow/employee-workflows", label: "ServiceNow Employee Workflows" },
-  { to: "/platforms/servicenow/creator-workflows", label: "ServiceNow Creator Workflows" },
-  { to: "/platforms/servicenow/support-managed-services", label: "ServiceNow Managed Services" },
-  { to: "/platforms/oracle/fusion-implementation", label: "Oracle Fusion Applications Implementation" },
-  { to: "/platforms/oracle/premium-support-service", label: "Oracle Premium Support Service" },
-  { to: "/platforms/salesforce/development-consulting", label: "Salesforce Development & Consulting" },
-  { to: "/platforms/salesforce/clouds", label: "Salesforce Clouds" },
+  { to: "/servicenow", label: "ServiceNow Solutions" },
+  { to: "/servicenow-technology-workflows", label: "ServiceNow Technology Workflows" },
+  { to: "/servicenow-customer-workflows", label: "ServiceNow Customer Workflows" },
+  { to: "/servicenow-employee-workflows", label: "ServiceNow Employee Workflows" },
+  { to: "/servicenow-creator-workflows", label: "ServiceNow Creator Workflows" },
+  { to: "/servicenow-support-managed-services", label: "ServiceNow Managed Services" },
+  { to: "/oracle-fusion-applications-implementation", label: "Oracle Fusion Applications Implementation" },
+  { to: "/oracle-premium-support-service", label: "Oracle Premium Support Service" },
+  { to: "/salesforce-consulting-development-services", label: "Salesforce Development & Consulting" },
+  { to: "/salesforce", label: "Salesforce Clouds" },
   { to: "/ai-consulting", label: "AI Consulting" },
   { to: "/data-cloud", label: "Salesforce Data Cloud" },
 ];

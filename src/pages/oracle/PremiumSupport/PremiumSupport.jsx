@@ -851,8 +851,8 @@ function FaqSection() {
           )}
         </div>
         <p className="ops-faq__links">
-          Related reading: <Link to="/platforms/oracle/fusion-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
-          <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
+          Related reading: <Link to="/oracle-fusion-applications-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
+          <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>, <a href="#services">Support Services</a>.
         </p>
       </div>

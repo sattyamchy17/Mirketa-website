@@ -81,11 +81,11 @@ const VALUES = [
 ];
 
 const EXPERTISE = [
-  { title: "Salesforce", description: "Consulting, development, and managed services across Sales, Service, Marketing, Revenue, and Health Cloud.", href: "/platforms/salesforce/clouds" },
+  { title: "Salesforce", description: "Consulting, development, and managed services across Sales, Service, Marketing, Revenue, and Health Cloud.", href: "/salesforce" },
   { title: "AI Solutions", description: "AI readiness, roadmap governance, agentic orchestration, and agent development for enterprise teams.", href: "/ai-consulting" },
   { title: "Data & Analytics", description: "Unified, AI-ready data foundations across CRM, ERP, and legacy systems.", href: "/ai-data-foundations" },
-  { title: "Healthcare", description: "HIPAA-ready systems and workflows for hospitals, payers, and life sciences organizations.", href: "/industry/healthcare" },
-  { title: "Enterprise Technology", description: "NetSuite, Workday, ServiceNow, and Oracle consulting and managed services.", href: "/platforms/servicenow" },
+  { title: "Healthcare", description: "HIPAA-ready systems and workflows for hospitals, payers, and life sciences organizations.", href: "/industries/healthcare" },
+  { title: "Enterprise Technology", description: "NetSuite, Workday, ServiceNow, and Oracle consulting and managed services.", href: "/servicenow" },
   { title: "Digital Transformation", description: "End-to-end modernization from legacy systems to cloud-native, AI-enabled platforms.", href: "/ai-readiness" },
 ];
 

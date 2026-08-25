@@ -162,37 +162,37 @@ const SERVICE_CATEGORIES = {
       icon: Ico.compass,
       title: "Consulting & Development Services",
       description: "Strategy, architecture, and custom development for your Now Platform instance.",
-      href: "/platforms/servicenow/consulting-development-services",
+      href: "/servicenow-consulting-development-services",
     },
     {
       icon: Ico.server,
       title: "Technology Workflows",
       description: "ITSM, ITOM, ITAM, and SecOps implementations that connect IT operations end to end.",
-      href: "/platforms/servicenow/technology-workflows",
+      href: "/servicenow-technology-workflows",
     },
     {
       icon: Ico.headset,
       title: "Customer Workflows",
       description: "Customer Service Management and Field Service Management built around case resolution speed.",
-      href: "/platforms/servicenow/customer-workflows",
+      href: "/servicenow-customer-workflows",
     },
     {
       icon: Ico.users,
       title: "Employee Workflows",
       description: "HR Service Delivery and Workplace Service Delivery that make every employee interaction self-service.",
-      href: "/platforms/servicenow/employee-workflows",
+      href: "/servicenow-employee-workflows",
     },
     {
       icon: Ico.code,
       title: "Creator Workflows",
       description: "App Engine and low-code development that ships custom apps without a backlog of developers.",
-      href: "/platforms/servicenow/creator-workflows",
+      href: "/servicenow-creator-workflows",
     },
     {
       icon: Ico.wrench,
       title: "Support & Managed Services",
       description: "SLA-backed managed support, upgrades, and continuous optimization for your live instance.",
-      href: "/platforms/servicenow/support-managed-services",
+      href: "/servicenow-support-managed-services",
     },
   ],
 };
@@ -773,14 +773,14 @@ function FaqSection() {
         </div>
         <FaqAccordion items={FAQS} className="snh-reveal" searchPlaceholder="Ask a question — e.g. &quot;workflows&quot;, &quot;managed services&quot;, &quot;AI&quot;..." />
         <p className="snh-faq__links">
-          Related reading: <Link to="/platforms/servicenow/consulting-development-services">ServiceNow Consulting & Development</Link>,{" "}
-          <Link to="/platforms/servicenow/technology-workflows">Technology Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/customer-workflows">Customer Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/employee-workflows">Employee Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/creator-workflows">Creator Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/support-managed-services">Support & Managed Services</Link>,{" "}
-          <Link to="/platforms/oracle/fusion-implementation">Oracle Fusion Implementation</Link>,{" "}
-          <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
+          Related reading: <Link to="/servicenow-consulting-development-services">ServiceNow Consulting & Development</Link>,{" "}
+          <Link to="/servicenow-technology-workflows">Technology Workflows</Link>,{" "}
+          <Link to="/servicenow-customer-workflows">Customer Workflows</Link>,{" "}
+          <Link to="/servicenow-employee-workflows">Employee Workflows</Link>,{" "}
+          <Link to="/servicenow-creator-workflows">Creator Workflows</Link>,{" "}
+          <Link to="/servicenow-support-managed-services">Support & Managed Services</Link>,{" "}
+          <Link to="/oracle-fusion-applications-implementation">Oracle Fusion Implementation</Link>,{" "}
+          <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>.
         </p>
       </div>

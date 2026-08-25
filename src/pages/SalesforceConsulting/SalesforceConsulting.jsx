@@ -103,7 +103,7 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/development-consulting" },
+  { label: "Platforms & Technology", href: "/salesforce-consulting-development-services" },
   { label: "Salesforce Development & Consulting" },
 ];
 
@@ -382,7 +382,7 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://www.mirketa.com/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://www.mirketa.com/platforms/salesforce/development-consulting" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://www.mirketa.com/salesforce-consulting-development-services" },
         { "@type": "ListItem", position: 3, name: "Salesforce Development & Consulting", item: "https://www.mirketa.com/salesforce-consulting-development-services/" },
       ],
     },
@@ -977,7 +977,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/platforms/salesforce/clouds" className="svc-final-cta__all-services">
+        <Link to="/salesforce" className="svc-final-cta__all-services">
           View All Services →
         </Link>
       </div>

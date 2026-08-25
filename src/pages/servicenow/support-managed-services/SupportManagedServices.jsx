@@ -113,7 +113,7 @@ const CONSULTATION = {
 const BREADCRUMB_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Platforms & Technology", href: "/" },
-  { label: "ServiceNow", href: "/platforms/servicenow" },
+  { label: "ServiceNow", href: "/servicenow" },
   { label: "Support & Managed Services" },
 ];
 
@@ -817,14 +817,14 @@ function FaqSection() {
         </div>
         <FaqAccordion items={FAQS} className="snms-reveal" searchPlaceholder="Ask a question — e.g. &quot;SLA&quot;, &quot;upgrade&quot;, &quot;monitoring&quot;..." />
         <p className="snms-faq__links">
-          Related reading: <Link to="/platforms/servicenow">ServiceNow Solutions</Link>,{" "}
-          <Link to="/platforms/servicenow/consulting-development-services">ServiceNow Consulting & Development Services</Link>,{" "}
-          <Link to="/platforms/servicenow/technology-workflows">ServiceNow Technology Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/customer-workflows">ServiceNow Customer Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/employee-workflows">ServiceNow Employee Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/creator-workflows">ServiceNow Creator Workflows</Link>,{" "}
-          <Link to="/platforms/oracle/premium-support-service">Oracle Premium Support Service</Link>,{" "}
-          <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
+          Related reading: <Link to="/servicenow">ServiceNow Solutions</Link>,{" "}
+          <Link to="/servicenow-consulting-development-services">ServiceNow Consulting & Development Services</Link>,{" "}
+          <Link to="/servicenow-technology-workflows">ServiceNow Technology Workflows</Link>,{" "}
+          <Link to="/servicenow-customer-workflows">ServiceNow Customer Workflows</Link>,{" "}
+          <Link to="/servicenow-employee-workflows">ServiceNow Employee Workflows</Link>,{" "}
+          <Link to="/servicenow-creator-workflows">ServiceNow Creator Workflows</Link>,{" "}
+          <Link to="/oracle-premium-support-service">Oracle Premium Support Service</Link>,{" "}
+          <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>.
         </p>
       </div>

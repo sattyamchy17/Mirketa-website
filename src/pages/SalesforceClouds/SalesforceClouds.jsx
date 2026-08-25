@@ -88,7 +88,7 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/development-consulting" },
+  { label: "Platforms & Technology", href: "/salesforce-consulting-development-services" },
   { label: "Salesforce Clouds" },
 ];
 
@@ -98,7 +98,7 @@ const HERO = {
   description:
     "From Sales Cloud to Health Cloud, Mirketa's certified consultants implement, integrate, and optimize the full Salesforce ecosystem — so your teams can move faster and your customers feel the difference.",
   primaryCta: { label: "Talk to a Salesforce Cloud Specialist", href: "#contact" },
-  secondaryCta: { label: "All Salesforce Services", href: "/platforms/salesforce/development-consulting" },
+  secondaryCta: { label: "All Salesforce Services", href: "/salesforce-consulting-development-services" },
   trustBadges: ["Certified Salesforce Partner", "15+ Years Experience", "AI Powered Solutions", "Global Delivery Team"],
 };
 
@@ -156,13 +156,13 @@ const CLOUDS = [
 ];
 
 const MORE_CLOUDS = [
-  { icon: Ico.target, name: "Sales Cloud", href: "/platforms/salesforce/clouds/sales-cloud" },
-  { icon: Ico.headset, name: "Service Cloud", href: "/platforms/salesforce/clouds/service-cloud" },
-  { icon: Ico.megaphone, name: "Marketing Cloud", href: "/platforms/salesforce/clouds/marketing-cloud" },
+  { icon: Ico.target, name: "Sales Cloud", href: "/salesforce/sales-cloud" },
+  { icon: Ico.headset, name: "Service Cloud", href: "/salesforce/service-cloud" },
+  { icon: Ico.megaphone, name: "Marketing Cloud", href: "/salesforce/marketing-cloud" },
   { icon: Ico.cart, name: "Commerce Cloud", href: "#contact", slug: "commerce-cloud" },
-  { icon: Ico.tag, name: "Revenue Cloud", href: "/platforms/salesforce/clouds/revenue-cloud" },
-  { icon: Ico.heartbeat, name: "Health Cloud", href: "/platforms/salesforce/clouds/health-cloud" },
-  { icon: Ico.factory, name: "Manufacturing Cloud", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
+  { icon: Ico.tag, name: "Revenue Cloud", href: "/salesforce/revenue-cloud" },
+  { icon: Ico.heartbeat, name: "Health Cloud", href: "/salesforce/health-cloud" },
+  { icon: Ico.factory, name: "Manufacturing Cloud", href: "/salesforce/manufacturing-cloud" },
   { icon: Ico.bank, name: "Financial Services Cloud", href: "#contact", slug: "financial-services-cloud" },
   { icon: Ico.graduation, name: "Education Cloud", href: "#contact", slug: "education-cloud" },
   { icon: Ico.database, name: "Data Cloud", href: "/data-cloud" },
@@ -231,7 +231,7 @@ const CASE_STUDIES = {
     { title: "Industrial Manufacturer Unifies 6 Systems Into One CRM", stat: "6→1", label: "Systems Unified", cloud: "Service Cloud" },
     { title: "B2B SaaS Company Scales Support Without Adding Headcount", stat: "62%", label: "Auto-Resolved", cloud: "Agentforce" },
   ],
-  cta: { label: "Read the Full Case Studies", href: "/platforms/salesforce/development-consulting#svc-results-heading" },
+  cta: { label: "Read the Full Case Studies", href: "/salesforce-consulting-development-services#svc-results-heading" },
 };
 
 const TECH_STACK = {
@@ -263,12 +263,12 @@ const FINAL_CTA = {
   heading: "Ready to Find the Right Salesforce Cloud for Your Business?",
   description: "Book a free 30-minute discovery call with a certified Salesforce cloud specialist. We'll map your goals to the right cloud and show you what a realistic implementation looks like.",
   primaryCta: { label: "Talk to a Salesforce Cloud Specialist", href: "#contact" },
-  secondaryCta: { label: "View All Salesforce Services", href: "/platforms/salesforce/development-consulting" },
+  secondaryCta: { label: "View All Salesforce Services", href: "/salesforce-consulting-development-services" },
   trust: "No commitment required · Free discovery call · Response within 1 business day",
 };
 
 const GET_IN_TOUCH_LINKS = [
-  { label: "Salesforce Development & Consulting", to: "/platforms/salesforce/development-consulting" },
+  { label: "Salesforce Development & Consulting", to: "/salesforce-consulting-development-services" },
   { label: "Salesforce Data Cloud", to: "/data-cloud" },
   { label: "Agentforce", to: "/agentforce" },
   { label: "AI Consulting", to: "/ai-consulting" },
@@ -279,7 +279,7 @@ const SEO = {
   title: "Salesforce Clouds — Consulting & Implementation | Mirketa",
   description:
     "Mirketa implements, integrates, and optimizes every Salesforce Cloud — Sales, Service, Marketing, Health, Nonprofit, and Experience — with 15+ years of certified expertise.",
-  canonical: "https://www.mirketa.com/platforms/salesforce/clouds/",
+  canonical: "https://www.mirketa.com/salesforce/",
   keywords: [
     "Salesforce Clouds",
     "Salesforce Sales Cloud consulting",
@@ -310,8 +310,8 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://www.mirketa.com/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://www.mirketa.com/platforms/salesforce/development-consulting" },
-        { "@type": "ListItem", position: 3, name: "Salesforce Clouds", item: "https://www.mirketa.com/platforms/salesforce/clouds/" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://www.mirketa.com/salesforce-consulting-development-services" },
+        { "@type": "ListItem", position: 3, name: "Salesforce Clouds", item: "https://www.mirketa.com/salesforce/" },
       ],
     },
     {
@@ -718,7 +718,7 @@ function TechStackSection() {
           <h2 id="scd-stack-heading">{TECH_STACK.heading}</h2>
           <p>
             ERP, iPaaS, and cloud infrastructure platforms connect cleanly into every Salesforce Cloud we implement. For the full integration catalog, see our{" "}
-            <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link> page.
+            <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link> page.
           </p>
         </div>
         <ul className="scd-stack__wall scd-reveal-stagger">

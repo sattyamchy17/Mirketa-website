@@ -105,7 +105,7 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/development-consulting" },
+  { label: "Platforms & Technology", href: "/salesforce-consulting-development-services" },
   { label: "Salesforce Financial Services Cloud" },
 ];
 
@@ -412,7 +412,7 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://mirketa.us/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/platforms/salesforce/development-consulting" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/salesforce-consulting-development-services" },
         { "@type": "ListItem", position: 3, name: "Salesforce Financial Services Cloud", item: "https://mirketa.us/salesforce-financial-services/" },
       ],
     },
@@ -1069,11 +1069,11 @@ function FaqSection() {
           )}
         </div>
         <p className="fsc-faq__links">
-          Related reading: <Link to="/platforms/salesforce/development-consulting">Salesforce Consulting & Development Services</Link>,{" "}
-          <Link to="/platforms/salesforce/developer-services">Salesforce Developer Services</Link>,{" "}
-          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
+          Related reading: <Link to="/salesforce-consulting-development-services">Salesforce Consulting & Development Services</Link>,{" "}
+          <Link to="/salesforce-developer-services">Salesforce Developer Services</Link>,{" "}
+          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
           <Link to="/data-cloud">Data Cloud</Link>, <Link to="/agentforce">Agentforce</Link>, <Link to="/ai-consulting">AI Consulting</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds/health-cloud">Healthcare Solutions</Link>,{" "}
+          <Link to="/salesforce/health-cloud">Healthcare Solutions</Link>,{" "}
           <a href="#integrations">Salesforce Integration Services</a>.
         </p>
       </div>
@@ -1099,7 +1099,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/platforms/salesforce/development-consulting" className="fsc-final-cta__all-services">
+        <Link to="/salesforce-consulting-development-services" className="fsc-final-cta__all-services">
           Explore All Salesforce Services →
         </Link>
       </div>

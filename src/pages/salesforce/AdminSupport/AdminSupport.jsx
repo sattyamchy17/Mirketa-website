@@ -138,7 +138,7 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/development-consulting" },
+  { label: "Platforms & Technology", href: "/salesforce-consulting-development-services" },
   { label: "Developer Services & Admin Support" },
 ];
 
@@ -432,7 +432,7 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://mirketa.us/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/platforms/salesforce/development-consulting" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/salesforce-consulting-development-services" },
         { "@type": "ListItem", position: 3, name: "Developer Services & Admin Support", item: "https://mirketa.us/developer-services-admin-support/" },
       ],
     },
@@ -1077,11 +1077,11 @@ function FaqSection() {
           )}
         </div>
         <p className="asp-faq__links">
-          Related reading: <Link to="/platforms/salesforce/development-consulting">Salesforce Consulting & Development Services</Link>,{" "}
-          <Link to="/platforms/salesforce/developer-services">Salesforce Developer Services</Link>,{" "}
-          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
+          Related reading: <Link to="/salesforce-consulting-development-services">Salesforce Consulting & Development Services</Link>,{" "}
+          <Link to="/salesforce-developer-services">Salesforce Developer Services</Link>,{" "}
+          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
           <a href="#services">Salesforce Integration Services</a>, <Link to="/agentforce">Agentforce</Link>, <Link to="/data-cloud">Data Cloud</Link>,{" "}
-          <Link to="/ai-consulting">AI Consulting</Link>, <Link to="/platforms/salesforce/clouds/health-cloud">Health Cloud</Link>,{" "}
+          <Link to="/ai-consulting">AI Consulting</Link>, <Link to="/salesforce/health-cloud">Health Cloud</Link>,{" "}
           <Link to="/salesforce-financial-services">Financial Services Cloud</Link>.
         </p>
       </div>
@@ -1107,7 +1107,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/platforms/salesforce/development-consulting" className="asp-final-cta__all-services">
+        <Link to="/salesforce-consulting-development-services" className="asp-final-cta__all-services">
           Explore All Salesforce Services →
         </Link>
       </div>

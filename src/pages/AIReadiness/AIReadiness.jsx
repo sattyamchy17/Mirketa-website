@@ -236,10 +236,10 @@ const SERVICE_GROUPS = [
     title: "Salesforce",
     description: "Consulting, development, and managed services across the Salesforce platform.",
     items: [
-      { label: "Salesforce Dev and Consulting", href: "/platforms/salesforce/development-consulting" },
-      { label: "Salesforce Clouds", href: "/platforms/salesforce/clouds" },
-      { label: "Salesforce Developer Services", href: "/platforms/salesforce/developer-services" },
-      { label: "Salesforce Support", href: "/platforms/salesforce/admin-support" },
+      { label: "Salesforce Dev and Consulting", href: "/salesforce-consulting-development-services" },
+      { label: "Salesforce Clouds", href: "/salesforce" },
+      { label: "Salesforce Developer Services", href: "/salesforce-developer-services" },
+      { label: "Salesforce Support", href: "/salesforce-managed-services" },
     ],
   },
   {
@@ -247,8 +247,8 @@ const SERVICE_GROUPS = [
     title: "Oracle Apps",
     description: "Implementation and managed services for Oracle Fusion Applications.",
     items: [
-      { label: "Oracle Fusion Applications Implementation", href: "/platforms/oracle/fusion-implementation" },
-      { label: "Oracle Managed Services", href: "/platforms/oracle/support-services" },
+      { label: "Oracle Fusion Applications Implementation", href: "/oracle-fusion-applications-implementation" },
+      { label: "Oracle Managed Services", href: "/oracle-managed-service" },
     ],
   },
   {
@@ -256,9 +256,9 @@ const SERVICE_GROUPS = [
     title: "NetSuite",
     description: "Implementation, managed services, and AI consulting for NetSuite.",
     items: [
-      { label: "NetSuite Implementation", href: "/platforms/netsuite/implementation" },
-      { label: "NetSuite Managed Services", href: "/platforms/netsuite/managed-services" },
-      { label: "NetSuite AI Solutions", href: "/platforms/netsuite/ai-consulting" },
+      { label: "NetSuite Implementation", href: "/netsuite-implementation-development" },
+      { label: "NetSuite Managed Services", href: "/netsuite-support-services" },
+      { label: "NetSuite AI Solutions", href: "/netsuite-ai-consulting" },
     ],
   },
   {
@@ -266,9 +266,9 @@ const SERVICE_GROUPS = [
     title: "ServiceNow",
     description: "Consulting, workflow implementation, and managed services across ServiceNow.",
     items: [
-      { label: "ServiceNow Consulting and Development", href: "/platforms/servicenow/consulting-development-services" },
-      { label: "Technology, Customer, Employee & Creator Workflows", href: "/platforms/servicenow" },
-      { label: "ServiceNow Managed Services", href: "/platforms/servicenow/support-managed-services" },
+      { label: "ServiceNow Consulting and Development", href: "/servicenow-consulting-development-services" },
+      { label: "Technology, Customer, Employee & Creator Workflows", href: "/servicenow" },
+      { label: "ServiceNow Managed Services", href: "/servicenow-support-managed-services" },
     ],
   },
   {
@@ -276,8 +276,8 @@ const SERVICE_GROUPS = [
     title: "Workday",
     description: "Consulting, development, and managed services for Workday.",
     items: [
-      { label: "Workday Consulting and Development", href: "/platforms/workday/consulting-development" },
-      { label: "Workday Managed Services", href: "/platforms/workday/managed-services" },
+      { label: "Workday Consulting and Development", href: "/workday-consulting-development" },
+      { label: "Workday Managed Services", href: "/workday-support-managed-services" },
     ],
   },
   {
@@ -285,10 +285,10 @@ const SERVICE_GROUPS = [
     title: "Cloud Infra Services",
     description: "Cloud setup, infrastructure management, and site reliability engineering.",
     items: [
-      { label: "Cloud Setup and Migration", href: "/platforms/cloud/setup-migration" },
-      { label: "Cloud Infra Management", href: "/platforms/cloud/infra-management" },
-      { label: "SRE Services", href: "/platforms/cloud/sre-security" },
-      { label: "Security Monitoring Services", href: "/platforms/cloud/sre-security" },
+      { label: "Cloud Setup and Migration", href: "/cloud-setup-migration" },
+      { label: "Cloud Infra Management", href: "/cloud-infrastructure-setup-migration" },
+      { label: "SRE Services", href: "/cloud-site-reliability-engineering" },
+      { label: "Security Monitoring Services", href: "/cloud-site-reliability-engineering" },
     ],
   },
   {
@@ -298,8 +298,8 @@ const SERVICE_GROUPS = [
     items: [
       { label: "Enterprise Integration Services", href: "/enterprise-integration-services" },
       { label: "iPaaS Development", href: "/enterprise-integration-services" },
-      { label: "Boomi Services", href: "/boomi-integration-services-solutions" },
-      { label: "MuleSoft Services", href: "/mulesoft-implementation" },
+      { label: "Boomi Services", href: "/boomi-integration-services" },
+      { label: "MuleSoft Services", href: "/mulesoft-integration-services" },
     ],
   },
 ];

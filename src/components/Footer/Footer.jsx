@@ -15,26 +15,26 @@ const FOOTER_COLUMNS = [
   {
     heading: "Salesforce",
     links: [
-      { label: "Sales & Service Cloud", href: "/platforms/salesforce/clouds" },
-      { label: "Health Cloud", href: "/platforms/salesforce/clouds/health-cloud" },
-      { label: "Nonprofit Cloud", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
-      { label: "Managed Support", href: "/platforms/salesforce/admin-support" },
+      { label: "Sales & Service Cloud", href: "/salesforce" },
+      { label: "Health Cloud", href: "/salesforce/health-cloud" },
+      { label: "Nonprofit Cloud", href: "/salesforce#nonprofit-cloud" },
+      { label: "Managed Support", href: "/salesforce-managed-services" },
     ],
   },
   {
     heading: "Industries",
     links: [
-      { label: "Healthcare", href: "/industry/healthcare" },
-      { label: "Nonprofit", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
-      { label: "Financial Services", href: "/industry/financial-services" },
-      { label: "Manufacturing", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "Nonprofit", href: "/salesforce#nonprofit-cloud" },
+      { label: "Financial Services", href: "/industries/financial-services" },
+      { label: "Manufacturing", href: "/salesforce/manufacturing-cloud" },
     ],
   },
   {
     heading: "Company",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Careers", href: "/company/careers" },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/company/contact" },
     ],
   },

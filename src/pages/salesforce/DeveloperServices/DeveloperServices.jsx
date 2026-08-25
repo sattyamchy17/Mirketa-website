@@ -132,7 +132,7 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/development-consulting" },
+  { label: "Platforms & Technology", href: "/salesforce-consulting-development-services" },
   { label: "Salesforce Developer Services" },
 ];
 
@@ -401,7 +401,7 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://mirketa.us/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/platforms/salesforce/development-consulting" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/salesforce-consulting-development-services" },
         { "@type": "ListItem", position: 3, name: "Salesforce Developer Services", item: "https://mirketa.us/salesforce-developer-services/" },
       ],
     },
@@ -985,8 +985,8 @@ function FaqSection() {
           )}
         </div>
         <p className="sds-faq__links">
-          Related reading: <Link to="/platforms/salesforce/development-consulting">Salesforce Consulting & Development Services</Link>,{" "}
-          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
+          Related reading: <Link to="/salesforce-consulting-development-services">Salesforce Consulting & Development Services</Link>,{" "}
+          <Link to="/salesforce-ai-services">Salesforce AI Services</Link>, <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
           <Link to="/agentforce">Agentforce</Link>, <Link to="/data-cloud">Data Cloud</Link>, <Link to="/ai-consulting">AI Consulting</Link>,{" "}
           <Link to="/ai-accelerator-aria">AI Accelerator Aria</Link>, <Link to="/salesforce-ai-case-management">Salesforce Case Management</Link>,{" "}
           <a href="#integrations">Salesforce Integration Services</a>.
@@ -1014,7 +1014,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/platforms/salesforce/development-consulting" className="sds-final-cta__all-services">
+        <Link to="/salesforce-consulting-development-services" className="sds-final-cta__all-services">
           Explore All Salesforce Services →
         </Link>
       </div>

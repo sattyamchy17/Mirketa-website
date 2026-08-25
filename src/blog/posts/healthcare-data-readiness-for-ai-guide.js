@@ -43,7 +43,7 @@ export const post = {
     { type: "heading2", text: "Where the Data Actually Lives, and Why That's Hard" },
     {
       type: "paragraph",
-      text: "Clinical and operational data in a typical healthcare organization is spread across an EHR system, a practice management platform, billing and claims systems, and increasingly a CRM layer for patient engagement and outreach. Each of those systems was generally built to serve its own function well, not to be a clean, unified data source for a downstream AI model. This is precisely the gap platforms like [Elixir EHR](/elixir/elixir-certified-module) — a Salesforce-native EHR and practice management platform — are designed to close, by keeping clinical, operational, and patient engagement data within a single, Salesforce-native ecosystem rather than scattered across disconnected point solutions.",
+      text: "Clinical and operational data in a typical healthcare organization is spread across an EHR system, a practice management platform, billing and claims systems, and increasingly a CRM layer for patient engagement and outreach. Each of those systems was generally built to serve its own function well, not to be a clean, unified data source for a downstream AI model. This is precisely the gap platforms like [Elixir EHR](/elixir-certified-module) — a Salesforce-native EHR and practice management platform — are designed to close, by keeping clinical, operational, and patient engagement data within a single, Salesforce-native ecosystem rather than scattered across disconnected point solutions.",
     },
     { type: "heading2", text: "What Real Readiness Looks Like in Practice" },
     { type: "heading3", text: "1. Data Accessibility Without Compromising Compliance" },

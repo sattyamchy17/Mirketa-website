@@ -61,7 +61,7 @@ export const post = {
     { type: "heading2", text: "Where This Connects to Broader Enterprise AI Strategy" },
     {
       type: "paragraph",
-      text: "ServiceNow modernization rarely happens in isolation from an enterprise's broader AI strategy. The same [AI readiness](/ai-readiness) questions — is the underlying data accessible and clean, is governance defined, is the workforce prepared for the change — apply just as directly to a ServiceNow AI initiative as they do to any other enterprise AI deployment. Treating a [ServiceNow](/platforms/servicenow) modernization effort as a narrow platform upgrade rather than an AI initiative with the same readiness requirements is a common source of underdelivered projects.",
+      text: "ServiceNow modernization rarely happens in isolation from an enterprise's broader AI strategy. The same [AI readiness](/ai-readiness) questions — is the underlying data accessible and clean, is governance defined, is the workforce prepared for the change — apply just as directly to a ServiceNow AI initiative as they do to any other enterprise AI deployment. Treating a [ServiceNow](/servicenow) modernization effort as a narrow platform upgrade rather than an AI initiative with the same readiness requirements is a common source of underdelivered projects.",
     },
     { type: "heading2", text: "Best Practices" },
     {

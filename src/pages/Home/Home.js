@@ -406,8 +406,8 @@ export const PRODUCTS_SECTION_BG = Images.homeProductsBg;
 export const PRODUCTS = [
   { name: "elixir", tagline: "Clinical Trial & Healthcare Life Sciences Management", href: "/products/elixir", icon: Images.homeProductElixirLogo, visual: Images.heroElixirCertifiedModule },
   { name: "RRD", tagline: "Smart Lead & Case Assignment", href: "http://roundrobindistributor.com/", icon: Images.homeProductRrdLogo, visual: null },
-  { name: "eCourier", tagline: "Automated Report Scheduler", href: "/ecourier", icon: Images.homeProductEcourierLogo, visual: Images.heroEcourier },
-  { name: "Duplicate Search & Merge", tagline: "Clean, AI-Ready Data", href: "/duplicate-search-and-merge", icon: Images.productDuplicateSearchMerge, visual: Images.heroDuplicateSearchAndMerge },
+  { name: "eCourier", tagline: "Automated Report Scheduler", href: "/ecourier-report-scheduler", icon: Images.homeProductEcourierLogo, visual: Images.heroEcourier },
+  { name: "Duplicate Search & Merge", tagline: "Clean, AI-Ready Data", href: "/duplicate-search-merge", icon: Images.productDuplicateSearchMerge, visual: Images.heroDuplicateSearchAndMerge },
   { name: "AI Accelerators", tagline: "Pre-built, proven, ready to deploy", href: "/products/ai-accelerators", icon: Images.productAiAccelerators, visual: Images.aiNetworkPattern },
 ];
 

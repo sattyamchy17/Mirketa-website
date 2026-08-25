@@ -90,17 +90,17 @@ const Ico = {
 // ============================================================
 
 const L3_ITEMS = [
-  { label: "ERP Consulting", href: "/platforms/oracle/fusion-implementation/erp-consulting" },
-  { label: "HCM", href: "/platforms/oracle/fusion-implementation/hcm-consulting" },
-  { label: "CX Consulting Development", href: "/platforms/oracle/fusion-implementation/cx-consulting" },
-  { label: "EPM Consulting Development Services", href: "/platforms/oracle/fusion-implementation/epm-consulting" },
-  { label: "SCM", href: "/platforms/oracle/fusion-implementation/scm-consulting" },
+  { label: "ERP Consulting", href: "/oracle-fusion/erp-consulting" },
+  { label: "HCM", href: "/oracle-fusion/hcm-consulting" },
+  { label: "CX Consulting Development", href: "/oracle-fusion/cx-consulting" },
+  { label: "EPM Consulting Development Services", href: "/oracle-fusion/epm-consulting" },
+  { label: "SCM", href: "/oracle-fusion/scm-consulting" },
 ];
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
   { label: "Platforms & Technology", href: "/" },
-  { label: "Oracle Fusion Applications Implementation", href: "/platforms/oracle/fusion-implementation" },
+  { label: "Oracle Fusion Applications Implementation", href: "/oracle-fusion-applications-implementation" },
   { label: "ERP Consulting" },
 ];
 
@@ -907,8 +907,8 @@ function FaqSection() {
           )}
         </div>
         <p className="oec-faq__links">
-          Related reading: <Link to="/platforms/oracle/fusion-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
-          <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
+          Related reading: <Link to="/oracle-fusion-applications-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
+          <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
           <Link to="/data-cloud">Data Cloud</Link>, <Link to="/ai-consulting">AI Consulting</Link>,{" "}
           <a href="#services">Implementation Services</a>.
         </p>

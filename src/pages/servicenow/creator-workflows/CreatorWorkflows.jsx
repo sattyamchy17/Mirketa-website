@@ -113,7 +113,7 @@ const CONSULTATION = {
 const BREADCRUMB_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Platforms & Technology", href: "/" },
-  { label: "ServiceNow", href: "/platforms/servicenow" },
+  { label: "ServiceNow", href: "/servicenow" },
   { label: "Creator Workflows" },
 ];
 
@@ -812,16 +812,16 @@ function FaqSection() {
         </div>
         <FaqAccordion items={FAQS} className="sncr-reveal" searchPlaceholder="Ask a question — e.g. &quot;App Engine&quot;, &quot;governance&quot;, &quot;integration&quot;..." />
         <p className="sncr-faq__links">
-          Related reading: <Link to="/platforms/servicenow">ServiceNow Solutions</Link>,{" "}
-          <Link to="/platforms/servicenow/consulting-development-services">ServiceNow Consulting &amp; Development Services</Link>,{" "}
-          <Link to="/platforms/servicenow/technology-workflows">ServiceNow Technology Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/customer-workflows">ServiceNow Customer Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/employee-workflows">ServiceNow Employee Workflows</Link>,{" "}
-          <Link to="/platforms/servicenow/support-managed-services">ServiceNow Managed Services</Link>,{" "}
-          <Link to="/platforms/oracle/fusion-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
-          <Link to="/platforms/oracle/premium-support-service">Oracle Premium Support Service</Link>,{" "}
-          <Link to="/platforms/salesforce/development-consulting">Salesforce Development &amp; Consulting</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
+          Related reading: <Link to="/servicenow">ServiceNow Solutions</Link>,{" "}
+          <Link to="/servicenow-consulting-development-services">ServiceNow Consulting &amp; Development Services</Link>,{" "}
+          <Link to="/servicenow-technology-workflows">ServiceNow Technology Workflows</Link>,{" "}
+          <Link to="/servicenow-customer-workflows">ServiceNow Customer Workflows</Link>,{" "}
+          <Link to="/servicenow-employee-workflows">ServiceNow Employee Workflows</Link>,{" "}
+          <Link to="/servicenow-support-managed-services">ServiceNow Managed Services</Link>,{" "}
+          <Link to="/oracle-fusion-applications-implementation">Oracle Fusion Applications Implementation</Link>,{" "}
+          <Link to="/oracle-premium-support-service">Oracle Premium Support Service</Link>,{" "}
+          <Link to="/salesforce-consulting-development-services">Salesforce Development &amp; Consulting</Link>,{" "}
+          <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>, and{" "}
           <Link to="/data-cloud">Salesforce Data Cloud</Link>.
         </p>

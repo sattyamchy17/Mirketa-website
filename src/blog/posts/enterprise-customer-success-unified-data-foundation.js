@@ -80,7 +80,7 @@ export const post = {
       items: [
         "**Start with the fields CS teams actually act on.** It's tempting to ingest every available data point. Start narrower — usage frequency, feature adoption depth, support ticket severity and recency, contract and renewal dates — and expand once the foundation is trusted.",
         "**Decide who owns data quality for each source system.** Unifying bad data doesn't fix it; it just makes bad data more visible, faster. Each source system needs an accountable owner for what flows into the unified profile.",
-        "**Design for the systems CS teams already live in.** If the unified view only exists in a separate analytics tool CSMs have to context-switch into, adoption will lag. Surfacing it inside [Service Cloud](/platforms/salesforce/clouds) or wherever the team already works matters as much as the underlying data model.",
+        "**Design for the systems CS teams already live in.** If the unified view only exists in a separate analytics tool CSMs have to context-switch into, adoption will lag. Surfacing it inside [Service Cloud](/salesforce) or wherever the team already works matters as much as the underlying data model.",
         "**Plan AI use cases as a second phase, not the starting point.** Predictive churn models and AI-generated account summaries are genuinely useful, but they inherit whatever quality problems exist in the underlying data. Get the foundation right first.",
       ],
     },

@@ -34,7 +34,7 @@ export const post = {
     { type: "heading2", text: "Where Data Cloud Fits In" },
     {
       type: "paragraph",
-      text: "Data Cloud was renamed Data 360 in late 2025, so if you see both terms floating around in different articles, that's why — same product. Its job is pulling data out of [Sales Cloud](/platforms/salesforce/clouds/sales-cloud), [Service Cloud](/platforms/salesforce/clouds/service-cloud), [Marketing Cloud](/platforms/salesforce/clouds/marketing-cloud), plus whatever else you're running — an ERP, a support desk, a spreadsheet someone's been maintaining since 2019 — and unifying it into one profile per customer that actually stays current.",
+      text: "Data Cloud was renamed Data 360 in late 2025, so if you see both terms floating around in different articles, that's why — same product. Its job is pulling data out of [Sales Cloud](/salesforce/sales-cloud), [Service Cloud](/salesforce/service-cloud), [Marketing Cloud](/salesforce/marketing-cloud), plus whatever else you're running — an ERP, a support desk, a spreadsheet someone's been maintaining since 2019 — and unifying it into one profile per customer that actually stays current.",
     },
     {
       type: "paragraph",
@@ -99,7 +99,7 @@ export const post = {
     },
     {
       type: "paragraph",
-      text: "The implementation and systems-integration line is also where the estimate is most likely to move, in either direction, depending on how many source systems actually need connecting. This is usually the point where [Salesforce integration services](/enterprise-integration-services) or an experienced [Salesforce consulting](/platforms/salesforce/development-consulting) partner earns its keep — scoping the real data complexity up front is what keeps that number from drifting toward the high end of the range.",
+      text: "The implementation and systems-integration line is also where the estimate is most likely to move, in either direction, depending on how many source systems actually need connecting. This is usually the point where [Salesforce integration services](/enterprise-integration-services) or an experienced [Salesforce consulting](/salesforce-consulting-development-services) partner earns its keep — scoping the real data complexity up front is what keeps that number from drifting toward the high end of the range.",
     },
     { type: "heading2", text: "So Why Do Teams Pay for It?" },
     {

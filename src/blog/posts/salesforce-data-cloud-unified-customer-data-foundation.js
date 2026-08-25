@@ -50,7 +50,7 @@ export const post = {
     { type: "heading3", text: "Consistent Data Across Every Salesforce Cloud" },
     {
       type: "paragraph",
-      text: "Once the unified profile exists, Sales Cloud, [Service Cloud](/platforms/salesforce/clouds), and Marketing Cloud all reference the same underlying customer view rather than each maintaining their own partial, occasionally conflicting version — which is a large part of why customer experience feels disjointed in organizations that haven't done this work.",
+      text: "Once the unified profile exists, Sales Cloud, [Service Cloud](/salesforce), and Marketing Cloud all reference the same underlying customer view rather than each maintaining their own partial, occasionally conflicting version — which is a large part of why customer experience feels disjointed in organizations that haven't done this work.",
     },
     { type: "heading3", text: "A Real Foundation for AI, Not Just Reporting" },
     {

@@ -410,7 +410,7 @@ function ProductsSection() {
       <div className="content-wrap">
         <div className="products__top">
           <h2 id="products-heading">Products &amp; IP</h2>
-          <Link to="/industry/healthcare" className="products__view-all">
+          <Link to="/industries/healthcare" className="products__view-all">
             View All Products <span className="btn-arrow">&rarr;</span>
           </Link>
         </div>

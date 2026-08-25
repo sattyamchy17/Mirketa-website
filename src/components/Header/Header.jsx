@@ -77,27 +77,27 @@ const NAV_ITEMS = [
         {
           heading: "Salesforce",
           items: [
-            { label: "Salesforce Development & Consulting", href: "/platforms/salesforce/development-consulting" },
+            { label: "Salesforce Development & Consulting", href: "/salesforce-consulting-development-services" },
             {
               label: "Salesforce Clouds",
-              href: "/platforms/salesforce/clouds",
+              href: "/salesforce",
               // L3 "Salesforce Clouds" fans out into its own L4 flyout — every
               // individual cloud page is a child of this item, never a direct
               // sibling under "Salesforce". Order matches the requested menu
               // structure exactly so new clouds can be appended in place.
               flyout: [
-                { label: "Sales Cloud", href: "/platforms/salesforce/clouds/sales-cloud" },
-                { label: "Service Cloud", href: "/platforms/salesforce/clouds/service-cloud" },
-                { label: "Marketing Cloud", href: "/platforms/salesforce/clouds/marketing-cloud" },
-                { label: "Experience Cloud", href: "/platforms/salesforce/clouds#experience-cloud" },
-                { label: "Revenue Cloud", href: "/platforms/salesforce/clouds/revenue-cloud" },
-                { label: "Health Cloud", href: "/platforms/salesforce/clouds/health-cloud" },
-                { label: "Manufacturing Cloud", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
+                { label: "Sales Cloud", href: "/salesforce/sales-cloud" },
+                { label: "Service Cloud", href: "/salesforce/service-cloud" },
+                { label: "Marketing Cloud", href: "/salesforce/marketing-cloud" },
+                { label: "Experience Cloud", href: "/salesforce#experience-cloud" },
+                { label: "Revenue Cloud", href: "/salesforce/revenue-cloud" },
+                { label: "Health Cloud", href: "/salesforce/health-cloud" },
+                { label: "Manufacturing Cloud", href: "/salesforce/manufacturing-cloud" },
               ],
             },
-            { label: "Salesforce Developer Services", href: "/platforms/salesforce/developer-services" },
+            { label: "Salesforce Developer Services", href: "/salesforce-developer-services" },
             { label: "Salesforce Support", href: "/platforms/salesforce/support" },
-            { label: "Developer Services & Admin Support", href: "/platforms/salesforce/admin-support" },
+            { label: "Developer Services & Admin Support", href: "/salesforce-managed-services" },
           ],
         },
       ],
@@ -105,13 +105,13 @@ const NAV_ITEMS = [
         {
           heading: "ServiceNow",
           items: [
-            { label: "ServiceNow Solutions", href: "/platforms/servicenow" },
-            { label: "Consulting & Development", href: "/platforms/servicenow/consulting-development-services" },
-            { label: "Technology", href: "/platforms/servicenow/technology-workflows" },
-            { label: "Customer", href: "/platforms/servicenow/customer-workflows" },
-            { label: "Employee", href: "/platforms/servicenow/employee-workflows" },
-            { label: "Creator Workflows", href: "/platforms/servicenow/creator-workflows" },
-            { label: "Managed Services", href: "/platforms/servicenow/support-managed-services" },
+            { label: "ServiceNow Solutions", href: "/servicenow" },
+            { label: "Consulting & Development", href: "/servicenow-consulting-development-services" },
+            { label: "Technology", href: "/servicenow-technology-workflows" },
+            { label: "Customer", href: "/servicenow-customer-workflows" },
+            { label: "Employee", href: "/servicenow-employee-workflows" },
+            { label: "Creator Workflows", href: "/servicenow-creator-workflows" },
+            { label: "Managed Services", href: "/servicenow-support-managed-services" },
           ],
         },
         {
@@ -119,20 +119,20 @@ const NAV_ITEMS = [
           items: [
             {
               label: "Oracle Fusion Applications Implementation",
-              href: "/platforms/oracle/fusion-implementation",
+              href: "/oracle-fusion-applications-implementation",
               // L3 "Fusion Implementation" fans out into its own L4 flyout —
               // each Oracle Fusion consulting sub-page is a child of this
               // item, never a direct sibling under "Oracle Applications".
               flyout: [
-                { label: "ERP Consulting", href: "/platforms/oracle/fusion-implementation/erp-consulting" },
-                { label: "HCM", href: "/platforms/oracle/fusion-implementation/hcm-consulting" },
-                { label: "CX Consulting Development", href: "/platforms/oracle/fusion-implementation/cx-consulting" },
-                { label: "EPM Consulting Development Services", href: "/platforms/oracle/fusion-implementation/epm-consulting" },
-                { label: "SCM", href: "/platforms/oracle/fusion-implementation/scm-consulting" },
+                { label: "ERP Consulting", href: "/oracle-fusion/erp-consulting" },
+                { label: "HCM", href: "/oracle-fusion/hcm-consulting" },
+                { label: "CX Consulting Development", href: "/oracle-fusion/cx-consulting" },
+                { label: "EPM Consulting Development Services", href: "/oracle-fusion/epm-consulting" },
+                { label: "SCM", href: "/oracle-fusion/scm-consulting" },
               ],
             },
-            { label: "Oracle Premium Support Service", href: "/platforms/oracle/premium-support-service" },
-            { label: "Oracle Managed Services", href: "/platforms/oracle/support-services" },
+            { label: "Oracle Premium Support Service", href: "/oracle-premium-support-service" },
+            { label: "Oracle Managed Services", href: "/oracle-managed-service" },
           ],
         },
       ],
@@ -143,16 +143,16 @@ const NAV_ITEMS = [
             { label: "AWS", href: "/platforms/cloud/aws" },
             { label: "Azure", href: "/platforms/cloud/azure" },
             { label: "Google Cloud Platform", href: "/platforms/cloud/gcp" },
-            { label: "Cloud Setup & Migration", href: "/platforms/cloud/setup-migration" },
-            { label: "Site Reliability Engineering", href: "/platforms/cloud/sre-security" },
-            { label: "Cloud Infrastructure Management", href: "/platforms/cloud/infra-management" },
+            { label: "Cloud Setup & Migration", href: "/cloud-setup-migration" },
+            { label: "Site Reliability Engineering", href: "/cloud-site-reliability-engineering" },
+            { label: "Cloud Infrastructure Management", href: "/cloud-infrastructure-setup-migration" },
           ],
         },
         {
           heading: "Workday",
           items: [
-            { label: "Consulting & Development", href: "/platforms/workday/consulting-development" },
-            { label: "Support Managed Services", href: "/platforms/workday/managed-services" },
+            { label: "Consulting & Development", href: "/workday-consulting-development" },
+            { label: "Support Managed Services", href: "/workday-support-managed-services" },
           ],
         },
       ],
@@ -161,16 +161,16 @@ const NAV_ITEMS = [
           heading: "Integration & iPaaS",
           items: [
             { label: "Enterprise Integration Services", href: "/enterprise-integration-services" },
-            { label: "Boomi Integration Services", href: "/boomi-integration-services-solutions" },
-            { label: "MuleSoft Implementation", href: "/mulesoft-implementation" },
+            { label: "Boomi Integration Services", href: "/boomi-integration-services" },
+            { label: "MuleSoft Implementation", href: "/mulesoft-integration-services" },
           ],
         },
         {
           heading: "NetSuite",
           items: [
-            { label: "NetSuite Implementation", href: "/platforms/netsuite/implementation" },
-            { label: "NetSuite AI Consulting", href: "/platforms/netsuite/ai-consulting" },
-            { label: "NetSuite Support Services", href: "/platforms/netsuite/managed-services" },
+            { label: "NetSuite Implementation", href: "/netsuite-implementation-development" },
+            { label: "NetSuite AI Consulting", href: "/netsuite-ai-consulting" },
+            { label: "NetSuite Support Services", href: "/netsuite-support-services" },
           ],
         },
       ],
@@ -184,26 +184,26 @@ const NAV_ITEMS = [
       [
         {
           items: [
-            { label: "Private Equity", href: "/industry/private-equity" },
+            { label: "Private Equity", href: "/industries/private-equity" },
             // No dedicated Nonprofits/Manufacturing industry page exists in
             // this project — these previously pointed at /industries/* pages
             // that were never built. Both now point at the real Salesforce
             // Cloud content that actually covers them (same destinations
             // already used by the Salesforce Clouds L4 flyout below).
-            { label: "Nonprofits", href: "/platforms/salesforce/clouds#nonprofit-cloud" },
-            { label: "Healthcare", href: "/industry/healthcare" },
-            { label: "Manufacturing", href: "/platforms/salesforce/clouds/manufacturing-cloud" },
-            { label: "Education", href: "/industry/education" },
+            { label: "Nonprofits", href: "/salesforce#nonprofit-cloud" },
+            { label: "Healthcare", href: "/industries/healthcare" },
+            { label: "Manufacturing", href: "/salesforce/manufacturing-cloud" },
+            { label: "Education", href: "/industries/education" },
           ],
         },
       ],
       [
         {
           items: [
-            { label: "Hi-Tech", href: "/industry/hi-tech" },
-            { label: "Financial Services", href: "/industry/financial-services" },
-            { label: "E-commerce", href: "/industry/ecommerce" },
-            { label: "Wholesale", href: "/industry/wholesale" },
+            { label: "Hi-Tech", href: "/industries/hi-tech" },
+            { label: "Financial Services", href: "/industries/financial-services" },
+            { label: "E-commerce", href: "/industries/e-commerce" },
+            { label: "Wholesale", href: "/industries/wholesale" },
           ],
         },
       ],
@@ -211,7 +211,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Products & IP",
-    prefixes: ["/products", "/elixir", "/finacast", "/ecourier", "/duplicate-search-and-merge"],
+    prefixes: ["/products", "/elixir", "/finacast", "/ecourier-report-scheduler", "/duplicate-search-merge"],
     columns: [
       [
         {
@@ -222,9 +222,9 @@ const NAV_ITEMS = [
           headingHref: "http://elixirehr.com/",
           headingExternal: true,
           items: [
-            { label: "ONC MFA Use Cases", href: "/elixir/onc-mfa-use-cases" },
-            { label: "API Developer Portal", href: "/elixir/api-developer-portal" },
-            { label: "Elixir Certified Module", href: "/elixir/elixir-certified-module" },
+            { label: "ONC MFA Use Cases", href: "/onc-mfa-use-cases" },
+            { label: "API Developer Portal", href: "/api-developer-portal" },
+            { label: "Elixir Certified Module", href: "/elixir-certified-module" },
           ],
         },
       ],
@@ -237,8 +237,8 @@ const NAV_ITEMS = [
             // nofollow link via the "http" prefix check above.
             { label: "RRD (Round Robin Distributor)", href: "http://roundrobindistributor.com/" },
             { label: "Finacast", href: "/finacast" },
-            { label: "eCourier", href: "/ecourier" },
-            { label: "Duplicate Search & Merge", href: "/duplicate-search-and-merge" },
+            { label: "eCourier", href: "/ecourier-report-scheduler" },
+            { label: "Duplicate Search & Merge", href: "/duplicate-search-merge" },
           ],
         },
       ],
@@ -263,7 +263,7 @@ const NAV_ITEMS = [
         {
           items: [
             { label: "About Mirketa", href: "/about-us" },
-            { label: "Careers", href: "/company/careers" },
+            { label: "Careers", href: "/careers" },
             // No Press/Newsroom page exists in this project yet — rendered
             // without an href (see the !link.href branch below) rather
             // than linking to a page that was never built.
@@ -283,10 +283,10 @@ const NAV_ITEMS = [
           // than guessing a destination.
           platformStyle: true,
           items: [
-            { label: "Salesforce", href: "/platforms/salesforce/clouds", activePrefix: "/platforms/salesforce" },
-            { label: "ServiceNow", href: "/platforms/servicenow", activePrefix: "/platforms/servicenow" },
-            { label: "Oracle", href: "/platforms/oracle/fusion-implementation", activePrefix: "/platforms/oracle" },
-            { label: "NetSuite", href: "/platforms/netsuite/implementation", activePrefix: "/platforms/netsuite" },
+            { label: "Salesforce", href: "/salesforce", activePrefix: "/platforms/salesforce" },
+            { label: "ServiceNow", href: "/servicenow", activePrefix: "/servicenow" },
+            { label: "Oracle", href: "/oracle-fusion-applications-implementation", activePrefix: "/platforms/oracle" },
+            { label: "NetSuite", href: "/netsuite-implementation-development", activePrefix: "/platforms/netsuite" },
             { label: "AWS" },
           ],
         },
@@ -444,7 +444,7 @@ export default function Header() {
               </a>
             </div>
             <div className="top-strip__links">
-              <Link to="/company/careers">Careers</Link>
+              <Link to="/careers">Careers</Link>
               <Link to="/company/contact">Contact</Link>
             </div>
           </div>

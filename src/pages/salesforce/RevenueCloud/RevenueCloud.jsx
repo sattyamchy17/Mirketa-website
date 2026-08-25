@@ -102,8 +102,8 @@ const Ico = {
 
 const BREADCRUMB = [
   { label: "Home", href: "/" },
-  { label: "Platforms & Technology", href: "/platforms/salesforce/clouds" },
-  { label: "Salesforce Clouds", href: "/platforms/salesforce/clouds" },
+  { label: "Platforms & Technology", href: "/salesforce" },
+  { label: "Salesforce Clouds", href: "/salesforce" },
   { label: "Revenue Cloud" },
 ];
 
@@ -382,8 +382,8 @@ const SEO = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://mirketa.us/" },
-        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/platforms/salesforce/clouds" },
-        { "@type": "ListItem", position: 3, name: "Salesforce Clouds", item: "https://mirketa.us/platforms/salesforce/clouds" },
+        { "@type": "ListItem", position: 2, name: "Platforms & Technology", item: "https://mirketa.us/salesforce" },
+        { "@type": "ListItem", position: 3, name: "Salesforce Clouds", item: "https://mirketa.us/salesforce" },
         { "@type": "ListItem", position: 4, name: "Revenue Cloud", item: "https://mirketa.us/salesforce-revenue-cloud/" },
       ],
     },
@@ -989,11 +989,11 @@ function FaqSection() {
           )}
         </div>
         <p className="rvc-faq__links">
-          Related reading: <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds/sales-cloud">Salesforce Sales Cloud</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds/service-cloud">Salesforce Service Cloud</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds/marketing-cloud">Salesforce Marketing Cloud</Link>,{" "}
+          Related reading: <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
+          <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
+          <Link to="/salesforce/sales-cloud">Salesforce Sales Cloud</Link>,{" "}
+          <Link to="/salesforce/service-cloud">Salesforce Service Cloud</Link>,{" "}
+          <Link to="/salesforce/marketing-cloud">Salesforce Marketing Cloud</Link>,{" "}
           <Link to="/data-cloud">Salesforce Data Cloud</Link>, <Link to="/agentforce">Agentforce</Link>,{" "}
           <Link to="/ai-consulting">AI Consulting</Link>, <a href="#services">Integration Services</a>,{" "}
           <Link to="/insights">Customer Success</Link>, <Link to="/blog">Blogs</Link>.
@@ -1021,7 +1021,7 @@ function FinalCtaSection() {
             {FINAL_CTA.secondaryCta.label}
           </a>
         </div>
-        <Link to="/platforms/salesforce/clouds" className="rvc-final-cta__all-services">
+        <Link to="/salesforce" className="rvc-final-cta__all-services">
           Explore All Salesforce Clouds →
         </Link>
       </div>

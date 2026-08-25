@@ -13,30 +13,30 @@
 
 export const NETSUITE_PAGES = {
   AI: {
-    slug: "/platforms/netsuite/ai-consulting",
+    slug: "/netsuite-ai-consulting",
     label: "NetSuite AI Consulting",
   },
   IMPLEMENTATION: {
-    slug: "/platforms/netsuite/implementation",
+    slug: "/netsuite-implementation-development",
     label: "NetSuite Implementation",
   },
   SUPPORT_SERVICES: {
     // Matches the URL already reserved for this item in the site nav
     // (previously labeled "NetSuite Managed Services").
-    slug: "/platforms/netsuite/managed-services",
+    slug: "/netsuite-support-services",
     label: "NetSuite Support Services",
   },
 };
 
 export const WORKDAY_PAGES = {
   CONSULTING_DEVELOPMENT: {
-    slug: "/platforms/workday/consulting-development",
+    slug: "/workday-consulting-development",
     label: "Workday Consulting & Development",
   },
   SUPPORT_MANAGED_SERVICES: {
     // Matches the URL already reserved for this item in the site nav
     // (previously labeled "Managed Services").
-    slug: "/platforms/workday/managed-services",
+    slug: "/workday-support-managed-services",
     label: "Workday Support Managed Services",
   },
 };
@@ -47,11 +47,11 @@ export const INTEGRATION_PAGES = {
     label: "Enterprise Integration Services",
   },
   BOOMI: {
-    slug: "/boomi-integration-services-solutions",
+    slug: "/boomi-integration-services",
     label: "Boomi Integration Services and Solutions",
   },
   MULESOFT: {
-    slug: "/mulesoft-implementation",
+    slug: "/mulesoft-integration-services",
     label: "MuleSoft Implementation",
   },
 };
@@ -61,28 +61,28 @@ export const INTEGRATION_PAGES = {
 // routes already registered in src/App.jsx — if one of those routes
 // changes, update it here too.
 export const ORACLE_PAGES = {
-  FUSION_IMPLEMENTATION: { slug: "/platforms/oracle/fusion-implementation", label: "Oracle Fusion Applications Implementation" },
-  ERP_CONSULTING: { slug: "/platforms/oracle/fusion-implementation/erp-consulting", label: "Oracle ERP Consulting" },
-  HCM_CONSULTING: { slug: "/platforms/oracle/fusion-implementation/hcm-consulting", label: "Oracle HCM Consulting" },
-  SCM_CONSULTING: { slug: "/platforms/oracle/fusion-implementation/scm-consulting", label: "Oracle SCM Consulting" },
-  EPM_CONSULTING: { slug: "/platforms/oracle/fusion-implementation/epm-consulting", label: "Oracle EPM Consulting" },
-  PREMIUM_SUPPORT: { slug: "/platforms/oracle/premium-support-service", label: "Oracle Premium Support Service" },
-  MANAGED_SERVICES: { slug: "/platforms/oracle/support-services", label: "Oracle Managed Services" },
+  FUSION_IMPLEMENTATION: { slug: "/oracle-fusion-applications-implementation", label: "Oracle Fusion Applications Implementation" },
+  ERP_CONSULTING: { slug: "/oracle-fusion/erp-consulting", label: "Oracle ERP Consulting" },
+  HCM_CONSULTING: { slug: "/oracle-fusion/hcm-consulting", label: "Oracle HCM Consulting" },
+  SCM_CONSULTING: { slug: "/oracle-fusion/scm-consulting", label: "Oracle SCM Consulting" },
+  EPM_CONSULTING: { slug: "/oracle-fusion/epm-consulting", label: "Oracle EPM Consulting" },
+  PREMIUM_SUPPORT: { slug: "/oracle-premium-support-service", label: "Oracle Premium Support Service" },
+  MANAGED_SERVICES: { slug: "/oracle-managed-service", label: "Oracle Managed Services" },
 };
 
 export const SALESFORCE_PAGES = {
-  DEVELOPMENT_CONSULTING: { slug: "/platforms/salesforce/development-consulting", label: "Salesforce Development & Consulting" },
-  CLOUDS: { slug: "/platforms/salesforce/clouds", label: "Salesforce Clouds" },
-  REVENUE_CLOUD: { slug: "/platforms/salesforce/clouds/revenue-cloud", label: "Salesforce Revenue Cloud" },
+  DEVELOPMENT_CONSULTING: { slug: "/salesforce-consulting-development-services", label: "Salesforce Development & Consulting" },
+  CLOUDS: { slug: "/salesforce", label: "Salesforce Clouds" },
+  REVENUE_CLOUD: { slug: "/salesforce/revenue-cloud", label: "Salesforce Revenue Cloud" },
   FINANCIAL_SERVICES: { slug: "/salesforce-financial-services", label: "Salesforce Financial Services" },
-  DEVELOPER_SERVICES: { slug: "/platforms/salesforce/developer-services", label: "Salesforce Developer Services" },
+  DEVELOPER_SERVICES: { slug: "/salesforce-developer-services", label: "Salesforce Developer Services" },
 };
 
 export const SERVICENOW_PAGES = {
-  HUB: { slug: "/platforms/servicenow", label: "ServiceNow Consulting & Implementation" },
-  TECHNOLOGY_WORKFLOWS: { slug: "/platforms/servicenow/technology-workflows", label: "ServiceNow Technology Workflows" },
-  CUSTOMER_WORKFLOWS: { slug: "/platforms/servicenow/customer-workflows", label: "ServiceNow Customer Workflows" },
-  SUPPORT_MANAGED_SERVICES: { slug: "/platforms/servicenow/support-managed-services", label: "ServiceNow Support & Managed Services" },
+  HUB: { slug: "/servicenow", label: "ServiceNow Consulting & Implementation" },
+  TECHNOLOGY_WORKFLOWS: { slug: "/servicenow-technology-workflows", label: "ServiceNow Technology Workflows" },
+  CUSTOMER_WORKFLOWS: { slug: "/servicenow-customer-workflows", label: "ServiceNow Customer Workflows" },
+  SUPPORT_MANAGED_SERVICES: { slug: "/servicenow-support-managed-services", label: "ServiceNow Support & Managed Services" },
 };
 
 export const AI_PAGES = {
@@ -99,13 +99,13 @@ export const AI_PAGES = {
 // touching this. Slugs are deliberately singular ("/industry/...",
 // not the older plural "/industries/..." the nav used to use).
 export const INDUSTRY_PAGES = {
-  PRIVATE_EQUITY: { slug: "/industry/private-equity", label: "Private Equity" },
-  ECOMMERCE: { slug: "/industry/ecommerce", label: "E-commerce" },
-  EDUCATION: { slug: "/industry/education", label: "Education" },
-  FINANCIAL_SERVICES: { slug: "/industry/financial-services", label: "Financial Services" },
-  HI_TECH: { slug: "/industry/hi-tech", label: "Hi-Tech" },
-  HEALTHCARE: { slug: "/industry/healthcare", label: "Healthcare" },
-  WHOLESALE: { slug: "/industry/wholesale", label: "Wholesale" },
+  PRIVATE_EQUITY: { slug: "/industries/private-equity", label: "Private Equity" },
+  ECOMMERCE: { slug: "/industries/e-commerce", label: "E-commerce" },
+  EDUCATION: { slug: "/industries/education", label: "Education" },
+  FINANCIAL_SERVICES: { slug: "/industries/financial-services", label: "Financial Services" },
+  HI_TECH: { slug: "/industries/hi-tech", label: "Hi-Tech" },
+  HEALTHCARE: { slug: "/industries/healthcare", label: "Healthcare" },
+  WHOLESALE: { slug: "/industries/wholesale", label: "Wholesale" },
 };
 
 // Elixir (EHR) is an external product (elixirehr.com) — the nav's
@@ -115,9 +115,9 @@ export const INDUSTRY_PAGES = {
 // App.jsx (same pathless-parent pattern as INDUSTRY_PAGES) with no
 // bare "/elixir" route registered.
 export const ELIXIR_PAGES = {
-  ONC_MFA_USE_CASES: { slug: "/elixir/onc-mfa-use-cases", label: "ONC MFA Use Cases" },
-  API_DEVELOPER_PORTAL: { slug: "/elixir/api-developer-portal", label: "API Developer Portal" },
-  CERTIFIED_MODULE: { slug: "/elixir/elixir-certified-module", label: "Elixir Certified Module" },
+  ONC_MFA_USE_CASES: { slug: "/onc-mfa-use-cases", label: "ONC MFA Use Cases" },
+  API_DEVELOPER_PORTAL: { slug: "/api-developer-portal", label: "API Developer Portal" },
+  CERTIFIED_MODULE: { slug: "/elixir-certified-module", label: "Elixir Certified Module" },
 };
 
 // RRD (Round Robin Distributor) is an external product site
@@ -128,19 +128,19 @@ export const ELIXIR_PAGES = {
 // "/products/" the way the old placeholder nav hrefs were).
 export const PRODUCT_PAGES = {
   FINACAST: { slug: "/finacast", label: "Finacast" },
-  ECOURIER: { slug: "/ecourier", label: "eCourier" },
-  DUPLICATE_SEARCH_MERGE: { slug: "/duplicate-search-and-merge", label: "Duplicate Search & Merge" },
+  ECOURIER: { slug: "/ecourier-report-scheduler", label: "eCourier" },
+  DUPLICATE_SEARCH_MERGE: { slug: "/duplicate-search-merge", label: "Duplicate Search & Merge" },
 };
 
-// Careers pages live under a shared "/company/careers" parent route in
+// Careers pages live under a shared "/careers" parent route in
 // App.jsx (same pathless-parent nesting as INDUSTRY_PAGES/ELIXIR_PAGES
 // above) — matching the "Careers" link already reserved in Header.jsx's
-// Company mega-menu (href: "/company/careers"), not a flat top-level
+// Company mega-menu (href: "/careers"), not a flat top-level
 // "/careers/..." path.
 export const CAREER_PAGES = {
-  HUB: { slug: "/company/careers", label: "Careers" },
+  HUB: { slug: "/careers", label: "Careers" },
   CYBERSECURITY_SOC_ANALYST: {
-    slug: "/company/careers/cybersecurity-soc-analyst",
+    slug: "/careers/cybersecurity-soc-analyst",
     label: "Cybersecurity SOC Analyst",
     location: "Gurugram",
     employmentType: "Full-time",
@@ -154,14 +154,14 @@ export const CLOUD_PAGES = {
   AZURE: { slug: "/platforms/cloud/azure", label: "Azure" },
   GCP: { slug: "/platforms/cloud/gcp", label: "Google Cloud Platform" },
   SETUP_MIGRATION: {
-    slug: "/platforms/cloud/setup-migration",
+    slug: "/cloud-setup-migration",
     label: "Cloud Setup & Migration",
   },
   SITE_RELIABILITY_ENGINEERING: {
     // Matches the URL already reserved for this item in the site nav
     // (previously labeled "SRE & Security Monitoring").
-    slug: "/platforms/cloud/sre-security",
+    slug: "/cloud-site-reliability-engineering",
     label: "Site Reliability Engineering",
   },
-  INFRA_MANAGEMENT: { slug: "/platforms/cloud/infra-management", label: "Cloud Infrastructure Management" },
+  INFRA_MANAGEMENT: { slug: "/cloud-infrastructure-setup-migration", label: "Cloud Infrastructure Management" },
 };

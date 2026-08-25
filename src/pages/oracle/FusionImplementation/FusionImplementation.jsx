@@ -1014,8 +1014,8 @@ function FaqSection() {
           )}
         </div>
         <p className="ofa-faq__links">
-          Related reading: <Link to="/platforms/salesforce/development-consulting">Salesforce Development & Consulting</Link>,{" "}
-          <Link to="/platforms/salesforce/clouds">Salesforce Clouds</Link>,{" "}
+          Related reading: <Link to="/salesforce-consulting-development-services">Salesforce Development & Consulting</Link>,{" "}
+          <Link to="/salesforce">Salesforce Clouds</Link>,{" "}
           <Link to="/data-cloud">Data Cloud</Link>, <Link to="/ai-consulting">AI Consulting</Link>,{" "}
           <Link to="/agentforce">Agentforce</Link>, <a href="#services">Implementation Services</a>.
         </p>
