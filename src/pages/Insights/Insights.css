@@ -247,11 +247,240 @@
   margin-top: 6px;
 }
 
+/* ---------- Content layout (main column + sidebar) ---------- */
+.insights-content__layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+
 /* ---------- Grid ---------- */
 .insights-content__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 26px;
+}
+
+/* ---------- Load More ---------- */
+.insights-content__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.insights-content__load-more .btn {
+  width: 100%;
+  max-width: 260px;
+}
+
+/* ---------- Sidebar ---------- */
+.insights-sidebar {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.insights-side-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-light);
+}
+
+.insights-side-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.insights-side-card__title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  display: flex;
+  align-items: center;
+}
+
+.insights-side-card__title .dot-accent {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.insights-side-card__link-all {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: #1c9457;
+}
+
+.insights-side-card__link-all:hover {
+  text-decoration: underline;
+}
+
+.insights-side-empty {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Latest Blogs list */
+.insights-latest-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insights-latest-item:first-child {
+  padding-top: 0;
+}
+
+.insights-latest-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.insights-latest-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background-color: var(--color-dark-navy);
+  background-size: cover;
+  background-position: center;
+}
+
+.insights-latest-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 4px;
+  color: var(--color-dark-navy);
+  transition: color var(--transition);
+}
+
+.insights-latest-item:hover .insights-latest-title {
+  color: #1c9457;
+}
+
+.insights-latest-date {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--color-gray-200);
+}
+
+/* Customer Success list */
+.insights-story-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insights-story-item:first-child {
+  padding-top: 0;
+}
+
+.insights-story-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.insights-story-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary-green);
+  margin-bottom: 10px;
+}
+
+.insights-story-mark .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+}
+
+.insights-story-headline {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-dark-navy);
+  margin: 0 0 10px;
+}
+
+.insights-link-arrow {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1c9457;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.15s ease;
+}
+
+.insights-link-arrow:hover {
+  gap: 8px;
+}
+
+/* PR & News list (empty state today — see InsightsSidebar comment) */
+.insights-news-item {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insights-news-item:first-child {
+  padding-top: 0;
+}
+
+.insights-news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.insights-news-kind {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.insights-news-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-dark-navy);
+  margin: 0 0 5px;
+  transition: color var(--transition);
+}
+
+.insights-news-item a:hover .insights-news-title {
+  color: #1c9457;
 }
 
 /* ---------- Loading skeleton ---------- */
@@ -291,15 +520,6 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1200px) {
-  .insights-content__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .insights-content__skeleton-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 992px) {
   .insights-hero__inner {
     grid-template-columns: 1fr;
@@ -307,11 +527,23 @@
   .insights-hero__panel {
     max-width: 420px;
   }
-  .insights-content__grid {
-    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Sidebar stacks below the main column — matches the site's
+   established sidebar-collapse breakpoint (see BlogDetail__hero
+   and similar patterns elsewhere). Main column regains full
+   width here, so the grid can afford one more column than the
+   sidebar-present default. */
+@media (max-width: 999px) {
+  .insights-content__layout {
+    grid-template-columns: 1fr;
   }
+  .insights-sidebar {
+    position: static;
+  }
+  .insights-content__grid,
   .insights-content__skeleton-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -332,12 +564,14 @@
     padding: 14px 14px;
     font-size: 13.5px;
   }
+  .insights-content__grid,
+  .insights-content__skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .insights-content__grid {
-    grid-template-columns: 1fr;
-  }
+  .insights-content__grid,
   .insights-content__skeleton-grid {
     grid-template-columns: 1fr;
   }

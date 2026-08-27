@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="eduBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#eduBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="100" font-family="IBM Plex Serif, Georgia, serif" font-size="36" font-weight="700" fill="#ffffff">Automating Student Enrollment</text>
+  <text x="70" y="142" font-family="IBM Plex Serif, Georgia, serif" font-size="36" font-weight="700" fill="#ffffff">for an Online University</text>
+  <text x="70" y="178" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#bcd7f5">Enrollment as a Service on Salesforce Education Cloud</text>
+
+  <!-- connecting lines into central cloud -->
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.55" fill="none">
+    <path d="M245 380 L470 400" />
+    <path d="M600 300 L600 370" />
+    <path d="M955 380 L730 400" />
+  </g>
+
+  <!-- graduation cap -->
+  <g transform="translate(200,380)">
+    <circle r="46" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.5" />
+    <path d="M-22 -4 L0 -14 L22 -4 L0 6 Z" fill="#8fd9b3" />
+    <path d="M-12 0 v10 c0 4 6 7 12 7 s12 -3 12 -7 v-10" fill="none" stroke="#8fd9b3" stroke-width="2" />
+  </g>
+
+  <!-- phone / CTI icon -->
+  <g transform="translate(600,250)">
+    <circle r="46" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.5" />
+    <path d="M-14 -16c8 0 22 12 22 22 0 3-2 6-4 8l-6-2-4-8 3-4c-2-4-6-7-10-9l-4 3-8-4c2-3 6-6 11-6z" fill="#8fd9b3" />
+  </g>
+
+  <!-- sync / database icon -->
+  <g transform="translate(1000,380)">
+    <circle r="46" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.5" />
+    <ellipse cx="0" cy="-14" rx="18" ry="7" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <path d="M-18 -14v20c0 4 8 7 18 7s18 -3 18 -7v-20" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <path d="M-18 -2c0 4 8 7 18 7s18-3 18-7" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+  </g>
+
+  <!-- salesforce cloud hub -->
+  <g transform="translate(600,400)">
+    <path d="M-70 20 a35 35 0 0 1 14 -68 a44 44 0 0 1 84 -8 a37 37 0 0 1 6 76 Z" fill="#21ad65" opacity="0.9" />
+    <text x="0" y="6" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="14" fill="#0f2438">Education Cloud</text>
+  </g>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#9db9d6">Salesforce Education Cloud &#183; Five9 &#183; MuleSoft &#183; Omni-Channel Routing</text>
+</svg>

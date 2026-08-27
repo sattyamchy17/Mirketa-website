@@ -249,6 +249,12 @@
   align-items: center;
 }
 
+.mfc-explainer__text {
+  position: relative;
+  z-index: 1;
+  margin-right: -32px;
+}
+
 .mfc-explainer__points {
   list-style: none;
   padding: 0;
@@ -283,15 +289,15 @@
 
 .mfc-explainer__illo {
   width: 100%;
-  max-width: 360px;
+  max-width: 100%;
   height: auto;
   justify-self: center;
-  filter: drop-shadow(0 16px 36px rgba(15, 36, 56, 0.12));
 }
 
 @media (max-width: 900px) {
   .mfc-explainer__grid { grid-template-columns: 1fr; }
-  .mfc-explainer__illo { order: -1; max-width: 260px; }
+  .mfc-explainer__illo { order: -1; max-width: 100%; }
+  .mfc-explainer__text { margin-right: 0; }
 }
 
 /* ============================================================

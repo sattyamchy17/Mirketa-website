@@ -7,6 +7,7 @@ import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import HeroVisual from "../../components/HeroVisual/HeroVisual.jsx";
+import cultureVisual from "../../assets/changes/about-us/mirketa_culture_futuristic_no_border.webp";
 import rajeevPhoto from "../../assets/Team/ceo (1).jpg";
 import maureenPhoto from "../../assets/Team/Maureen (1).jpg";
 import salilPhoto from "../../assets/Team/Salil-Prasad.jpg";
@@ -432,7 +433,7 @@ function CultureSection() {
           ))}
         </div>
         <div className="abt-culture__visual abt-reveal" aria-hidden="true">
-          <img src={Images.illoTeamCollaboration} alt="" loading="lazy" />
+          <img src={cultureVisual} alt="" loading="lazy" />
         </div>
       </div>
     </section>

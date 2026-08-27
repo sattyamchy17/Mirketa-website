@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="edaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#edaBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="96" font-family="IBM Plex Serif, Georgia, serif" font-size="31" font-weight="700" fill="#ffffff">Automating Student Enrollment</text>
+  <text x="70" y="134" font-family="IBM Plex Serif, Georgia, serif" font-size="31" font-weight="700" fill="#ffffff">on Salesforce EDA</text>
+  <text x="70" y="170" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#bcd7f5">Advisor assignment, follow-ups, and SIS sync in one system</text>
+
+  <!-- connecting lines -->
+  <g stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none">
+    <path d="M270 400 h130" />
+    <path d="M700 400 h130" />
+  </g>
+  <path d="M660 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+  <path d="M1090 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- application intake icon -->
+  <g transform="translate(180,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <rect x="-18" y="-22" width="36" height="44" rx="3" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <line x1="-11" y1="-10" x2="11" y2="-10" stroke="#8fd9b3" stroke-width="2" />
+    <line x1="-11" y1="-2" x2="11" y2="-2" stroke="#8fd9b3" stroke-width="2" />
+    <line x1="-11" y1="6" x2="4" y2="6" stroke="#8fd9b3" stroke-width="2" />
+  </g>
+  <text x="180" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Student Applications</text>
+
+  <!-- Salesforce EDA hub -->
+  <g transform="translate(600,400)">
+    <circle r="52" fill="#21ad65" opacity="0.9" />
+    <circle cx="-12" cy="0" r="9" fill="none" stroke="#0f2438" stroke-width="2.2" />
+    <circle cx="12" cy="0" r="9" fill="none" stroke="#0f2438" stroke-width="2.2" />
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#0f2438" stroke-width="2.2" />
+  </g>
+  <text x="600" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#8fd9b3">Enrollment Service on EDA</text>
+
+  <!-- 360 view output -->
+  <g transform="translate(1020,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M-14 4 L-4 14 L16 -10" fill="none" stroke="#8fd9b3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="1020" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Student 360 View</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#9db9d6">Advisor Assignment &#183; SIS Two-Way Sync &#183; Follow-Up Automation</text>
+</svg>

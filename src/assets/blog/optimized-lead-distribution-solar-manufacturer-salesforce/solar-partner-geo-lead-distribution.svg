@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="solBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#solBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="98" font-family="IBM Plex Serif, Georgia, serif" font-size="33" font-weight="700" fill="#ffffff">Optimized Lead Distribution for a</text>
+  <text x="70" y="138" font-family="IBM Plex Serif, Georgia, serif" font-size="33" font-weight="700" fill="#ffffff">Global Solar Panel Manufacturer</text>
+  <text x="70" y="174" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#bcd7f5">Geo-matched, round robin routing to installer partners</text>
+
+  <!-- map pin (lead) at center -->
+  <g transform="translate(300,400)">
+    <circle r="46" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M0 -20c9 0 16 7 16 16 0 11-16 26-16 26s-16-15-16-26c0-9 7-16 16-16z" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <circle cy="-4" r="5" fill="#8fd9b3" />
+  </g>
+  <text x="300" y="460" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Geo-Matched Lead</text>
+
+  <!-- connecting lines to partner nodes -->
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.55" fill="none">
+    <path d="M346 380 L580 300" />
+    <path d="M346 400 L580 400" />
+    <path d="M346 420 L580 500" />
+  </g>
+
+  <!-- partner nodes with solar panel icon -->
+  <g transform="translate(630,300)">
+    <circle r="36" fill="#0f2942" stroke="#8fd9b3" stroke-width="2" />
+    <rect x="-14" y="-10" width="28" height="20" rx="2" fill="none" stroke="#8fd9b3" stroke-width="1.8" />
+    <line x1="-14" y1="-3" x2="14" y2="-3" stroke="#8fd9b3" stroke-width="1.4" />
+    <line x1="-4" y1="-10" x2="-4" y2="10" stroke="#8fd9b3" stroke-width="1.4" />
+    <line x1="6" y1="-10" x2="6" y2="10" stroke="#8fd9b3" stroke-width="1.4" />
+  </g>
+  <g transform="translate(630,400)">
+    <circle r="36" fill="#21ad65" opacity="0.9" />
+    <rect x="-14" y="-10" width="28" height="20" rx="2" fill="none" stroke="#0f2438" stroke-width="1.8" />
+    <line x1="-14" y1="-3" x2="14" y2="-3" stroke="#0f2438" stroke-width="1.4" />
+    <line x1="-4" y1="-10" x2="-4" y2="10" stroke="#0f2438" stroke-width="1.4" />
+    <line x1="6" y1="-10" x2="6" y2="10" stroke="#0f2438" stroke-width="1.4" />
+  </g>
+  <g transform="translate(630,500)">
+    <circle r="36" fill="#0f2942" stroke="#8fd9b3" stroke-width="2" />
+    <rect x="-14" y="-10" width="28" height="20" rx="2" fill="none" stroke="#8fd9b3" stroke-width="1.8" />
+    <line x1="-14" y1="-3" x2="14" y2="-3" stroke="#8fd9b3" stroke-width="1.4" />
+    <line x1="-4" y1="-10" x2="-4" y2="10" stroke="#8fd9b3" stroke-width="1.4" />
+    <line x1="6" y1="-10" x2="6" y2="10" stroke="#8fd9b3" stroke-width="1.4" />
+  </g>
+
+  <!-- arrow to mobile app -->
+  <path d="M700 400 h130" stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none" />
+  <path d="M800 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- mobile phone icon -->
+  <g transform="translate(920,400)">
+    <circle r="46" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <rect x="-13" y="-22" width="26" height="44" rx="4" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <line x1="-13" y1="14" x2="13" y2="14" stroke="#8fd9b3" stroke-width="1.6" />
+  </g>
+  <text x="920" y="460" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Partner Mobile App</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#9db9d6">Geolocation Matching &#183; Round Robin &#183; Load Management &#183; Mobile Sync</text>
+</svg>

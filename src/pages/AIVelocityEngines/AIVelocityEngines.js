@@ -58,7 +58,7 @@ export const AI_VELOCITY_PRODUCTS = [
   { icon: Images.iconAgentTypeConversational, title: "Aria AI", description: "Conversational AI assistant for real-time customer and employee engagement.", href: "/ai-accelerator-aria" },
   { icon: Images.iconDimensionGovernance, title: "Vendor Compliance AI", description: "Automated vendor risk scoring and compliance monitoring at scale." },
   { icon: Images.productElixir, title: "Kratu AI (ElixirAI)", description: "AI-powered healthcare workflow intelligence built on the Elixir platform.", href: "/kratu-ai" },
-  { icon: Images.iconAgentTypeTaskExecution, title: "Case Rezolver & Management", description: "Autonomous case triage, routing, and resolution for service teams.", href: "/salesforce-ai-case-management" },
+  { icon: Images.iconAgentTypeTaskExecution, title: "Case Rezolver", description: "Autonomous case triage, routing, and resolution for service teams.", href: "/salesforce-ai-case-management" },
   { icon: Images.iconVelocityScribe, title: "Scribe — Ambient Listening", description: "Ambient AI transcription and structured note generation from conversations." },
   { icon: Images.iconVelocityCodeAnalysis, title: "Code Analysis", description: "AI-assisted code review, quality scoring, and vulnerability detection." },
   { icon: Images.iconVelocityScheduling, title: "Smart Appointment Scheduling", description: "Predictive, AI-optimised appointment scheduling that reduces no-shows." },

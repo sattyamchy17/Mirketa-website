@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Images } from "../../../assets/images/index.js";
+import explainerIllo from "../../../assets/changes/manufacturing-cloud/salesforce_manufacturing_cloud_right_section.webp";
 import Seo from "../../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb.jsx";
 import HeroVisual from "../../../components/HeroVisual/HeroVisual.jsx";
@@ -153,7 +154,7 @@ const EXPLAINER = {
     "Order and inventory visibility shared across sales, service, and production teams",
     "A connected foundation for Data Cloud, Agentforce, and AI-powered manufacturing intelligence",
   ],
-  illo: Images.illoManufacturingEcosystem,
+  illo: explainerIllo,
 };
 
 const COMPARISON = {

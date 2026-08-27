@@ -7,7 +7,7 @@ import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import heroBg from "../../assets/images/case-rezolver/hero-bg.svg";
 import heroIllustration from "../../assets/images/case-rezolver/hero-illustration.svg";
-import overviewImg from "../../assets/images/case-rezolver/overview.svg";
+import overviewImg from "../../assets/changes/ai-case-management/salesforce_ai_assistant_clean_transparent.webp";
 import workflowImg from "../../assets/images/case-rezolver/workflow.svg";
 import automationImg from "../../assets/images/case-rezolver/automation.svg";
 import benefitsImg from "../../assets/images/case-rezolver/benefits.svg";
@@ -317,7 +317,7 @@ const SEO = {
       "@type": "Service",
       serviceType: "Salesforce-Native AI Case Management",
       provider: { "@type": "Organization", name: "Mirketa Inc.", url: "https://www.mirketa.com" },
-      name: "Case Rezolver & Management",
+      name: "Case Rezolver",
       description:
         "An AI-powered case management accelerator for Salesforce Service Cloud that summarizes case context, recommends next-best resolution steps, and highlights relevant precedent under human approval.",
       areaServed: "Global",

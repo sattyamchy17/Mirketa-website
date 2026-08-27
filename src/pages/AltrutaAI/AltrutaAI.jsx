@@ -7,10 +7,8 @@ import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import heroBg from "../../assets/images/altruta-ai/hero-bg.svg";
 import heroIllustration from "../../assets/images/altruta-ai/hero-illustration.svg";
-import overviewImg from "../../assets/images/altruta-ai/overview.svg";
-import featuresImg from "../../assets/images/altruta-ai/features.svg";
+import overviewImg from "../../assets/changes/altruta-ai/altruta_nonprofit_ai_suite_full_cover.webp";
 import benefitsImg from "../../assets/images/altruta-ai/benefits.svg";
-import analyticsImg from "../../assets/images/altruta-ai/analytics.svg";
 import automationImg from "../../assets/images/altruta-ai/automation.svg";
 import integrationImg from "../../assets/images/altruta-ai/integration.svg";
 import ctaImg from "../../assets/images/altruta-ai/cta.svg";
@@ -60,6 +58,33 @@ const Ico = {
   ),
   check: (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l5 5L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  donor: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.2-7-9.6C5 7 7.2 5 9.8 5c1 0 2 .4 2.2 1.2C12.2 5.4 13.2 5 14.2 5 16.8 5 19 7 19 10.4 19 15.8 12 20 12 20z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><path d="M8 12.5l2.2 2 1.8-4 2 2.8L18 8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  program: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7a1 1 0 011-1h5l2 2h9a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V7z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><circle cx="10" cy="13.5" r="1.6" stroke="currentColor" strokeWidth="1.2" /><circle cx="14.5" cy="13.5" r="1.6" stroke="currentColor" strokeWidth="1.2" /></svg>
+  ),
+  grant: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h7l4 4v14H7V3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><path d="M9 9h5M9 12.5h5" stroke="currentColor" strokeWidth="1.1" opacity="0.6" /><circle cx="9.2" cy="18.3" r="2.2" stroke="currentColor" strokeWidth="1.2" /><path d="M8.2 20l-1 2.6 1.9-1 1.9 1-1-2.6" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round" /></svg>
+  ),
+  trendArrow: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l6-6 4 4 6-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /><path d="M14 6h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  person: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.4" /><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg>
+  ),
+  shieldCheck: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><path d="M9 12l2 2 4-4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  ),
+  converge: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="4.5" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.1" /><circle cx="19.5" cy="5" r="1.5" stroke="currentColor" strokeWidth="1.1" /><circle cx="12" cy="4" r="1.5" stroke="currentColor" strokeWidth="1.1" /><path d="M4.8 6.3L11 16M19.2 6.3L13 16M12 5.5V15" stroke="currentColor" strokeWidth="1.1" /><circle cx="12" cy="18" r="2.4" stroke="currentColor" strokeWidth="1.4" /></svg>
+  ),
+  trendSpark: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17l4-5 3 3 5-7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /><path d="M18 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round" /></svg>
+  ),
+  docSpark: (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" /><path d="M9 12h6M9 15.5h6" stroke="currentColor" strokeWidth="1.1" opacity="0.6" /><path d="M14 6l.8 1.8L17 8.6l-2.2.8L14 11l-.8-1.6L11 8.6l2.2-.8L14 6z" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" /></svg>
   ),
 };
 
@@ -122,9 +147,9 @@ const MEET_ALTRUTA = {
   description:
     "Altruta connects the full lifecycle of nonprofit work — from the first donor interaction to the program outcome that proves impact — in a single intelligent Salesforce-native environment. No new platform. No data leaving your trusted environment. A human in control of every AI decision.",
   capabilities: [
-    { tag: "Predict", color: "navy", title: "Predict what's likely to happen", description: "Identify donor risk, beneficiary disengagement, and funding opportunities earlier." },
-    { tag: "Personalize", color: "green", title: "Personalize every interaction at scale", description: "Generate outreach, notes, briefs, and reports grounded in your Salesforce data." },
-    { tag: "Prove", color: "teal", title: "Prove impact with confidence", description: "Connect fundraising, programs, outcomes, and funder reporting in one auditable environment." },
+    { tag: "Predict", color: "navy", icon: Ico.trendArrow, title: "Predict what's likely to happen", description: "Identify donor risk, beneficiary disengagement, and funding opportunities earlier." },
+    { tag: "Personalize", color: "green", icon: Ico.person, title: "Personalize every interaction at scale", description: "Generate outreach, notes, briefs, and reports grounded in your Salesforce data." },
+    { tag: "Prove", color: "teal", icon: Ico.shieldCheck, title: "Prove impact with confidence", description: "Connect fundraising, programs, outcomes, and funder reporting in one auditable environment." },
   ],
 };
 
@@ -135,6 +160,7 @@ const SUITE = {
   modules: [
     {
       status: "Available Now",
+      icon: Ico.donor,
       name: "Donor Management AI",
       title: "Turn fragmented donor data into predictive, personalized engagement",
       description: "Altruta unifies every donor signal into a single Salesforce profile, then uses AI to tell your team exactly who to focus on — and why — with personalized outreach drafted from real impact stories.",
@@ -143,6 +169,7 @@ const SUITE = {
     },
     {
       status: "Available Now",
+      icon: Ico.program,
       name: "Program & Case Management AI",
       title: "Spend less time documenting. More time delivering impact.",
       description: "Altruta predicts which beneficiaries are at risk of disengaging, drafts structured case notes, and tracks program outcomes against funder targets in real time — giving staff back hours every week.",
@@ -151,6 +178,7 @@ const SUITE = {
     },
     {
       status: "Coming Soon",
+      icon: Ico.grant,
       name: "Grant Management AI",
       title: "Find the right funding. Win it. Report on it with AI.",
       description: "Altruta's Grant Management module surfaces high-fit funding opportunities, assists with proposal drafting grounded in real outcome data, and auto-generates funder-ready reports.",
@@ -177,10 +205,10 @@ const HOW_IT_WORKS = {
   heading: "Four Salesforce AI capabilities working as one nonprofit intelligence layer",
   intro: "Altruta turns Salesforce into an AI engine for mission-driven work by connecting unified data, predictive intelligence, agentic workflow support, and governed content generation.",
   steps: [
-    { name: "Data Cloud", verb: "unifies", description: "Altruta brings together every donor, beneficiary, and program signal into a single, real-time Salesforce profile." },
-    { name: "Einstein", verb: "predicts", description: "Prediction models score who needs attention and why across donors, beneficiaries, and program outcomes." },
-    { name: "Agentforce", verb: "acts", description: "AI agents draft outreach, recommend next steps, and orchestrate workflows — routing everything for human approval." },
-    { name: "Prompt Builder", verb: "personalizes", description: "Every message and report is generated in your voice, grounded in your real data, with no fabrication." },
+    { name: "Data Cloud", verb: "unifies", icon: Ico.converge, description: "Altruta brings together every donor, beneficiary, and program signal into a single, real-time Salesforce profile." },
+    { name: "Einstein", verb: "predicts", icon: Ico.trendSpark, description: "Prediction models score who needs attention and why across donors, beneficiaries, and program outcomes." },
+    { name: "Agentforce", verb: "acts", icon: Ico.team, description: "AI agents draft outreach, recommend next steps, and orchestrate workflows — routing everything for human approval." },
+    { name: "Prompt Builder", verb: "personalizes", icon: Ico.docSpark, description: "Every message and report is generated in your voice, grounded in your real data, with no fabrication." },
   ],
 };
 
@@ -542,17 +570,41 @@ function MeetAltrutaSection() {
           <p className="alt-eyebrow">{MEET_ALTRUTA.eyebrow}</p>
           <h2 id="alt-meet-heading">{MEET_ALTRUTA.heading}</h2>
           <p>{MEET_ALTRUTA.description}</p>
+          <div className="alt-meet__native-badge">
+            <img src={Images.clientSalesforce} alt="" aria-hidden="true" />
+            <div>
+              <strong>Native on Salesforce</strong>
+              <span>Secure. Trusted. Built for Nonprofits.</span>
+            </div>
+          </div>
         </div>
-        <div className="alt-meet__image alt-zoom-in">
-          <img src={overviewImg} alt="Salesforce cloud orbited by Altruta's predict, personalize, and prove AI capabilities" loading="lazy" />
+        <div className="alt-meet__visual alt-zoom-in">
+          <div className="alt-meet__image">
+            <img src={overviewImg} alt="Altruta team reviewing donor and program data together" loading="lazy" />
+          </div>
+          <div className="alt-meet__pills" aria-hidden="true">
+            {MEET_ALTRUTA.capabilities.map((c) => (
+              <span className={`alt-meet__pill alt-meet__pill--${c.color}`} key={c.tag}>
+                {c.tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <div className="container alt-meet__capabilities alt-reveal-stagger">
         {MEET_ALTRUTA.capabilities.map((c) => (
           <div className={`alt-capability-card alt-capability-card--${c.color}`} key={c.tag}>
-            <span className="alt-capability-card__tag">{c.tag}</span>
+            <div className="alt-capability-card__head">
+              <span className="alt-capability-card__icon" aria-hidden="true">
+                {c.icon}
+              </span>
+              <span className="alt-capability-card__tag">{c.tag}</span>
+            </div>
             <h3>{c.title}</h3>
             <p>{c.description}</p>
+            <a href="#suite" className="alt-capability-card__link" aria-label={`Learn more about how Altruta helps you ${c.tag.toLowerCase()}`}>
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         ))}
       </div>
@@ -568,18 +620,24 @@ function SuiteSection() {
   return (
     <section className="section alt-suite" id="suite" aria-labelledby="alt-suite-heading">
       <div className="container">
+        <span className="alt-badge-pill">{SUITE.eyebrow}</span>
         <div className="section-heading alt-reveal">
-          <p className="alt-eyebrow">{SUITE.eyebrow}</p>
           <h2 id="alt-suite-heading">{SUITE.heading}</h2>
           <p>{SUITE.intro}</p>
         </div>
-        <div className="alt-suite__image alt-reveal">
-          <img src={featuresImg} alt="Three Altruta AI module cards: Donor Management, Program and Case Management, and Grant Management" loading="lazy" />
+
+        <div className="alt-suite__layer-bar alt-reveal" aria-hidden="true">
+          <span>One Shared Salesforce Intelligence Layer</span>
         </div>
+
         <div className="alt-suite__grid alt-reveal-stagger">
           {SUITE.modules.map((m) => (
             <div className={`alt-module-card ${m.status === "Coming Soon" ? "is-upcoming" : ""}`} key={m.name}>
+              <span className="alt-module-card__connector" aria-hidden="true" />
               <span className={`alt-module-card__status ${m.status === "Coming Soon" ? "is-upcoming" : ""}`}>{m.status}</span>
+              <span className="alt-module-card__icon" aria-hidden="true">
+                {m.icon}
+              </span>
               <h3 className="alt-module-card__name">{m.name}</h3>
               <p className="alt-module-card__title">{m.title}</p>
               <p className="alt-module-card__description">{m.description}</p>
@@ -596,6 +654,18 @@ function SuiteSection() {
               </a>
             </div>
           ))}
+        </div>
+
+        <div className="alt-suite__trust-strip alt-reveal">
+          <span>
+            <span aria-hidden="true">{Ico.shield}</span>Salesforce-native
+          </span>
+          <span>
+            <span aria-hidden="true">{Ico.person}</span>Human-approved
+          </span>
+          <span>
+            <span aria-hidden="true">{Ico.grant}</span>Fully auditable
+          </span>
         </div>
       </div>
     </section>
@@ -640,33 +710,67 @@ function DifferenceSection() {
 // HOW ALTRUTA WORKS — connected horizontal process
 // ============================================================
 
+function HowItWorksStep({ step, num }) {
+  return (
+    <div className="alt-how-step">
+      <span className="alt-how-step__num">{String(num).padStart(2, "0")}</span>
+      <span className="alt-how-step__icon" aria-hidden="true">
+        {step.icon}
+      </span>
+      <h3>
+        {step.name} <em>{step.verb}</em>
+      </h3>
+      <p>{step.description}</p>
+    </div>
+  );
+}
+
 function HowItWorksSection() {
+  const [dataCloud, einstein, agentforce, promptBuilder] = HOW_IT_WORKS.steps;
+
   return (
     <section className="section alt-how" aria-labelledby="alt-how-heading">
       <div className="container">
+        <span className="alt-badge-pill">{HOW_IT_WORKS.eyebrow}</span>
         <div className="section-heading alt-reveal">
-          <p className="alt-eyebrow">{HOW_IT_WORKS.eyebrow}</p>
           <h2 id="alt-how-heading">{HOW_IT_WORKS.heading}</h2>
           <p>{HOW_IT_WORKS.intro}</p>
         </div>
-        <div className="alt-how__chain alt-reveal-stagger">
-          {HOW_IT_WORKS.steps.map((s, i) => (
-            <div className="alt-how-step" key={s.name}>
-              <span className="alt-how-step__num">{i + 1}</span>
-              <h3>
-                {s.name} <em>{s.verb}</em>
-              </h3>
-              <p>{s.description}</p>
-              {i < HOW_IT_WORKS.steps.length - 1 && (
-                <span className="alt-how-step__arrow" aria-hidden="true">
-                  →
-                </span>
-              )}
+
+        <div className="alt-how__panel alt-reveal">
+          <div className="alt-how__layout">
+            <div className="alt-how__col alt-reveal-stagger">
+              <HowItWorksStep step={dataCloud} num={1} />
+              <HowItWorksStep step={agentforce} num={3} />
             </div>
-          ))}
-        </div>
-        <div className="alt-how__image alt-reveal">
-          <img src={analyticsImg} alt="Predictive scoring dashboard listing donors and beneficiaries ranked by AI-generated risk and opportunity scores" loading="lazy" />
+
+            <div className="alt-how__hub" aria-hidden="true">
+              <span className="alt-how__hub-icon">{Ico.converge}</span>
+              <span className="alt-how__hub-label">Altruta Intelligence Layer</span>
+              <span className="alt-how__hub-review">
+                <span aria-hidden="true">{Ico.person}</span>
+                Human review
+              </span>
+            </div>
+
+            <div className="alt-how__col alt-reveal-stagger">
+              <HowItWorksStep step={einstein} num={2} />
+              <HowItWorksStep step={promptBuilder} num={4} />
+            </div>
+          </div>
+
+          <div className="alt-how__footer" aria-hidden="true">
+            <span>
+              <span aria-hidden="true">{Ico.person}</span>Unified profiles
+            </span>
+            <span>
+              <span aria-hidden="true">{Ico.check}</span>Prioritized actions
+            </span>
+            <span>
+              <span aria-hidden="true">{Ico.donor}</span>Personalized engagement
+            </span>
+          </div>
+          <p className="alt-how__loop-caption">One Governed Intelligence Loop</p>
         </div>
       </div>
     </section>

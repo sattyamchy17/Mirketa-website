@@ -8,7 +8,7 @@ import ConsultationSection from "../../components/ConsultationSection/Consultati
 import heroBg from "../../assets/images/netsuite-ai/hero-bg.svg";
 import heroIllustration from "../../assets/images/netsuite-ai/hero-illustration.svg";
 import overviewImg from "../../assets/images/netsuite-ai/overview.svg";
-import erpDashboardImg from "../../assets/images/netsuite-ai/erp-dashboard.svg";
+import erpDashboardImg from "../../assets/changes/netsuite-ai/netsuite_erp_intelligence_right_section.webp";
 import automationImg from "../../assets/images/netsuite-ai/automation.svg";
 import analyticsImg from "../../assets/images/netsuite-ai/analytics.svg";
 import forecastingImg from "../../assets/images/netsuite-ai/forecasting.svg";

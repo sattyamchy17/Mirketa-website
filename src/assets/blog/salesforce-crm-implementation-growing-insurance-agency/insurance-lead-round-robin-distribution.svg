@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="insBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#insBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="108" font-family="IBM Plex Serif, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">Salesforce CRM for a Growing</text>
+  <text x="70" y="156" font-family="IBM Plex Serif, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">Insurance Agency</text>
+  <text x="70" y="194" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#bcd7f5">Automated, round robin lead distribution on Sales Cloud</text>
+
+  <!-- round-robin hub with rep nodes -->
+  <g transform="translate(300,400)">
+    <circle r="54" fill="#0f2438" stroke="#21ad65" stroke-width="3" />
+    <path d="M-18 -6 a18 18 0 1 1 4 10" fill="none" stroke="#8fd9b3" stroke-width="3" stroke-linecap="round" />
+    <path d="M-20 -12 l4 10 l10 -4 z" fill="#8fd9b3" />
+  </g>
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.55" fill="none">
+    <path d="M354 400 L520 320" />
+    <path d="M354 400 L520 400" />
+    <path d="M354 400 L520 480" />
+  </g>
+  <g transform="translate(560,320)">
+    <circle r="34" fill="#0f2942" stroke="#8fd9b3" stroke-width="2" />
+    <circle cy="-6" r="10" fill="none" stroke="#bcd7f5" stroke-width="2" />
+    <path d="M-13 18c2-11 8-16 13-16s11 5 13 16" fill="none" stroke="#bcd7f5" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <g transform="translate(560,400)">
+    <circle r="34" fill="#0f2942" stroke="#8fd9b3" stroke-width="2" />
+    <circle cy="-6" r="10" fill="none" stroke="#bcd7f5" stroke-width="2" />
+    <path d="M-13 18c2-11 8-16 13-16s11 5 13 16" fill="none" stroke="#bcd7f5" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <g transform="translate(560,480)">
+    <circle r="34" fill="#0f2942" stroke="#8fd9b3" stroke-width="2" />
+    <circle cy="-6" r="10" fill="none" stroke="#bcd7f5" stroke-width="2" />
+    <path d="M-13 18c2-11 8-16 13-16s11 5 13 16" fill="none" stroke="#bcd7f5" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- insurance shield icon -->
+  <g transform="translate(860,400)">
+    <path d="M0 -46 L38 -30 V10 C38 40 20 58 0 66 C-20 58 -38 40 -38 10 V-30 Z" fill="none" stroke="#21ad65" stroke-width="3" stroke-linejoin="round" />
+    <path d="M-16 4 L-4 16 L20 -12" fill="none" stroke="#8fd9b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- pills -->
+  <rect x="945" y="290" width="200" height="52" rx="26" fill="#eef4fb" />
+  <text x="1045" y="323" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="18" fill="#0f2942">Sales Cloud</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#9db9d6">Round Robin Distributor &#183; Assignment Rules &#183; Lead Visibility &#183; Sales Cloud</text>
+</svg>

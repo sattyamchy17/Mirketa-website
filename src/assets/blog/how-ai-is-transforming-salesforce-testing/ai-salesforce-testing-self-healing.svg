@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="stBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#stBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="108" font-family="IBM Plex Serif, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">How AI Is Transforming</text>
+  <text x="70" y="156" font-family="IBM Plex Serif, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">Salesforce Testing</text>
+  <text x="70" y="194" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#bcd7f5">Self-healing scripts for a platform that never stops changing</text>
+
+  <!-- browser window with a broken locator -->
+  <g transform="translate(150,330)">
+    <rect x="-110" y="-70" width="220" height="140" rx="10" fill="#0f2942" stroke="#c23a3a" stroke-width="2.5" />
+    <circle cx="-90" cy="-52" r="4" fill="#c23a3a" opacity="0.8" />
+    <circle cx="-78" cy="-52" r="4" fill="#e2b13c" opacity="0.8" />
+    <circle cx="-66" cy="-52" r="4" fill="#8fd9b3" opacity="0.8" />
+    <rect x="-90" y="-30" width="120" height="10" rx="3" fill="#5b7896" />
+    <rect x="-90" y="-10" width="80" height="10" rx="3" fill="#5b7896" opacity="0.6" />
+    <path d="M-30 20 L20 45 M20 20 L-30 45" stroke="#f2b8b5" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <path d="M270 340 h130" stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none" />
+  <path d="M380 340 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- self-healed window -->
+  <g transform="translate(660,330)">
+    <rect x="-110" y="-70" width="220" height="140" rx="10" fill="#0f2942" stroke="#21ad65" stroke-width="2.5" />
+    <circle cx="-90" cy="-52" r="4" fill="#c23a3a" opacity="0.8" />
+    <circle cx="-78" cy="-52" r="4" fill="#e2b13c" opacity="0.8" />
+    <circle cx="-66" cy="-52" r="4" fill="#8fd9b3" opacity="0.8" />
+    <rect x="-90" y="-30" width="120" height="10" rx="3" fill="#5b7896" />
+    <rect x="-90" y="-10" width="80" height="10" rx="3" fill="#5b7896" opacity="0.6" />
+    <circle cx="-5" cy="32" r="20" fill="none" stroke="#8fd9b3" stroke-width="3" />
+    <path d="M-14 32 l8 8 l18 -18" fill="none" stroke="#8fd9b3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- pills row -->
+  <rect x="820" y="290" width="190" height="52" rx="26" fill="#c9f0dc" />
+  <text x="915" y="323" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="18" fill="#0f6b3f">Self-Healing</text>
+
+  <rect x="820" y="352" width="230" height="52" rx="26" fill="#eef4fb" />
+  <text x="935" y="385" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="18" fill="#0f2942">AI Object Recognition</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#9db9d6">Self-Healing Scripts &#183; Parallel Execution &#183; Regression Testing &#183; Release Confidence</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="dpBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#dpBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="100" font-family="IBM Plex Serif, Georgia, serif" font-size="33" font-weight="700" fill="#ffffff">Improved Demand Planning for</text>
+  <text x="70" y="140" font-family="IBM Plex Serif, Georgia, serif" font-size="33" font-weight="700" fill="#ffffff">an Automotive Parts Supplier</text>
+  <text x="70" y="176" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#bcd7f5">Salesforce Manufacturing Cloud &amp; Einstein AI forecasting</text>
+
+  <!-- connecting lines -->
+  <g stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none">
+    <path d="M270 400 h130" />
+    <path d="M700 400 h130" />
+  </g>
+  <path d="M660 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+  <path d="M1090 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- demand signals icon (gear/part) -->
+  <g transform="translate(180,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <circle r="18" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <circle r="6" fill="#8fd9b3" />
+    <g stroke="#8fd9b3" stroke-width="2.2">
+      <line x1="0" y1="-26" x2="0" y2="-18" />
+      <line x1="0" y1="18" x2="0" y2="26" />
+      <line x1="-26" y1="0" x2="-18" y2="0" />
+      <line x1="18" y1="0" x2="26" y2="0" />
+    </g>
+  </g>
+  <text x="180" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Demand &amp; Supply Data</text>
+
+  <!-- Einstein AI hub -->
+  <g transform="translate(600,400)">
+    <circle r="52" fill="#21ad65" opacity="0.9" />
+    <path d="M-14 8c0-14 8-22 14-22s14 8 14 22" fill="none" stroke="#0f2438" stroke-width="2.4" stroke-linecap="round" />
+    <circle cx="0" cy="-14" r="4" fill="#0f2438" />
+    <text x="0" y="26" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="11" fill="#0f2438">Einstein AI</text>
+  </g>
+
+  <!-- forecast/collaboration output -->
+  <g transform="translate(1020,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M-18 14l9-9 6 6 12-14" fill="none" stroke="#8fd9b3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="1020" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Forecast Accuracy</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#9db9d6">Manufacturing Cloud &#183; Einstein AI &#183; Collaborative Planning &#183; Scalable Architecture</text>
+</svg>

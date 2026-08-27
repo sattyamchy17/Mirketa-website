@@ -21,6 +21,41 @@ import { post as aiCompliance } from "./posts/ai-compliance.js";
 import { post as netsuiteNext } from "./posts/netsuite-next.js";
 import { post as buildVsBuyAi } from "./posts/build-vs-buy-ai.js";
 import { post as salesforceAgentforcePricing } from "./posts/salesforce-agentforce-pricing.js";
+import { post as whyFindingBugsIsNotTheMainJobOfAQaEngineer } from "./posts/why-finding-bugs-is-not-the-main-job-of-a-qa-engineer.js";
+import { post as howAiIsTransformingSalesforceTesting } from "./posts/how-ai-is-transforming-salesforce-testing.js";
+import { post as salesforceCrmImplementationGrowingInsuranceAgency } from "./posts/salesforce-crm-implementation-growing-insurance-agency.js";
+import { post as automatingStudentEnrollmentServiceOnlineUniversity } from "./posts/automating-student-enrollment-service-online-university.js";
+import { post as integratedKycCpqB2bOnboardingSalesforce } from "./posts/integrated-kyc-cpq-b2b-onboarding-salesforce.js";
+import { post as scalableProductPricingLogicSmbCommerceSalesforce } from "./posts/scalable-product-pricing-logic-smb-commerce-salesforce.js";
+import { post as revivingAbandonedSalesJourneysCpqSalesforce } from "./posts/reviving-abandoned-sales-journeys-cpq-salesforce.js";
+import { post as endToEndDigitalSalesJourneyLogisticsSalesforce } from "./posts/end-to-end-digital-sales-journey-logistics-salesforce.js";
+import { post as optimizedLeadDistributionSolarManufacturerSalesforce } from "./posts/optimized-lead-distribution-solar-manufacturer-salesforce.js";
+import { post as netsuiteErpGrantManagementNonprofitHealthcare } from "./posts/netsuite-erp-grant-management-nonprofit-healthcare.js";
+import { post as netsuiteDonorEngagementNonprofitYouthEducation } from "./posts/netsuite-donor-engagement-nonprofit-youth-education.js";
+import { post as netsuiteErpScalingManufacturingOperations } from "./posts/netsuite-erp-scaling-manufacturing-operations.js";
+import { post as salesforceDemandPlanningAutomotivePartsSupplier } from "./posts/salesforce-demand-planning-automotive-parts-supplier.js";
+import { post as salesforceServiceCloudIndustrialEquipmentManufacturer } from "./posts/salesforce-service-cloud-industrial-equipment-manufacturer.js";
+import { post as salesforceSalesProcessBuildingMaterialsCompany } from "./posts/salesforce-sales-process-building-materials-company.js";
+import { post as salesforceCpqNetsuiteIntegrationSubscriptionBilling } from "./posts/salesforce-cpq-netsuite-integration-subscription-billing.js";
+import { post as salesforceEinsteinAiPrecisionComponentsManufacturer } from "./posts/salesforce-einstein-ai-precision-components-manufacturer.js";
+import { post as streamliningDataInfrastructureAutomotiveManufacturer } from "./posts/streamlining-data-infrastructure-automotive-manufacturer.js";
+import { post as salesforceB2bCommerceIndustrialDistributor } from "./posts/salesforce-b2b-commerce-industrial-distributor.js";
+import { post as salesforceCpqQuotingHeavyEquipmentManufacturer } from "./posts/salesforce-cpq-quoting-heavy-equipment-manufacturer.js";
+import { post as salesforceDealerManagementAutomotiveManufacturer } from "./posts/salesforce-dealer-management-automotive-manufacturer.js";
+import { post as netsuiteErpMultiChannelRetailPb5star } from "./posts/netsuite-erp-multi-channel-retail-pb5star.js";
+import { post as salesforceCommunityCloudFinancialPlanningPortal } from "./posts/salesforce-community-cloud-financial-planning-portal.js";
+import { post as salesforceTechnicalDebtRefactoringOnlineCounseling } from "./posts/salesforce-technical-debt-refactoring-online-counseling.js";
+import { post as salesforceEdaEnrollmentAdvisorAutomationUniversity } from "./posts/salesforce-eda-enrollment-advisor-automation-university.js";
+import { post as salesforceLegacyCrmRevampRealTimeIntegrations } from "./posts/salesforce-legacy-crm-revamp-real-time-integrations.js";
+import { post as elixirCrmEhrBillingSleepApneaTreatmentCenter } from "./posts/elixir-crm-ehr-billing-sleep-apnea-treatment-center.js";
+import { post as elixirPatientIntakeInsuranceVerificationTreatmentCenter } from "./posts/elixir-patient-intake-insurance-verification-treatment-center.js";
+import { post as salesforceServiceCloudAiSkuRecognitionManufacturing } from "./posts/salesforce-service-cloud-ai-sku-recognition-manufacturing.js";
+import { post as salesforceEinsteinCustomerChurnPredictionSaas } from "./posts/salesforce-einstein-customer-churn-prediction-saas.js";
+import { post as salesforceSalesCloudAutomationAddictionTreatmentCenter } from "./posts/salesforce-sales-cloud-automation-addiction-treatment-center.js";
+import { post as student360EnrollmentSalesforceEdaFullstackAcademy } from "./posts/student-360-enrollment-salesforce-eda-fullstack-academy.js";
+import { post as salesforceMarketingCloudConfigurationNursingUniversity } from "./posts/salesforce-marketing-cloud-configuration-nursing-university.js";
+import { post as salesforceConnectorAdapterLearningManagementSaas } from "./posts/salesforce-connector-adapter-learning-management-saas.js";
+import { post as salesforceJenkinsCicdReleaseManagementSolarManufacturer } from "./posts/salesforce-jenkins-cicd-release-management-solar-manufacturer.js";
 
 export const blogPosts = [
   enterpriseCustomerSuccessUnifiedDataFoundation,
@@ -36,4 +71,39 @@ export const blogPosts = [
   netsuiteNext,
   buildVsBuyAi,
   salesforceAgentforcePricing,
+  whyFindingBugsIsNotTheMainJobOfAQaEngineer,
+  howAiIsTransformingSalesforceTesting,
+  salesforceCrmImplementationGrowingInsuranceAgency,
+  automatingStudentEnrollmentServiceOnlineUniversity,
+  integratedKycCpqB2bOnboardingSalesforce,
+  scalableProductPricingLogicSmbCommerceSalesforce,
+  revivingAbandonedSalesJourneysCpqSalesforce,
+  endToEndDigitalSalesJourneyLogisticsSalesforce,
+  optimizedLeadDistributionSolarManufacturerSalesforce,
+  netsuiteErpGrantManagementNonprofitHealthcare,
+  netsuiteDonorEngagementNonprofitYouthEducation,
+  netsuiteErpScalingManufacturingOperations,
+  salesforceDemandPlanningAutomotivePartsSupplier,
+  salesforceServiceCloudIndustrialEquipmentManufacturer,
+  salesforceSalesProcessBuildingMaterialsCompany,
+  salesforceCpqNetsuiteIntegrationSubscriptionBilling,
+  salesforceEinsteinAiPrecisionComponentsManufacturer,
+  streamliningDataInfrastructureAutomotiveManufacturer,
+  salesforceB2bCommerceIndustrialDistributor,
+  salesforceCpqQuotingHeavyEquipmentManufacturer,
+  salesforceDealerManagementAutomotiveManufacturer,
+  netsuiteErpMultiChannelRetailPb5star,
+  salesforceCommunityCloudFinancialPlanningPortal,
+  salesforceTechnicalDebtRefactoringOnlineCounseling,
+  salesforceEdaEnrollmentAdvisorAutomationUniversity,
+  salesforceLegacyCrmRevampRealTimeIntegrations,
+  elixirCrmEhrBillingSleepApneaTreatmentCenter,
+  elixirPatientIntakeInsuranceVerificationTreatmentCenter,
+  salesforceServiceCloudAiSkuRecognitionManufacturing,
+  salesforceEinsteinCustomerChurnPredictionSaas,
+  salesforceSalesCloudAutomationAddictionTreatmentCenter,
+  student360EnrollmentSalesforceEdaFullstackAcademy,
+  salesforceMarketingCloudConfigurationNursingUniversity,
+  salesforceConnectorAdapterLearningManagementSaas,
+  salesforceJenkinsCicdReleaseManagementSolarManufacturer,
 ];

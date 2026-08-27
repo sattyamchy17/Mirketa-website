@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Images } from "../../assets/images/index.js";
+import integrationTrapImg from "../../assets/changes/agentic-orchestration/mirketa_realistic_integration_trap_card.webp";
+import orchestrationLayerImg from "../../assets/changes/agentic-orchestration/mirketa_realistic_orchestration_layer_card.webp";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
@@ -707,7 +709,7 @@ function ProblemSection() {
         <div className="ao-problem__grid">
           <div className="ao-problem__panel ao-problem__panel--trap ao-slide-left">
             <img
-              src={Images.diagramMxnTrap}
+              src={integrationTrapImg}
               alt="Diagram showing a tangled many-to-many web of custom integrations between data sources and enterprise systems"
               className="ao-problem__diagram"
               loading="lazy"
@@ -724,7 +726,7 @@ function ProblemSection() {
           </div>
           <div className="ao-problem__panel ao-problem__panel--hub ao-slide-right">
             <img
-              src={Images.diagramOrchestrationHub}
+              src={orchestrationLayerImg}
               alt="Diagram showing a clean hub-and-spoke architecture where a single MCP orchestration layer connects data sources to enterprise systems"
               className="ao-problem__diagram"
               loading="lazy"

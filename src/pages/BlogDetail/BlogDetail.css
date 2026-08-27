@@ -152,13 +152,129 @@
 }
 
 .blog-detail__body-wrap {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
   justify-content: center;
 }
 
 .blog-detail__body {
   width: 100%;
   max-width: 760px;
+}
+
+/* ---------- Discovery sidebar ----------
+   Appears only on individual post detail pages (Blog, Customer
+   Success, Webinar, and future PR/News posts) — the separate
+   Insights landing page keeps its own existing sidebar untouched. */
+.bd-sidebar {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bd-sidebar__widget {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-light);
+}
+
+.bd-sidebar__widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.bd-sidebar__widget-title {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--color-dark-navy);
+  display: flex;
+  align-items: center;
+}
+
+.bd-sidebar__widget-title .dot-accent {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-green);
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.bd-sidebar__widget-link {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1c9457;
+}
+
+.bd-sidebar__widget-link:hover {
+  text-decoration: underline;
+}
+
+.bd-sidebar__empty {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bd-sidebar__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bd-discovery-card {
+  display: block;
+}
+
+.bd-discovery-card__media {
+  display: block;
+  width: 100%;
+  height: 96px;
+  border-radius: var(--radius-btn);
+  background-color: var(--color-dark-navy);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.bd-discovery-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-dark-navy);
+  margin-bottom: 6px;
+  transition: color var(--transition);
+}
+
+.bd-discovery-card:hover .bd-discovery-card__title {
+  color: #1c9457;
+}
+
+.bd-discovery-card__meta {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-gray-300);
 }
 
 /* ---------- Article typography ---------- */
@@ -266,8 +382,14 @@
    RESPONSIVE
    ============================================================ */
 @media (max-width: 992px) {
+  .blog-detail__body-wrap {
+    grid-template-columns: 1fr;
+  }
   .blog-detail__body {
     max-width: none;
+  }
+  .bd-sidebar {
+    position: static;
   }
 }
 

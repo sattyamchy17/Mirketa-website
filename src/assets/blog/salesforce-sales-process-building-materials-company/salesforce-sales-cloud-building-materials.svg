@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bmBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bmBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="100" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Streamlined Sales Process for a</text>
+  <text x="70" y="140" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Building Materials Company</text>
+  <text x="70" y="176" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#bcd7f5">Pipeline visibility, lead management, and sales forecasting on Salesforce</text>
+
+  <!-- connecting lines -->
+  <g stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none">
+    <path d="M270 400 h130" />
+    <path d="M700 400 h130" />
+  </g>
+  <path d="M660 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+  <path d="M1090 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- lead / funnel icon -->
+  <g transform="translate(180,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M-18 -14h36l-12 16v14l-12 6v-20z" fill="none" stroke="#8fd9b3" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <text x="180" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Leads &amp; Pipeline</text>
+
+  <!-- Sales Cloud hub -->
+  <g transform="translate(600,400)">
+    <circle r="52" fill="#21ad65" opacity="0.9" />
+    <text x="0" y="-2" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="12" fill="#0f2438">Sales</text>
+    <text x="0" y="14" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="12" fill="#0f2438">Cloud</text>
+  </g>
+
+  <!-- forecast output -->
+  <g transform="translate(1020,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M-16 16h32M-10 16V0M0 16v-10M10 16V-4" stroke="#8fd9b3" stroke-width="2.4" stroke-linecap="round" />
+  </g>
+  <text x="1020" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Sales Forecasting</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#9db9d6">Lead Management &#183; Pipeline Visibility &#183; Sales Forecasting</text>
+</svg>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Images } from "../../assets/images/index.js";
+import problemDiagramImg from "../../assets/changes/ai-data-foundations/mirketa_data_foundation_left_section.webp";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
@@ -545,13 +546,7 @@ function ProblemSection() {
     <section className="section adf-problem" aria-labelledby="adf-problem-heading">
       <div className="container adf-problem__grid">
         <div className="adf-problem__diagram adf-slide-left" aria-hidden="true">
-          <div className="adf-silo-field">
-            {PROBLEM.silos.map((s, i) => (
-              <span key={s} className={`adf-silo adf-silo--${i}`}>{s}</span>
-            ))}
-          </div>
-          <div className="adf-funnel" />
-          <div className="adf-fabric-hub">Unified Data Fabric</div>
+          <img src={problemDiagramImg} alt="" loading="lazy" />
         </div>
         <div className="adf-problem__content adf-slide-right">
           <p className="adf-eyebrow">{PROBLEM.eyebrow}</p>

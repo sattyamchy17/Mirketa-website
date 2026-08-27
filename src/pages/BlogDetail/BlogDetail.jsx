@@ -4,7 +4,7 @@ import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import BlogContent from "../../components/BlogContent/BlogContent.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
-import { getPostBySlug, getRelatedPosts } from "../../blog/blogUtils.js";
+import { getPostBySlug, getRelatedPosts, getPostsByCategory } from "../../blog/blogUtils.js";
 import "../Blog/Blog.css";
 import "./BlogDetail.css";
 
@@ -17,9 +17,82 @@ const CONSULTATION = {
   formTitle: "Schedule a Free Consultation",
 };
 
+// Discovery sidebar widgets shown on every post's detail page (not the
+// Insights landing page, which has its own separate sidebar). "PR & News"
+// has no real source anywhere on the site yet, so it renders an honest
+// empty state instead of inventing press releases.
+const DISCOVERY_WIDGETS = [
+  { title: "Featured Blogs", category: "Blogs", kind: "Blog" },
+  { title: "Customer Success", category: "Customer Success", kind: "Customer Success" },
+  { title: "PR & News", category: null, kind: "News" },
+  { title: "Webinars", category: "Webinars", kind: "Webinar" },
+];
+
 function formatDate(dateString) {
   if (!dateString) return "";
   return new Date(dateString).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function formatMonthYear(dateString) {
+  if (!dateString) return "";
+  return new Date(dateString).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+function DiscoveryCard({ post, kind }) {
+  return (
+    <Link to={`/blog/${post.slug}`} className="bd-discovery-card">
+      <span
+        className="bd-discovery-card__media"
+        style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}
+        aria-hidden="true"
+      />
+      <span className="bd-discovery-card__title">{post.title}</span>
+      <span className="bd-discovery-card__meta">
+        {kind} &bull; {formatMonthYear(post.publishedDate)}
+      </span>
+    </Link>
+  );
+}
+
+function DiscoveryWidget({ title, category, kind, excludeSlug }) {
+  const posts = category
+    ? getPostsByCategory(category)
+        .filter((p) => p.slug !== excludeSlug)
+        .slice(0, 3)
+    : [];
+
+  return (
+    <div className="bd-sidebar__widget">
+      <div className="bd-sidebar__widget-header">
+        <span className="bd-sidebar__widget-title">
+          <span className="dot-accent" aria-hidden="true" />
+          {title}
+        </span>
+        <Link to="/insights" className="bd-sidebar__widget-link">
+          View all
+        </Link>
+      </div>
+      {posts.length === 0 ? (
+        <p className="bd-sidebar__empty">No {title.toLowerCase()} yet — check back soon.</p>
+      ) : (
+        <div className="bd-sidebar__cards">
+          {posts.map((p) => (
+            <DiscoveryCard post={p} kind={kind} key={p.slug} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BlogDetailSidebar({ excludeSlug }) {
+  return (
+    <aside className="bd-sidebar">
+      {DISCOVERY_WIDGETS.map((w) => (
+        <DiscoveryWidget key={w.title} title={w.title} category={w.category} kind={w.kind} excludeSlug={excludeSlug} />
+      ))}
+    </aside>
+  );
 }
 
 export default function BlogDetail() {
@@ -43,6 +116,7 @@ export default function BlogDetail() {
 
   const canonicalUrl = `${SITE_URL}/blog/${post.slug}`;
   const relatedPosts = getRelatedPosts(post, 3);
+  const faqItems = (post.content || []).filter((block) => block.type === "faq").flatMap((block) => block.items || []);
 
   return (
     <div className="blog-detail">
@@ -74,7 +148,18 @@ export default function BlogDetail() {
               { "@type": "ListItem", position: 3, name: post.title, item: canonicalUrl },
             ],
           },
-        ]}
+          faqItems.length > 0
+            ? {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqItems.map((item) => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: { "@type": "Answer", text: item.answer },
+                })),
+              }
+            : undefined,
+        ].filter(Boolean)}
       />
 
       <header className={`blog-detail__hero ${post.featuredImage ? "blog-detail__hero--image" : ""}`}>
@@ -111,6 +196,7 @@ export default function BlogDetail() {
           <div className="blog-detail__body">
             <BlogContent blocks={post.content} />
           </div>
+          <BlogDetailSidebar excludeSlug={post.slug} />
         </div>
       </section>
 

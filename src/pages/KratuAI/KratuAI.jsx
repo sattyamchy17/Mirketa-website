@@ -418,15 +418,6 @@ function HeroSection({ heroTextRef }) {
           <StatTile key={s.label} metric={s} />
         ))}
       </div>
-
-      <button
-        type="button"
-        className="kr-scroll-indicator"
-        onClick={() => document.getElementById("console")?.scrollIntoView({ behavior: "smooth" })}
-        aria-label="Scroll to Kratu AI capabilities"
-      >
-        <span />
-      </button>
     </section>
   );
 }
@@ -647,16 +638,23 @@ function WhyMirketaSection() {
           <h2 id="kr-why-heading">{WHY_MIRKETA.heading}</h2>
           <p>{WHY_MIRKETA.intro}</p>
         </div>
-        <div className="kr-why__list kr-reveal-stagger">
-          {WHY_MIRKETA.items.map((w) => (
-            <div className="kr-why-row" key={w.title}>
+        <div className="kr-why__flow kr-reveal-stagger">
+          {WHY_MIRKETA.items.map((w, i) => (
+            <div className="kr-why-card" key={w.title}>
+              <span className="kr-why-card__num">{String(i + 1).padStart(2, "0")}</span>
               <img src={w.icon} alt="" loading="lazy" />
-              <div>
-                <h3>{w.title}</h3>
-                <p>{w.description}</p>
-              </div>
+              <h3>{w.title}</h3>
+              <p>{w.description}</p>
+              {i < WHY_MIRKETA.items.length - 1 && (
+                <span className="kr-why-card__arrow" aria-hidden="true">→</span>
+              )}
             </div>
           ))}
+        </div>
+
+        <div className="kr-why__hub kr-reveal" aria-hidden="true">
+          <span className="kr-why__hub-connector" />
+          <span className="kr-why__hub-badge">Secure Healthcare AI Deployment</span>
         </div>
       </div>
     </section>

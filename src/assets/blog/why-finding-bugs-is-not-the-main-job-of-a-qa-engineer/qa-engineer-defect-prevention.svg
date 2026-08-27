@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="qaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#qaBg)" />
+
+  <!-- ambient decorative circles -->
+  <circle cx="1090" cy="80" r="170" fill="#123049" opacity="0.55" />
+  <circle cx="60" cy="620" r="150" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1180" cy="600" r="4" fill="#8fd9b3" opacity="0.6" />
+  <circle cx="1130" cy="640" r="2.5" fill="#8fd9b3" opacity="0.4" />
+
+  <!-- heading -->
+  <text x="70" y="110" font-family="IBM Plex Serif, Georgia, serif" font-size="42" font-weight="700" fill="#ffffff">Why Finding Bugs Isn't the</text>
+  <text x="70" y="158" font-family="IBM Plex Serif, Georgia, serif" font-size="42" font-weight="700" fill="#ffffff">Main Job of a QA Engineer</text>
+  <text x="70" y="196" font-family="IBM Plex Sans, sans-serif" font-size="19" fill="#bcd7f5">From defect detection to defect prevention</text>
+
+  <!-- connecting line: magnifier -> arrow -> shield -->
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.5">
+    <path d="M330 400 L560 400" fill="none" />
+    <path d="M700 400 L900 400" fill="none" />
+  </g>
+  <path d="M660 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- magnifying glass finding a bug -->
+  <g transform="translate(230,400)">
+    <circle r="58" fill="#0f2438" stroke="#c23a3a" stroke-width="3" />
+    <circle cx="-6" cy="-6" r="24" fill="none" stroke="#f2b8b5" stroke-width="3" />
+    <line x1="13" y1="13" x2="34" y2="34" stroke="#f2b8b5" stroke-width="5" stroke-linecap="round" />
+    <!-- small bug glyph inside the lens -->
+    <ellipse cx="-6" cy="-6" rx="8" ry="10" fill="#f2b8b5" />
+    <line x1="-14" y1="-12" x2="-20" y2="-18" stroke="#f2b8b5" stroke-width="2" />
+    <line x1="2" y1="-12" x2="8" y2="-18" stroke="#f2b8b5" stroke-width="2" />
+    <line x1="-14" y1="0" x2="-22" y2="0" stroke="#f2b8b5" stroke-width="2" />
+    <line x1="2" y1="0" x2="10" y2="0" stroke="#f2b8b5" stroke-width="2" />
+  </g>
+
+  <!-- shield with checkmark: prevention -->
+  <g transform="translate(820,400)">
+    <circle r="58" fill="#0f2438" stroke="#21ad65" stroke-width="3" />
+    <path d="M0 -28 L24 -18 V4 C24 22 12 34 0 40 C-12 34 -24 22 -24 4 V-18 Z" fill="none" stroke="#8fd9b3" stroke-width="3" stroke-linejoin="round" />
+    <path d="M-11 2 L-3 11 L14 -10" fill="none" stroke="#8fd9b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- pills row -->
+  <rect x="70" y="480" width="185" height="56" rx="28" fill="#eef4fb" />
+  <text x="162" y="515" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="19" fill="#0f2942">Requirements</text>
+
+  <rect x="275" y="480" width="130" height="56" rx="28" fill="#c9f0dc" />
+  <text x="340" y="515" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="19" fill="#0f6b3f">Risk</text>
+
+  <rect x="425" y="480" width="150" height="56" rx="28" fill="#ded6f7" />
+  <text x="500" y="515" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="19" fill="#3730a3">Design</text>
+
+  <rect x="595" y="480" width="185" height="56" rx="28" fill="#fde3a3" />
+  <text x="687" y="515" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="19" fill="#92400e">Automation</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#9db9d6">Defect Prevention &#183; Quality Engineering &#183; Agile QA &#183; Continuous Testing</text>
+</svg>

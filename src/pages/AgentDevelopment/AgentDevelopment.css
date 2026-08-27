@@ -785,14 +785,17 @@
 
 .ad-industries__use-cases {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ad-flow-card {
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 12px 16px;
+  flex: 0 0 260px;
 }
 
 .ad-flow-card h4 {

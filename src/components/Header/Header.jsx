@@ -39,7 +39,7 @@ const NAV_ITEMS = [
             { label: "ARIA - AI based RCA", href: "/ai-accelerator-aria" },
             { label: "ALTRUTA - AI Nonprofit Suite", href: "/altruta-ai" },
             { label: "KRATU AI - Clinical AI", href: "/kratu-ai" },
-            { label: "Case Rezolver & Management", href: "/salesforce-ai-case-management" },
+            { label: "Case Rezolver", href: "/salesforce-ai-case-management" },
             // Existing "Vulnerability Remediation Agent" content on the
             // Agentic Orchestration page — no dedicated page exists for
             // this item, so it links there rather than to a new/guessed URL.

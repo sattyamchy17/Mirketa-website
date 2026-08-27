@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="pgBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#pgBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="100" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Scalable Product &amp; Pricing Logic</text>
+  <text x="70" y="142" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">for SMB Commerce on Salesforce</text>
+  <text x="70" y="178" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#bcd7f5">48+ product variants, generated automatically from metadata</text>
+
+  <!-- three input nodes converging -->
+  <g stroke="#21ad65" stroke-width="1.4" opacity="0.55" fill="none">
+    <path d="M230 300 L560 400" />
+    <path d="M230 400 L560 400" />
+    <path d="M230 500 L560 400" />
+  </g>
+
+  <g transform="translate(180,300)">
+    <circle r="42" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.2" />
+    <path d="M0 -20 L0 20 M-20 0 L20 0" stroke="#8fd9b3" stroke-width="2" opacity="0.6" />
+    <circle r="6" fill="#8fd9b3" />
+  </g>
+  <text x="180" y="360" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Zone</text>
+
+  <g transform="translate(180,400)">
+    <circle r="42" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.2" />
+    <text x="0" y="7" text-anchor="middle" font-family="IBM Plex Serif, Georgia, serif" font-size="22" fill="#8fd9b3">$</text>
+  </g>
+  <text x="180" y="460" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Cash Tier</text>
+
+  <g transform="translate(180,500)">
+    <circle r="42" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.2" />
+    <circle r="16" fill="none" stroke="#8fd9b3" stroke-width="2" />
+    <path d="M0 0 L0 -11 M0 0 L8 4" stroke="#8fd9b3" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <text x="180" y="560" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Duration</text>
+
+  <!-- engine hub -->
+  <g transform="translate(600,400)">
+    <circle r="52" fill="#21ad65" opacity="0.9" />
+    <text x="0" y="-2" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="13" fill="#0f2438">CPQ</text>
+    <text x="0" y="14" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="13" fill="#0f2438">Engine</text>
+  </g>
+
+  <path d="M660 400 h130" stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none" />
+  <path d="M780 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- product grid output -->
+  <g transform="translate(900,340)">
+    <rect x="0" y="0" width="56" height="42" rx="4" fill="#eef4fb" />
+    <rect x="66" y="0" width="56" height="42" rx="4" fill="#c9f0dc" />
+    <rect x="0" y="52" width="56" height="42" rx="4" fill="#ded6f7" />
+    <rect x="66" y="52" width="56" height="42" rx="4" fill="#fde3a3" />
+  </g>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#9db9d6">Custom Metadata Types &#183; Salesforce CPQ &#183; LWC &#183; Dynamic Product Catalog</text>
+</svg>

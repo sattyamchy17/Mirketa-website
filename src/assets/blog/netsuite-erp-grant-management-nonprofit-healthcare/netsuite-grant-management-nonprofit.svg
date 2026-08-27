@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2438" />
+      <stop offset="100%" stop-color="#0d3b3d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grBg)" />
+
+  <circle cx="1100" cy="90" r="160" fill="#123049" opacity="0.55" />
+  <circle cx="50" cy="600" r="140" fill="#0f6b3f" opacity="0.35" />
+  <circle cx="1170" cy="610" r="4" fill="#8fd9b3" opacity="0.6" />
+
+  <!-- heading -->
+  <text x="70" y="100" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">Streamlining Grant Management</text>
+  <text x="70" y="140" font-family="IBM Plex Serif, Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">for a Nonprofit on NetSuite ERP</text>
+  <text x="70" y="176" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#bcd7f5">Automated tracking, budgets, and audit-ready reporting</text>
+
+  <!-- connecting lines -->
+  <g stroke="#21ad65" stroke-width="1.6" opacity="0.6" fill="none">
+    <path d="M270 400 h130" />
+    <path d="M700 400 h130" />
+  </g>
+  <path d="M660 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+  <path d="M1090 400 l30 -14 v28 z" fill="#21ad65" opacity="0.85" />
+
+  <!-- grant/heart icon -->
+  <g transform="translate(180,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <path d="M0 20s-20-12-20-27C-20 -14 -12 -20 -3 -20c4 0 3 2 3 6 0-4-1-6 3-6 9 0 17 6 17 13 0 15-20 27-20 27z" fill="none" stroke="#8fd9b3" stroke-width="2.2" stroke-linejoin="round" />
+  </g>
+  <text x="180" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Grant Funding</text>
+
+  <!-- NetSuite ERP hub -->
+  <g transform="translate(600,400)">
+    <circle r="52" fill="#21ad65" opacity="0.9" />
+    <text x="0" y="-2" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="13" fill="#0f2438">NetSuite</text>
+    <text x="0" y="14" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="13" fill="#0f2438">ERP</text>
+  </g>
+
+  <!-- compliance report output -->
+  <g transform="translate(1020,400)">
+    <circle r="56" fill="#0f2438" stroke="#8fd9b3" stroke-width="2.4" />
+    <rect x="-17" y="-24" width="34" height="46" rx="3" fill="none" stroke="#8fd9b3" stroke-width="2.2" />
+    <line x1="-9" y1="-11" x2="9" y2="-11" stroke="#8fd9b3" stroke-width="2" />
+    <line x1="-9" y1="-2" x2="9" y2="-2" stroke="#8fd9b3" stroke-width="2" />
+    <path d="M-9 8 l5 5 l9 -10" fill="none" stroke="#8fd9b3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="1020" y="475" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#bcd7f5">Compliance Reports</text>
+
+  <!-- footer tag row -->
+  <text x="70" y="610" font-family="IBM Plex Sans, sans-serif" font-size="17" fill="#9db9d6">Grant Tracking &#183; Budget Management &#183; Compliance Reporting</text>
+</svg>
