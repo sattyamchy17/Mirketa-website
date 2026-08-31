@@ -5,6 +5,9 @@ import ScrollToHash from "./components/ScrollToHash/ScrollToHash.jsx";
 import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Podcast from "./pages/Podcast/Podcast.jsx";
+import VendorGovernanceRiskComplianceEngine from "./pages/VendorGovernanceRiskComplianceEngine/VendorGovernanceRiskComplianceEngine.jsx";
+import VulnerabilityRemediationAgent from "./pages/VulnerabilityRemediationAgent/VulnerabilityRemediationAgent.jsx";
 import AIConsulting from "./pages/AIConsulting/AIConsulting.jsx";
 import AIReadiness from "./pages/AIReadiness/AIReadiness.jsx";
 import AIRoadmapGovernance from "./pages/AIRoadmapGovernance/AIRoadmapGovernance.jsx";
@@ -49,7 +52,7 @@ import CreatorWorkflows from "./pages/servicenow/creator-workflows/CreatorWorkfl
 import SupportManagedServices from "./pages/servicenow/support-managed-services/SupportManagedServices.jsx";
 import { NetsuiteAI, NetsuiteImplementation, NetsuiteSupportServices } from "./pages/netsuite/index.js";
 import { WorkdayConsultingDevelopment, WorkdaySupportManagedServices } from "./pages/workday/index.js";
-import { CloudSetupMigration, SiteReliabilityEngineering, InfrastructureManagement } from "./pages/cloud/index.js";
+import { CloudSetupMigration, SiteReliabilityEngineering, InfrastructureManagement, AWSManagedServices, AzureManagedServices } from "./pages/cloud/index.js";
 import { EnterpriseIntegrationServices, BoomiIntegrationServices, MuleSoftImplementation } from "./pages/integration-ipaas/index.js";
 import { PrivateEquity, Ecommerce, Education, FinancialServices as IndustryFinancialServices, HiTech, Healthcare, Wholesale } from "./pages/industry/index.js";
 import { OncMfaUseCases, ApiDeveloperPortal, ElixirCertifiedModule } from "./pages/Elixir/index.js";
@@ -83,6 +86,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/company/contact" element={<Contact />} />
+          <Route path="/podcast" element={<Podcast />} />
+          <Route path="/ai-velocity-engines/vendor-governance-risk-compliance-engine" element={<VendorGovernanceRiskComplianceEngine />} />
+          <Route path="/ai-velocity-engines/vulnerability-remediation-agent" element={<VulnerabilityRemediationAgent />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />
           <Route path="/ai-readiness" element={<AIReadiness />} />
           <Route path="/ai-roadmap-governance" element={<AIRoadmapGovernance />} />
@@ -133,6 +139,8 @@ export default function App() {
           <Route path={CLOUD_PAGES.SETUP_MIGRATION.slug} element={<CloudSetupMigration />} />
           <Route path={CLOUD_PAGES.SITE_RELIABILITY_ENGINEERING.slug} element={<SiteReliabilityEngineering />} />
           <Route path={CLOUD_PAGES.INFRA_MANAGEMENT.slug} element={<InfrastructureManagement />} />
+          <Route path={CLOUD_PAGES.AWS.slug} element={<AWSManagedServices />} />
+          <Route path={CLOUD_PAGES.AZURE.slug} element={<AzureManagedServices />} />
           <Route path={INTEGRATION_PAGES.ENTERPRISE.slug} element={<EnterpriseIntegrationServices />} />
           <Route path={INTEGRATION_PAGES.BOOMI.slug} element={<BoomiIntegrationServices />} />
           <Route path={INTEGRATION_PAGES.MULESOFT.slug} element={<MuleSoftImplementation />} />
@@ -204,6 +212,8 @@ export default function App() {
           <Route path="/platforms/cloud/setup-migration" element={<Navigate to="/cloud-setup-migration" replace />} />
           <Route path="/platforms/cloud/sre-security" element={<Navigate to="/cloud-site-reliability-engineering" replace />} />
           <Route path="/platforms/cloud/infra-management" element={<Navigate to="/cloud-infrastructure-setup-migration" replace />} />
+          <Route path="/platforms/cloud/aws" element={<Navigate to={CLOUD_PAGES.AWS.slug} replace />} />
+          <Route path="/platforms/cloud/azure" element={<Navigate to={CLOUD_PAGES.AZURE.slug} replace />} />
           <Route path="/platforms/workday/consulting-development" element={<Navigate to="/workday-consulting-development" replace />} />
           <Route path="/platforms/workday/managed-services" element={<Navigate to="/workday-support-managed-services" replace />} />
           <Route path="/boomi-integration-services-solutions" element={<Navigate to="/boomi-integration-services" replace />} />

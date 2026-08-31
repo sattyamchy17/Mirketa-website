@@ -148,10 +148,14 @@ export const CAREER_PAGES = {
 };
 
 export const CLOUD_PAGES = {
-  // AWS/Azure/GCP nav entries are reserved but not yet built as pages —
-  // left here as reference only; do not link to them until they exist.
-  AWS: { slug: "/platforms/cloud/aws", label: "AWS" },
-  AZURE: { slug: "/platforms/cloud/azure", label: "Azure" },
+  // GCP nav entry is still reserved but not yet built as a page — left here
+  // as reference only; do not link to it until it exists.
+  // AWS and Azure now have real pages — matching the flat, keyword-rich
+  // slug pattern used by the SETUP_MIGRATION/SITE_RELIABILITY_ENGINEERING/
+  // INFRA_MANAGEMENT siblings below, with their old "/platforms/cloud/*"
+  // nav paths kept as redirects in App.jsx for backward compatibility.
+  AWS: { slug: "/aws-managed-services", label: "AWS Managed Services" },
+  AZURE: { slug: "/azure-managed-services", label: "Azure Managed Services" },
   GCP: { slug: "/platforms/cloud/gcp", label: "Google Cloud Platform" },
   SETUP_MIGRATION: {
     slug: "/cloud-setup-migration",

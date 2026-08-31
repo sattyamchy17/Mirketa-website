@@ -1,0 +1,381 @@
+/* ============================================================
+   AZURE MANAGED SERVICES PAGE
+   Reuses global tokens/utilities from src/css/global.css
+   (.container, .content-wrap, .section, .btn*) plus shared
+   components (Breadcrumb, FaqAccordion, ConsultationSection),
+   matching the visual language of this project's other Cloud
+   platform pages (see src/pages/cloud/AWSManagedServices).
+   ============================================================ */
+
+.azure-managed-services {
+  --azms-hover-navy: #1d4056;
+  overflow-x: clip;
+}
+
+.azms-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.azms-btn.btn-primary:hover {
+  background: var(--azms-hover-navy);
+}
+
+.azms-section-heading {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.azms-section-heading h2 {
+  margin-bottom: 12px;
+}
+
+.azms-section-heading p {
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.azms-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #081b30;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+.azms-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 27, 48, 0.94) 0%, rgba(8, 27, 48, 0.7) 55%, rgba(8, 27, 48, 0.4) 100%);
+}
+
+.azms-breadcrumb {
+  position: relative;
+  z-index: 1;
+}
+
+.azms-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-top: 26px;
+}
+
+.azms-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(33, 173, 101, 0.14);
+  border: 1px solid rgba(33, 173, 101, 0.4);
+  color: #8fe3b5;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.azms-hero h1 {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 18px;
+  line-height: 1.28;
+}
+
+.azms-hero__description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 30px;
+  max-width: 620px;
+}
+
+.azms-hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .azms-hero { padding-top: 120px; padding-bottom: 56px; }
+  .azms-hero h1 { font-size: 27px; }
+  .azms-hero__ctas { flex-direction: column; align-items: stretch; }
+}
+
+/* ============================================================
+   CHECK LIST — shared by "Why a Dedicated Team" and
+   "Why Companies Choose Mirketa"
+   ============================================================ */
+.azms-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 28px;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.azms-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--color-dark-navy);
+  background: var(--color-bg-light);
+  border-radius: var(--radius-btn);
+  padding: 14px 18px;
+}
+
+.azms-check-list li span {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary-green);
+  margin-top: 2px;
+}
+
+.azms-check-list li span svg {
+  width: 100%;
+  height: 100%;
+}
+
+.azms-why-team__closing {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.azms-why-mirketa {
+  background: var(--color-bg-light);
+}
+
+/* ============================================================
+   INLINE CTA — small heading + button used mid-page
+   ============================================================ */
+.azms-inline-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.azms-inline-cta__heading {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--color-dark-navy);
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   WHAT WE MANAGE
+   ============================================================ */
+.azms-manage__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.azms-manage-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.azms-manage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.azms-manage-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.azms-manage-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.azms-manage-card h3 {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  color: var(--color-dark-navy);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.azms-manage-card p {
+  font-size: 14.5px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .azms-manage__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .azms-manage__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.azms-how__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.azms-how-card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-light);
+}
+
+.azms-how-card__number {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.azms-how-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(33, 173, 101, 0.1);
+  color: var(--color-primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.azms-how-card__icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.azms-how-card h3 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  color: var(--color-dark-navy);
+  margin-bottom: 8px;
+}
+
+.azms-how-card p {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .azms-how__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .azms-how__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SAAS / SALESFORCE FIT
+   ============================================================ */
+.azms-saas-fit {
+  background: var(--color-bg-light);
+  text-align: center;
+}
+
+.azms-saas-fit .content-wrap {
+  max-width: 760px;
+}
+
+.azms-saas-fit h2 {
+  margin-bottom: 16px;
+}
+
+.azms-saas-fit p {
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   CLOSING CTA
+   ============================================================ */
+.azms-closing-cta {
+  background: var(--color-dark-navy);
+  padding: 72px 0;
+}
+
+.azms-closing-cta__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.azms-closing-cta__inner h2 {
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.azms-closing-cta__inner p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  .azms-closing-cta { padding: 52px 0; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.azms-faq {
+  background: var(--color-white);
+}
+
+.azms-faq__closing {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+.azms-faq__closing-link {
+  color: var(--color-primary-green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.azms-faq__closing-link:hover,
+.azms-faq__closing-link:focus-visible {
+  color: var(--azms-hover-navy);
+}

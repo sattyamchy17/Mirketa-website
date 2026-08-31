@@ -4,3 +4,5 @@
 export { default as CloudSetupMigration } from "./CloudSetupMigration/index.js";
 export { default as SiteReliabilityEngineering } from "./SiteReliabilityEngineering/index.js";
 export { default as InfrastructureManagement } from "./InfrastructureManagement/index.js";
+export { default as AWSManagedServices } from "./AWSManagedServices/index.js";
+export { default as AzureManagedServices } from "./AzureManagedServices/index.js";

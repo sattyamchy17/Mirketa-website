@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Images } from "../../assets/images/index.js";
@@ -840,7 +841,15 @@ function ArchitectureSection() {
 // ============================================================
 
 function IndustryImpactSection() {
-  const [active, setActive] = useState(INDUSTRY_IMPACT[0].id);
+  // Nav links like "/agentic-orchestration?industry=technology-saas" (see
+  // Header.jsx's "AI-Driven Vulnerability Management" item) can request a
+  // specific tab pre-selected, since that content otherwise sits hidden
+  // behind a tab the visitor has no way to know to click.
+  const [searchParams] = useSearchParams();
+  const requestedIndustry = searchParams.get("industry");
+  const [active, setActive] = useState(() =>
+    requestedIndustry && INDUSTRY_IMPACT.some((i) => i.id === requestedIndustry) ? requestedIndustry : INDUSTRY_IMPACT[0].id
+  );
   const industry = INDUSTRY_IMPACT.find((i) => i.id === active) ?? INDUSTRY_IMPACT[0];
 
   const handleKeyDown = (e, index) => {

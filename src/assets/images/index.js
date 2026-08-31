@@ -432,6 +432,9 @@ import illoWorkdayConsultingOrgDashboard from "./illustrations/workday-consultin
 import heroCloudSetupMigration from "./hero/cloud-setup-migration-hero-bg.svg";
 import heroCloudSreSecurity from "./hero/cloud-sre-security-hero-bg.svg";
 import heroCloudInfraManagement from "./hero/cloud-infra-management-hero-bg.svg";
+import heroAwsManagedServices from "./hero/aws-managed-services-hero-bg.svg";
+import heroAzureManagedServices from "./hero/azure-managed-services-hero-bg.svg";
+import heroVulnerabilityRemediationAgent from "./hero/vulnerability-remediation-agent-hero-bg.svg";
 import illoCloudInfraUtilizationDashboard from "./illustrations/cloud-infra-utilization-dashboard.svg";
 import illoCloudSreUptimeDashboard from "./illustrations/cloud-sre-uptime-dashboard.svg";
 import illoCloudMigrationTimeline from "./illustrations/cloud-migration-timeline.svg";
@@ -866,6 +869,9 @@ export const Images = {
   heroCloudSetupMigration,
   heroCloudSreSecurity,
   heroCloudInfraManagement,
+  heroAwsManagedServices,
+  heroAzureManagedServices,
+  heroVulnerabilityRemediationAgent,
   illoCloudInfraUtilizationDashboard,
   illoCloudSreUptimeDashboard,
   illoCloudMigrationTimeline,

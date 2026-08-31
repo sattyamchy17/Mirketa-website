@@ -486,6 +486,14 @@
   transition: gap var(--transition);
 }
 
+.mega-featured-card__cta--static,
+.mega-featured-card__cta--static:hover,
+.mega-featured-card__cta--static:focus-visible {
+  color: var(--color-gray-400);
+  cursor: default;
+  gap: 6px;
+}
+
 .mega-featured-card__cta:hover {
   gap: 10px;
 }

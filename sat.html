@@ -233,7 +233,7 @@ get_header();
       z-index: 1;
     }
     @media (min-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start; }
     }
     .hero-eyebrow { color: var(--green); }
     .hero-eyebrow .eyebrow-line { background: var(--green); }
@@ -288,6 +288,10 @@ get_header();
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 90px;
+    }
+    @media (min-width: 1024px) {
+      .hero-img-wrap { align-items: flex-start; }
     }
     .hero-img-glow {
       position: absolute;
@@ -299,10 +303,10 @@ get_header();
     }
     .hero-img-wrap img {
       position: relative;
-      border-radius: 1rem;
+      border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
-      animation: heroFloat 6s ease-in-out infinite;
+      box-shadow: 0 16px 40px rgba(15,37,53,0.28);
+      /* animation: heroFloat 6s ease-in-out infinite; */
     }
     @keyframes heroFloat {
       0%, 100% { transform: translateY(0); }
@@ -884,7 +888,7 @@ get_header();
         <div class="hero-img-wrap fade-left" style="transition-delay:0.2s">
           <div class="hero-img-glow"></div>
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663478277191/d5YdYyHYgnD3YYqLkSMtff/altruta_hero_dashboard-gzFo4jMVALpA3P2nFB3Qrs.webp"
+            src="https://mirketa.com/wp-content/uploads/2026/08/altruta.webp"
             alt="AI-powered Salesforce nonprofit dashboard showing donor management, case management, and grant intelligence"
             loading="eager"
           />

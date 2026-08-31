@@ -40,10 +40,8 @@ const NAV_ITEMS = [
             { label: "ALTRUTA - AI Nonprofit Suite", href: "/altruta-ai" },
             { label: "KRATU AI - Clinical AI", href: "/kratu-ai" },
             { label: "Case Rezolver", href: "/salesforce-ai-case-management" },
-            // Existing "Vulnerability Remediation Agent" content on the
-            // Agentic Orchestration page — no dedicated page exists for
-            // this item, so it links there rather than to a new/guessed URL.
-            { label: "AI-Driven Vulnerability Management", href: "/agentic-orchestration" },
+            { label: "AI-Driven Vulnerability Management", href: "/ai-velocity-engines/vulnerability-remediation-agent" },
+            { label: "Supplier Compliance Platform", href: "/ai-velocity-engines/vendor-governance-risk-compliance-engine" },
           ],
         },
       ],
@@ -63,10 +61,10 @@ const NAV_ITEMS = [
       ],
     ],
     featured: {
-      title: "AI Readiness Assessment",
-      description: "Find your fastest path to enterprise AI ROI in as little as 3 weeks.",
-      cta: "Start Assessment",
-      href: "/ai-readiness",
+      title: "Mirketa Podcast Series",
+      description: "Catch the latest episodes on enterprise AI enablement and tech innovation.",
+      cta: "Stream All Episodes",
+      href: "/podcast",
     },
   },
   {
@@ -96,7 +94,7 @@ const NAV_ITEMS = [
               ],
             },
             { label: "Salesforce Developer Services", href: "/salesforce-developer-services" },
-            { label: "Salesforce Support", href: "/platforms/salesforce/support" },
+            { label: "Salesforce Support", href: "/salesforce-managed-services" },
             { label: "Developer Services & Admin Support", href: "/salesforce-managed-services" },
           ],
         },
@@ -140,9 +138,14 @@ const NAV_ITEMS = [
         {
           heading: "Cloud",
           items: [
-            { label: "AWS", href: "/platforms/cloud/aws" },
-            { label: "Azure", href: "/platforms/cloud/azure" },
-            { label: "Google Cloud Platform", href: "/platforms/cloud/gcp" },
+            { label: "AWS Managed Services", href: "/aws-managed-services" },
+            { label: "Azure Managed Services", href: "/azure-managed-services" },
+            // GCP nav entry is still reserved but not yet built as a page
+            // (see CLOUD_PAGES.GCP in pageSlugs.js) — rendered without an
+            // href, matching how other not-yet-built items are handled
+            // elsewhere in this menu, rather than linking to a route that
+            // was never registered.
+            { label: "Google Cloud Platform" },
             { label: "Cloud Setup & Migration", href: "/cloud-setup-migration" },
             { label: "Site Reliability Engineering", href: "/cloud-site-reliability-engineering" },
             { label: "Cloud Infrastructure Management", href: "/cloud-infrastructure-setup-migration" },
@@ -246,8 +249,10 @@ const NAV_ITEMS = [
     featured: {
       title: "View All Products",
       description: "Explore Mirketa's full library of pre-built accelerators and IP.",
+      // No /products hub page exists yet — rendered without an href
+      // (see the conditional render below) rather than linking to a
+      // route that was never registered.
       cta: "Browse Products",
-      href: "/products",
     },
   },
   {
@@ -278,16 +283,13 @@ const NAV_ITEMS = [
           // previously pointed at /company/partners/* pages that never
           // existed. `platformStyle` gives this group's rows the green
           // hover/active accent instead of the sitewide default blue.
-          // AWS has no dedicated page yet (see the AWS entry's comment in
-          // src/config/pageSlugs.js) — rendered without an href rather
-          // than guessing a destination.
           platformStyle: true,
           items: [
             { label: "Salesforce", href: "/salesforce", activePrefix: "/platforms/salesforce" },
             { label: "ServiceNow", href: "/servicenow", activePrefix: "/servicenow" },
             { label: "Oracle", href: "/oracle-fusion-applications-implementation", activePrefix: "/platforms/oracle" },
             { label: "NetSuite", href: "/netsuite-implementation-development", activePrefix: "/platforms/netsuite" },
-            { label: "AWS" },
+            { label: "AWS", href: "/aws-managed-services", activePrefix: "/aws-managed-services" },
           ],
         },
       ],
@@ -644,10 +646,17 @@ export default function Header() {
                         <div className="mega-featured-card">
                           <h4>{panelContentItem.featured.title}</h4>
                           <p>{panelContentItem.featured.description}</p>
-                          <Link to={panelContentItem.featured.href} className="mega-featured-card__cta">
-                            {panelContentItem.featured.cta}
-                            <span className="btn-arrow">&rarr;</span>
-                          </Link>
+                          {panelContentItem.featured.href ? (
+                            <Link to={panelContentItem.featured.href} className="mega-featured-card__cta">
+                              {panelContentItem.featured.cta}
+                              <span className="btn-arrow">&rarr;</span>
+                            </Link>
+                          ) : (
+                            // No real destination exists yet for this featured CTA — a plain,
+                            // non-interactive label rather than a guessed or dead link (same
+                            // treatment used for not-yet-built items elsewhere in this menu).
+                            <span className="mega-featured-card__cta mega-featured-card__cta--static">{panelContentItem.featured.cta}</span>
+                          )}
                         </div>
                       </div>
                     )}
