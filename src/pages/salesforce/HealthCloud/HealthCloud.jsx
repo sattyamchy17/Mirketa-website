@@ -687,7 +687,6 @@ function ChallengesSection() {
             <h2 id="hlc-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="hlc-challenges__illo" loading="lazy" />
         </div>
         <div className="hlc-challenges__grid hlc-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -722,7 +721,6 @@ function ServicesSection() {
             <h2 id="hlc-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="hlc-services__illo" loading="lazy" />
         </div>
         <div className="hlc-services__grid hlc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -756,7 +754,6 @@ function WhyHealthCloudSection() {
     <section className="section hlc-why-cloud" aria-labelledby="hlc-why-cloud-heading">
       <div className="container">
         <div className="hlc-why-cloud__head hlc-reveal">
-          <img src={WHY_HEALTH_CLOUD.illo} alt="" aria-hidden="true" className="hlc-why-cloud__illo" loading="lazy" />
           <div className="section-heading">
             <p className="hlc-eyebrow">{WHY_HEALTH_CLOUD.eyebrow}</p>
             <h2 id="hlc-why-cloud-heading">{WHY_HEALTH_CLOUD.heading}</h2>
@@ -817,7 +814,6 @@ function AiHealthCloudSection() {
             <h2 id="hlc-ai-heading">{AI_HEALTH_CLOUD.heading}</h2>
             <p>{AI_HEALTH_CLOUD.intro}</p>
           </div>
-          <img src={AI_HEALTH_CLOUD.illo} alt="" aria-hidden="true" className="hlc-ai__illo" loading="lazy" />
         </div>
         <div className="hlc-ai__grid hlc-reveal-stagger">
           {AI_HEALTH_CLOUD.items.map((a) => (
@@ -847,7 +843,6 @@ function IntegrationsSection() {
     <section className="section hlc-integrations" aria-labelledby="hlc-integrations-heading">
       <div className="container">
         <div className="hlc-integrations__head hlc-reveal">
-          <img src={INTEGRATIONS.illo} alt="" aria-hidden="true" className="hlc-integrations__illo" loading="lazy" />
           <div className="section-heading">
             <p className="hlc-eyebrow">{INTEGRATIONS.eyebrow}</p>
             <h2 id="hlc-integrations-heading">{INTEGRATIONS.heading}</h2>
@@ -909,7 +904,6 @@ function BenefitsSection() {
             <h2 id="hlc-benefits-heading">{BENEFITS.heading}</h2>
             <p>{BENEFITS.intro}</p>
           </div>
-          <img src={BENEFITS.illo} alt="" aria-hidden="true" className="hlc-benefits__illo" loading="lazy" />
         </div>
         <div className="hlc-benefits__grid hlc-reveal-stagger">
           {BENEFITS.items.map((b) => (

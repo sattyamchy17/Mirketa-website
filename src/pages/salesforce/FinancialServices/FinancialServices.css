@@ -213,8 +213,7 @@
 .fsc-services__head,
 .fsc-ai__head,
 .fsc-process__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
@@ -222,8 +221,7 @@
 
 .fsc-capabilities__head,
 .fsc-integrations__head {
-  display: grid;
-  grid-template-columns: 220px 1fr;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;

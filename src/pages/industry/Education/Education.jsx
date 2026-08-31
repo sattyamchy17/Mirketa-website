@@ -562,7 +562,6 @@ function ServicesSection() {
     <section className="section edu-services" aria-labelledby="edu-services-heading">
       <div className="container">
         <div className="edu-services__head edu-reveal">
-          <img src={Images.industryEducation} alt="" aria-hidden="true" className="edu-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="edu-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="edu-services-heading">{SERVICES.heading}</h2>

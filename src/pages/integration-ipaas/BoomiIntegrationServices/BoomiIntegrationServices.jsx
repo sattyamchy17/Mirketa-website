@@ -23,7 +23,6 @@ import ConsultationSection from "../../../components/ConsultationSection/Consult
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./BoomiIntegrationServices.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -510,23 +509,11 @@ function ServiceOverviewSection() {
     <section className="section bis-overview" aria-labelledby="bis-overview-heading">
       <div className="container bis-overview__grid">
         <div className="bis-reveal-left">
-          <img src={Images.illoBoomiPipelineDashboard} alt="" aria-hidden="true" className="bis-overview__illo" loading="lazy" />
           <p className="bis-eyebrow">{SERVICE_OVERVIEW.eyebrow}</p>
           <h2 id="bis-overview-heading">{SERVICE_OVERVIEW.heading}</h2>
           {SERVICE_OVERVIEW.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="bis-reveal-right">
-          <AnalyticsPanel
-            title="Boomi Environment Health"
-            donutPercent={99}
-            donutLabel="Trailing 90-day Atom uptime across all environments"
-            metrics={[
-              { value: "62", label: "Active processes" },
-              { value: "40+", label: "Connectors in use" },
-            ]}
-          />
         </div>
       </div>
     </section>

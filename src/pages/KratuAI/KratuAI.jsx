@@ -518,7 +518,6 @@ function PillarsSection() {
             <p className="kr-eyebrow">{PILLARS.eyebrow}</p>
             <h2 id="kr-pillars-heading">{PILLARS.heading}</h2>
           </div>
-          <img src={Images.illoKratuAmbientDocumentationDashboard} alt="" aria-hidden="true" className="kr-pillars__illo" loading="lazy" />
         </div>
         <p className="kr-pillars__stat kr-reveal">{PILLARS.stat}</p>
         <div className="kr-pillars__spine kr-reveal-stagger">

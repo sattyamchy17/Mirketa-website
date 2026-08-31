@@ -573,7 +573,6 @@ function ChallengesSection() {
             <h2 id="scc-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="scc-challenges__illo" loading="lazy" />
         </div>
         <div className="scc-challenges__grid scc-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -603,7 +602,6 @@ function ServicesSection() {
             <h2 id="scc-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="scc-services__illo" loading="lazy" />
         </div>
         <div className="scc-services__grid scc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -667,7 +665,6 @@ function FeaturesSection() {
     <section className="section scc-features" id="features" aria-labelledby="scc-features-heading">
       <div className="container">
         <div className="scc-features__head scc-reveal">
-          <img src={FEATURES.illo} alt="" aria-hidden="true" className="scc-features__illo" loading="lazy" />
           <div className="section-heading">
             <p className="scc-eyebrow">{FEATURES.eyebrow}</p>
             <h2 id="scc-features-heading">{FEATURES.heading}</h2>
@@ -732,7 +729,6 @@ function ProcessSection() {
             <h2 id="scc-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="scc-process__illo" loading="lazy" />
         </div>
         <div className="scc-process__rail scc-reveal-stagger">
           {PROCESS.steps.map((p, i) => (
@@ -763,7 +759,6 @@ function AiServiceCloudSection() {
             <h2 id="scc-ai-heading">{AI_SERVICE_CLOUD.heading}</h2>
             <p>{AI_SERVICE_CLOUD.intro}</p>
           </div>
-          <img src={AI_SERVICE_CLOUD.illo} alt="" aria-hidden="true" className="scc-ai__illo" loading="lazy" />
         </div>
         <div className="scc-ai__grid scc-reveal-stagger">
           {AI_SERVICE_CLOUD.items.map((a) => (

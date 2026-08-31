@@ -555,7 +555,6 @@ function ServicesSection() {
     <section className="section dsm-services" aria-labelledby="dsm-services-heading">
       <div className="container">
         <div className="dsm-services__head dsm-reveal">
-          <img src={Images.illoDuplicateSearchMergeBeforeAfter} alt="" aria-hidden="true" className="dsm-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="dsm-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="dsm-services-heading">{SERVICES.heading}</h2>

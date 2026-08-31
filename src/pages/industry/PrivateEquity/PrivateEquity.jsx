@@ -544,7 +544,6 @@ function ServicesSection() {
     <section className="section pe-services" aria-labelledby="pe-services-heading">
       <div className="container">
         <div className="pe-services__head pe-reveal">
-          <img src={Images.illoIndustryPrivateEquityDashboard} alt="" aria-hidden="true" className="pe-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="pe-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="pe-services-heading">{SERVICES.heading}</h2>

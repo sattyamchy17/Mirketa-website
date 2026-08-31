@@ -564,7 +564,6 @@ function ConsultingServicesSection() {
             <h2 id="slc-services-heading">{CONSULTING_SERVICES.heading}</h2>
             <p>{CONSULTING_SERVICES.intro}</p>
           </div>
-          <img src={CONSULTING_SERVICES.illo} alt="" aria-hidden="true" className="slc-services__illo" loading="lazy" />
         </div>
         <div className="slc-services__grid slc-reveal-stagger">
           {CONSULTING_SERVICES.items.map((s) => (
@@ -597,7 +596,6 @@ function FeaturesSection() {
     <section className="section slc-features" id="features" aria-labelledby="slc-features-heading">
       <div className="container">
         <div className="slc-features__head slc-reveal">
-          <img src={FEATURES.illo} alt="" aria-hidden="true" className="slc-features__illo" loading="lazy" />
           <div className="section-heading">
             <p className="slc-eyebrow">{FEATURES.eyebrow}</p>
             <h2 id="slc-features-heading">{FEATURES.heading}</h2>
@@ -636,7 +634,6 @@ function AiSalesCloudSection() {
             <h2 id="slc-ai-heading">{AI_SALES_CLOUD.heading}</h2>
             <p>{AI_SALES_CLOUD.intro}</p>
           </div>
-          <img src={AI_SALES_CLOUD.illo} alt="" aria-hidden="true" className="slc-ai__illo" loading="lazy" />
         </div>
         <div className="slc-ai__grid slc-reveal-stagger">
           {AI_SALES_CLOUD.items.map((a) => (
@@ -666,7 +663,6 @@ function IntegrationsSection() {
     <section className="section slc-integrations" aria-labelledby="slc-integrations-heading">
       <div className="container">
         <div className="slc-integrations__head slc-reveal">
-          <img src={INTEGRATIONS.illo} alt="" aria-hidden="true" className="slc-integrations__illo" loading="lazy" />
           <div className="section-heading">
             <p className="slc-eyebrow">{INTEGRATIONS.eyebrow}</p>
             <h2 id="slc-integrations-heading">{INTEGRATIONS.heading}</h2>
@@ -723,7 +719,6 @@ function ProcessSection() {
             <h2 id="slc-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="slc-process__illo" loading="lazy" />
         </div>
         <div className="slc-process__rail slc-reveal-stagger">
           {PROCESS.steps.map((p, i) => (
@@ -754,7 +749,6 @@ function BenefitsSection() {
             <h2 id="slc-benefits-heading">{BENEFITS.heading}</h2>
             <p>{BENEFITS.intro}</p>
           </div>
-          <img src={BENEFITS.illo} alt="" aria-hidden="true" className="slc-benefits__illo" loading="lazy" />
         </div>
         <div className="slc-benefits__grid slc-reveal-stagger">
           {BENEFITS.stats.map((s) => (
@@ -778,7 +772,6 @@ function CaseStudiesSection() {
     <section className="section slc-cases" aria-labelledby="slc-cases-heading">
       <div className="container">
         <div className="slc-cases__head slc-reveal">
-          <img src={CASE_STUDIES.illo} alt="" aria-hidden="true" className="slc-cases__illo" loading="lazy" />
           <div className="section-heading">
             <p className="slc-eyebrow">{CASE_STUDIES.eyebrow}</p>
             <h2 id="slc-cases-heading">{CASE_STUDIES.heading}</h2>

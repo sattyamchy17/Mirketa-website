@@ -295,11 +295,14 @@
    ORACLE HCM CONSULTING SERVICES — 2-col icon card grid
    ============================================================ */
 .ohc-services__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 28px;
   align-items: center;
   margin-bottom: 24px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ohc-services__illo {

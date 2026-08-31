@@ -536,7 +536,6 @@ function ServicesSection() {
     <section className="section adp-services" aria-labelledby="adp-services-heading">
       <div className="container">
         <div className="adp-services__head adp-reveal">
-          <img src={Images.illoElixirApiPortalConsole} alt="" aria-hidden="true" className="adp-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="adp-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="adp-services-heading">{SERVICES.heading}</h2>

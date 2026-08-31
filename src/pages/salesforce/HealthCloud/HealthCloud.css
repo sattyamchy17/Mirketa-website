@@ -266,8 +266,7 @@
 .hlc-services__head,
 .hlc-ai__head,
 .hlc-benefits__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
@@ -275,8 +274,7 @@
 
 .hlc-why-cloud__head,
 .hlc-integrations__head {
-  display: grid;
-  grid-template-columns: 220px 1fr;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;

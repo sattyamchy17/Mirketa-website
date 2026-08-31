@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Autoplay, Pagination, Keyboard, A11y } from "swiper/modules";
 import { Images } from "../../assets/images/index.js";
-import { getLatestPosts, getLatestPostByCategory } from "../../blog/blogUtils.js";
+import { getLatestPosts, getLatestPostByCategory, getPostHref } from "../../blog/blogUtils.js";
 
 export const playIcon = Images.iconPlay;
 export const quoteIcon = Images.iconQuote;
@@ -351,7 +351,7 @@ export const FEATURED_CASE_STUDY = latestCustomerSuccessPost
   ? {
       title: latestCustomerSuccessPost.title,
       description: latestCustomerSuccessPost.excerpt,
-      href: `/blog/${latestCustomerSuccessPost.slug}`,
+      href: getPostHref(latestCustomerSuccessPost),
     }
   : {
       title: "Fortune 500 Financial Services Transformation",
@@ -468,7 +468,7 @@ function mapPostToInsight(post) {
     date: formatInsightDate(post.publishedDate),
     title: post.title,
     excerpt: post.excerpt,
-    href: `/blog/${post.slug}`,
+    href: getPostHref(post),
     image: post.featuredImage || Images.aiNetworkPattern,
   };
 }

@@ -15,7 +15,6 @@ import ConsultationSection from "../../../components/ConsultationSection/Consult
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./Ecommerce.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -519,23 +518,11 @@ function SolutionSection() {
     <section className="section ecm-solution" aria-labelledby="ecm-solution-heading">
       <div className="container ecm-solution__grid">
         <div className="ecm-reveal-left">
-          <img src={Images.illoIndustryEcommerceDashboard} alt="" aria-hidden="true" className="ecm-solution__illo" loading="lazy" />
           <p className="ecm-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="ecm-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="ecm-reveal-right">
-          <AnalyticsPanel
-            title="Omnichannel Inventory Accuracy"
-            donutPercent={99}
-            donutLabel="Order sync accuracy across every channel"
-            metrics={[
-              { value: "28%", label: "Higher cart conversion" },
-              { value: "92%", label: "Same-day fulfillment" },
-            ]}
-          />
         </div>
       </div>
     </section>

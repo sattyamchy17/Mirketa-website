@@ -585,7 +585,6 @@ function ModulesSection() {
             <h2 id="ara-modules-heading">The full RCA stack, configured end to end.</h2>
             <p>Aria covers every configuration area across CPQ, Billing, and CLM — generating a single validated change set you deploy to your sandbox or production org.</p>
           </div>
-          <img src={Images.illoAriaQuoteToCashPipeline} alt="" aria-hidden="true" className="ara-modules__illo" loading="lazy" />
         </div>
 
         <div className="ara-modules__grid ara-reveal-stagger">

@@ -620,7 +620,6 @@ function WorkflowCategoriesSection() {
     <section className="section snh-workflows" aria-labelledby="snh-workflows-heading">
       <div className="container">
         <div className="snh-workflows__head snh-reveal">
-          <img src={Images.illoServicenowHubDashboard} alt="" aria-hidden="true" className="snh-workflows__illo" loading="lazy" />
           <div className="section-heading">
             <p className="snh-eyebrow">{WORKFLOW_CATEGORIES.eyebrow}</p>
             <h2 id="snh-workflows-heading">{WORKFLOW_CATEGORIES.heading}</h2>

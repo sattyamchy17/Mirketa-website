@@ -471,8 +471,7 @@
 }
 
 .kr-pillars__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   align-items: center;
   gap: 32px;
   margin-bottom: 56px;

@@ -548,7 +548,6 @@ function ServicesSection() {
     <section className="section hct-services" aria-labelledby="hct-services-heading">
       <div className="container">
         <div className="hct-services__head hct-reveal">
-          <img src={Images.industryHealthcare} alt="" aria-hidden="true" className="hct-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="hct-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="hct-services-heading">{SERVICES.heading}</h2>

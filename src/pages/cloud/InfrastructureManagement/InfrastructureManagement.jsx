@@ -14,7 +14,6 @@ import HeroVisual from "../../../components/HeroVisual/HeroVisual.jsx";
 import ConsultationSection from "../../../components/ConsultationSection/ConsultationSection.jsx";
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
 import "./InfrastructureManagement.css";
 
@@ -462,23 +461,11 @@ function SolutionSection() {
     <section className="section cim-solution" aria-labelledby="cim-solution-heading">
       <div className="container cim-solution__grid">
         <div className="cim-reveal-left">
-          <img src={Images.illoCloudInfraUtilizationDashboard} alt="" aria-hidden="true" className="cim-solution__illo" loading="lazy" />
           <p className="cim-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="cim-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="cim-reveal-right">
-          <AnalyticsPanel
-            title="Infrastructure-as-Code Coverage"
-            donutPercent={96}
-            donutLabel="Cloud resources managed as version-controlled infrastructure as code"
-            metrics={[
-              { value: "96%", label: "IaC coverage" },
-              { value: "29%", label: "Cost savings" },
-            ]}
-          />
         </div>
       </div>
     </section>

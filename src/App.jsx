@@ -6,6 +6,11 @@ import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Podcast from "./pages/Podcast/Podcast.jsx";
+import MasteringDataManagementNonprofit from "./pages/webinars/MasteringDataManagementNonprofit/MasteringDataManagementNonprofit.jsx";
+import DigitalTransformationNonprofits from "./pages/webinars/DigitalTransformationNonprofits/DigitalTransformationNonprofits.jsx";
+import HowMachineLearningWorks from "./pages/webinars/HowMachineLearningWorks/HowMachineLearningWorks.jsx";
+import DelphiSalesforceAIAnalytics from "./pages/webinars/DelphiSalesforceAIAnalytics/DelphiSalesforceAIAnalytics.jsx";
+import MasterDataManagementMDM from "./pages/webinars/MasterDataManagementMDM/MasterDataManagementMDM.jsx";
 import VendorGovernanceRiskComplianceEngine from "./pages/VendorGovernanceRiskComplianceEngine/VendorGovernanceRiskComplianceEngine.jsx";
 import VulnerabilityRemediationAgent from "./pages/VulnerabilityRemediationAgent/VulnerabilityRemediationAgent.jsx";
 import AIConsulting from "./pages/AIConsulting/AIConsulting.jsx";
@@ -87,6 +92,11 @@ export default function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/company/contact" element={<Contact />} />
           <Route path="/podcast" element={<Podcast />} />
+          <Route path="/webinars/mastering-data-management-nonprofit-organizations" element={<MasteringDataManagementNonprofit />} />
+          <Route path="/webinars/digital-transformation-for-nonprofits" element={<DigitalTransformationNonprofits />} />
+          <Route path="/webinars/how-machine-learning-works" element={<HowMachineLearningWorks />} />
+          <Route path="/webinars/delphi-salesforce-ai-analytics" element={<DelphiSalesforceAIAnalytics />} />
+          <Route path="/webinars/master-data-management-mdm" element={<MasterDataManagementMDM />} />
           <Route path="/ai-velocity-engines/vendor-governance-risk-compliance-engine" element={<VendorGovernanceRiskComplianceEngine />} />
           <Route path="/ai-velocity-engines/vulnerability-remediation-agent" element={<VulnerabilityRemediationAgent />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />

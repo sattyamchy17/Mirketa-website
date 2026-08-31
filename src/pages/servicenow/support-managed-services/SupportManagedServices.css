@@ -309,7 +309,7 @@
 }
 
 .snms-sla__head {
-  display: flex;
+  display: block;
   align-items: center;
   gap: 32px;
   margin-bottom: 32px;

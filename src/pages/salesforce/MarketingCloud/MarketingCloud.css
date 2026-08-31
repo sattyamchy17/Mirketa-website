@@ -241,16 +241,14 @@
 .mkc-services__head,
 .mkc-ai__head,
 .mkc-process__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
 }
 
 .mkc-products__head {
-  display: grid;
-  grid-template-columns: 220px 1fr;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;

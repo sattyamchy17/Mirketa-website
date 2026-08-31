@@ -552,7 +552,6 @@ function ServicesSection() {
     <section className="section fc-services" aria-labelledby="fc-services-heading">
       <div className="container">
         <div className="fc-services__head fc-reveal">
-          <img src={Images.illoFinacastForecastChart} alt="" aria-hidden="true" className="fc-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="fc-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="fc-services-heading">{SERVICES.heading}</h2>

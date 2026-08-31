@@ -2,7 +2,7 @@ import { useMemo, useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Seo from "../../components/Seo/Seo.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
-import { getAllPosts, getPostsByCategory } from "../../blog/blogUtils.js";
+import { getAllPosts, getPostsByCategory, getPostHref } from "../../blog/blogUtils.js";
 import { BLOG_CATEGORIES } from "../../blog/blogCategories.js";
 import "./Insights.css";
 
@@ -53,7 +53,7 @@ function InsightsSidebar() {
           <p className="insights-side-empty">No blog posts published yet.</p>
         ) : (
           latestBlogs.map((post) => (
-            <Link to={`/blog/${post.slug}`} className="insights-latest-item" key={post.slug}>
+            <Link to={getPostHref(post)} className="insights-latest-item" key={post.slug}>
               <span
                 className="insights-latest-thumb"
                 style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}
@@ -88,7 +88,7 @@ function InsightsSidebar() {
                 Customer Success
               </span>
               <p className="insights-story-headline">{post.excerpt || post.title}</p>
-              <Link to={`/blog/${post.slug}`} className="insights-link-arrow">
+              <Link to={getPostHref(post)} className="insights-link-arrow">
                 Read case study <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
@@ -110,7 +110,7 @@ function InsightsSidebar() {
 }
 
 function FeaturedInsight({ post }) {
-  const detailHref = `/blog/${post.slug}`;
+  const detailHref = getPostHref(post);
 
   return (
     <div className="insights-featured" style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}>

@@ -493,7 +493,6 @@ function CloudsSection() {
             <p className="scd-eyebrow">Salesforce Clouds We Implement</p>
             <h2 id="scd-clouds-heading">Deep Expertise Across the Clouds That Matter Most</h2>
           </div>
-          <img src={Images.illoSalesforceCloudsArchitectureMap} alt="" aria-hidden="true" className="scd-clouds__illo" loading="lazy" />
         </div>
 
         <div className="scd-clouds__accordion scd-reveal-stagger">

@@ -638,7 +638,6 @@ function FeaturesFlowSection() {
     <section className="section sncr-features" aria-labelledby="sncr-features-heading">
       <div className="container">
         <div className="sncr-features__head sncr-reveal">
-          <img src={Images.illoServicenowAppBuilder} alt="" aria-hidden="true" className="sncr-features__illo" loading="lazy" />
           <div className="section-heading">
             <p className="sncr-eyebrow">Core Capabilities</p>
             <h2 id="sncr-features-heading">The ServiceNow Modules Behind a Governed Creator Workflow</h2>

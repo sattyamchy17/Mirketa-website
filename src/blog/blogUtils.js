@@ -15,6 +15,20 @@ export function cleanSlug(slug) {
   return String(slug || "").replace(/^\/+|\/+$/g, "");
 }
 
+/**
+ * Where a post should actually link to. Most posts live entirely inside
+ * the generic /blog/:slug template, so this defaults to that route. A
+ * post can instead declare its own real page (e.g. a webinar with a
+ * hero, video embed, and dedicated sections that /blog/:slug can't
+ * render) via an explicit `href` — every card/listing/sidebar across
+ * the site should resolve links through this helper instead of
+ * building `/blog/${slug}` by hand, so a post with a custom `href`
+ * shows up correctly everywhere with no per-component changes.
+ */
+export function getPostHref(post) {
+  return post?.href || `/blog/${post?.slug}`;
+}
+
 function toTimestamp(post) {
   const t = new Date(post.publishedDate).getTime();
   return Number.isFinite(t) ? t : 0;

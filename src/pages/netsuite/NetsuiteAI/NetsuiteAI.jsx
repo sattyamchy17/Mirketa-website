@@ -16,7 +16,6 @@ import RelatedServices from "../../../components/RelatedServices/RelatedServices
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import FinanceChart from "../../../components/illustrations/FinanceChart/FinanceChart.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./NetsuiteAI.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -493,23 +492,11 @@ function SolutionSection() {
     <section className="section nsa-solution" aria-labelledby="nsa-solution-heading">
       <div className="container nsa-solution__grid">
         <div className="nsa-reveal-left">
-          <img src={Images.illoNetsuiteAiForecastDashboard} alt="" aria-hidden="true" className="nsa-solution__illo" loading="lazy" />
           <p className="nsa-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="nsa-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="nsa-reveal-right">
-          <AnalyticsPanel
-            title="AI Recommendation Adoption"
-            donutPercent={88}
-            donutLabel="AI-drafted recommendations approved as-drafted after 90 days"
-            metrics={[
-              { value: "88%", label: "Approved as-drafted at 90 days" },
-              { value: "100%", label: "Actions logged to the audit trail" },
-            ]}
-          />
         </div>
       </div>
     </section>

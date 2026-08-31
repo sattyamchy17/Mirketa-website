@@ -708,7 +708,6 @@ function ChallengesSection() {
             <h2 id="asp-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="asp-challenges__illo" loading="lazy" />
         </div>
         <div className="asp-challenges__grid asp-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -743,7 +742,6 @@ function ServicesSection() {
             <h2 id="asp-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="asp-services__illo" loading="lazy" />
         </div>
         <div className="asp-services__grid asp-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -767,7 +765,6 @@ function AdminServicesSection() {
     <section className="section asp-admin" aria-labelledby="asp-admin-heading">
       <div className="container">
         <div className="asp-admin__head asp-reveal">
-          <img src={ADMIN_SERVICES.illo} alt="" aria-hidden="true" className="asp-admin__illo" loading="lazy" />
           <div className="section-heading">
             <p className="asp-eyebrow">{ADMIN_SERVICES.eyebrow}</p>
             <h2 id="asp-admin-heading">{ADMIN_SERVICES.heading}</h2>
@@ -914,7 +911,6 @@ function EngagementModelsSection() {
             <h2 id="asp-engagement-heading">{ENGAGEMENT_MODELS.heading}</h2>
             <p>{ENGAGEMENT_MODELS.intro}</p>
           </div>
-          <img src={ENGAGEMENT_MODELS.illo} alt="" aria-hidden="true" className="asp-engagement__illo" loading="lazy" />
         </div>
         <div className="asp-engagement__grid asp-reveal-stagger">
           {ENGAGEMENT_MODELS.items.map((e) => (
@@ -984,7 +980,6 @@ function CaseStudiesSection() {
     <section className="section asp-cases" aria-labelledby="asp-cases-heading">
       <div className="container">
         <div className="asp-cases__head asp-reveal">
-          <img src={CASE_STUDIES.illo} alt="" aria-hidden="true" className="asp-cases__illo" loading="lazy" />
           <div className="section-heading">
             <p className="asp-eyebrow">{CASE_STUDIES.eyebrow}</p>
             <h2 id="asp-cases-heading">{CASE_STUDIES.heading}</h2>

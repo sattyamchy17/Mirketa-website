@@ -15,7 +15,6 @@ import ConsultationSection from "../../../components/ConsultationSection/Consult
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./Wholesale.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -520,23 +519,11 @@ function SolutionSection() {
     <section className="section whd-solution" aria-labelledby="whd-solution-heading">
       <div className="container whd-solution__grid">
         <div className="whd-reveal-left">
-          <img src={Images.illoIndustryWholesaleDashboard} alt="" aria-hidden="true" className="whd-solution__illo" loading="lazy" />
           <p className="whd-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="whd-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="whd-reveal-right">
-          <AnalyticsPanel
-            title="Inventory Health"
-            donutPercent={99}
-            donutLabel="Inventory accuracy across all warehouses"
-            metrics={[
-              { value: "99.3%", label: "Inventory accuracy" },
-              { value: "-27%", label: "Stockout rate" },
-            ]}
-          />
         </div>
       </div>
     </section>

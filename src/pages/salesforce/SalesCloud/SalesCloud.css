@@ -268,17 +268,10 @@
 .slc-process__head,
 .slc-benefits__head,
 .slc-cases__head {
-  display: grid;
-  grid-template-columns: 1fr 240px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
-}
-
-.slc-features__head,
-.slc-integrations__head,
-.slc-cases__head {
-  grid-template-columns: 240px 1fr;
 }
 
 .slc-services__illo,

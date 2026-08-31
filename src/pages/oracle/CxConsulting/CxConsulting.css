@@ -296,11 +296,14 @@
    ORACLE CX CONSULTING SERVICES — 3-col compact card grid
    ============================================================ */
 .ocx-services__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 28px;
   align-items: center;
   margin-bottom: 24px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ocx-services__illo {

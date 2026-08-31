@@ -15,7 +15,6 @@ import ConsultationSection from "../../../components/ConsultationSection/Consult
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./MuleSoftImplementation.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -493,23 +492,11 @@ function ServiceOverviewSection() {
     <section className="section mim-overview" aria-labelledby="mim-overview-heading">
       <div className="container mim-overview__grid">
         <div className="mim-reveal-left">
-          <img src={Images.illoMulesoftGatewayDashboard} alt="" aria-hidden="true" className="mim-overview__illo" loading="lazy" />
           <p className="mim-eyebrow">{SERVICE_OVERVIEW.eyebrow}</p>
           <h2 id="mim-overview-heading">{SERVICE_OVERVIEW.heading}</h2>
           {SERVICE_OVERVIEW.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="mim-reveal-right">
-          <AnalyticsPanel
-            title="Anypoint Platform Health"
-            donutPercent={68}
-            donutLabel="Average API reuse rate across business units"
-            metrics={[
-              { value: "42", label: "APIs in production" },
-              { value: "99.97%", label: "CloudHub uptime" },
-            ]}
-          />
         </div>
       </div>
     </section>

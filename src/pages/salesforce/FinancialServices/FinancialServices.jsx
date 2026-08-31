@@ -688,7 +688,6 @@ function ChallengesSection() {
             <h2 id="fsc-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="fsc-challenges__illo" loading="lazy" />
         </div>
         <div className="fsc-challenges__grid fsc-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -723,7 +722,6 @@ function ServicesSection() {
             <h2 id="fsc-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="fsc-services__illo" loading="lazy" />
         </div>
         <div className="fsc-services__grid fsc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -757,7 +755,6 @@ function CapabilitiesSection() {
     <section className="section fsc-capabilities" aria-labelledby="fsc-capabilities-heading">
       <div className="container">
         <div className="fsc-capabilities__head fsc-reveal">
-          <img src={CAPABILITIES.illo} alt="" aria-hidden="true" className="fsc-capabilities__illo" loading="lazy" />
           <div className="section-heading">
             <p className="fsc-eyebrow">{CAPABILITIES.eyebrow}</p>
             <h2 id="fsc-capabilities-heading">{CAPABILITIES.heading}</h2>
@@ -817,7 +814,6 @@ function AiFscSection() {
             <h2 id="fsc-ai-heading">{AI_FSC.heading}</h2>
             <p>{AI_FSC.intro}</p>
           </div>
-          <img src={AI_FSC.illo} alt="" aria-hidden="true" className="fsc-ai__illo" loading="lazy" />
         </div>
         <div className="fsc-ai__grid fsc-reveal-stagger">
           {AI_FSC.items.map((a) => (
@@ -847,7 +843,6 @@ function IntegrationsSection() {
     <section className="section fsc-integrations" id="integrations" aria-labelledby="fsc-integrations-heading">
       <div className="container">
         <div className="fsc-integrations__head fsc-reveal">
-          <img src={INTEGRATIONS.illo} alt="" aria-hidden="true" className="fsc-integrations__illo" loading="lazy" />
           <div className="section-heading">
             <p className="fsc-eyebrow">{INTEGRATIONS.eyebrow}</p>
             <h2 id="fsc-integrations-heading">{INTEGRATIONS.heading}</h2>
@@ -881,7 +876,6 @@ function ProcessSection() {
             <h2 id="fsc-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="fsc-process__illo" loading="lazy" />
         </div>
         <div className="fsc-process__rail fsc-reveal-stagger">
           {PROCESS.steps.map((p, i) => (

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getPostHref } from "../../blog/blogUtils.js";
 import "./BlogCard.css";
 
 function formatDate(dateString) {
@@ -14,11 +15,15 @@ function formatDate(dateString) {
 // src/blog/blogUtils.js. All props below `post` are optional and
 // default to the standard /blog behavior (category badge, "Read More"
 // to /blog/:slug); the Insights hub overrides them per category
-// without changing anything for /blog itself.
-export default function BlogCard({ post, badgeLabel, ctaLabel = "Read More", href, external = false, download = false }) {
-  const detailHref = `/blog/${post.slug}`;
+// without changing anything for /blog itself. A post with its own
+// standalone page (e.g. a webinar) declares `href` in its own data
+// file — getPostHref resolves the thumbnail/title/CTA to that real
+// page everywhere this card is used, with no per-caller changes.
+export default function BlogCard({ post, badgeLabel, ctaLabel, href, external = false, download = false }) {
+  const detailHref = getPostHref(post);
   const ctaHref = href || detailHref;
   const badge = badgeLabel ?? post.category;
+  const resolvedCtaLabel = ctaLabel || post.ctaLabel || "Read More";
 
   return (
     <article className="blog-card">
@@ -42,12 +47,12 @@ export default function BlogCard({ post, badgeLabel, ctaLabel = "Read More", hre
           )}
           {external ? (
             <a href={ctaHref} className="blog-card__link" target="_blank" rel="noopener noreferrer" {...(download ? { download: true } : {})}>
-              {ctaLabel} <span aria-hidden="true">&rarr;</span>
+              {resolvedCtaLabel} <span aria-hidden="true">&rarr;</span>
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
           ) : (
             <Link to={ctaHref} className="blog-card__link">
-              {ctaLabel} <span aria-hidden="true">&rarr;</span>
+              {resolvedCtaLabel} <span aria-hidden="true">&rarr;</span>
             </Link>
           )}
         </div>

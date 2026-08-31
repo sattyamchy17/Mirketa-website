@@ -639,7 +639,6 @@ function ProcessSection() {
     <section className="section nsi-process" aria-labelledby="nsi-process-heading">
       <div className="container">
         <div className="section-heading nsi-reveal">
-          <img src={Images.illoNetsuiteImplementationTimeline} alt="" aria-hidden="true" className="nsi-process__illo" loading="lazy" />
           <p className="nsi-eyebrow">{PROCESS.eyebrow}</p>
           <h2 id="nsi-process-heading">{PROCESS.heading}</h2>
           <p>{PROCESS.intro}</p>

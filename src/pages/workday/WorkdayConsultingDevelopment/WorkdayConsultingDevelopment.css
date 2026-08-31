@@ -194,10 +194,13 @@
    OUR WORKDAY SOLUTION
    ============================================================ */
 .wcd-solution__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
-  align-items: center;
+  display: block;
+}
+
+.wcd-reveal-left {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .wcd-solution__illo {

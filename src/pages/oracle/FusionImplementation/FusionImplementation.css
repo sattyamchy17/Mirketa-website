@@ -544,10 +544,15 @@
 }
 
 .ofa-ai__grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
-  align-items: center;
+  display: block;
+}
+
+/* Scoped to this parent only — .ofa-reveal-right is reused elsewhere
+   on this page (an alternating zigzag list) that must not be centered. */
+.ofa-ai__grid > .ofa-reveal-right {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .ofa-ai__illo {
@@ -614,8 +619,7 @@
 }
 
 .ofa-migration__head {
-  display: grid;
-  grid-template-columns: 1fr 260px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 40px;

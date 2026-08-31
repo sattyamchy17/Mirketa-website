@@ -56,8 +56,18 @@ import { post as student360EnrollmentSalesforceEdaFullstackAcademy } from "./pos
 import { post as salesforceMarketingCloudConfigurationNursingUniversity } from "./posts/salesforce-marketing-cloud-configuration-nursing-university.js";
 import { post as salesforceConnectorAdapterLearningManagementSaas } from "./posts/salesforce-connector-adapter-learning-management-saas.js";
 import { post as salesforceJenkinsCicdReleaseManagementSolarManufacturer } from "./posts/salesforce-jenkins-cicd-release-management-solar-manufacturer.js";
+import { post as masteringDataManagementNonprofitOrganizations } from "./posts/mastering-data-management-nonprofit-organizations.js";
+import { post as digitalTransformationForNonprofits } from "./posts/digital-transformation-for-nonprofits.js";
+import { post as howMachineLearningWorks } from "./posts/how-machine-learning-works.js";
+import { post as delphiSalesforceAiAnalytics } from "./posts/delphi-salesforce-ai-analytics.js";
+import { post as masterDataManagementMdm } from "./posts/master-data-management-mdm.js";
 
 export const blogPosts = [
+  masteringDataManagementNonprofitOrganizations,
+  digitalTransformationForNonprofits,
+  howMachineLearningWorks,
+  delphiSalesforceAiAnalytics,
+  masterDataManagementMdm,
   enterpriseCustomerSuccessUnifiedDataFoundation,
   aiAssistedCustomerHealthScoringChurnReduction,
   enterpriseAiReadinessFoundationScalableAi,

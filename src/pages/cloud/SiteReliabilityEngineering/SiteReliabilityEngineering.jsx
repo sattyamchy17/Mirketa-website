@@ -14,7 +14,6 @@ import HeroVisual from "../../../components/HeroVisual/HeroVisual.jsx";
 import ConsultationSection from "../../../components/ConsultationSection/ConsultationSection.jsx";
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
 import "./SiteReliabilityEngineering.css";
 
@@ -472,23 +471,11 @@ function SolutionSection() {
     <section className="section sre-solution" aria-labelledby="sre-solution-heading">
       <div className="container sre-solution__grid">
         <div className="sre-reveal-left">
-          <img src={Images.illoCloudSreUptimeDashboard} alt="" aria-hidden="true" className="sre-solution__illo" loading="lazy" />
           <p className="sre-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="sre-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="sre-reveal-right">
-          <AnalyticsPanel
-            title="Reliability Trend — Last 90 Days"
-            donutPercent={95}
-            donutLabel="Uptime SLO attainment across monitored services"
-            metrics={[
-              { value: "99.95%", label: "Uptime SLO" },
-              { value: "22 min", label: "Avg. MTTR" },
-            ]}
-          />
         </div>
       </div>
     </section>

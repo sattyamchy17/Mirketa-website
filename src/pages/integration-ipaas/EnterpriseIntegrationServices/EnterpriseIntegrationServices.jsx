@@ -15,7 +15,6 @@ import ConsultationSection from "../../../components/ConsultationSection/Consult
 import RelatedServices from "../../../components/RelatedServices/RelatedServices.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./EnterpriseIntegrationServices.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -493,23 +492,11 @@ function ServiceOverviewSection() {
     <section className="section eis-overview" aria-labelledby="eis-overview-heading">
       <div className="container eis-overview__grid">
         <div className="eis-reveal-left">
-          <img src={Images.illoIntegrationApiFlowDiagram} alt="" aria-hidden="true" className="eis-overview__illo" loading="lazy" />
           <p className="eis-eyebrow">{SERVICE_OVERVIEW.eyebrow}</p>
           <h2 id="eis-overview-heading">{SERVICE_OVERVIEW.heading}</h2>
           {SERVICE_OVERVIEW.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="eis-reveal-right">
-          <AnalyticsPanel
-            title="Integration Health"
-            donutPercent={99}
-            donutLabel="Trailing 90-day API uptime across all flows"
-            metrics={[
-              { value: "14", label: "Systems connected" },
-              { value: "0", label: "Duplicate records" },
-            ]}
-          />
         </div>
       </div>
     </section>

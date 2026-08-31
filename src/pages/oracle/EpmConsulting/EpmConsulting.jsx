@@ -621,7 +621,6 @@ function ServicesSection() {
           <h2 id="oep-services-heading">{SERVICES.heading}</h2>
           <p className="oep-section-intro">{SERVICES.intro}</p>
         </div>
-        <img src={Images.illoOracleEpmCloseDashboard} alt="" aria-hidden="true" className="oep-services__illo" loading="lazy" />
       </div>
       <div className="oep-services__accordion">
         {SERVICES.items.map((s, i) => {

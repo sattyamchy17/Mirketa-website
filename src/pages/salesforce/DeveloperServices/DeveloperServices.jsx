@@ -675,7 +675,6 @@ function ServicesSection() {
             <h2 id="sds-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="sds-services__illo" loading="lazy" />
         </div>
         <div className="sds-services__grid sds-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -709,7 +708,6 @@ function TechnologiesSection() {
     <section className="section sds-technologies" aria-labelledby="sds-technologies-heading">
       <div className="container">
         <div className="sds-technologies__head sds-reveal">
-          <img src={TECHNOLOGIES.illo} alt="" aria-hidden="true" className="sds-technologies__illo" loading="lazy" />
           <div className="section-heading">
             <p className="sds-eyebrow">{TECHNOLOGIES.eyebrow}</p>
             <h2 id="sds-technologies-heading">{TECHNOLOGIES.heading}</h2>
@@ -766,7 +764,6 @@ function DevCapabilitiesSection() {
             <h2 id="sds-capabilities-heading">{DEV_CAPABILITIES.heading}</h2>
             <p>{DEV_CAPABILITIES.intro}</p>
           </div>
-          <img src={DEV_CAPABILITIES.illo} alt="" aria-hidden="true" className="sds-capabilities__illo" loading="lazy" />
         </div>
         <div className="sds-capabilities__grid sds-reveal-stagger">
           {DEV_CAPABILITIES.items.map((c) => (
@@ -790,7 +787,6 @@ function IntegrationsSection() {
     <section className="section sds-integrations" id="integrations" aria-labelledby="sds-integrations-heading">
       <div className="container">
         <div className="sds-integrations__head sds-reveal">
-          <img src={INTEGRATIONS.illo} alt="" aria-hidden="true" className="sds-integrations__illo" loading="lazy" />
           <div className="section-heading">
             <p className="sds-eyebrow">{INTEGRATIONS.eyebrow}</p>
             <h2 id="sds-integrations-heading">{INTEGRATIONS.heading}</h2>
@@ -824,7 +820,6 @@ function ProcessSection() {
             <h2 id="sds-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="sds-process__illo" loading="lazy" />
         </div>
         <div className="sds-process__rail sds-reveal-stagger">
           {PROCESS.steps.map((p, i) => (

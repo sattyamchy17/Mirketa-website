@@ -16,7 +16,6 @@ import RelatedServices from "../../../components/RelatedServices/RelatedServices
 import BentoGrid from "../../../components/sections/BentoGrid/BentoGrid.jsx";
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./WorkdayConsultingDevelopment.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -466,23 +465,11 @@ function SolutionSection() {
     <section className="section wcd-solution" aria-labelledby="wcd-solution-heading">
       <div className="container wcd-solution__grid">
         <div className="wcd-reveal-left">
-          <img src={Images.illoWorkdayConsultingOrgDashboard} alt="" aria-hidden="true" className="wcd-solution__illo" loading="lazy" />
           <p className="wcd-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="wcd-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="wcd-reveal-right">
-          <AnalyticsPanel
-            title="Manager Self-Service Adoption"
-            donutPercent={94}
-            donutLabel="Managers actively using self-service workflows"
-            metrics={[
-              { value: "94%", label: "Adoption at 60 days" },
-              { value: "65%", label: "Faster approval cycle time" },
-            ]}
-          />
         </div>
       </div>
     </section>

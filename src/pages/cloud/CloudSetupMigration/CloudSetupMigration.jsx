@@ -595,7 +595,6 @@ function ProcessSection() {
     <section className="section csm-process" aria-labelledby="csm-process-heading">
       <div className="container">
         <div className="section-heading csm-reveal">
-          <img src={Images.illoCloudMigrationTimeline} alt="" aria-hidden="true" className="csm-process__illo" loading="lazy" />
           <p className="csm-eyebrow">{PROCESS.eyebrow}</p>
           <h2 id="csm-process-heading">{PROCESS.heading}</h2>
           <p>{PROCESS.intro}</p>

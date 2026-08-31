@@ -544,7 +544,6 @@ function ServicesSection() {
     <section className="section hte-services" aria-labelledby="hte-services-heading">
       <div className="container">
         <div className="hte-services__head hte-reveal">
-          <img src={Images.industryHiTech} alt="" aria-hidden="true" className="hte-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="hte-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="hte-services-heading">{SERVICES.heading}</h2>

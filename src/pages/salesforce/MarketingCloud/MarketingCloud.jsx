@@ -603,7 +603,6 @@ function ChallengesSection() {
             <h2 id="mkc-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="mkc-challenges__illo" loading="lazy" />
         </div>
         <div className="mkc-challenges__grid mkc-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -633,7 +632,6 @@ function ServicesSection() {
             <h2 id="mkc-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="mkc-services__illo" loading="lazy" />
         </div>
         <div className="mkc-services__grid mkc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -661,7 +659,6 @@ function ProductsSection() {
     <section className="section mkc-products" id="products" aria-labelledby="mkc-products-heading">
       <div className="container">
         <div className="mkc-products__head mkc-reveal">
-          <img src={PRODUCTS.illo} alt="" aria-hidden="true" className="mkc-products__illo" loading="lazy" />
           <div className="section-heading">
             <p className="mkc-eyebrow">{PRODUCTS.eyebrow}</p>
             <h2 id="mkc-products-heading">{PRODUCTS.heading}</h2>
@@ -736,7 +733,6 @@ function AiMarketingSection() {
             <h2 id="mkc-ai-heading">{AI_MARKETING.heading}</h2>
             <p>{AI_MARKETING.intro}</p>
           </div>
-          <img src={AI_MARKETING.illo} alt="" aria-hidden="true" className="mkc-ai__illo" loading="lazy" />
         </div>
         <div className="mkc-ai__grid mkc-reveal-stagger">
           {AI_MARKETING.items.map((a) => (
@@ -792,7 +788,6 @@ function ProcessSection() {
             <h2 id="mkc-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="mkc-process__illo" loading="lazy" />
         </div>
         <div className="mkc-process__rail mkc-reveal-stagger">
           {PROCESS.steps.map((p, i) => (

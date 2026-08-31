@@ -641,8 +641,7 @@
 }
 
 .oms-tooling__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 32px;
   align-items: center;
   margin-bottom: 8px;

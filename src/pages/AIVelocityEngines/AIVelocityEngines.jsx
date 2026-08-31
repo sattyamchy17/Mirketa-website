@@ -155,7 +155,6 @@ function ProductsSection() {
     <section className="section ve-products" id="engines" aria-labelledby="ve-products-heading">
       <div className="container">
         <div className="ve-products__head ve-reveal">
-          <img src={Images.illoMultiAgentPipeline} alt="" aria-hidden="true" className="ve-products__illo" loading="lazy" />
           <div className="section-heading">
             <p className="ve-eyebrow">AI Velocity Engines</p>
             <h2 id="ve-products-heading">Pre-Built AI Accelerators, Ready to Deploy</h2>

@@ -720,7 +720,6 @@ function AiAutomationSection() {
   return (
     <section className="section ofa-ai" aria-labelledby="ofa-ai-heading">
       <div className="container ofa-ai__grid">
-        <img src={AI_AUTOMATION.illo} alt="" aria-hidden="true" className="ofa-ai__illo ofa-reveal-left" loading="lazy" />
         <div className="ofa-reveal-right">
           <div className="section-heading">
             <p className="ofa-eyebrow">{AI_AUTOMATION.eyebrow}</p>
@@ -761,7 +760,6 @@ function MigrationSection() {
             <h2 id="ofa-migration-heading">{MIGRATION.heading}</h2>
             <p>{MIGRATION.intro}</p>
           </div>
-          <img src={MIGRATION.illo} alt="" aria-hidden="true" className="ofa-migration__illo" loading="lazy" />
         </div>
         <div className="ofa-migration__grid ofa-reveal-stagger">
           {MIGRATION.items.map((m) => (
@@ -789,7 +787,6 @@ function IntegrationsSection() {
           <h2 id="ofa-integrations-heading">{INTEGRATIONS.heading}</h2>
           <p>{INTEGRATIONS.intro}</p>
         </div>
-        <img src={INTEGRATIONS.illo} alt="" aria-hidden="true" className="ofa-integrations__illo ofa-zoom-in" loading="lazy" />
       </div>
       <div className="container">
         <div className="ofa-integrations__grid ofa-reveal-stagger">

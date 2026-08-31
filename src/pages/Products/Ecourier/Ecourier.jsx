@@ -545,7 +545,6 @@ function ServicesSection() {
     <section className="section ec-services" aria-labelledby="ec-services-heading">
       <div className="container">
         <div className="ec-services__head ec-reveal">
-          <img src={Images.illoEcourierScheduleQueue} alt="" aria-hidden="true" className="ec-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="ec-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="ec-services-heading">{SERVICES.heading}</h2>

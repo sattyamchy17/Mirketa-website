@@ -533,7 +533,6 @@ function ServicesSection() {
     <section className="section ecmod-services" aria-labelledby="ecmod-services-heading">
       <div className="container">
         <div className="ecmod-services__head ecmod-reveal">
-          <img src={Images.illoElixirCertifiedModuleBadge} alt="" aria-hidden="true" className="ecmod-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="ecmod-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="ecmod-services-heading">{SERVICES.heading}</h2>

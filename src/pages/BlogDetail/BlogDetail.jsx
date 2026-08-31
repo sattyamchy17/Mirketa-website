@@ -1,10 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
 import BlogContent from "../../components/BlogContent/BlogContent.jsx";
 import BlogCard from "../../components/BlogCard/BlogCard.jsx";
-import { getPostBySlug, getRelatedPosts, getPostsByCategory } from "../../blog/blogUtils.js";
+import { getPostBySlug, getRelatedPosts, getPostsByCategory, getPostHref } from "../../blog/blogUtils.js";
 import "../Blog/Blog.css";
 import "./BlogDetail.css";
 
@@ -40,7 +40,7 @@ function formatMonthYear(dateString) {
 
 function DiscoveryCard({ post, kind }) {
   return (
-    <Link to={`/blog/${post.slug}`} className="bd-discovery-card">
+    <Link to={getPostHref(post)} className="bd-discovery-card">
       <span
         className="bd-discovery-card__media"
         style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}
@@ -112,6 +112,14 @@ export default function BlogDetail() {
         </div>
       </div>
     );
+  }
+
+  // A post with its own standalone page (e.g. a webinar with a hero and
+  // video embed) declares `href` in its data file — /blog/:slug redirects
+  // there instead of rendering the generic article template, which has
+  // no content blocks for it.
+  if (post.href) {
+    return <Navigate to={post.href} replace />;
   }
 
   const canonicalUrl = `${SITE_URL}/blog/${post.slug}`;

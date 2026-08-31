@@ -568,7 +568,6 @@ function ServicesSection() {
           <h2 id="ocx-services-heading">{SERVICES.heading}</h2>
           <p className="ocx-section-intro">{SERVICES.intro}</p>
         </div>
-        <img src={Images.illoOracleCxCaseConsole} alt="" aria-hidden="true" className="ocx-services__illo" loading="lazy" />
       </div>
       <div className="ocx-services__grid ocx-reveal-stagger">
         {SERVICES.items.map((s) => (

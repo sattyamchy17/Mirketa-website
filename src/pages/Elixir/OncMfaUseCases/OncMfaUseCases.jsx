@@ -536,7 +536,6 @@ function ServicesSection() {
     <section className="section mfa-services" aria-labelledby="mfa-services-heading">
       <div className="container">
         <div className="mfa-services__head mfa-reveal">
-          <img src={Images.illoElixirOncMfaCompliance} alt="" aria-hidden="true" className="mfa-services__illo" loading="lazy" />
           <div className="section-heading">
             <p className="mfa-eyebrow">{SERVICES.eyebrow}</p>
             <h2 id="mfa-services-heading">{SERVICES.heading}</h2>

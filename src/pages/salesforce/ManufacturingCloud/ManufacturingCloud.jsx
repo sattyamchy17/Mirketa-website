@@ -626,7 +626,6 @@ function ExplainerSection() {
             ))}
           </ul>
         </div>
-        <img src={EXPLAINER.illo} alt="" aria-hidden="true" className="mfc-explainer__illo mfc-zoom-in" loading="lazy" />
       </div>
     </section>
   );
@@ -646,7 +645,6 @@ function ComparisonSection() {
             <h2 id="mfc-comparison-heading">{COMPARISON.heading}</h2>
             <p>{COMPARISON.intro}</p>
           </div>
-          <img src={COMPARISON.illo} alt="" aria-hidden="true" className="mfc-comparison__illo" loading="lazy" />
         </div>
         <div className="mfc-comparison__table mfc-reveal-stagger">
           <div className="mfc-comparison__row mfc-comparison__row--head">
@@ -778,7 +776,6 @@ function AiManufacturingSection() {
             <h2 id="mfc-ai-heading">{AI_MANUFACTURING.heading}</h2>
             <p>{AI_MANUFACTURING.intro}</p>
           </div>
-          <img src={AI_MANUFACTURING.illo} alt="" aria-hidden="true" className="mfc-ai__illo" loading="lazy" />
         </div>
         <div className="mfc-ai__grid mfc-reveal-stagger">
           {AI_MANUFACTURING.items.map((a) => (

@@ -623,7 +623,6 @@ function ServicesSection() {
           <h2 id="osc-services-heading">{SERVICES.heading}</h2>
           <p className="osc-section-intro">{SERVICES.intro}</p>
         </div>
-        <img src={Images.illoOracleScmSupplyChainDashboard} alt="" aria-hidden="true" className="osc-services__illo" loading="lazy" />
       </div>
       <div className="osc-services__grid osc-reveal-stagger">
         {SERVICES.items.map((s) => (

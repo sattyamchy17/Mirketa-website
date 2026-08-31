@@ -815,7 +815,6 @@ function ToolingSection() {
             <h2 id="oms-tooling-heading">{TOOLING.heading}</h2>
             <p>{TOOLING.intro}</p>
           </div>
-          <img src={Images.illoOracleManagedOpsDashboard} alt="" aria-hidden="true" className="oms-tooling__illo" loading="lazy" />
         </div>
         <div className="oms-tooling__grid oms-reveal-stagger">
           {TOOLING.items.map((t) => (

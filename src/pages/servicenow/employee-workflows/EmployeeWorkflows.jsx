@@ -642,7 +642,6 @@ function FeaturesSection() {
     <section className="section snew-features" aria-labelledby="snew-features-heading">
       <div className="container">
         <div className="snew-features__head snew-reveal">
-          <img src={Images.illoServicenowHrsdOnboarding} alt="" aria-hidden="true" className="snew-features__illo" loading="lazy" />
           <div className="section-heading">
             <p className="snew-eyebrow">{FEATURES.eyebrow}</p>
             <h2 id="snew-features-heading">{FEATURES.heading}</h2>

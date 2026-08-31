@@ -222,8 +222,7 @@
 }
 
 .pe-services__head {
-  display: grid;
-  grid-template-columns: 320px 1fr;
+  display: block;
   gap: 36px;
   align-items: center;
 }

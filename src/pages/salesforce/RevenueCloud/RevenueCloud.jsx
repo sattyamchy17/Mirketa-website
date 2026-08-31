@@ -604,7 +604,6 @@ function ChallengesSection() {
             <h2 id="rvc-challenges-heading">{CHALLENGES.heading}</h2>
             <p>{CHALLENGES.intro}</p>
           </div>
-          <img src={CHALLENGES.illo} alt="" aria-hidden="true" className="rvc-challenges__illo" loading="lazy" />
         </div>
         <div className="rvc-challenges__grid rvc-reveal-stagger">
           {CHALLENGES.items.map((c) => (
@@ -634,7 +633,6 @@ function ServicesSection() {
             <h2 id="rvc-services-heading">{SERVICES.heading}</h2>
             <p>{SERVICES.intro}</p>
           </div>
-          <img src={SERVICES.illo} alt="" aria-hidden="true" className="rvc-services__illo" loading="lazy" />
         </div>
         <div className="rvc-services__grid rvc-reveal-stagger">
           {SERVICES.items.map((s) => (
@@ -662,7 +660,6 @@ function CapabilitiesSection() {
     <section className="section rvc-capabilities" id="capabilities" aria-labelledby="rvc-capabilities-heading">
       <div className="container">
         <div className="rvc-capabilities__head rvc-reveal">
-          <img src={CAPABILITIES.illo} alt="" aria-hidden="true" className="rvc-capabilities__illo" loading="lazy" />
           <div className="section-heading">
             <p className="rvc-eyebrow">{CAPABILITIES.eyebrow}</p>
             <h2 id="rvc-capabilities-heading">{CAPABILITIES.heading}</h2>
@@ -737,7 +734,6 @@ function AiRevenueOpsSection() {
             <h2 id="rvc-ai-heading">{AI_REVENUE_OPS.heading}</h2>
             <p>{AI_REVENUE_OPS.intro}</p>
           </div>
-          <img src={AI_REVENUE_OPS.illo} alt="" aria-hidden="true" className="rvc-ai__illo" loading="lazy" />
         </div>
         <div className="rvc-ai__grid rvc-reveal-stagger">
           {AI_REVENUE_OPS.items.map((a) => (
@@ -793,7 +789,6 @@ function ProcessSection() {
             <h2 id="rvc-process-heading">{PROCESS.heading}</h2>
             <p>{PROCESS.intro}</p>
           </div>
-          <img src={PROCESS.illo} alt="" aria-hidden="true" className="rvc-process__illo" loading="lazy" />
         </div>
         <div className="rvc-process__rail rvc-reveal-stagger">
           {PROCESS.steps.map((p, i) => (
@@ -868,7 +863,6 @@ function CaseStudiesSection() {
     <section className="section rvc-cases" aria-labelledby="rvc-cases-heading">
       <div className="container">
         <div className="rvc-cases__head rvc-reveal">
-          <img src={CASE_STUDIES.illo} alt="" aria-hidden="true" className="rvc-cases__illo" loading="lazy" />
           <div className="section-heading">
             <p className="rvc-eyebrow">{CASE_STUDIES.eyebrow}</p>
             <h2 id="rvc-cases-heading">{CASE_STUDIES.heading}</h2>

@@ -690,7 +690,6 @@ function FrameworkSection() {
             <span className="ar-eyebrow">The Assessment Framework</span>
             <h2 id="ar-framework-heading">Six Dimensions of AI Readiness</h2>
           </div>
-          <img src={Images.illoAiReadinessMaturityScorecard} alt="" aria-hidden="true" className="ar-framework__illo" loading="lazy" />
         </div>
 
         <div className="ar-framework__tabs" role="tablist" aria-label="Assessment dimensions">

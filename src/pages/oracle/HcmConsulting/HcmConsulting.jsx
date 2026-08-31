@@ -590,7 +590,6 @@ function ServicesSection() {
           <h2 id="ohc-services-heading">{SERVICES.heading}</h2>
           <p className="ohc-section-intro">{SERVICES.intro}</p>
         </div>
-        <img src={Images.illoOracleHcmWorkforceDashboard} alt="" aria-hidden="true" className="ohc-services__illo" loading="lazy" />
       </div>
       <div className="ohc-services__grid ohc-reveal-stagger">
         {SERVICES.items.map((s) => (

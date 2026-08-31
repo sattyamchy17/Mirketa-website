@@ -629,7 +629,6 @@ function SlaTiersSection() {
     <section className="section snms-sla" aria-labelledby="snms-sla-heading">
       <div className="container">
         <div className="snms-sla__head snms-reveal">
-          <img src={Images.illoServicenowManagedSla} alt="" aria-hidden="true" className="snms-sla__illo" loading="lazy" />
           <div className="section-heading">
             <p className="snms-eyebrow">{SLA_TIERS.eyebrow}</p>
             <h2 id="snms-sla-heading">{SLA_TIERS.heading}</h2>

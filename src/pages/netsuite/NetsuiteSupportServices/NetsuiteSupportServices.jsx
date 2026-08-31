@@ -16,7 +16,6 @@ import RelatedServices from "../../../components/RelatedServices/RelatedServices
 import WorkflowDiagram from "../../../components/illustrations/WorkflowDiagram/WorkflowDiagram.jsx";
 import FinanceChart from "../../../components/illustrations/FinanceChart/FinanceChart.jsx";
 import SupplyChainMap from "../../../components/illustrations/SupplyChainMap/SupplyChainMap.jsx";
-import AnalyticsPanel from "../../../components/illustrations/AnalyticsPanel/AnalyticsPanel.jsx";
 import "./NetsuiteSupportServices.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -484,23 +483,11 @@ function SolutionSection() {
     <section className="section nss-solution" aria-labelledby="nss-solution-heading">
       <div className="container nss-solution__grid">
         <div className="nss-reveal-left">
-          <img src={Images.illoNetsuiteSupportSlaDashboard} alt="" aria-hidden="true" className="nss-solution__illo" loading="lazy" />
           <p className="nss-eyebrow">{SOLUTION.eyebrow}</p>
           <h2 id="nss-solution-heading">{SOLUTION.heading}</h2>
           {SOLUTION.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
-        </div>
-        <div className="nss-reveal-right">
-          <AnalyticsPanel
-            title="SLA Performance Dashboard"
-            donutPercent={97}
-            donutLabel="Tickets resolved within SLA window"
-            metrics={[
-              { value: "98.7%", label: "SLA adherence, trailing 12 months" },
-              { value: "1.8 hrs", label: "Average first response time" },
-            ]}
-          />
         </div>
       </div>
     </section>

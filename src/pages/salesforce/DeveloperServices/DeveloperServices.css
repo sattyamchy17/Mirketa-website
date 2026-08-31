@@ -212,8 +212,7 @@
 .sds-services__head,
 .sds-capabilities__head,
 .sds-process__head {
-  display: grid;
-  grid-template-columns: 1fr 220px;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
@@ -221,8 +220,7 @@
 
 .sds-technologies__head,
 .sds-integrations__head {
-  display: grid;
-  grid-template-columns: 220px 1fr;
+  display: block;
   gap: 40px;
   align-items: center;
   margin-bottom: 44px;
