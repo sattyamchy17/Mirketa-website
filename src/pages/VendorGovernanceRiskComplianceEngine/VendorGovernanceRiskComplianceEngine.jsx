@@ -176,23 +176,25 @@ const MODULES = [
   {
     number: 1,
     title: "AI Document Classification and Text Extraction",
-    subhead: "Turn manual document review into automated, accurate compliance",
+    subhead: "Turn manual document review into automated, accurate compliance checks.",
     description:
-      "Supplier documents are classified and their text extracted automatically, pulling structured data straight from digitally-native PDFs and routing it into Salesforce — no manual re-keying required.",
+      "Every certificate, license, and policy document a supplier submits gets read the moment it lands, not queued for someone to open later. The platform pulls text directly from the document itself, PDF, Word, or Excel, classifies what it's looking at, and extracts the details that matter: expiration dates, coverage limits, entity names, so your team reviews a clean summary instead of hunting through the source file. Anything it can't read with confidence, a scanned image with no underlying text layer, for example, gets routed to a person before it's ever marked complete.",
     features: ["Guided self-service supplier portals", "AI document classification and text extraction", "Automated compliance gap detection", "Human-in-the-loop review for low-confidence items", "Full audit trail inside Salesforce"],
   },
   {
     number: 2,
     title: "Continuous Monitoring & Renewal Orchestration",
     subhead: "Spend less time chasing updates. More time managing strategy.",
-    description: "The platform tracks expiry dates across your entire supplier base, automatically drafting contextual reminder sequences before documents lapse, giving your team back hours every week.",
+    description:
+      "The platform tracks expiration dates across your entire supplier base and drafts contextual renewal reminders before documents lapse, not after, so your team gets hours back every week instead of spending them on follow-up emails.",
     features: ["Proactive expiry tracking and alerts", "AI-drafted renewal communications", "Real-time compliance scoring updates", "Autonomous escalation alerts for high-risk lapses", "Natural-language Q&A for compliance status"],
   },
   {
     number: 3,
-    title: "Multi-Tier Supplier Risk Monitoring",
+    title: "Multi-Tier Risk Propagation",
     subhead: "See the risks that legacy systems miss.",
-    description: "See risk across your entire supplier network — not just Tier-1 — so a disruption three tiers down surfaces long before it reaches your business.",
+    description:
+      "Most procurement tools stop watching once a supplier passes their initial check. This platform keeps mapping the relationships underneath, so a compliance gap two or three tiers down shows up as a risk signal at your level, not as a surprise after it's already caused a delay.",
     features: ["Tier-2 and Tier-3 relationship mapping", "Cascading risk score recalculation", "Real-time disruption impact analysis", "Geopolitical and environmental risk overlays"],
   },
 ];

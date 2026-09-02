@@ -15,18 +15,40 @@ export function cleanSlug(slug) {
   return String(slug || "").replace(/^\/+|\/+$/g, "");
 }
 
+// Categories whose posts get their own URL prefix automatically, purely
+// from `category` — no per-post `href` needed. Add a category here (and
+// its matching dynamic route in App.jsx, e.g.
+// `<Route path="/press-releases/:slug" element={<BlogDetail />} />`)
+// to give every post in it a real SEO URL with zero per-post wiring —
+// this is what makes Press Release posts "just work" the moment
+// they're added to blogData.js, unlike a webinar's own bespoke page
+// (which still needs an explicit `href` + its own route, since it's a
+// genuinely different component, not just a URL prefix on BlogDetail).
+const CATEGORY_ROUTE_PREFIXES = {
+  "Press Release": "/press-releases",
+};
+
 /**
  * Where a post should actually link to. Most posts live entirely inside
- * the generic /blog/:slug template, so this defaults to that route. A
- * post can instead declare its own real page (e.g. a webinar with a
- * hero, video embed, and dedicated sections that /blog/:slug can't
- * render) via an explicit `href` — every card/listing/sidebar across
- * the site should resolve links through this helper instead of
- * building `/blog/${slug}` by hand, so a post with a custom `href`
- * shows up correctly everywhere with no per-component changes.
+ * the generic /blog/:slug template, so this defaults to that route.
+ *
+ * A post can declare its own real page (e.g. a webinar with a hero,
+ * video embed, and dedicated sections that /blog/:slug can't render)
+ * via an explicit `href` — that always wins.
+ *
+ * Otherwise, if the post's `category` is listed in
+ * CATEGORY_ROUTE_PREFIXES, it resolves to `<prefix>/<slug>` automatically.
+ *
+ * Every card/listing/sidebar across the site resolves links through
+ * this helper instead of building `/blog/${slug}` by hand, so both
+ * kinds of custom routing show up correctly everywhere with no
+ * per-component changes.
  */
 export function getPostHref(post) {
-  return post?.href || `/blog/${post?.slug}`;
+  if (!post) return "/blog";
+  if (post.href) return post.href;
+  const prefix = CATEGORY_ROUTE_PREFIXES[post.category];
+  return prefix ? `${prefix}/${post.slug}` : `/blog/${post.slug}`;
 }
 
 function toTimestamp(post) {

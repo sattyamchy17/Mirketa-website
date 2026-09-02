@@ -8,7 +8,7 @@ import "./BlogContent.css";
 // markup lives; BlogDetail.jsx never hardcodes article content.
 //
 // Supported block types: heading2, heading3, heading4, paragraph,
-// list, callout, table, faq. Paragraph/list/table text supports two
+// list, callout, table, image, faq. Paragraph/list/table text supports two
 // lightweight inline tokens — **bold** and [label](/path or
 // https://url) — parsed by renderInline() below, so authors can add
 // emphasis and internal/external links directly in blogData without
@@ -105,6 +105,13 @@ export default function BlogContent({ blocks }) {
                   </tbody>
                 </table>
               </div>
+            );
+          case "image":
+            return (
+              <figure key={i} className="blog-content__figure">
+                <img src={block.src} alt={block.alt || ""} loading="lazy" />
+                {block.caption && <figcaption>{renderInline(block.caption)}</figcaption>}
+              </figure>
             );
           case "faq":
             return (

@@ -13,6 +13,7 @@ import DelphiSalesforceAIAnalytics from "./pages/webinars/DelphiSalesforceAIAnal
 import MasterDataManagementMDM from "./pages/webinars/MasterDataManagementMDM/MasterDataManagementMDM.jsx";
 import VendorGovernanceRiskComplianceEngine from "./pages/VendorGovernanceRiskComplianceEngine/VendorGovernanceRiskComplianceEngine.jsx";
 import VulnerabilityRemediationAgent from "./pages/VulnerabilityRemediationAgent/VulnerabilityRemediationAgent.jsx";
+import AIDrivenVulnerabilityManagement from "./pages/AIDrivenVulnerabilityManagement/AIDrivenVulnerabilityManagement.jsx";
 import AIConsulting from "./pages/AIConsulting/AIConsulting.jsx";
 import AIReadiness from "./pages/AIReadiness/AIReadiness.jsx";
 import AIRoadmapGovernance from "./pages/AIRoadmapGovernance/AIRoadmapGovernance.jsx";
@@ -99,6 +100,7 @@ export default function App() {
           <Route path="/webinars/master-data-management-mdm" element={<MasterDataManagementMDM />} />
           <Route path="/ai-velocity-engines/vendor-governance-risk-compliance-engine" element={<VendorGovernanceRiskComplianceEngine />} />
           <Route path="/ai-velocity-engines/vulnerability-remediation-agent" element={<VulnerabilityRemediationAgent />} />
+          <Route path="/ai-velocity-engines/ai-driven-vulnerability-management" element={<AIDrivenVulnerabilityManagement />} />
           <Route path="/ai-consulting" element={<AIConsulting />} />
           <Route path="/ai-readiness" element={<AIReadiness />} />
           <Route path="/ai-roadmap-governance" element={<AIRoadmapGovernance />} />
@@ -186,6 +188,14 @@ export default function App() {
           <Route path="/netsuite-next" element={<Navigate to="/blog/netsuite-next" replace />} />
           <Route path="/build-vs-buy-ai" element={<Navigate to="/blog/build-vs-buy-ai" replace />} />
           <Route path="/salesforce-agentforce-pricing" element={<Navigate to="/blog/salesforce-agentforce-pricing" replace />} />
+          <Route path="/salesforce-testing" element={<Navigate to="/blog/how-ai-is-transforming-salesforce-testing" replace />} />
+          <Route path="/model-context-protocol-salesforce-erp" element={<Navigate to="/blog/model-context-protocol-salesforce-erp" replace />} />
+          <Route path="/whitepapers/the-blind-spot-in-supply-chain-risk" element={<BlogDetail slugOverride="the-blind-spot-in-supply-chain-risk" />} />
+          {/* Press Release posts get this one dynamic route — unlike the
+              static per-post routes above, no new route is ever needed
+              for a future Press Release post; see getPostHref's
+              CATEGORY_ROUTE_PREFIXES in blogUtils.js. */}
+          <Route path="/press-releases/:slug" element={<BlogDetail />} />
 
           {/* Legacy slug redirects — old URLs kept live so bookmarked/indexed
               links land on the new canonical page instead of breaking. */}

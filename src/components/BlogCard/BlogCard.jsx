@@ -13,23 +13,20 @@ function formatDate(dateString) {
 //
 // `post` comes from the local blog data (src/blog) — see
 // src/blog/blogUtils.js. All props below `post` are optional and
-// default to the standard /blog behavior (category badge, "Read More"
-// to /blog/:slug); the Insights hub overrides them per category
-// without changing anything for /blog itself. A post with its own
-// standalone page (e.g. a webinar) declares `href` in its own data
-// file — getPostHref resolves the thumbnail/title/CTA to that real
-// page everywhere this card is used, with no per-caller changes.
-export default function BlogCard({ post, badgeLabel, ctaLabel, href, external = false, download = false }) {
+// default to the standard /blog behavior ("Read More" to /blog/:slug);
+// the Insights hub overrides them per category without changing
+// anything for /blog itself. A post with its own standalone page (e.g.
+// a webinar) declares `href` in its own data file — getPostHref
+// resolves the thumbnail/title/CTA to that real page everywhere this
+// card is used, with no per-caller changes.
+export default function BlogCard({ post, ctaLabel, href, external = false, download = false }) {
   const detailHref = getPostHref(post);
   const ctaHref = href || detailHref;
-  const badge = badgeLabel ?? post.category;
   const resolvedCtaLabel = ctaLabel || post.ctaLabel || "Read More";
 
   return (
     <article className="blog-card">
-      <Link to={detailHref} className="blog-card__media" style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined} aria-hidden="true" tabIndex={-1}>
-        {badge && <span className="blog-card__badge">{badge}</span>}
-      </Link>
+      <Link to={detailHref} className="blog-card__media" style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined} aria-hidden="true" tabIndex={-1} />
       <div className="blog-card__body">
         <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
         <h3>

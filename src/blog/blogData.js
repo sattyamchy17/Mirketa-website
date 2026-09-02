@@ -61,13 +61,25 @@ import { post as digitalTransformationForNonprofits } from "./posts/digital-tran
 import { post as howMachineLearningWorks } from "./posts/how-machine-learning-works.js";
 import { post as delphiSalesforceAiAnalytics } from "./posts/delphi-salesforce-ai-analytics.js";
 import { post as masterDataManagementMdm } from "./posts/master-data-management-mdm.js";
+import { post as modelContextProtocolSalesforceErp } from "./posts/model-context-protocol-salesforce-erp.js";
+import { post as hybridSalesforceQaEngineersAdminSkills } from "./posts/hybrid-salesforce-qa-engineers-admin-skills.js";
+import { post as ciCdInSalesforceQaRoleDevopsPipeline } from "./posts/ci-cd-in-salesforce-qa-role-devops-pipeline.js";
+import { post as salesforceCrmAddictionTreatmentCenters } from "./posts/salesforce-crm-addiction-treatment-centers.js";
+import { post as theBlindSpotInSupplyChainRisk } from "./posts/the-blind-spot-in-supply-chain-risk.js";
+import { post as vendorGovernanceRiskComplianceEngine } from "./posts/vendor-governance-risk-compliance-engine.js";
 
 export const blogPosts = [
+  vendorGovernanceRiskComplianceEngine,
   masteringDataManagementNonprofitOrganizations,
   digitalTransformationForNonprofits,
   howMachineLearningWorks,
   delphiSalesforceAiAnalytics,
   masterDataManagementMdm,
+  modelContextProtocolSalesforceErp,
+  hybridSalesforceQaEngineersAdminSkills,
+  ciCdInSalesforceQaRoleDevopsPipeline,
+  salesforceCrmAddictionTreatmentCenters,
+  theBlindSpotInSupplyChainRisk,
   enterpriseCustomerSuccessUnifiedDataFoundation,
   aiAssistedCustomerHealthScoringChurnReduction,
   enterpriseAiReadinessFoundationScalableAi,

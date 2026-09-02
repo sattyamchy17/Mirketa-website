@@ -40,7 +40,7 @@ const NAV_ITEMS = [
             { label: "ALTRUTA - AI Nonprofit Suite", href: "/altruta-ai" },
             { label: "KRATU AI - Clinical AI", href: "/kratu-ai" },
             { label: "Case Rezolver", href: "/salesforce-ai-case-management" },
-            { label: "AI-Driven Vulnerability Management", href: "/ai-velocity-engines/vulnerability-remediation-agent" },
+            { label: "AI-Driven Vulnerability Management", href: "/ai-velocity-engines/ai-driven-vulnerability-management" },
             { label: "Supplier Compliance Platform", href: "/ai-velocity-engines/vendor-governance-risk-compliance-engine" },
           ],
         },

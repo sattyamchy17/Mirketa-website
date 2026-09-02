@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, useLocation, Link, Navigate } from "react-router-dom";
 import Seo from "../../components/Seo/Seo.jsx";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb.jsx";
 import ConsultationSection from "../../components/ConsultationSection/ConsultationSection.jsx";
@@ -95,8 +95,25 @@ function BlogDetailSidebar({ excludeSlug }) {
   );
 }
 
-export default function BlogDetail() {
-  const { slug } = useParams();
+// Every ordinary blog post lives at /blog/:slug — no per-post route
+// registration needed, so a new post becomes reachable the moment it's
+// added to blogData.js. A post can get a real URL elsewhere in one of
+// two ways, both resolved through getPostHref() (see blogUtils.js):
+//   1. An explicit `href` on the post (e.g. a Whitepaper's own page) —
+//      mounted via a manually-registered static route passing
+//      `slugOverride` (no `:slug` param to read there).
+//   2. A `category` listed in CATEGORY_ROUTE_PREFIXES (e.g. Press
+//      Release) — mounted via a genuinely dynamic `/press-releases/:slug`
+//      route, no per-post registration ever needed.
+// Whichever way a post's canonical URL differs from the current one
+// (comparing real pathnames, not a slugOverride flag — that's what
+// correctly covers both the static and dynamic cases without a
+// self-redirect loop), it redirects there instead of rendering this
+// generic template twice under two different URLs.
+export default function BlogDetail({ slugOverride }) {
+  const { slug: slugParam } = useParams();
+  const location = useLocation();
+  const slug = slugOverride || slugParam;
   // Local blog data is synchronous — no fetch/loading state needed.
   const post = getPostBySlug(slug);
 
@@ -114,15 +131,12 @@ export default function BlogDetail() {
     );
   }
 
-  // A post with its own standalone page (e.g. a webinar with a hero and
-  // video embed) declares `href` in its data file — /blog/:slug redirects
-  // there instead of rendering the generic article template, which has
-  // no content blocks for it.
-  if (post.href) {
-    return <Navigate to={post.href} replace />;
+  const canonicalHref = getPostHref(post);
+  if (location.pathname !== canonicalHref) {
+    return <Navigate to={canonicalHref} replace />;
   }
 
-  const canonicalUrl = `${SITE_URL}/blog/${post.slug}`;
+  const canonicalUrl = `${SITE_URL}${canonicalHref}`;
   const relatedPosts = getRelatedPosts(post, 3);
   const faqItems = (post.content || []).filter((block) => block.type === "faq").flatMap((block) => block.items || []);
 
@@ -181,9 +195,15 @@ export default function BlogDetail() {
           <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
           {post.category && <span className="blog-detail__tag">{post.category}</span>}
           <h1>{post.title}</h1>
-          <a href="#contact" className="btn btn-primary blog-detail__cta">
-            Contact Us <span aria-hidden="true">&rarr;</span>
-          </a>
+          {post.downloadUrl ? (
+            <a href={post.downloadUrl} download={`${post.slug}.pdf`} className="btn btn-primary blog-detail__cta">
+              {post.downloadLabel || "Download"} <span aria-hidden="true">&rarr;</span>
+            </a>
+          ) : (
+            <a href="#contact" className="btn btn-primary blog-detail__cta">
+              Contact Us <span aria-hidden="true">&rarr;</span>
+            </a>
+          )}
           <div className="blog-detail__meta">
             {post.author && (
               <span className="blog-detail__author">
@@ -207,6 +227,18 @@ export default function BlogDetail() {
           <BlogDetailSidebar excludeSlug={post.slug} />
         </div>
       </section>
+
+      {post.downloadUrl && (
+        <section className="section blog-detail__download" aria-labelledby="blog-download-heading">
+          <div className="container blog-detail__download-inner">
+            <h2 id="blog-download-heading">Get the Full Whitepaper</h2>
+            <p>Download the complete PDF for the full analysis.</p>
+            <a href={post.downloadUrl} download={`${post.slug}.pdf`} className="btn btn-primary">
+              {post.downloadLabel || "Download"} <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </section>
+      )}
 
       {relatedPosts.length > 0 && (
         <section className="section blog-detail__related" aria-labelledby="blog-related-heading">

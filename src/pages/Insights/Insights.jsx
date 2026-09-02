@@ -116,7 +116,6 @@ function FeaturedInsight({ post }) {
     <div className="insights-featured" style={post.featuredImage ? { backgroundImage: `url("${post.featuredImage}")` } : undefined}>
       <span className="insights-featured__scrim" aria-hidden="true" />
       <div className="insights-featured__body">
-        <span className="insights-featured__badge">{post.category}</span>
         <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
         {/* Image/title always open the post's own page — only the explicit CTA
             below can point somewhere external, so there's always a way to read

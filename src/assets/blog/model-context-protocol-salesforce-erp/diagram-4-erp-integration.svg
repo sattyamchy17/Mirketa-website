@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 400" font-family="Helvetica,Arial,Arial" overflow="hidden">
+  <defs>
+    <marker refX="8" refY="3" markerWidth="10" markerHeight="10" markerUnits="strokeWidth" orient="auto" id="arrow2" overflow="hidden">
+      <path d="M0 0 0 6 9 3Z" fill="#888888"></path>
+    </marker>
+    <marker refX="8" refY="3" markerWidth="10" markerHeight="10" markerUnits="strokeWidth" orient="auto" id="arrowblue" overflow="hidden">
+      <path d="M0 0 0 6 9 3Z" fill="#2D6CDF"></path>
+    </marker>
+    <marker refX="8" refY="3" markerWidth="10" markerHeight="10" markerUnits="strokeWidth" orient="auto" id="arrowgreen" overflow="hidden">
+      <path d="M0 0 0 6 9 3Z" fill="#16A085"></path>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="900" height="400" fill="#F7F8FA"></rect>
+  <text fill="#1A1A2E" font-weight="700" font-size="22" text-anchor="middle" x="450" y="38">One Question, Two Systems: Salesforce + ERP via MCP</text>
+  <rect x="30" y="160" rx="10" width="170" height="80" stroke="#4F5DF0" stroke-width="2" fill="#FFFFFF"></rect>
+  <text fill="#2D2D5A" font-weight="700" font-size="13" text-anchor="middle" x="115" y="190">Sales Rep asks:</text>
+  <text fill="#555555" font-size="11" text-anchor="middle" x="115" y="210">"Is Acme's last</text>
+  <text fill="#555555" font-size="11" text-anchor="middle" x="115" y="225">invoice paid?"</text>
+  <line x1="200" y1="200" x2="270" y2="200" stroke="#888888" stroke-width="2" marker-end="url(#arrow2)"></line>
+  <rect x="270" y="150" rx="10" width="170" height="100" stroke="#4F5DF0" stroke-width="2" fill="#FFFFFF"></rect>
+  <text fill="#2D2D5A" font-weight="700" font-size="13" text-anchor="middle" x="355" y="185">AI Assistant</text>
+  <text fill="#555555" font-size="11" text-anchor="middle" x="355" y="205">(MCP Host + Client)</text>
+  <text fill="#888888" font-size="10" text-anchor="middle" x="355" y="225">Decides which tools</text>
+  <text fill="#888888" font-size="10" text-anchor="middle" x="355" y="238">it needs to call</text>
+  <line x1="440" y1="180" x2="530" y2="110" stroke="#2D6CDF" stroke-width="2" marker-end="url(#arrowblue)"></line>
+  <rect x="530" y="60" rx="10" width="180" height="90" stroke="#2D6CDF" stroke-width="2" fill="#EEF6FF"></rect>
+  <text fill="#1A3D7A" font-weight="700" font-size="13" text-anchor="middle" x="620" y="90">Salesforce MCP Server</text>
+  <text fill="#3A5A99" font-size="11" text-anchor="middle" x="620" y="112">Returns: Account,</text>
+  <text fill="#3A5A99" font-size="11" text-anchor="middle" x="620" y="128">Opportunity, Case data</text>
+  <line x1="440" y1="220" x2="530" y2="290" stroke="#16A085" stroke-width="2" marker-end="url(#arrowgreen)"></line>
+  <rect x="530" y="270" rx="10" width="180" height="90" stroke="#16A085" stroke-width="2" fill="#E6F6EE"></rect>
+  <text fill="#0E5C4A" font-weight="700" font-size="13" text-anchor="middle" x="620" y="300">ERP MCP Server</text>
+  <text fill="#1D7A5F" font-size="11" text-anchor="middle" x="620" y="322">Returns: Invoice,</text>
+  <text fill="#1D7A5F" font-size="11" text-anchor="middle" x="620" y="338">Payment, Order status</text>
+  <line x1="710" y1="105" x2="780" y2="180" stroke="#888888" stroke-width="1.6" stroke-dasharray="4 3"></line>
+  <line x1="710" y1="315" x2="780" y2="220" stroke="#888888" stroke-width="1.6" stroke-dasharray="4 3"></line>
+  <rect x="740" y="165" rx="10" width="140" height="70" stroke="#E0A92B" stroke-width="2" fill="#FFF8E6"></rect>
+  <text fill="#8A6414" font-weight="700" font-size="12" text-anchor="middle" x="810" y="192">Combined,</text>
+  <text fill="#8A6414" font-weight="700" font-size="12" text-anchor="middle" x="810" y="208">Grounded Answer</text>
+  <text fill="#8A6414" font-size="10" text-anchor="middle" x="810" y="224">back to the rep</text>
+</svg>
